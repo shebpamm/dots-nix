@@ -29,6 +29,7 @@
     wget
     xclip
     zoxide
+    github-cli
   ];
 
   # not big enough for their own modules
