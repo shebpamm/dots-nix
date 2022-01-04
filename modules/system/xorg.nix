@@ -8,10 +8,23 @@
     # };
     displayManager.gdm = {
       enable = true;
-      wayland = true;
+      wayland = false;
     };
+
+    displayManager.sessionCommands = ''${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --mode 3840x2160'';
+
+    xrandrHeads = [
+      { output = "DP-1"; monitorConfig = ''
+        Option "Position" "2160 1213"
+      ''; }
+      { output = "DP-2"; monitorConfig = ''
+        Option "Rotate" "left"
+        Option "Position" "0 0"
+      ''; }
+    ];
+
     libinput.enable = true;
-    layout = "gb";
+    layout = "eu";
     windowManager = {
       awesome = {
         enable = true;
