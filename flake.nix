@@ -51,8 +51,8 @@
               ];
             };
           system = "x86_64-linux";
-          homeDirectory = "/home/advait";
-          username = "advait";
+          homeDirectory = "/home/shebpamm";
+          username = "shebpamm";
           stateVersion = "21.11";
         };
       };
