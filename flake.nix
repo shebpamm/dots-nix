@@ -30,6 +30,7 @@
               home.stateVersion = "21.11";
               programs.home-manager.enable = true;
               nixpkgs.overlays = overlays;
+              nixpkgs.config.allowUnfree = true;
               imports = [
                 ./modules/shell
                 ./modules/editors/neovim.nix
