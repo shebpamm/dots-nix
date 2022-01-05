@@ -22,7 +22,8 @@
   networking = {
     hostName = "kerosene";
     useDHCP = false;
-    interfaces.enp0s31f6.useDHCP = true;
+
+    interfaces.eno1.useDHCP = true;
   };
 
   services.avahi = {
