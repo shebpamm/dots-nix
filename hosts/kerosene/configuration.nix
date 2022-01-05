@@ -21,7 +21,6 @@
 
   networking = {
     hostName = "kerosene";
-    networkmanager.enable = true;
     useDHCP = false;
     interfaces.enp0s31f6.useDHCP = true;
   };
