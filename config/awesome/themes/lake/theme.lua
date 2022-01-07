@@ -104,6 +104,9 @@ theme.tag_preview_widget_border_color = theme.border_color_normal
 theme.tag_preview_widget_border_width = 0
 theme.tag_preview_widget_margin = 10
 
+theme.hotkeys_fg = "#ECEFF4"
+theme.hotkeys_modifiers_fg = "#A3BE8C"
+
 -- For tabbed only
 theme.tabbed_spawn_in_tab = false
 
