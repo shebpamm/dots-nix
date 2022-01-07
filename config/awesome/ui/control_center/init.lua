@@ -109,6 +109,7 @@ local control_center = awful.popup {
   placement = function(c)
     awful.placement.bottom_right(c, { margins = { bottom = 50, right = 10 } })
   end,
+  screen = awful.screen.focused(),
   ontop = true,
   visible = false,
   bg = beautiful.bg_dark,
@@ -118,6 +119,7 @@ local control_center = awful.popup {
 }
 
 local function toggle()
+  control_center.screen = awful.screen.focused()
   control_center.visible = not control_center.visible
 end
 
