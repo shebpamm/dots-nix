@@ -34,43 +34,46 @@ local time = wibox.widget {
   },
 }
 
-local layoutbox = wibox.widget {
-  bg = beautiful.bg_normal,
-  fg = beautiful.fg_time,
-  shape = function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, 9)
-  end,
-  widget = wibox.container.background,
-  {
-    widget = wibox.container.margin,
-    margins = 7.5,
+function create_layoutbox(s)
+  return wibox.widget {
+    bg = beautiful.bg_normal,
+    fg = beautiful.fg_time,
+    shape = function(cr, width, height)
+      gears.shape.rounded_rect(cr, width, height, 9)
+    end,
+    widget = wibox.container.background,
     {
-      widget = awful.widget.layoutbox {
-        buttons = {
-          awful.button({}, 1, function()
-            awful.layout.inc(1)
-          end),
-          awful.button({}, 3, function()
-            awful.layout.inc(-1)
-          end),
-          awful.button({}, 4, function()
-            awful.layout.inc(1)
-          end),
-          awful.button({}, 5, function()
-            awful.layout.inc(-1)
-          end),
+      widget = wibox.container.margin,
+      margins = 7.5,
+      {
+        widget = awful.widget.layoutbox {
+          screen = s,
+          buttons = {
+            awful.button({}, 1, function()
+              awful.layout.inc(1)
+            end),
+            awful.button({}, 3, function()
+              awful.layout.inc(-1)
+            end),
+            awful.button({}, 4, function()
+              awful.layout.inc(1)
+            end),
+            awful.button({}, 5, function()
+              awful.layout.inc(-1)
+            end),
+          },
         },
       },
     },
-  },
-}
+  }
+end
 
 screen.connect_signal("request::desktop_decoration", function(s)
   local l = awful.layout.suit
   awful.tag(
     { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
     s,
-    { l.floating, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile }
+    { l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile }
   )
   awful.popup({
     bg = beautiful.none,
@@ -107,7 +110,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
       {
         { widget = battery },
         { widget = time },
-        { widget = layoutbox },
+        { widget = create_layoutbox(s) },
         layout = wibox.layout.fixed.horizontal,
         spacing = 10,
       },
