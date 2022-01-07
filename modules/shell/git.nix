@@ -18,6 +18,9 @@
           pushInsteadOf = [ "github:" "git://github.com/" ];
         };
       };
+      "credential \"https://github.com\"" = {
+          helper = "!${pkgs.github-cli}/bin/gh auth git-credential";
+        };
     };
   };
 }
