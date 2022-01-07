@@ -1,5 +1,3 @@
-these are my dotfiles
+these dotfiles were made by [nuxshed](https://github.com/nuxshed).
 
-for installation and other stuff, see the [wiki](https://github.com/nuxshed/dotfiles/wiki)
-
-<img src="./rice.png">
+This is my fork as I venture down the path of NixOS!
