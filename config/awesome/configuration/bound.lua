@@ -1,4 +1,7 @@
 local awful = require "awful"
+local hotkeys_popup = require "awful.hotkeys_popup"
+
+require "awful.hotkeys_popup.keys"
 
 -- Mouse bindings
 awful.mouse.append_global_mousebindings {
@@ -56,6 +59,12 @@ awful.keyboard.append_global_keybindings {
   awful.key({ modkey }, "a", function()
     require "ui.control_center"()
   end),
+  awful.key({ modkey }, "/", function()
+    hotkeys_popup.show_help(nil, awful.screen.focused())
+  end, {
+    description = "show help",
+    group = "awesome",
+  }),
 }
 
 -- Tags related keybindings
