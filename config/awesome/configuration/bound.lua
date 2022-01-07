@@ -58,7 +58,10 @@ awful.keyboard.append_global_keybindings {
   }),
   awful.key({ modkey }, "a", function()
     require "ui.control_center"()
-  end),
+  end, {
+    description = "toggle control center",
+    group = "launcher",
+  }),
   awful.key({ modkey }, "/", function()
     hotkeys_popup.show_help(nil, awful.screen.focused())
   end, {
