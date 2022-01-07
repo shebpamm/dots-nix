@@ -142,6 +142,11 @@ theme.window_switcher_name_normal_color = theme.fg_normal
 theme.window_switcher_name_focus_color = "#89b482"
 theme.window_switcher_icon_width = 40
 
+-- bling window swallowing
+theme.parent_filter_list = { "firefox", "Gimp" }
+theme.child_filter_list = {}
+theme.swallowing_filter = true
+
 -- Set different colors for urgent notifications.
 rnotification.connect_signal("request::rules", function()
   rnotification.append_rule {
