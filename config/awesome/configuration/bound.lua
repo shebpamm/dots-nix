@@ -1,5 +1,6 @@
 local awful = require "awful"
 local hotkeys_popup = require "awful.hotkeys_popup"
+local machi = require "../modules/layout-machi"
 
 require "awful.hotkeys_popup.keys"
 
@@ -163,6 +164,12 @@ awful.keyboard.append_global_keybindings {
     awful.layout.inc(-1)
   end, {
     description = "select previous",
+    group = "layout",
+  }),
+  awful.key({ modkey }, ".", function()
+    machi.default_editor.start_interactive()
+  end, {
+    description = "edit the current layout as machi layout",
     group = "layout",
   }),
 }
