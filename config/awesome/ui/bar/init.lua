@@ -2,6 +2,7 @@ local awful = require "awful"
 local wibox = require "wibox"
 local beautiful = require "beautiful"
 local gears = require "gears"
+local machi_layouts = require "../../configuration/layout/machi"
 
 local battery = wibox.widget {
   bg = beautiful.bg_normal,
@@ -70,11 +71,16 @@ end
 
 screen.connect_signal("request::desktop_decoration", function(s)
   local l = awful.layout.suit
-  awful.tag(
-    { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-    s,
-    { l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile }
-  )
+  if s ~= screen.primary then
+    local ml = machi_layouts.secondary
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, { ml, ml, ml, ml, ml, ml, ml, ml, ml })
+  else
+    awful.tag(
+      { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+      s,
+      { l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile }
+    )
+  end
   local anchor_side = (s == screen.primary and "bottom" or "top")
   awful.popup({
     bg = beautiful.none,
