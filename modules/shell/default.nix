@@ -30,6 +30,7 @@
     xclip
     zoxide
     github-cli
+    playerctl
   ];
 
   # not big enough for their own modules
