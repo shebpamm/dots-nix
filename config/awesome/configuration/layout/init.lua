@@ -1,12 +1,13 @@
 local awful = require "awful"
 local bling = require "modules.bling"
+local beautiful = require "beautiful"
+local machi = require "configuration.layout.machi"
+
+beautiful.layout_machi = machi.machi.get_icon()
 
 local l = awful.layout.suit
 
-local machi = require "../modules/layout-machi"
-
 awful.layout.layouts = {
-  machi.default_layout,
   l.tile,
   l.spiral,
   bling.layout.mstab,
@@ -14,4 +15,5 @@ awful.layout.layouts = {
   bling.layout.equalarea,
   bling.layout.deck,
   l.floating,
+  machi.secondary,
 }
