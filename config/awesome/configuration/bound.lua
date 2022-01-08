@@ -51,6 +51,12 @@ awful.keyboard.append_global_keybindings {
     description = "open a terminal",
     group = "launcher",
   }),
+  awful.key({ modkey, "Shift" }, "Return", function()
+    awful.spawn(browser)
+  end, {
+    description = "open a browser",
+    group = "launcher",
+  }),
   awful.key({ modkey }, "d", function()
     awful.spawn "rofi -show drun"
   end, {
@@ -69,6 +75,19 @@ awful.keyboard.append_global_keybindings {
     description = "show help",
     group = "awesome",
   }),
+}
+
+-- Media control keys
+awful.keyboard.append_global_keybindings {
+  awful.key({}, "XF86AudioPlay", function()
+    awful.spawn "playerctl play-pause"
+  end, { description = "view previous", group = "tag" }),
+  awful.key({}, "XF86AudioNext", function()
+    awful.spawn "playerctl next"
+  end, { description = "view next", group = "tag" }),
+  awful.key({}, "XF86AudioPrev", function()
+    awful.spawn "playerctl previous"
+  end, { description = "go back", group = "tag" }),
 }
 
 -- Tags related keybindings
