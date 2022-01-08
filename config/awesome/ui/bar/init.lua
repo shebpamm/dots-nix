@@ -75,12 +75,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
     s,
     { l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile }
   )
+  local anchor_side = (s == screen.primary and "bottom" or "top")
   awful.popup({
     bg = beautiful.none,
     placement = function(c)
-      (awful.placement.bottom + awful.placement.maximize_horizontally)(
+      local anchor = (s == screen.primary and awful.placement.bottom or awful.placement.top)
+
+      return (anchor + awful.placement.maximize_horizontally)(
         c,
-        { margins = { bottom = 10, left = 20, right = 20 } }
+        { margins = { [anchor_side] = 10, left = 20, right = 20 } }
       )
     end,
     shape = gears.shape.rect,
@@ -117,5 +120,5 @@ screen.connect_signal("request::desktop_decoration", function(s)
       layout = wibox.layout.align.horizontal,
       forced_height = 30,
     },
-  }):struts { bottom = 40 }
+  }):struts { [anchor_side] = 40 }
 end)
