@@ -822,8 +822,11 @@
         "spicetify-themes": "spicetify-themes"
       },
       "locked": {
-        "lastModified": 1641468066,
+        "lastModified": 1641562078,
         "narHash": "sha256-iVq3ZPV0uVgkofH1LzhotLAA9mHLSShZ1AqaO43M3uM=",
+        "ref": "master",
+        "rev": "eb5177a268964430bb4dbcf1216c0817be8560a6",
+        "revCount": 21,
         "type": "git",
         "url": "file:///home/shebpamm/spicetify-nix"
       },
