@@ -6,7 +6,7 @@ local theme_assets = require "beautiful.theme_assets"
 local xresources = require "beautiful.xresources"
 local rnotification = require "ruled.notification"
 local dpi = xresources.apply_dpi
-local theme_path = require("gears").filesystem.get_configuration_dir() .. "themes/forest/"
+local theme_path = require("gears").filesystem.get_configuration_dir() .. "themes/lake/"
 local themes_path = require("gears").filesystem.get_themes_dir()
 local gcolor = require("gears").color
 
