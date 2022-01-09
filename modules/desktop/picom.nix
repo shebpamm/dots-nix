@@ -9,6 +9,7 @@
       shadowOffsets = [ (-5) (0) ];
       shadowExclude = [
         "name = 'Notification'"
+        "class_g = 'Rofi'"
         "class_g = 'Conky'"
         "class_g ?= 'Notify-osd'"
         "class_g = 'Cairo-clock'"
