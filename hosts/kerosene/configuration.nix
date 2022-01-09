@@ -73,6 +73,19 @@
     zsh
   ];
 
+  # Expose secrets
+  sops.defaultSopsFile = ../../secrets/kerosene.yaml;
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.secrets.hass-server = {
+      mode = "0400";
+      owner = "shebpamm";
+    };
+
+  sops.secrets.hass-token = {
+      mode = "0400";
+      owner = "shebpamm";
+    };
+
   nix = {
     package = pkgs.nixUnstable;
     trustedUsers = [ "root" "shebpamm" "@wheel" ];

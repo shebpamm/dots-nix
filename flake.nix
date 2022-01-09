@@ -7,9 +7,10 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     spicetify.url = "/home/shebpamm/spicetify-nix";
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly, nixpkgs-f2k, spicetify }:
+  outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix }:
     let
       system = "x86_64-linux";
 
@@ -67,6 +68,7 @@
               nixpkgs.overlays = overlays;
             }
             ./hosts/kerosene/configuration.nix
+            sops-nix.nixosModules.sops
           ];
         };
       };

@@ -565,6 +565,22 @@
     },
     "nixpkgs_16": {
       "locked": {
+        "lastModified": 1638097282,
+        "narHash": "sha256-EXCzj9b8X/lqDPJapxZThIOKL5ASbpsJZ+8L1LnY1ig=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "78cb77b29d37a9663e05b61abb4fa09465da4b70",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_17": {
+      "locked": {
         "lastModified": 1641549189,
         "narHash": "sha256-eniH46gBJfWMU++/hk239L/HmXYKNDDEqXsxBn+4OR4=",
         "owner": "NixOS",
@@ -776,6 +792,7 @@
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-f2k": "nixpkgs-f2k",
+        "sops-nix": "sops-nix",
         "spicetify": "spicetify"
       }
     },
@@ -815,10 +832,28 @@
         "type": "github"
       }
     },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_16"
+      },
+      "locked": {
+        "lastModified": 1641374494,
+        "narHash": "sha256-a56G6Um43+0+n+yNYhRCh/mSvDdRVzQHSKcFaDEB9/8=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "7edb4b080023ef12f39262a3aa7aab31015a7a0e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
+      }
+    },
     "spicetify": {
       "inputs": {
         "flake-utils": "flake-utils_8",
-        "nixpkgs": "nixpkgs_16",
+        "nixpkgs": "nixpkgs_17",
         "spicetify-themes": "spicetify-themes"
       },
       "locked": {
