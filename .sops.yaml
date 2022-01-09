@@ -1,0 +1,10 @@
+keys:
+  - &kerosene age18de5qeh3lenv478ykpqqrs6wj668lc2urpw4ecjkk89nayewwdssktx693
+  - &shebpamm age1774gz6rjltdzc65rudqpf2h6dy36vv5dg86xf7n4t5h6tx7ejcps3gazef
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+      - age:
+        - *kerosene
+        - *shebpamm
