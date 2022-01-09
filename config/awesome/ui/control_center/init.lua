@@ -3,6 +3,8 @@ local beautiful = require "beautiful"
 local gears = require "gears"
 local wibox = require "wibox"
 
+local LampToggle = require "ui.control_center.controls.lamp"
+
 local control_center = awful.popup {
   widget = {
     {
@@ -79,10 +81,10 @@ local control_center = awful.popup {
       {
         {
           {
-            { widget = require "ui.control_center.controls.wifi" },
-            { widget = require "ui.control_center.controls.bluetooth" },
-            { widget = require "ui.control_center.controls.dnd" },
-            { widget = require "ui.control_center.controls.night_light" },
+            { widget = LampToggle:new("light.shed_lamp", "bulb.svg") },
+            { widget = LampToggle:new("light.erik_s_computer", "bulb.svg") },
+            { widget = LampToggle:new("light.shed_lamp", "bulb.svg") },
+            { widget = LampToggle:new("light.shed_lamp", "bulb.svg") },
             layout = wibox.layout.flex.horizontal,
             spacing = 15,
           },
