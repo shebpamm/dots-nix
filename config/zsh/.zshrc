@@ -58,7 +58,7 @@ promptinit
 setopt globdots                 # Glob Dotfiles As Well.
 setopt extendedglob             # Use Extended Globbing.
 setopt auto_cd                  # no need to specify cd
-setopt correct                  # spelling correction
+unsetopt correct                  # spelling correction
 setopt interactivecomments      # Ignore lines prefixed with '#'
 unsetopt beep                   # Hush.
 setopt rc_quotes                # Allow 'Henry''s Garage' instead of 'Henry'\''s Garage'
