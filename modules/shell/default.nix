@@ -31,6 +31,7 @@
     zoxide
     github-cli
     playerctl
+    htop
   ];
 
   # not big enough for their own modules
