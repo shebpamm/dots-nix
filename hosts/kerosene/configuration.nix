@@ -29,6 +29,7 @@
     useDHCP = false;
 
     interfaces.eno1.useDHCP = true;
+    firewall.allowedTCPPorts = [ 80 443 22 6742 ];
   };
 
   services.avahi = {
