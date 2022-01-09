@@ -25,6 +25,14 @@
       vSync = true;
 
       extraOptions = ''
+        animations = true;
+        animation-window-mass: 1;
+        animation-stiffness = 300;
+        animation-dampening = 26;
+        animation-clamping = true;
+
+        animation-for-open-window = "zoom";
+
         shadow-radius = 16;
         corner-radius = 20;
         rounded-corners-exclude = [
