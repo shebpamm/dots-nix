@@ -10,6 +10,8 @@ local theme_path = require("gears").filesystem.get_configuration_dir() .. "theme
 local themes_path = require("gears").filesystem.get_themes_dir()
 local gcolor = require("gears").color
 
+local c = require("themes.lake.colors").dark
+
 local theme = {}
 
 theme.font_name = "JetBrainsMono Nerd Font"
@@ -17,27 +19,27 @@ theme.font = theme.font_name .. " 8"
 
 theme.none = "#00000000"
 
-theme.bg_normal = "#2E3440"
-theme.bg_focus = "#434C5E"
-theme.bg_dark = "#1d2021"
-theme.bg_urgent = "#3b4252"
-theme.bg_minimize = "#434c5e"
+theme.bg_normal = c.nord0
+theme.bg_focus = c.nord2
+theme.bg_dark = c.nord0
+theme.bg_urgent = c.nord1
+theme.bg_minimize = c.nord2
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = "#d8dee9"
-theme.fg_focus = "#eceff4"
-theme.fg_urgent = "#eceff4"
-theme.fg_minimize = "#d8dee9"
-theme.fg_dark = "#d8dee9"
+theme.fg_normal = c.nord4
+theme.fg_focus = c.nord6
+theme.fg_urgent = c.nord6
+theme.fg_minimize = c.nord4
+theme.fg_dark = c.nord4
 
-theme.fg_bat = "#8fbcbb"
-theme.fg_time = "#81a1c1"
+theme.fg_bat = c.nord7
+theme.fg_time = c.nord9
 
 theme.useless_gap = dpi(10)
 theme.border_width = dpi(0)
-theme.border_color_normal = "#5e81ac"
-theme.border_color_active = "#8fbcbb"
-theme.border_color_marked = "#88c0d0"
+theme.border_color_normal = c.nord10
+theme.border_color_active = c.nord7
+theme.border_color_marked = c.nord8
 
 -- There are other variable sets
 -- overriding the default one when
@@ -50,9 +52,9 @@ theme.border_color_marked = "#88c0d0"
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
-theme.taglist_bg_focus = "#88c0d0"
-theme.taglist_fg_empty = "#d8dee9"
-theme.taglist_fg_occupied = "#eceff4"
+theme.taglist_bg_focus = c.nord8
+theme.taglist_fg_empty = c.nord4
+theme.taglist_fg_occupied = c.nord6
 theme.taglist_fg_focus = theme.bg_normal
 
 -- Generate taglist squares:
@@ -61,12 +63,12 @@ theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
 -- control center
-theme.control_center_button_bg = "#89b482"
-theme.control_center_button_bg_off = "#3f3f3f"
-theme.control_center_mem_used = "#ea6962"
-theme.control_center_cpu_active = "#d8a657"
-theme.control_center_vol_slider_active = "#a9b665"
-theme.control_center_bri_slider_active = "#d3869b"
+theme.control_center_button_bg = c.nord9
+theme.control_center_button_bg_off = c.nord2
+theme.control_center_mem_used = c.nord12
+theme.control_center_cpu_active = c.nord14
+theme.control_center_vol_slider_active = c.nord9
+theme.control_center_bri_slider_active = c.nord9
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -104,8 +106,8 @@ theme.tag_preview_widget_border_color = theme.border_color_normal
 theme.tag_preview_widget_border_width = 0
 theme.tag_preview_widget_margin = 10
 
-theme.hotkeys_fg = "#ECEFF4"
-theme.hotkeys_modifiers_fg = "#A3BE8C"
+theme.hotkeys_fg = c.nord6
+theme.hotkeys_modifiers_fg = c.nord14
 
 -- For tabbed only
 theme.tabbed_spawn_in_tab = false
