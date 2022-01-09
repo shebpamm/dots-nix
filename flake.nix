@@ -6,7 +6,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
-    spicetify = { url = "/home/shebpamm/spicetify-nix"; flake = true; };
+    spicetify.url = "/home/shebpamm/spicetify-nix";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly, nixpkgs-f2k, spicetify }:
