@@ -8,6 +8,17 @@
       "*.o"
       ".DS_Store"
     ];
+
+    aliases = {
+      co = "checkout";
+      br = "branch";
+      st = "status";
+      cm = "commit -m";  
+      amend = "commit --amend";
+      dfs = "diff --staged";
+      a = "add";
+    };
+
     extraConfig = {
       url = {
         "git://github.com/" = {
