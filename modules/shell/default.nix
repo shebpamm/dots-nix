@@ -32,6 +32,7 @@
     github-cli
     playerctl
     htop
+    home-assistant-cli
   ];
 
   # not big enough for their own modules
