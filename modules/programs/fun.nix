@@ -5,5 +5,7 @@
     cmatrix
     lolcat
     pipes-rs
+    pfetch
+    neofetch
   ];
 }
