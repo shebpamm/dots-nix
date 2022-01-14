@@ -3,6 +3,8 @@ local wibox = require "wibox"
 local beautiful = require "beautiful"
 local gears = require "gears"
 
+beautiful.systray_icon_spacing = 12
+
 local systray = wibox.widget.systray()
 systray:set_screen(screen[screen.count()])
 systray:set_horizontal(false)
