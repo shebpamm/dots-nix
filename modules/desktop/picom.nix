@@ -33,6 +33,7 @@
         animation-clamping = true;
 
         animation-for-open-window = "zoom";
+        animation-force-steps = true;
 
         shadow-radius = 16;
         corner-radius = 20;
