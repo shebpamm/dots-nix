@@ -35,6 +35,7 @@
               nixpkgs.overlays = overlays;
               nixpkgs.config.allowUnfree = true;
               imports = [
+                ./modules/system/openrgb.nix
                 ./modules/shell
                 ./modules/editors/neovim.nix
                 ./modules/editors/emacs.nix
