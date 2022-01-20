@@ -185,6 +185,12 @@ awful.keyboard.append_global_keybindings {
     description = "select previous",
     group = "layout",
   }),
+  awful.key({ modkey }, ",", function()
+    machi.switcher.start()
+  end, {
+    description = "edit the current layout as machi layout",
+    group = "layout",
+  }),
   awful.key({ modkey }, ".", function()
     machi.default_editor.start_interactive()
   end, {
