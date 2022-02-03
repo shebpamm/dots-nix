@@ -3,6 +3,7 @@
   imports = [
     ./git.nix
     ./zsh.nix
+    ./ssh.nix
   ];
   home.packages = with pkgs; [
     acpi
