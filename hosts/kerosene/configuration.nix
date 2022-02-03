@@ -107,8 +107,10 @@
     '';
   };
 
+  virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "shebpamm" ];
+  users.extraGroups.docker.members = [ "shebpamm" ];
 
   system.stateVersion = "21.11";
 }
