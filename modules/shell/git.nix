@@ -20,6 +20,9 @@
     };
 
     extraConfig = {
+      init = {
+          defaultBranch = "main";
+        };
       url = {
         "git://github.com/" = {
           insteadOf = "github:";
