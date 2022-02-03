@@ -2,15 +2,16 @@
 {
   fonts.fonts = with pkgs; [
     cantarell-fonts
-    (nerdfonts.override { fonts = [ "CascadiaCode" "FiraCode" "Gohu" "IBMPlexMono" "Iosevka" "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "CascadiaCode" "FiraCode" "Gohu" "IBMPlexMono" "Iosevka" "FiraCode" ]; })
+    noto-fonts
     noto-fonts-emoji-blob-bin
   ];
 
   fonts.fontconfig = {
     defaultFonts = {
-      monospace = [ "JetBrainsMono Nerd Font" ];
-      sansSerif = [ "JetBrainsMono Nerd Font" ];
-      serif = [ "JetBrainsMono Nerd Font" ];
+      monospace = [ "Cousine" ];
+      sansSerif = [ "Arimo" ];
+      serif = [ "Tinos" ];
       emoji = [ "Blobmoji" ];
     };
   };
