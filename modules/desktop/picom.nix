@@ -14,6 +14,7 @@
         "class_g ?= 'Notify-osd'"
         "class_g = 'Cairo-clock'"
         "class_g = 'awesome'"
+        "class_g = 'Vncviewer'"
         "_GTK_FRAME_EXTENTS@:c"
       ];
 
@@ -26,7 +27,7 @@
       vSync = true;
 
       extraOptions = ''
-        animations = true;
+        animations = false;
         animation-window-mass: 1;
         animation-stiffness = 300;
         animation-dampening = 26;
@@ -40,7 +41,8 @@
         rounded-corners-exclude = [
           "window_type = 'dock'",
           "window_type = 'desktop'",
-          "class_g = 'awesome'"
+          "class_g = 'awesome'",
+          "class_g = 'Vncviewer'"
         ];
       '';
     };
