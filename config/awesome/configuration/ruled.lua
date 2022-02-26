@@ -24,6 +24,7 @@ ruled.client.connect_signal("request::rules", function()
         "Sxiv",
         "Tor Browser",
         "Wpa_gui",
+        "Vncviewer",
       },
       name = {
         "Event Tester", -- xev.
@@ -42,6 +43,16 @@ ruled.client.connect_signal("request::rules", function()
     id = "titlebars",
     rule_any = { type = { "normal", "dialog" } },
     properties = { titlebars_enabled = true },
+  }
+
+  ruled.client.append_rule {
+    id = "vncviewer",
+    rule_any = { class = { "Vncviewer" } },
+    properties = { 
+      titlebars_enabled = false,
+      screen = "DP-2",
+      fullscreen = true,
+    },
   }
 end)
 
