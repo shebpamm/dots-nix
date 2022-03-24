@@ -1,7 +1,7 @@
 { config, pkgs, libs, ... }:
 {
   home.packages = with pkgs; [
-    ((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [
+    ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
       epkgs.vterm
     ]))
   ];

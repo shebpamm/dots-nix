@@ -23,13 +23,16 @@
   time.timeZone = "Europe/Helsinki";
 
   hardware.nvidia.modesetting.enable = true;
+  hardware.opengl.driSupport32Bit = true;
+
+  systemd.enableUnifiedCgroupHierarchy = false;
 
   networking = {
     hostName = "kerosene";
     useDHCP = false;
 
     interfaces.eno1.useDHCP = true;
-    firewall.allowedTCPPorts = [ 80 443 22 6742 24800 4713];
+    firewall.allowedTCPPorts = [ 80 443 22 6742 24800 4713 3389];
   };
 
   services.avahi = {
@@ -110,6 +113,7 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.enableNvidia = true;
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "shebpamm" ];
   users.extraGroups.docker.members = [ "shebpamm" ];
