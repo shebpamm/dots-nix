@@ -79,6 +79,7 @@
                 ./modules/dev/python.nix
                 ./modules/programs
                 ./modules/programs/graphics.nix
+                ./modules/programs/work.nix
                 ./modules/desktop
                 ./modules/desktop/windowManagers/awesome.nix
               ];
