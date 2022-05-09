@@ -6,11 +6,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
-    spicetify.url = "/home/shebpamm/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix }:
+  outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly, nixpkgs-f2k, sops-nix }:
     let
       system = "x86_64-linux";
 
@@ -22,7 +21,6 @@
       overlays = [
         nixpkgs-f2k.overlay
         neovim-nightly.overlay
-        spicetify.overlay
       ];
     in
     {
