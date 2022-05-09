@@ -1,6 +1,6 @@
 { config, pkgs, libs, ... }:
 {
-  imports = [ ./irssi.nix ./kitty ./spotify.nix ./fun.nix ];
+  imports = [ ./irssi.nix ./kitty ./fun.nix ];
   home.packages = with pkgs; [ 
     google-chrome
     rofi

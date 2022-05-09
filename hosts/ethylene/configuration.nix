@@ -15,9 +15,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  hardware.enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = false;
 
   # Use the systemd-boot EFI boot loader.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
@@ -41,6 +44,19 @@
     fsType = "btrfs";
     options = [ "subvol=@nix-root" "compress=zstd" "noatime" ];
   };
+
+  fileSystems."/home" = { 
+    device = "/dev/void/root";
+    fsType = "btrfs";
+    options = [ "subvol=@home" "compress=zstd" "noatime" ];
+  };
+
+  fileSystems."/home/shebpamm/dots" = { 
+    device = "/dev/void/root";
+    fsType = "btrfs";
+    options = [ "subvol=dots/@nix-dots" "compress=zstd" "noatime" ];
+  };
+
 
   time.timeZone = "Europe/Helsinki";
 
