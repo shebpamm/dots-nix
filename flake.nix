@@ -60,6 +60,35 @@
           username = "shebpamm";
           stateVersion = "21.11";
         };
+
+        ethylene = home-manager.lib.homeManagerConfiguration {
+          configuration = { pkgs, config, ... }:
+            {
+              home.stateVersion = "21.11";
+              programs.home-manager.enable = true;
+              nixpkgs.overlays = overlays;
+              nixpkgs.config.allowUnfree = true;
+              imports = [
+                ./modules/shell
+                ./modules/editors/neovim.nix
+                ./modules/editors/emacs.nix
+                ./modules/editors/vim.nix
+                ./modules/dev/lua.nix
+                ./modules/dev/node.nix
+                ./modules/dev/rust.nix
+                ./modules/dev/nix.nix
+                ./modules/dev/python.nix
+                ./modules/programs
+                ./modules/programs/graphics.nix
+                ./modules/desktop
+                ./modules/desktop/windowManagers/awesome.nix
+              ];
+            };
+          system = "x86_64-linux";
+          homeDirectory = "/home/shebpamm";
+          username = "shebpamm";
+          stateVersion = "21.11";
+        };
       };
       nixosConfigurations = {
         kerosene = nixpkgs.lib.nixosSystem {
@@ -70,6 +99,15 @@
             }
             ./hosts/kerosene/configuration.nix
             sops-nix.nixosModules.sops
+          ];
+        };
+        ethylene = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            {
+              nixpkgs.overlays = overlays;
+            }
+            ./hosts/ethylene/configuration.nix
           ];
         };
       };
