@@ -28,7 +28,7 @@
     hostName = "ethylene";
     useDHCP = true;
 
-    networking.wireless.iwd.enable = true;
+    wireless.iwd.enable = true;
     firewall.allowedTCPPorts = [ 80 443 22 6742 ];
   };
 
