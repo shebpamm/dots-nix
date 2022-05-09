@@ -15,10 +15,32 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  hardware.bluetooth.enable = false;
+
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.blacklistedKernelModules = ["bluetooth"];
+  boot.loader.grub = {
+    enable = true;
+    version = 2;
+    device = "nodev";
+    efiSupport = true;
+    enableCryptodisk = true;
+  };
+  boot.initrd.luks.devices = {
+    root = {
+      device = "/dev/disk/by-uuid/302b1f5f-dd74-452c-9257-cc4a90561a32";
+      preLVM = true;
+    };
+  };
+
+  fileSystems."/" = { 
+    device = "/dev/void/root";
+    fsType = "btrfs";
+    options = [ "subvol=@nix-root" "compress=zstd" "noatime" ];
+  };
 
   time.timeZone = "Europe/Helsinki";
 
