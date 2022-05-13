@@ -5,8 +5,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 9;
+      name = "MesloLGM Nerd Font Mono";
+      size = 11;
     };
     settings = {
       cursor_shape = "underline";
