@@ -38,7 +38,7 @@ local servers = {
   rnix = {},
   pyright = {},
   rust_analyzer = {},
-  ls_emmet = {},
+  emmet_ls = {},
 }
 
 require("lsp.null-ls").setup()
