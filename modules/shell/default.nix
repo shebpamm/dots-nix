@@ -3,6 +3,7 @@
   imports = [
     ./git.nix
     ./zsh.nix
+    ./fish.nix
   ];
   home.packages = with pkgs; [
     acpi
@@ -38,7 +39,6 @@
 
   # not big enough for their own modules
   home.file.".bin".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/bin";
-  home.file.".config/fish".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/fish";
   home.file.".tmux.conf".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/tmux/.tmux.conf";
 }

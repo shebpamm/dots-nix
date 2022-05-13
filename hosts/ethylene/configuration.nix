@@ -95,9 +95,7 @@
     enableGlobalCompInit = false;
   };
 
-  programs.fish = {
-    enable = true;
-  };
+  programs.fish.enable = true;
 
   environment.binsh = "${pkgs.dash}/bin/dash";
 

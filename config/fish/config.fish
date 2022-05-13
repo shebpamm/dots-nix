@@ -12,6 +12,8 @@ if test -z (pgrep ssh-agent)
   set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
 end
 
+source ~/.config/fish/static_variables.fish
+
 if status --is-login
   if test -z "$DISPLAY" -a $XDG_VTNR = 1123
     exec startx
