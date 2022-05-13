@@ -27,6 +27,10 @@
       }
     ];
 
+    shellAliases = {
+      vim = "nvim";
+    };
+
     shellInit = ''
       set -e VAULT_TOKEN
       set -Ux VAULT_TOKEN (pass 'Vault Token' -sa password)
