@@ -60,8 +60,6 @@
 
   time.timeZone = "Europe/Helsinki";
 
-  hardware.nvidia.modesetting.enable = true;
-
   networking = {
     hostName = "ethylene";
     useDHCP = true;
@@ -88,13 +86,17 @@
   users.users.shebpamm = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableGlobalCompInit = false;
+  };
+
+  programs.fish = {
+    enable = true;
   };
 
   environment.binsh = "${pkgs.dash}/bin/dash";
