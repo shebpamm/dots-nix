@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ -z $1 ]; then echo "gib addr(s)"; exit 1; fi
+
+if [ $1 == "old" ]; then
+  iface=tun1
+  gw=$(ip r | grep -oP -m1 'via \K.*(?= dev tun1)')
+  shift;
+else
+  iface=tun0
+  gw=$(ip r | grep -oP -m1 'via \K.*(?= dev tun0)')
+fi
+
+addrs="$@"
+
+for addr in $addrs; do
+  if [[ ! $addr =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    addr=$(dig +short $addr | xargs)
+  fi
+  echo -n "Adding ${addr} : "
+  ip route add $addr via $gw dev $iface && echo "Success"
+done
