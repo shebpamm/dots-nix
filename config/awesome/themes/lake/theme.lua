@@ -76,6 +76,9 @@ theme.control_center_bri_slider_active = c.nord9
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
 
+theme.notification_font = "arimo:mono 16"
+theme.notification_bg = theme.fg
+
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]

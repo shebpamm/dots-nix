@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     acpi
     alsa-utils
+    bat
     bottom
     brightnessctl
     exa

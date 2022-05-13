@@ -51,6 +51,12 @@ awful.keyboard.append_global_keybindings {
     description = "open a terminal",
     group = "launcher",
   }),
+  awful.key({ modkey }, "z", function()
+    awful.screen.focused().quake:toggle()
+  end, {
+    description = "toggle dropdown terminal",
+    group = "launcher",
+  }),
   awful.key({ modkey, "Shift" }, "Return", function()
     awful.spawn(browser)
   end, {
@@ -59,6 +65,12 @@ awful.keyboard.append_global_keybindings {
   }),
   awful.key({ modkey }, "d", function()
     awful.spawn "rofi -show drun"
+  end, {
+    description = "run prompt",
+    group = "launcher",
+  }),
+  awful.key({ modkey, "Shift" }, "l", function()
+    awful.spawn "betterlockscreen -l"
   end, {
     description = "run prompt",
     group = "launcher",
@@ -112,12 +124,9 @@ awful.keyboard.append_global_keybindings {
     group = "client",
   }),
   awful.key({ modkey }, "Tab", function()
-    awful.client.focus.history.previous()
-    if client.focus then
-      client.focus:raise()
-    end
+    awful.screen.focus_relative(1)
   end, {
-    description = "go back",
+    description = "switch focus of screen",
     group = "client",
   }),
 }
@@ -183,12 +192,6 @@ awful.keyboard.append_global_keybindings {
     awful.layout.inc(-1)
   end, {
     description = "select previous",
-    group = "layout",
-  }),
-  awful.key({ modkey }, ",", function()
-    machi.switcher.start()
-  end, {
-    description = "edit the current layout as machi layout",
     group = "layout",
   }),
   awful.key({ modkey }, ".", function()
@@ -322,16 +325,13 @@ client.connect_signal("request::default_keybindings", function()
       group = "client",
     }),
     awful.key({ modkey }, "n", function(c)
-      -- The client currently has the input focus, so it cannot be
-      -- minimized, since minimized clients can't have the focus.
-      c.minimized = true
+      require "ui.notification_center"()
     end, {
       description = "minimize",
       group = "client",
     }),
     awful.key({ modkey }, "m", function(c)
-      c.maximized = not c.maximized
-      c:raise()
+      awful.spawn "clipcat-menu"
     end, {
       description = "(un)maximize",
       group = "client",

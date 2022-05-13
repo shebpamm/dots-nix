@@ -44,7 +44,9 @@ screen.connect_signal("arrange", function(s)
   local layout = s.selected_tag.layout.name
   for _, c in pairs(s.clients) do
     if layout == "floating" or c.floating then
-      awful.titlebar.show(c)
+      if c.class ~= "quake" then
+        awful.titlebar.show(c)
+      end
     else
       awful.titlebar.hide(c)
     end

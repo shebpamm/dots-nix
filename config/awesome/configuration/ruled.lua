@@ -43,10 +43,16 @@ ruled.client.connect_signal("request::rules", function()
     rule_any = { type = { "normal", "dialog" } },
     properties = { titlebars_enabled = true },
   }
+
+  ruled.client.append_rule {
+    rule = { class = "quake" },
+    properties = {
+      titlebars_enabled = false
+    }
+  }
 end)
 
 -- Notifications
-
 ruled.notification.connect_signal("request::rules", function()
   -- All notifications will match this rule.
   ruled.notification.append_rule {
@@ -58,8 +64,11 @@ ruled.notification.connect_signal("request::rules", function()
   }
 end)
 
+naughty.expiration_paused = true
+naughty.persistence_enabled = true
+
 naughty.connect_signal("request::display", function(n)
-  naughty.layout.box { notification = n }
+  -- naughty.layout.box { notification = n }
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
