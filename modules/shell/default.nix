@@ -36,6 +36,7 @@
     playerctl
     htop
     home-assistant-cli
+    bind
   ];
 
   # not big enough for their own modules

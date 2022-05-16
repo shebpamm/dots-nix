@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -z $1 ]; then echo "gib addr(s)"; exit 1; fi
 
