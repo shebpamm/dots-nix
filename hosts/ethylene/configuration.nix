@@ -114,6 +114,8 @@
     zsh
   ];
 
+  security.sudo.wheelNeedsPassword = false;
+
   nix = {
     package = pkgs.nixUnstable;
     trustedUsers = [ "root" "shebpamm" "@wheel" ];
