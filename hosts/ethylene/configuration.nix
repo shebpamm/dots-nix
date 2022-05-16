@@ -67,6 +67,7 @@
   networking = {
     hostName = "ethylene";
     useDHCP = true;
+    nameservers = ["8.8.8.8" "1.1.1.1"];
 
     wireless.iwd.enable = true;
     firewall.allowedTCPPorts = [ 80 443 22 6742 ];
