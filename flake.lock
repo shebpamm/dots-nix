@@ -581,7 +581,8 @@
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-f2k": "nixpkgs-f2k",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "work-nix": "work-nix"
       }
     },
     "rust-analyzer-src": {
@@ -636,6 +637,18 @@
         "submodules": true,
         "type": "git",
         "url": "https://github.com/wez/wezterm.git"
+      }
+    },
+    "work-nix": {
+      "locked": {
+        "lastModified": 1652708203,
+        "narHash": "sha256-1/FqBkpiwjkssAvb8qFy0KCQHJJ+3063g+y+vZ5t1hA=",
+        "type": "git",
+        "url": "file:///home/shebpamm/work-nix"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/shebpamm/work-nix"
       }
     }
   },
