@@ -17,14 +17,18 @@
 
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
-  hardware.bluetooth.enable = false;
+  hardware.bluetooth.enable = true;
+
+  hardware.opengl = {
+    enable = true;
+    extraPackages = [ pkgs.mesa.drivers ];
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.blacklistedKernelModules = ["bluetooth"];
   boot.loader.grub = {
     enable = true;
     version = 2;

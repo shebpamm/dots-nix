@@ -6,6 +6,7 @@
     rofi
     nyxt
     discord
+    kitty
   ];
   home.file.".config/rofi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi";
