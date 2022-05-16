@@ -19,5 +19,10 @@
       allow_remote_control = "yes";
       listen_on = "unix:/tmp/mykitty";
     };
+    extraConfig = ''
+      term xterm 
+      disable_ligatures never
+      strip_trailing_spaces smart
+    '';
   };
 }
