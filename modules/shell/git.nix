@@ -20,6 +20,7 @@
     };
 
     extraConfig = {
+      safe.directory = "/home/shebpamm/dotfiles";
       init = {
           defaultBranch = "main";
         };
