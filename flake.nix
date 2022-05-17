@@ -56,7 +56,6 @@
                 ./modules/desktop/windowManagers/i3.nix
                 ./modules/desktop/windowManagers/sway.nix
               ];
-              programs.kitty.font.size = 15;
             };
           system = "x86_64-linux";
           homeDirectory = "/home/shebpamm";
