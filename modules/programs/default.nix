@@ -1,6 +1,6 @@
 { config, pkgs, libs, ... }:
 {
-  imports = [ ./irssi.nix ./kitty ./spotify.nix ./fun.nix ];
+  imports = [ ./irssi.nix ./kitty ./fun.nix ./spotify.nix ];
   home.packages = with pkgs; [ 
     google-chrome
     rofi
@@ -8,6 +8,9 @@
     discord
     nfs-utils
     iperf3
+    kitty
+    bitwarden
+    bitwarden-cli
   ];
   home.file.".config/rofi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi";

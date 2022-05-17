@@ -65,9 +65,20 @@ ts_config.setup {
   },
 }
 
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+ft_to_parser.json = "jsonc"
+ft_to_parser.rasi = "css"
+ 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.jsonc.used_by = "json"
-parser_config.css.used_by = "rasi"
+
+parser_config.jinja2 = {
+  install_info = {
+    url = "https://github.com/dbt-labs/tree-sitter-jinja2",
+    branch = "main",
+    files = { "src/parser.c" },
+  },
+  filetype = "j2",
+}
 
 -- add markdown (credit: folke)
 parser_config.markdown = {

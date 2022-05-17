@@ -4,10 +4,12 @@
     ./git.nix
     ./zsh.nix
     ./ssh.nix
+    ./fish.nix
   ];
   home.packages = with pkgs; [
     acpi
     alsa-utils
+    bat
     bottom
     brightnessctl
     exa
@@ -15,6 +17,7 @@
     feh
     ffmpeg
     fortune
+    fish
     fzf
     github-cli
     gnumake
@@ -34,6 +37,7 @@
     playerctl
     htop
     home-assistant-cli
+    bind
   ];
 
   # not big enough for their own modules

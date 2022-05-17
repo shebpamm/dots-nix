@@ -25,10 +25,10 @@ while [ "$1" ]; do
       nix-collect-garbage
       exit ;;
     home)
-      nix build "$HOME/dotfiles#homemanagerConfigurations.kerosene.activationPackage" && ./result/activate
+      NIXPKGS_ALLOW_UNFREE=1 nix build "$HOME/dotfiles#homemanagerConfigurations.$(hostname -s).activationPackage" --impure && ./result/activate
       exit ;;
     rebuild)
-      sudo nixos-rebuild "${2:-switch}" --flake "$HOME/dotfiles#"
+      sudo nixos-rebuild "${2:-switch}" --flake "$HOME/dotfiles#$(hostname -s)"
       exit ;;
     repl)
       [ ! -r /tmp/dotfiles-repl.nix ] && echo "builtins.getFlake (toString $HOME/dotfiles)" > /tmp/dotfiles-repl

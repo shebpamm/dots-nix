@@ -5,8 +5,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 9;
+      name = "MesloLGM Nerd Font Mono";
+      size = 11;
     };
     settings = {
       cursor_shape = "underline";
@@ -19,5 +19,10 @@
       allow_remote_control = "yes";
       listen_on = "unix:/tmp/mykitty";
     };
+    extraConfig = ''
+      term xterm 
+      disable_ligatures never
+      strip_trailing_spaces smart
+    '';
   };
 }

@@ -8,8 +8,8 @@ export VISUAL=/bin/vim
 export DOTFILES=$HOME/dotfiles
 export PROJECTS_DIR=$HOME/projects
 export NPM_PREFIX_DIR=$HOME/.node_modules
-export HASS_SERVER=$(cat /run/secrets/hass-server)
-export HASS_TOKEN=$(cat /run/secrets/hass-token)
+#export HASS_SERVER=$(cat /run/secrets/hass-server)
+#export HASS_TOKEN=$(cat /run/secrets/hass-token)
 
 typeset -U PATH path
 

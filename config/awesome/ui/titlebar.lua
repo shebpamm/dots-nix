@@ -44,7 +44,7 @@ screen.connect_signal("arrange", function(s)
   local layout = s.selected_tag.layout.name
   for _, c in pairs(s.clients) do
     if layout == "floating" or c.floating then
-      if c.class ~= "Vncviewer" then
+      if c.class ~= "quake" and c.class ~= "Vncviewer" then
         awful.titlebar.show(c)
       end
     else

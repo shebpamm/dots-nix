@@ -4,6 +4,27 @@ local beautiful = require "beautiful"
 local gears = require "gears"
 local machi_layouts = require "../../configuration/layout/machi"
 
+local systray = wibox.widget.systray()
+systray:set_screen(screen[screen.count()])
+systray:set_horizontal(true)
+
+local tray_widget = wibox.widget {
+  bg = beautiful.bg_normal,
+  fg = beautiful.fg_time,
+  shape = function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 9)
+  end,
+  widget = wibox.container.background,
+  {
+    systray,
+    left = 15,
+    right = 15,
+    top = 5,
+    bottom = 5,
+    widget = wibox.container.margin,
+  },
+}
+
 local battery = wibox.widget {
   bg = beautiful.bg_normal,
   fg = beautiful.fg_bat,
@@ -13,7 +34,7 @@ local battery = wibox.widget {
   widget = wibox.container.background,
   {
     {
-      widget = awful.widget.watch("status bat", 30),
+      widget = awful.widget.watch("stts bat", 30),
     },
     left = 7,
     right = 7,
@@ -117,6 +138,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
       },
       {
+        { widget = tray_widget },
         { widget = battery },
         { widget = time },
         { widget = create_layoutbox(s) },

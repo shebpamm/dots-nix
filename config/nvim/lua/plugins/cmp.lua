@@ -58,8 +58,10 @@ cmp.setup {
       return vim_item
     end,
   },
-  documentation = {
-    border = O.borders,
+  window = {
+    documentation = {
+      border = O.borders,
+    },
   },
   sources = {
     { name = "nvim_lua" },

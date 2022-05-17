@@ -12,6 +12,9 @@ ruled.client.connect_signal("request::rules", function()
       raise = true,
       screen = awful.screen.preferred,
       placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+      maximized_horizontal = false,
+      maximized_vertical = false,
+      maximized = false,
     },
   }
 
@@ -46,6 +49,13 @@ ruled.client.connect_signal("request::rules", function()
   }
 
   ruled.client.append_rule {
+    rule = { class = "quake" },
+    properties = {
+      titlebars_enabled = false
+    }
+  }
+
+  ruled.client.append_rule {
     id = "vncviewer",
     rule_any = { class = { "Vncviewer" } },
     properties = { 
@@ -57,7 +67,6 @@ ruled.client.connect_signal("request::rules", function()
 end)
 
 -- Notifications
-
 ruled.notification.connect_signal("request::rules", function()
   -- All notifications will match this rule.
   ruled.notification.append_rule {
@@ -69,8 +78,11 @@ ruled.notification.connect_signal("request::rules", function()
   }
 end)
 
+naughty.expiration_paused = true
+naughty.persistence_enabled = true
+
 naughty.connect_signal("request::display", function(n)
-  naughty.layout.box { notification = n }
+  -- naughty.layout.box { notification = n }
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
