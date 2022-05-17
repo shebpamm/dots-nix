@@ -83,6 +83,7 @@
                 ./modules/programs/work.nix
                 ./modules/desktop
                 ./modules/desktop/windowManagers/awesome.nix
+                work-nix.homeManagerConfiguration
               ];
             };
           system = "x86_64-linux";
