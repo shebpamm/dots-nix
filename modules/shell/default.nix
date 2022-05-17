@@ -3,7 +3,6 @@
   imports = [
     ./git.nix
     ./zsh.nix
-    ./ssh.nix
     ./fish.nix
   ];
   home.packages = with pkgs; [

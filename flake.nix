@@ -38,6 +38,7 @@
               imports = [
                 ./modules/system/openrgb.nix
                 ./modules/shell
+                ./modules/shell/ssh.nix
                 ./modules/editors/neovim.nix
                 ./modules/editors/emacs.nix
                 ./modules/editors/vim.nix
