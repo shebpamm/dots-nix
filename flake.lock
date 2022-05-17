@@ -184,6 +184,21 @@
         "type": "github"
       }
     },
+    "flake-utils_5": {
+      "locked": {
+        "lastModified": 1638122382,
+        "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "74f7e4319258e287b0f9cb95426c9853b282730b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -491,6 +506,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_9": {
+      "locked": {
+        "lastModified": 1641549189,
+        "narHash": "sha256-eniH46gBJfWMU++/hk239L/HmXYKNDDEqXsxBn+4OR4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2320573b696600fc868e3cc35ce7fb4b56a10f8e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "phocus-src": {
       "flake": false,
       "locked": {
@@ -582,6 +613,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "sops-nix": "sops-nix",
+        "spicetify": "spicetify",
         "work-nix": "work-nix"
       }
     },
@@ -620,6 +652,42 @@
         "type": "github"
       }
     },
+    "spicetify": {
+      "inputs": {
+        "flake-utils": "flake-utils_5",
+        "nixpkgs": "nixpkgs_9",
+        "spicetify-themes": "spicetify-themes"
+      },
+      "locked": {
+        "lastModified": 1641562078,
+        "narHash": "sha256-iVq3ZPV0uVgkofH1LzhotLAA9mHLSShZ1AqaO43M3uM=",
+        "owner": "shebpamm",
+        "repo": "spicetify-nix",
+        "rev": "eb5177a268964430bb4dbcf1216c0817be8560a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shebpamm",
+        "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
+    "spicetify-themes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1641217296,
+        "narHash": "sha256-TpbmVQZAjG10xi62JiJdtC26uJdMN4jwKt0X1/n4G00=",
+        "owner": "morpheusthewhite",
+        "repo": "spicetify-themes",
+        "rev": "de39c9fad631f830aa912325e3c1afb1d5cb9f73",
+        "type": "github"
+      },
+      "original": {
+        "owner": "morpheusthewhite",
+        "repo": "spicetify-themes",
+        "type": "github"
+      }
+    },
     "wezterm-git-src": {
       "flake": false,
       "locked": {
@@ -641,8 +709,8 @@
     },
     "work-nix": {
       "locked": {
-        "lastModified": 1652708203,
-        "narHash": "sha256-1/FqBkpiwjkssAvb8qFy0KCQHJJ+3063g+y+vZ5t1hA=",
+        "lastModified": 1652770452,
+        "narHash": "sha256-QjmLgBsirIYQG3cuUJ7au2t6LrmG3RmczavMj1+o38o=",
         "type": "git",
         "url": "file:///home/shebpamm/work-nix"
       },
