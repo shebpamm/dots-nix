@@ -4,6 +4,7 @@
     ./git.nix
     ./zsh.nix
     ./fish
+    ./lorri.nix
   ];
   home.packages = with pkgs; [
     acpi

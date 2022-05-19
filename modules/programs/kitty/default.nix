@@ -23,6 +23,7 @@
       term xterm 
       disable_ligatures never
       strip_trailing_spaces smart
+      enable_audio_bell no
     '';
   };
 }
