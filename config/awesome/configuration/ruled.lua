@@ -86,6 +86,6 @@ naughty.connect_signal("request::display", function(n)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::move", function(c)
-  c:activate { context = "mouse_move", raise = false }
+client.connect_signal("mouse::enter", function(c)
+  c:activate { context = "mouse_enter", raise = false }
 end)
