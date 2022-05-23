@@ -709,8 +709,8 @@
     },
     "work-nix": {
       "locked": {
-        "lastModified": 1652814453,
-        "narHash": "sha256-JLYgYw9mnYGHrcnk1d6WKHK0LxsZikClBQbmlqBH0Xs=",
+        "lastModified": 1653050480,
+        "narHash": "sha256-2xGDKoiGwse+h9Mm0oW+8lTWLYyqd8kdhIUaC4fx4MY=",
         "type": "git",
         "url": "file:///home/shebpamm/work-nix"
       },
