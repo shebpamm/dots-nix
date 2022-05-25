@@ -138,5 +138,8 @@
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "shebpamm" ];
 
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ "shebpamm" ];
+
   system.stateVersion = "21.11";
 }
