@@ -106,7 +106,7 @@ awful.keyboard.append_global_keybindings {
 awful.keyboard.append_global_keybindings {
   awful.key({ modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
   awful.key({ modkey }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
-  awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
+  awful.key({ modkey, "Shift" }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
 }
 
 -- Focus related keybindings
@@ -128,6 +128,21 @@ awful.keyboard.append_global_keybindings {
   end, {
     description = "switch focus of screen",
     group = "client",
+  }),
+  awful.key({ modkey }, "Escape", function(c)
+    local master = awful.client.getmaster(awful.screen.focused())
+    local last_focused_window = awful.client.focus.history.get(awful.screen.focused(), 1, nil)
+    if client.focus == master then
+      if not last_focused_window then
+        return
+      end
+      client.focus = last_focused_window
+    else
+      client.focus = master
+    end
+  end, {
+    description = "switch focus between master and last client",
+    group = "client"
   }),
 }
 
