@@ -40,6 +40,12 @@
     nssmdns = true;
   };
 
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "awesome";
+  };
+
+
   services.udev = {
     packages = [ pkgs.openrgb ];
   };

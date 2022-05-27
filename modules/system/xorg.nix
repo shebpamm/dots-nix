@@ -30,11 +30,6 @@
     };
   };
 
-  services.xrdp = {
-    enable = true;
-    defaultWindowManager = "awesome";
-  };
-
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
