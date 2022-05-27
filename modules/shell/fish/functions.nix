@@ -16,4 +16,9 @@
       bluetoothctl connect F8:4E:17:2B:3C:83
     '';
   };
+
+  p = {
+    description = "Print using bat";
+    body = "bat --pager=never $argv";
+  };
 }
