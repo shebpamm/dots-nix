@@ -9,11 +9,17 @@
     spicetify.url = "github:shebpamm/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
     work-nix.url = "/home/shebpamm/work-nix";
+    nomachine.url = "github:rytec-nl/nixpkgs/submit/add-nomachine-server";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix }:
+  outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine }:
     let
       system = "x86_64-linux";
+
+      nomachine-pkgs = import nomachine {
+        inherit system;
+        config = { allowUnfree = true; }; # Forgive me Mr. Stallman
+      };
 
       pkgs = import nixpkgs {
         inherit system;
@@ -24,6 +30,7 @@
         nixpkgs-f2k.overlay
         neovim-nightly.overlay
         spicetify.overlay
+        (self: super: { nomachine = nomachine-pkgs.nomachine; })
       ];
     in
     {
@@ -113,6 +120,7 @@
               nixpkgs.overlays = overlays;
             }
             ./hosts/ethylene/configuration.nix
+            "${nomachine.outPath}/nixos/modules/services/admin/nomachine.nix"
             work-nix.nixosModule
           ];
         };
