@@ -5,6 +5,7 @@
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME = "\${HOME}/.local/bin";
     XDG_DATA_HOME = "\${HOME}/.local/share";
+    EDITOR = "nvim";
 
     PATH = [
       "\${HOME}/.bin"
