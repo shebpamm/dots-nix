@@ -114,6 +114,11 @@
       owner = "shebpamm";
   };
 
+  sops.secrets.hass-phone = {
+      mode = "0400";
+      owner = "shebpamm";
+  };
+
   nix = {
     package = pkgs.nixUnstable;
     settings = {
