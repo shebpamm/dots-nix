@@ -107,12 +107,12 @@
   sops.secrets.hass-server = {
       mode = "0400";
       owner = "shebpamm";
-    };
+  };
 
   sops.secrets.hass-token = {
       mode = "0400";
       owner = "shebpamm";
-    };
+  };
 
   nix = {
     package = pkgs.nixUnstable;
