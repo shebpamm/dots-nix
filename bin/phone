@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+entity_id="$(cat /run/secrets/hass-phone)"
+
+notify() {
+  hass-cli service call notify.mobile_app_$entity_id --arguments title="$1",message="$2" >/dev/null
+}
+
+while [ "$1" ]; do
+  case $1 in
+    notify)
+      shift;
+      notify "$@"
+      exit ;;
+  esac
+done
