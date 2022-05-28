@@ -29,6 +29,17 @@
           sha256="kl6XR6IFk5J5Bw7/0/wER4+TnQfC18GKxYbt9C+YHJ0=";
         };
       }
+
+      # https://github.com/franciscolourenco/done
+      {
+        name = "done";
+        src = pkgs.fetchFromGitHub {
+          owner = "franciscolourenco";
+          repo = "done";
+          rev= "d6abb267bb3fb7e987a9352bc43dcdb67bac9f06";
+          sha256="sha256-6oeyN9ngXWvps1c5QAUjlyPDQwRWAoxBiVTNmZ4sG8E=";
+        };
+      }
     ];
 
     shellAliases = {

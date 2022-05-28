@@ -12,6 +12,9 @@
     bitwarden
     bitwarden-cli
     nomachine
+    xprintidle
+    sops
+    libnotify
   ];
   home.file.".config/rofi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi";

@@ -21,4 +21,13 @@
     description = "Print using bat";
     body = "bat --pager=never $argv";
   };
+
+  afk-notify = {
+    description = "check if used is afk and if so, send notification to phone";
+    body = ''
+      if test (xprintidle) -ge (math -s 0 $__done_min_cmd_duration/2)
+        phone notify $argv
+      end
+    '';
+  };
 }
