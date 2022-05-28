@@ -5,6 +5,7 @@
     enable = true;
 
     functions = import ./functions.nix;
+    interactiveShellInit = import ./interactiveShellInit.nix;
 
     plugins = [
       # https://github.com/jethrokuan/z
