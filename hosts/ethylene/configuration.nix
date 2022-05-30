@@ -79,6 +79,7 @@
   };
 
   services.sshd.enable = true;
+  services.x2goserver.enable = true;
 
   services.nxserver = {
     enable = true;
