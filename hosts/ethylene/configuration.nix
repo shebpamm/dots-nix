@@ -29,6 +29,7 @@
   boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
   boot.loader.grub = {
     enable = true;
     version = 2;
@@ -142,8 +143,8 @@
     '';
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "shebpamm" ];
+
+  virtualisation.libvirtd.enable = true;
 
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "shebpamm" ];
