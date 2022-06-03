@@ -15,6 +15,7 @@
     xprintidle
     sops
     libnotify
+    pcmanfm
   ];
   home.file.".config/rofi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi";
