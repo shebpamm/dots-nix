@@ -23,10 +23,10 @@
       {
         name = "bobthefish";
         src = pkgs.fetchFromGitHub {
-          owner = "oh-my-fish";
+          owner = "shebpamm";
           repo = "theme-bobthefish";
-          rev= "14a6f2b317661e959e13a23870cf89274f867f12";
-          sha256="kl6XR6IFk5J5Bw7/0/wER4+TnQfC18GKxYbt9C+YHJ0=";
+          rev = "e591c412d2dc3a47ba97da75e94de2ff70297590";
+          sha256="sha256-VKbnxTPuiCG4R6cBd1stweXWRpepqPuAywjZz0/BwO4=";
         };
       }
 
