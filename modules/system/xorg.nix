@@ -37,4 +37,6 @@
     enable = false;
     wrapperFeatures.gtk = true;
   };
+
+  programs.dconf.enable = true;
 }
