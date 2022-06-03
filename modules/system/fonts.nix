@@ -2,9 +2,9 @@
 {
   fonts.fonts = with pkgs; [
     cantarell-fonts
-    (nerdfonts.override { fonts = [ "Meslo" "CascadiaCode" "FiraCode" "Gohu" "IBMPlexMono" "Iosevka" "JetBrainsMono" ]; })
     noto-fonts
     noto-fonts-emoji-blob-bin
+    fira-code
   ];
 
   fonts.fontconfig = {
