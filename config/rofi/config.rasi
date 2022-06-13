@@ -2,6 +2,7 @@ configuration {
   icon-theme: "Papirus-Dark";
   show-icons: true;
   modi: "drun";
+  run-command: "fish -c '{cmd}'";
 }
 
 @theme "/dev/null"

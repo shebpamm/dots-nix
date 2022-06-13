@@ -39,4 +39,11 @@
       git push
     '';
   };
+
+  "%" = {
+    description = "run command fron nix-store package of the same name";
+    body = ''
+      nix-shell -p $argv[1] --run $argv[1] &
+    '';
+  };
 }
