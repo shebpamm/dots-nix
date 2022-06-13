@@ -40,6 +40,17 @@
           sha256="sha256-6oeyN9ngXWvps1c5QAUjlyPDQwRWAoxBiVTNmZ4sG8E=";
         };
       }
+
+      # https://github.com/tom-doerr/codex.fish
+      {
+        name = "codex.fish";
+        src = pkgs.fetchFromGitHub {
+          owner = "tom-doerr";
+          repo = "codex.fish";
+          rev= "de47a14cabb7e47cc24b6f723362e4795799a893";
+          sha256="sha256-JTxFYEeRc9IPTuU0rwoWnwd9+IoJ/2WNLVREeMH1C7s=";
+        };
+      }
     ];
 
     shellAliases = {
