@@ -30,4 +30,13 @@
       end
     '';
   };
+
+  acp = {
+    description = "lazy command to git add, commit & push all at one";
+    body = ''
+      git add .
+      git commit -m "$argv"
+      git push
+    '';
+  };
 }
