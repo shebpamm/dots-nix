@@ -3,6 +3,7 @@
   imports = [ ./irssi.nix ./kitty ./fun.nix ./spotify.nix ];
   home.packages = with pkgs; [ 
     google-chrome
+    firefox
     rofi
     nyxt
     discord
