@@ -2,6 +2,7 @@
   description = "My NixOS Configuration";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-2111.url = "github:NixOS/nixpkgs/nixos-21.11";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
@@ -12,7 +13,7 @@
     nomachine.url = "github:rytec-nl/nixpkgs/submit/add-nomachine-server";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine }:
     let
       system = "x86_64-linux";
 
@@ -26,11 +27,17 @@
         config = { allowUnfree = true; }; # Forgive me Mr. Stallman
       };
 
+      stable-pkgs = import nixpkgs-2111 {
+        inherit system;
+        config = { allowUnfree = true; }; # Forgive me Mr. Stallman
+      };
+
       overlays = [
         nixpkgs-f2k.overlay
         neovim-nightly.overlay
         spicetify.overlay
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
+        (self: super: { keepassxc = stable-pkgs.keepassxc; })
       ];
     in
     {

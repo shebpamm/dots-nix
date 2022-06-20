@@ -371,6 +371,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-2111": {
+      "locked": {
+        "lastModified": 1655415671,
+        "narHash": "sha256-WD7HxxW1m8D/fkV1QlCYlZvnE5gQdg7ckq3myI4gPtE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f96729212602f15a6a226d2f27f5de70492ad095",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-21.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-21_11": {
       "locked": {
         "lastModified": 1654346688,
@@ -728,6 +744,7 @@
         "home-manager": "home-manager",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-2111": "nixpkgs-2111",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nomachine": "nomachine",
         "sops-nix": "sops-nix",
