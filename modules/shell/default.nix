@@ -38,6 +38,7 @@
     htop
     home-assistant-cli
     bind
+    jq
   ];
 
   # not big enough for their own modules
