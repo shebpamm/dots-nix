@@ -37,7 +37,7 @@
         neovim-nightly.overlay
         spicetify.overlay
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
-        (self: super: { keepassxc = stable-pkgs.keepassxc; })
+        (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
       ];
     in
     {
