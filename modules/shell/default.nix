@@ -39,6 +39,8 @@
     home-assistant-cli
     bind
     jq
+    yubikey-manager
+    yubikey-agent
   ];
 
   # not big enough for their own modules

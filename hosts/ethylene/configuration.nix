@@ -79,6 +79,10 @@
     nssmdns = true;
   };
 
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+
+  services.pcscd.enable = true;
+
   services.sshd.enable = true;
   services.x2goserver.enable = true;
 
