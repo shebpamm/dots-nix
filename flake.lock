@@ -861,11 +861,11 @@
     },
     "work-nix": {
       "locked": {
-        "lastModified": 1656934110,
-        "narHash": "sha256-M2T7B6CvPuO/1NQ+vYsmyqDr7Vyc7QOyQn+JfrvN43s=",
+        "lastModified": 1657111930,
+        "narHash": "sha256-7TPo1Rppi+BzvglKvuqrSB+eEyLgFbNdpUcvYEtPW7g=",
         "ref": "refs/heads/main",
-        "rev": "dbcc8208960cc9ba3d1af52097d56d79d6a52dc4",
-        "revCount": 9,
+        "rev": "c836ded15b71253ecbb45c7776d9b700c072123d",
+        "revCount": 10,
         "type": "git",
         "url": "file:///home/shebpamm/work-nix"
       },
