@@ -162,37 +162,18 @@ require("packer").startup {
 
     -- Completion and Snippets ---------------------------------
     use {
-      "hrsh7th/nvim-cmp",
-      event = { "InsertEnter", "CmdLineEnter" },
-      config = [[require "plugins.cmp"]],
-      wants = { "LuaSnip" },
-      requires = {
-        { "hrsh7th/cmp-nvim-lsp", after = "nvim-lspconfig" },
-        { "f3fora/cmp-spell", after = "nvim-cmp" },
-        { "hrsh7th/cmp-path", after = "nvim-cmp" },
-        { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
-        { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" },
-        { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" },
-        { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
-        { "hrsh7th/cmp-nvim-lsp-document-symbol", after = "nvim-cmp" },
-      },
+      "ms-jpq/coq_nvim",
+      branch = "coq"
     }
+
     use {
-      -- you gotta love them snippets
-      "L3MON4D3/LuaSnip",
-      event = "InsertEnter",
-      config = [[require("plugins.snippets")]],
+      "ms-jpq/coq.artifacts",
+      branch = "artifacts"
     }
-    -- this completes me
+
     use {
-      "windwp/nvim-autopairs",
-      after = "nvim-cmp",
-      module = "nvim-autopairs",
-      config = function()
-        require("nvim-autopairs").setup {
-          close_triple_quotes = true,
-        }
-      end,
+      "ms-jpq/coq.thirdparty",
+      branch = "3p"
     }
 
     -- Project Management --------------------------------------
