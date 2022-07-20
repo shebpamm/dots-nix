@@ -20,7 +20,6 @@
       listen_on = "unix:/tmp/mykitty";
     };
     extraConfig = ''
-      term xterm 
       bold_font Fira Code Bold
       disable_ligatures never
       strip_trailing_spaces smart

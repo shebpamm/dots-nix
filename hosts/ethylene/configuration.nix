@@ -69,6 +69,9 @@
     hostName = "ethylene";
     useDHCP = true;
     nameservers = ["8.8.8.8" "1.1.1.1"];
+    extraHosts = ''
+      127.0.0.1 jira.horsch.com 
+    '';
 
     wireless.iwd.enable = true;
     firewall.allowedTCPPorts = [ 80 443 22 6742 5201 ];
