@@ -42,6 +42,7 @@
     yq
     yubikey-manager
     yubikey-agent
+    cloudflared
   ];
 
   # not big enough for their own modules
