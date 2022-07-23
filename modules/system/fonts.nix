@@ -5,6 +5,7 @@
     noto-fonts
     noto-fonts-emoji-blob-bin
     fira-code
+    (nerdfonts.override { fonts = [ "3270" ]; })
   ];
 
   fonts.fontconfig = {
