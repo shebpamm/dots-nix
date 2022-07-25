@@ -39,6 +39,7 @@
     home-assistant-cli
     bind
     jq
+    yq
     yubikey-manager
     yubikey-agent
   ];
