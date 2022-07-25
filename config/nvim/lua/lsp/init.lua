@@ -21,7 +21,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   },
 }
 
-require "lsp.emmet"
+local emmet_config = require "lsp.emmet"
 
 local function on_attach(client, bufnr)
   require("lsp.autocommands").setup(client)
@@ -33,12 +33,12 @@ end
 
 local servers = {
   -- sumneko_lua = require("lsp.lang.lua").setup,
-  html = { cmd = { "vscode-html-language-server", "--stdio" } },
-  cssls = { cmd = { "vscode-css-language-server", "--stdio" } },
+  html = { cmd = { "npx", "vscode-html-language-server-bin", "--stdio" } },
+  cssls = { cmd = { "npx", "vscode-css-language-server-bin", "--stdio" } },
   rnix = {},
   pyright = {},
   rust_analyzer = {},
-  emmet_ls = {},
+  emmet_ls = emmet_config,
 }
 
 require("lsp.null-ls").setup()

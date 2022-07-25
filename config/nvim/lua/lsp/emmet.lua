@@ -4,9 +4,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local configs = require "lspconfig/configs"
-configs.emmet_ls = {
-  default_config = {
-    cmd = { "npx emmet_ls", "--stdio" },
+local emmet_config = {
+    cmd = { "npx", "emmet-ls", "--stdio" },
     filetypes = {
       "html",
       "css",
@@ -29,5 +28,6 @@ configs.emmet_ls = {
       return vim.loop.cwd()
     end,
     settings = {},
-  },
 }
+
+return emmet_config
