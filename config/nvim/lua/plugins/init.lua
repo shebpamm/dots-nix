@@ -44,10 +44,11 @@ require("packer").startup {
 
     -- file tree
     use {
-      "kyazdani42/nvim-tree.lua",
-      cmd = "NvimTreeToggle",
+      "ms-jpq/chadtree",
+      branch = "chad",
       keys = { "<C-n>" },
-      config = [[require"plugins.nvim-tree"]],
+      cmd = "CHADopen",
+      config = [[require"plugins.chadtree"]],
     }
 
     -- dashboard
