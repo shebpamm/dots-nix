@@ -193,11 +193,13 @@ require("packer").startup {
       "ahmedkhalf/project.nvim",
       keys = { "<leader>fp" },
       cmd = { "ProjectRoot" },
+      event = "VimEnter",
       config = function()
         require("project_nvim").setup {
-          manual_mode = true,
+          manual_mode = false,
           ignore_lsp = { "null-ls" },
           show_hidden = true,
+          detection_methods = { "lsp", "pattern" },
           patterns = {
             "stylua.toml",
             "rc.lua",
