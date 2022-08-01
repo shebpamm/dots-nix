@@ -38,10 +38,10 @@ require("packer").startup {
 
     -- bufferline
     use {
-      "jose-elias-alvarez/buftabline.nvim",
-      event = "BufEnter",
-      config = [[require"plugins.buftabline"]],
-    }
+      'noib3/nvim-cokeline',
+      requires = 'kyazdani42/nvim-web-devicons', 
+      config = [[require"plugins.cokeline"]]
+    }      
 
     -- file tree
     use {
