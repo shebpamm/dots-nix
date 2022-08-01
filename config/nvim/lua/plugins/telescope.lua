@@ -153,6 +153,7 @@ wk.register {
       h = { b.help_tags, "help" },
       i = { ivy, "ivy" },
       p = { x.projects.projects, "projects" },
+      t = { "<cmd>TodoTelescope<cr>", "todos" },
       g = {
         name = "+git",
         f = { b.git_files, "files" },
