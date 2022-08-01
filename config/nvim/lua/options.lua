@@ -34,7 +34,9 @@ o.fillchars = {
   foldclose = "▸",
 }
 
-o.foldmethod = "manual"
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldlevelstart = 99
 
 o.emoji = false -- no emoji
 o.ruler = false -- no ruler
