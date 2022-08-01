@@ -10,6 +10,12 @@ status_volume() {
 }
 
 status_battery() {
+  
+  if [ ! -f "/sys/class/power_supply/BAT0/status" ]; then
+    echo "no battery"
+    exit 2
+  fi
+
   CHARGE=$(cat /sys/class/power_supply/BAT0/capacity)
   STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
