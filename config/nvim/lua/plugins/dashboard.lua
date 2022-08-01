@@ -4,6 +4,8 @@ local b = d.button
 local s = d.section
 
 s.buttons.val = {
+  b("SPC s l", "  Last Session"),
+  b("SPC s c", "  Directory Session"),
   b("SPC f f", "  Find File"),
   b("SPC f r", "  Recent Files"),
   b("SPC f w", "  Find Word"),

@@ -24,6 +24,7 @@ require("packer").startup {
     use { "wbthomason/packer.nvim", opt = true }
     use { "nvim-lua/plenary.nvim", module_pattern = "plenary.*" }
     use { "kyazdani42/nvim-web-devicons", module = "nvim-web-devicons" }
+    use { "stevearc/dressing.nvim" }
 
     -- Colorschemes --------------------------------------------
     use "sainnhe/gruvbox-material"
@@ -218,6 +219,15 @@ require("packer").startup {
           },
         }
       end,
+    }
+
+    -- Sessions ------------------------------------------------
+
+    use {
+      "Shatur/neovim-session-manager",
+      event = "VimEnter",
+      wants = "dressing.nvim",
+      config = [[require("plugins.sessions")]],
     }
 
     -- Git -----------------------------------------------------
