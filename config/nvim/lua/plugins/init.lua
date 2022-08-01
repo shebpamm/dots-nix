@@ -45,7 +45,7 @@ require("packer").startup {
 
     -- file tree
     use {
-      "ms-jpq/chadtree",
+      "shebpamm/chadtree",
       branch = "chad",
       keys = { "<C-n>" },
       cmd = "CHADopen",
