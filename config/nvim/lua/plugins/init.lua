@@ -268,14 +268,6 @@ require("packer").startup {
       end,
     }
 
-    -- terminal
-    use {
-      "akinsho/nvim-toggleterm.lua",
-      keys = { "<A-`>" },
-      cmd = "ToggleTerm",
-      config = [[require"plugins.terminal"]],
-    }
-
     -- todo comments
     use {
       "folke/todo-comments.nvim",
