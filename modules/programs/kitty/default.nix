@@ -17,7 +17,7 @@
       tab_bar_margin_width = 5;
       tab_bar_margin_height = 5;
       allow_remote_control = "yes";
-      listen_on = "unix:/tmp/mykitty";
+      listen_on = "unix:/tmp/kitty";
     };
     extraConfig = ''
       bold_font Fira Code Bold
