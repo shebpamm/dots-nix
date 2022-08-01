@@ -288,6 +288,12 @@ require("packer").startup {
       config = [[require"plugins.todo"]]
     }
 
+    -- Marks 
+    use {
+      "chentoast/marks.nvim",
+      config = [[require"plugins.marks"]]
+    }
+
     -- Zen -------------------------------
     use {
       "folke/zen-mode.nvim",
