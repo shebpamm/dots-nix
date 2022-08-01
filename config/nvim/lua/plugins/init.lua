@@ -293,7 +293,7 @@ require("packer").startup {
         require("zen-mode").setup {
           twilight = { enabled = false },
           gitsigns = { enabled = true },
-          kitty = { enabled = true },
+          kitty = { enabled = true, font = "+4" },
         }
       end,
     }
