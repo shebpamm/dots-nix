@@ -8,41 +8,69 @@ local systray = wibox.widget.systray()
 systray:set_screen(screen[screen.count()])
 systray:set_horizontal(true)
 
-local tray_widget = wibox.widget {
-  bg = beautiful.bg_normal,
-  fg = beautiful.fg_time,
-  shape = function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, 9)
-  end,
-  widget = wibox.container.background,
-  {
-    systray,
-    left = 15,
-    right = 15,
-    top = 5,
-    bottom = 5,
-    widget = wibox.container.margin,
-  },
-}
-
-local battery = wibox.widget {
-  bg = beautiful.bg_normal,
-  fg = beautiful.fg_bat,
-  shape = function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, 9)
-  end,
-  widget = wibox.container.background,
-  {
+function tray_widget()
+  local widget = wibox.widget {
+    bg = beautiful.bg_normal,
+    fg = beautiful.fg_time,
+    shape = function(cr, width, height)
+      gears.shape.rounded_rect(cr, width, height, 9)
+    end,
+    widget = wibox.container.background,
     {
-      widget = awful.widget.watch("stts bat", 30),
+      systray,
+      left = 15,
+      right = 15,
+      top = 5,
+      bottom = 5,
+      widget = wibox.container.margin,
     },
-    left = 7,
-    right = 7,
-    top = 5,
-    bottom = 5,
-    widget = wibox.container.margin,
-  },
-}
+  }
+
+  if awesome.systray() == 0 then
+    widget.visible = false
+  else
+    widget.visible = true
+  end
+
+  systray:connect_signal('widget::redraw_needed', function()
+    if awesome.systray() == 0 then
+      widget.visible = false
+    else
+      widget.visible = true
+    end
+  end)
+
+  return widget
+end
+
+function battery()
+  local widget = wibox.widget {
+    bg = beautiful.bg_normal,
+    fg = beautiful.fg_bat,
+    shape = function(cr, width, height)
+      gears.shape.rounded_rect(cr, width, height, 9)
+    end,
+    widget = wibox.container.background,
+    {
+      {
+        widget = awful.widget.watch("stts bat", 30),
+      },
+      left = 7,
+      right = 7,
+      top = 5,
+      bottom = 5,
+      widget = wibox.container.margin,
+    },
+  }
+  
+  awful.spawn.easy_async("stts bat", function(stdout, stderr, reason, exit_code)
+    if exit_code == 2 then
+      widget.visible = false
+    end
+  end)
+
+  return widget
+end
 
 local time = wibox.widget {
   bg = beautiful.bg_normal,
@@ -103,6 +131,20 @@ screen.connect_signal("request::desktop_decoration", function(s)
     )
   end
   local anchor_side = (s == screen.primary and "bottom" or "top")
+  
+  local bar_endwidgets =
+    {
+      { widget = battery() },
+      { widget = time },
+      { widget = create_layoutbox(s) },
+      layout = wibox.layout.fixed.horizontal,
+      spacing = 10,
+    }
+
+  if s == screen[screen.count()] then
+    table.insert(bar_endwidgets, 1, { widget = tray_widget() })
+  end
+
   awful.popup({
     bg = beautiful.none,
     placement = function(c)
@@ -137,14 +179,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
           widget = require "ui.bar.tasklist"(s),
         },
       },
-      {
-        { widget = tray_widget },
-        { widget = battery },
-        { widget = time },
-        { widget = create_layoutbox(s) },
-        layout = wibox.layout.fixed.horizontal,
-        spacing = 10,
-      },
+      bar_endwidgets,
       layout = wibox.layout.align.horizontal,
       forced_height = 30,
     },
