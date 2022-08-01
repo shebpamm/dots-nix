@@ -60,6 +60,9 @@ require("packer").startup {
       config = [[require"plugins.dashboard"]],
     }
 
+    -- Better Quickfix
+    use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+
     -- indent lines
     use {
       "lukas-reineke/indent-blankline.nvim",
