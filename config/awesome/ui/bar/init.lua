@@ -4,17 +4,23 @@ local beautiful = require "beautiful"
 local gears = require "gears"
 local machi_layouts = require "../../configuration/layout/machi"
 
+-- How much should corners be rounded
+local round_radius = 9
+
+-- Systray configuration
 local systray = wibox.widget.systray()
 systray:set_screen(screen[screen.count()])
 systray:set_horizontal(true)
+
+function rounded_rect(cr, width, height)
+  return gears.shape.rounded_rect(cr, width, height, round_radius)
+end
 
 function tray_widget()
   local widget = wibox.widget {
     bg = beautiful.bg_normal,
     fg = beautiful.fg_time,
-    shape = function(cr, width, height)
-      gears.shape.rounded_rect(cr, width, height, 9)
-    end,
+    shape = rounded_rect,
     widget = wibox.container.background,
     {
       systray,
@@ -47,9 +53,7 @@ function battery()
   local widget = wibox.widget {
     bg = beautiful.bg_normal,
     fg = beautiful.fg_bat,
-    shape = function(cr, width, height)
-      gears.shape.rounded_rect(cr, width, height, 9)
-    end,
+    shape = rounded_rect,
     widget = wibox.container.background,
     {
       {
@@ -72,25 +76,25 @@ function battery()
   return widget
 end
 
-local time = wibox.widget {
-  bg = beautiful.bg_normal,
-  fg = beautiful.fg_time,
-  shape = function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, 9)
-  end,
-  widget = wibox.container.background,
-  {
-    widget = wibox.widget.textclock,
-  },
-}
+function time()
+  local widget = wibox.widget {
+    bg = beautiful.bg_normal,
+    fg = beautiful.fg_time,
+    shape = rounded_rect,
+    widget = wibox.container.background,
+    {
+      widget = wibox.widget.textclock,
+    },
+  }
+
+  return widget
+end
 
 function create_layoutbox(s)
   return wibox.widget {
     bg = beautiful.bg_normal,
     fg = beautiful.fg_time,
-    shape = function(cr, width, height)
-      gears.shape.rounded_rect(cr, width, height, 9)
-    end,
+    shape = rounded_rect,
     widget = wibox.container.background,
     {
       widget = wibox.container.margin,
@@ -119,27 +123,50 @@ function create_layoutbox(s)
 end
 
 screen.connect_signal("request::desktop_decoration", function(s)
-  local l = awful.layout.suit
+
+  -- Set layout depending on screen
+  local dl
   if s ~= screen.primary then
-    local ml = machi_layouts.secondary
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, { ml, ml, ml, ml, ml, ml, ml, ml, ml })
+     dl = machi_layouts.secondary -- Default Layout
   else
-    awful.tag(
-      { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-      s,
-      { l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile }
-    )
+     dl = awful.layout.suit.tile  -- Default Layout
   end
+
+  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, { dl, dl, dl, dl, dl, dl, dl, dl, dl })
+
   local anchor_side = (s == screen.primary and "bottom" or "top")
+
+  local bar_startwidgets =
+  {
+    {
+      {
+        widget = require "ui.bar.taglist"(s),
+      },
+      widget = wibox.container.margin,
+      margins = 5,
+    },
+    widget = wibox.container.background,
+    bg = beautiful.bg_normal,
+    shape = rounded_rect,
+  }
+  
+  local bar_centerwidgets =
+  {
+    widget = wibox.container.place,
+    halign = "center",
+    {
+      widget = require "ui.bar.tasklist"(s),
+    },
+  }
   
   local bar_endwidgets =
-    {
-      { widget = battery() },
-      { widget = time },
-      { widget = create_layoutbox(s) },
-      layout = wibox.layout.fixed.horizontal,
-      spacing = 10,
-    }
+  {
+    { widget = battery() },
+    { widget = time() },
+    { widget = create_layoutbox(s) },
+    layout = wibox.layout.fixed.horizontal,
+    spacing = 10,
+  }
 
   if s == screen[screen.count()] then
     table.insert(bar_endwidgets, 1, { widget = tray_widget() })
@@ -147,6 +174,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
   awful.popup({
     bg = beautiful.none,
+    shape = gears.shape.rect,
+    screen = s,
+
+    -- Place on bottom if primary, otherwise on top
     placement = function(c)
       local anchor = (s == screen.primary and awful.placement.bottom or awful.placement.top)
 
@@ -155,33 +186,20 @@ screen.connect_signal("request::desktop_decoration", function(s)
         { margins = { [anchor_side] = 10, left = 20, right = 20 } }
       )
     end,
-    shape = gears.shape.rect,
-    screen = s,
+
     widget = {
-      {
-        {
-          {
-            widget = require "ui.bar.taglist"(s),
-          },
-          widget = wibox.container.margin,
-          margins = 5,
-        },
-        widget = wibox.container.background,
-        bg = beautiful.bg_normal,
-        shape = function(cr, width, height)
-          gears.shape.rounded_rect(cr, width, height, 9)
-        end,
-      },
-      {
-        widget = wibox.container.place,
-        halign = "center",
-        {
-          widget = require "ui.bar.tasklist"(s),
-        },
-      },
-      bar_endwidgets,
+      -- Dimensions & Placement
       layout = wibox.layout.align.horizontal,
       forced_height = 30,
+
+      -- Left side
+      bar_startwidgets,
+
+      -- Center
+      bar_centerwidgets,
+
+      -- Right side
+      bar_endwidgets,
     },
-  }):struts { [anchor_side] = 40 }
+  }):struts { [anchor_side] = 40 } -- Add padding of 40 to anchor_side
 end)
