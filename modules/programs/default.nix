@@ -21,6 +21,8 @@
     yubikey-manager-qt
     yubioath-desktop
     xpra
+    pulseaudio
+    pavucontrol
   ];
   home.file.".config/rofi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi";
