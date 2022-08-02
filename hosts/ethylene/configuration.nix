@@ -65,20 +65,6 @@
 
   time.timeZone = "Europe/Helsinki";
 
-  services.pipewire = {
-    config.pipewire = {
-      "context.modules" = [
-        {
-          name = "libpipewire-module-pulse-tunnel";
-          args = {
-              "tunnel.mode" = "sink";
-              "pulse.server.address" = "tcp:192.168.1.234";
-          };
-        }
-      ];
-    };
-  };
-
   networking = {
     hostName = "ethylene";
     useDHCP = true;
