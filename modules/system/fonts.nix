@@ -5,6 +5,7 @@
     noto-fonts
     noto-fonts-emoji-blob-bin
     fira-code
+    meslo-lg
     (nerdfonts.override { fonts = [ "3270" ]; })
   ];
 
