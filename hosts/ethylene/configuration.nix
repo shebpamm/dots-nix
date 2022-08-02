@@ -65,6 +65,20 @@
 
   time.timeZone = "Europe/Helsinki";
 
+  services.pipewire = {
+    config.pipewire = {
+      "context.modules" = [
+        {
+          name = "libpipewire-module-pulse-tunnel";
+          args = {
+              "tunnel.mode" = "sink";
+              "pulse.server.address" = "tcp:192.168.1.234";
+          };
+        }
+      ];
+    };
+  };
+
   networking = {
     hostName = "ethylene";
     useDHCP = true;
@@ -74,7 +88,7 @@
     '';
 
     wireless.iwd.enable = true;
-    firewall.allowedTCPPorts = [ 80 443 22 6742 5201 ];
+    firewall.allowedTCPPorts = [ 80 443 22 4713 6742 5201 ];
   };
 
   services.avahi = {
