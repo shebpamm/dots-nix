@@ -96,7 +96,7 @@ function time()
   return widget
 end
 
-function create_layoutbox(s)
+function layoutbox(s)
   return wibox.widget {
     bg = beautiful.bg_normal,
     fg = beautiful.fg_time,
@@ -169,7 +169,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
   {
     { widget = battery() },
     { widget = time() },
-    { widget = create_layoutbox(s) },
+    { widget = layoutbox(s) },
     layout = wibox.layout.fixed.horizontal,
     spacing = 10,
   }
