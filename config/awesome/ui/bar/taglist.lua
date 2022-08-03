@@ -3,6 +3,11 @@ return function(s)
   local bling = require "modules.bling"
   local gears = require "gears"
   local wibox = require "wibox"
+  local beautiful = require "beautiful"
+
+  local theme = beautiful.get()
+
+
   bling.widget.tag_preview.enable {
     placement_fn = function(c) -- Place the widget using awful.placement (this overrides x & y)
       awful.placement.bottom_left(c, {
@@ -40,17 +45,31 @@ return function(s)
     },
     style = {
       shape = function(cr, width, height)
-        gears.shape.squircle(cr, width, height, 1.3, 0)
+
+        local adjusted_size = math.floor(math.min(width, height)*1/math.sqrt(2)*0.8)
+
+        gears.shape.rectangle(cr, adjusted_size, adjusted_size)
+        cr:translate(adjusted_size/2, height/2)
+        cr:rotate(math.rad(45))
+        cr:translate(adjusted_size/-2, height/-2)
+        cr:translate(-9, -3)
       end,
     },
     widget_template = {
       {
         {
-          id = "text_role",
-          widget = wibox.widget.textbox,
+          id = "inner_diamond",
+          bg = theme.taglist_fg_empty,
+          widget = wibox.container.background,
+          forced_height = 10,
+          forced_width = 12,
+          shape = function(cr, width, height)
+            gears.shape.hexagon(cr, 10, 10)
+            cr:translate(-1.5, -5)
+          end,
         },
-        left = 7,
-        right = 7,
+        left = 5,
+        right = 5,
         widget = wibox.container.margin,
       },
       id = "background_role",
@@ -69,6 +88,17 @@ return function(s)
             self.bg = self.backup
           end
         end)
+      end,
+      update_callback = function(self, t, index, tags)
+        local diamond = self:get_children_by_id('inner_diamond')[1]
+        if t.selected then
+          diamond.bg = theme.taglist_fg_focus
+        elseif #t:clients() > 0 then
+          diamond.bg = theme.taglist_fg_occupied
+        else
+          diamond.bg = theme.taglist_fg_empty
+
+        end
       end,
     },
   }

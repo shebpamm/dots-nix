@@ -52,10 +52,12 @@ theme.border_color_marked = c.nord8
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
-theme.taglist_bg_focus = c.nord8
-theme.taglist_fg_empty = c.nord4
-theme.taglist_fg_occupied = c.nord6
-theme.taglist_fg_focus = theme.bg_normal
+theme.taglist_bg_empty = c.nord4
+theme.taglist_bg_occupied = c.nord4
+theme.taglist_bg_focus = c.nord4
+theme.taglist_fg_empty = c.nord0
+theme.taglist_fg_occupied = c.nord2
+theme.taglist_fg_focus = c.nord8
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(0)

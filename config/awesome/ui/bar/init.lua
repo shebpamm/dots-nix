@@ -17,7 +17,7 @@ function rounded_rect(cr, width, height)
 end
 
 function dribble_rect(cr, width, height)
-  return gears.shape.partially_rounded_rect(cr, width, height, true, false, true, false, round_radius*2)
+  return gears.shape.partially_rounded_rect(cr, width, height, true, true, true, false, round_radius*2)
 end
 
 function tray_widget()
