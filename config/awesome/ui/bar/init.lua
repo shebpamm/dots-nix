@@ -16,6 +16,10 @@ function rounded_rect(cr, width, height)
   return gears.shape.rounded_rect(cr, width, height, round_radius)
 end
 
+function dribble_rect(cr, width, height)
+  return gears.shape.partially_rounded_rect(cr, width, height, true, false, true, false, round_radius*2)
+end
+
 function tray_widget()
   local widget = wibox.widget {
     bg = beautiful.bg_normal,
@@ -80,10 +84,12 @@ function time()
   local widget = wibox.widget {
     bg = beautiful.bg_normal,
     fg = beautiful.fg_time,
-    shape = rounded_rect,
+    shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, math.floor(round_radius/1.5)) end,  -- Make clock a bit less rounded
     widget = wibox.container.background,
     {
-      widget = wibox.widget.textclock,
+      widget = wibox.widget.textclock(
+        '<span color="#ffffff" font="Meslo LG L 10" weight="bold"> %H.%M </span>', 1
+      ),
     },
   }
 
@@ -147,7 +153,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     },
     widget = wibox.container.background,
     bg = beautiful.bg_normal,
-    shape = rounded_rect,
+    shape = dribble_rect,
   }
   
   local bar_centerwidgets =
