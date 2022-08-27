@@ -8,6 +8,9 @@
       matchBlocks = {
           "*" = {
               user = "shebpamm@ad.sorsa.cloud";
+              extraOptions = {
+                SetEnv = "TERM=xterm";
+              };
           };
           showrunner = {
               user = "shebpamm";
