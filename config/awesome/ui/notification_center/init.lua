@@ -4,8 +4,6 @@ local naughty = require "naughty"
 local gears = require "gears"
 local wibox = require "wibox"
 
-local LampToggle = require "ui.control_center.controls.lamp"
-
 local window_margin = 25
 
 local function get_height()
