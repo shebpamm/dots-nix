@@ -39,6 +39,7 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   emmet_ls = emmet_config,
+  tsserver = { cmd = { "npx", "typescript-language-server", "--stdio" } },
 }
 
 require("lsp.null-ls").setup()
