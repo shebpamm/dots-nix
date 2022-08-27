@@ -81,10 +81,6 @@ end)
 naughty.expiration_paused = true
 naughty.persistence_enabled = true
 
-naughty.connect_signal("request::display", function(n)
-  -- naughty.layout.box { notification = n }
-end)
-
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
   c:activate { context = "mouse_enter", raise = false }
