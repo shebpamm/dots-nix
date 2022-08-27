@@ -29,6 +29,16 @@ element-text, element-icon {
   margin: 3px;
   padding: 7px;
   border: 0px;
+
+  urgent-foreground: @fg;
+  urgent-background: @bg;
+  selected-urgent-foreground: @fg;
+  selected-urgent-background: @bg;
+
+  active-foreground: @fg;
+  active-background: @bg;
+  selected-active-foreground: @fg;
+  selected-active-background: @bg;
 }
 
 window {
