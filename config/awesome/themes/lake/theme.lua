@@ -40,6 +40,7 @@ theme.border_width = dpi(0)
 theme.border_color_normal = c.nord10
 theme.border_color_active = c.nord7
 theme.border_color_marked = c.nord8
+theme.border_radius = 9 
 
 -- There are other variable sets
 -- overriding the default one when

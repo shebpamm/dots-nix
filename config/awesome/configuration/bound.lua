@@ -346,7 +346,7 @@ client.connect_signal("request::default_keybindings", function()
       group = "client",
     }),
     awful.key({ modkey }, "n", function(c)
-      require "ui.notification_center"()
+      require "ui.notification_center.notif_popup"()
     end, {
       description = "minimize",
       group = "client",

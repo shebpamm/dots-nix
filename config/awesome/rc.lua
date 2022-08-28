@@ -31,3 +31,5 @@ require "squeals"
 
 -- user interfaces
 require "ui"
+
+naughty.notification {title = "kaka",message = "asdasd"}

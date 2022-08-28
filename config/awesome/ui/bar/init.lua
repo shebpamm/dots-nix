@@ -5,7 +5,7 @@ local gears = require "gears"
 local machi_layouts = require "../../configuration/layout/machi"
 
 -- How much should corners be rounded
-local round_radius = 9
+local border_radius = beautiful.border_radius or 9
 
 -- Systray configuration
 local systray = wibox.widget.systray()
@@ -13,11 +13,11 @@ systray:set_screen(screen[screen.count()])
 systray:set_horizontal(true)
 
 function rounded_rect(cr, width, height)
-  return gears.shape.rounded_rect(cr, width, height, round_radius)
+  return gears.shape.rounded_rect(cr, width, height, border_radius)
 end
 
 function dribble_rect(cr, width, height)
-  return gears.shape.partially_rounded_rect(cr, width, height, true, true, true, false, round_radius*2)
+  return gears.shape.partially_rounded_rect(cr, width, height, true, true, true, false, border_radius*2)
 end
 
 function tray_widget()
@@ -84,7 +84,7 @@ function time()
   local widget = wibox.widget {
     bg = beautiful.bg_normal,
     fg = beautiful.fg_time,
-    shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, math.floor(round_radius/1.5)) end,  -- Make clock a bit less rounded
+    shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, math.floor(border_radius/1.5)) end,  -- Make clock a bit less rounded
     widget = wibox.container.background,
     {
       widget = wibox.widget.textclock(
