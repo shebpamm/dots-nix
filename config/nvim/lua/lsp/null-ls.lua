@@ -9,9 +9,10 @@ M.setup = function()
     sources = {
       b.formatting.black,
       b.formatting.isort,
-      b.formatting.prettierd,
+      b.formatting.prettier_d_slim,
       b.diagnostics.shellcheck,
       b.formatting.stylua,
+      b.diagnostics.yamllint,
     },
     on_attach = function(client)
       if client.server_capabilities.document_formatting then

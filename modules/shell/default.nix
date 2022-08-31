@@ -43,6 +43,9 @@
     yubikey-manager
     yubikey-agent
     cloudflared
+    nodePackages.prettier_d_slim
+    yamllint
+    ansible-lint
   ];
 
   # not big enough for their own modules

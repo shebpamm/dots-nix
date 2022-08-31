@@ -193,6 +193,8 @@ require("packer").startup {
       end,
     }
 
+    use 'pearofducks/ansible-vim'
+
     -- Project Management --------------------------------------
     use {
       "ahmedkhalf/project.nvim",
