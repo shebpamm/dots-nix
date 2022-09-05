@@ -5,6 +5,8 @@ for secret in hass-server hass-token hass-imaginary
   end
 end
 
+set -lx VAULT_TOKEN (toket token 2>/dev/null)
+
 set __done_enabled 1
 set __done_min_cmd_duration 60000
 set __done_notification_command "afk-notify \$title \$message"
