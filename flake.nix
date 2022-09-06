@@ -11,9 +11,10 @@
     sops-nix.url = "github:Mic92/sops-nix";
     work-nix.url = "/home/shebpamm/work-nix";
     nomachine.url = "github:rytec-nl/nixpkgs/submit/add-nomachine-server";
+    logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops }:
     let
       system = "x86_64-linux";
 
@@ -32,12 +33,15 @@
         config = { allowUnfree = true; }; # Forgive me Mr. Stallman
       };
 
+      logiops-pkgs = import logiops { inherit system; };
+
       overlays = [
         nixpkgs-f2k.overlay
         neovim-nightly.overlay
         spicetify.overlay
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
         (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
+        (self: super: { formats = logiops-pkgs.formats; })
       ];
     in
     {
@@ -128,6 +132,7 @@
             }
             ./hosts/ethylene/configuration.nix
             "${nomachine.outPath}/nixos/modules/services/admin/nomachine.nix"
+            "${logiops.outPath}/nixos/modules/hardware/logiops"
             work-nix.nixosModule
           ];
         };

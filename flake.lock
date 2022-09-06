@@ -259,6 +259,22 @@
         "type": "github"
       }
     },
+    "logiops": {
+      "locked": {
+        "lastModified": 1660381985,
+        "narHash": "sha256-XC4H6e6ueVHg5rFEmp9G1zkwX5IlbfdNj2DfZJvZBso=",
+        "owner": "ckiee",
+        "repo": "nixpkgs",
+        "rev": "b0926f8d190250c6889ce8fb62c7d43a5d613b00",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ckiee",
+        "ref": "logiops-nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "mpv-discord-src": {
       "flake": false,
       "locked": {
@@ -742,6 +758,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "logiops": "logiops",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-2111": "nixpkgs-2111",
@@ -861,11 +878,11 @@
     },
     "work-nix": {
       "locked": {
-        "lastModified": 1662118358,
+        "lastModified": 1662473174,
         "narHash": "sha256-v0E2ylH4//u/L1zwjYGWKj//eORL4muodvJs7gxlaZg=",
         "ref": "refs/heads/main",
-        "rev": "3a1e41b23048904cbe0f1352e2087da199476300",
-        "revCount": 14,
+        "rev": "3c546086bf4028078031961ec190e2091758c66c",
+        "revCount": 15,
         "type": "git",
         "url": "file:///home/shebpamm/work-nix"
       },

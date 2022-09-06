@@ -104,6 +104,26 @@
     ];
   };
 
+  services.logiops = {
+    enable = true;
+    settings = {
+      devices = [{
+        name = "MX Master 3 for Mac";
+        smartshift = { 
+          on = true; 
+          threshold = 20;
+        };
+
+        hiresscroll = { 
+          hires = true; 
+          invert = false; 
+          target = false; 
+        };
+      }];
+    };
+
+  };
+
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
@@ -139,6 +159,7 @@
   ];
 
   security.sudo.wheelNeedsPassword = false;
+  
 
   nix = {
     package = pkgs.nixUnstable;
