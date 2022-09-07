@@ -9,6 +9,17 @@
       '';
   };
 
+  fish_greeting = {
+    description = "Greeting displayed at start of shell";
+    body = ''
+      set_color $fish_color_autosuggestion
+
+      fortune -s
+
+      set_color normal
+    '';
+  };
+
   xm4 = {
     description = "Connect my Sony XM4 Headphones";
     body = ''
