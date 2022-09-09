@@ -19,6 +19,7 @@
 
     libinput.enable = true;
     layout = "eu";
+    xkbOptions = "caps:escape";
     windowManager = {
       awesome = {
         enable = true;
