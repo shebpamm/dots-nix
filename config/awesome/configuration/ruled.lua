@@ -78,8 +78,8 @@ ruled.notification.connect_signal("request::rules", function()
   }
 end)
 
-naughty.expiration_paused = true
-naughty.persistence_enabled = true
+naughty.expiration_paused = false
+naughty.persistence_enabled = false
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
