@@ -66,6 +66,7 @@
 
     shellAliases = {
       vim = "nvim";
+      ls = "exa";
     };
   };
 

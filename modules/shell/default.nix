@@ -10,6 +10,7 @@
     acpi
     alsa-utils
     bat
+    exa
     bottom
     brightnessctl
     exa
