@@ -7,47 +7,47 @@
     ./lorri.nix
   ];
   home.packages = with pkgs; [
+    (ripgrep.override { withPCRE2 = true; })
     acpi
     alsa-utils
+    ansible-lint
     bat
-    exa
+    bind
     bottom
     brightnessctl
+    cloudflared
+    exa
     exa
     fd
     feh
     ffmpeg
-    fortune
     fish
+    fortune
     fzf
     github-cli
+    github-cli
     gnumake
+    home-assistant-cli
+    htop
+    jq
     lazygit
     maim
     ncdu
+    nodePackages.prettier_d_slim
     pamixer
     pass
+    playerctl
     ranger
-    (ripgrep.override { withPCRE2 = true; })
+    thefuck
     tmux
     unzip
     wget
     xclip
-    zoxide
-    github-cli
-    playerctl
-    htop
-    home-assistant-cli
-    bind
-    jq
-    yq
-    yubikey-manager
-    yubikey-agent
-    cloudflared
-    nodePackages.prettier_d_slim
     yamllint
-    ansible-lint
-    thefuck
+    yq
+    yubikey-agent
+    yubikey-manager
+    zoxide
   ];
 
   # not big enough for their own modules

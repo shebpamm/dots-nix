@@ -2,27 +2,27 @@
 {
   imports = [ ./irssi.nix ./kitty ./fun.nix ./spotify.nix ];
   home.packages = with pkgs; [ 
-    google-chrome
-    firefox
-    rofi
-    nyxt
-    discord
-    nfs-utils
-    iperf3
-    kitty
     bitwarden
     bitwarden-cli
-    nomachine
-    xprintidle
-    sops
+    discord
+    firefox
+    google-chrome
+    iperf3
+    kitty
     libnotify
-    pcmanfm
+    nfs-utils
+    nomachine
+    nyxt
     obsidian
+    pavucontrol
+    pcmanfm
+    pulseaudio
+    rofi
+    sops
+    xpra
+    xprintidle
     yubikey-manager-qt
     yubioath-desktop
-    xpra
-    pulseaudio
-    pavucontrol
   ];
   home.file.".config/rofi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi";
