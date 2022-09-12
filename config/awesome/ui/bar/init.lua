@@ -81,17 +81,33 @@ function battery()
 end
 
 function time()
+  local format_prefix = '<span color="#ffffff" font="Meslo LG L 10" weight="bold">'
+  local format_postfix = '</span>'
+
+  local short_format = format_prefix .. " %H.%M " .. format_postfix
+  local long_format = format_prefix .. " %a %b %d " .. format_postfix
+
+  local clockwidget = wibox.widget.textclock(
+        short_format, 1
+  )
+
   local widget = wibox.widget {
     bg = beautiful.bg_normal,
     fg = beautiful.fg_time,
     shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, math.floor(border_radius/1.5)) end,  -- Make clock a bit less rounded
     widget = wibox.container.background,
     {
-      widget = wibox.widget.textclock(
-        '<span color="#ffffff" font="Meslo LG L 10" weight="bold"> %H.%M </span>', 1
-      ),
+      widget = clockwidget,
     },
   }
+
+  widget:connect_signal("button::press", function(w)
+    if clockwidget.format == short_format then
+      clockwidget.format = long_format
+    else
+      clockwidget.format = short_format
+    end
+  end)
 
   return widget
 end
