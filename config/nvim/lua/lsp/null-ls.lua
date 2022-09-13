@@ -7,12 +7,20 @@ M.setup = function()
   null_ls.setup {
     debounce = 150,
     sources = {
+      b.diagnostics.flake8.with({
+        filter = function(diagnostic)
+          return diagnostic.code ~= "E501" -- Skip "line too long" errors
+        end,
+      }),
+      b.code_actions.refactoring,
+      b.diagnostics.pydocstyle,
+      b.diagnostics.pylint,
+      b.diagnostics.shellcheck,
+      b.diagnostics.yamllint,
       b.formatting.black,
       b.formatting.isort,
       b.formatting.prettier_d_slim,
-      b.diagnostics.shellcheck,
       b.formatting.stylua,
-      b.diagnostics.yamllint,
     },
     on_attach = function(client)
       if client.server_capabilities.document_formatting then

@@ -165,6 +165,14 @@ require("packer").startup {
       },
     }
 
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        }
+    }
+
     -- Completion and Snippets ---------------------------------
     use {
       'ms-jpq/coq_nvim',

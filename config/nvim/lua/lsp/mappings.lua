@@ -6,8 +6,8 @@ function M.setup(bufnr)
   wk.register({
     c = {
       name = "+code",
-      r = { require("lsp.ui").lsp_rename, "rename" },
-      -- a = { require("plugins.telescope").lsp_code_actions, "code action" },
+      r = { vim.lsp.buf.rename, "rename" },
+      a = { vim.lsp.buf.code_action, "code action" },
     },
     g = {
       name = "+goto",
@@ -29,6 +29,17 @@ function M.setup(bufnr)
     ["[d"] = { vim.diagnostic.goto_prev, "prev diagnostic" },
   }, {
     buffer = bufnr,
+  })
+
+  -- Visual mode mappings
+  wk.register({
+    c = {
+      name = "+code",
+      a = { vim.lsp.buf.range_code_action, "range code action" },
+    },
+  }, {
+    buffer = bufnr,
+    mode = "v"
   })
 end
 
