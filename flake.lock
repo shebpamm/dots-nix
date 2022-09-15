@@ -657,11 +657,11 @@
     },
     "nomachine": {
       "locked": {
-        "lastModified": 1650230600,
-        "narHash": "sha256-TeCy9eMNQrkbJ/L+dpWBNoHyovJgFo4qD17dtm1RMws=",
+        "lastModified": 1659604761,
+        "narHash": "sha256-7ng6alhIrbJsdnmmMzUeO1YrrorRH7WN6RFyfW/z2Bo=",
         "owner": "rytec-nl",
         "repo": "nixpkgs",
-        "rev": "0f0aa25664c0d9507247143e466ff01bc63d2dac",
+        "rev": "a312461214aa64253b74bd31f0d4a32cd029a932",
         "type": "github"
       },
       "original": {
