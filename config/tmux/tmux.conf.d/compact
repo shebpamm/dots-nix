@@ -5,5 +5,21 @@ current_window=$(tmux display-message -p '#I.0')
 # Join all panes
 tmux list-windows -F '#I.0' | sed "/^$current_window\$/d" | sort -r | xargs -n1 tmux join-pane -h -d -t "$current_window" -s
 
-# Set layout to tiled
-tmux select-layout tiled
+# Set layout to dwindle if less than 3 panes, otherwise tiled
+pane_count=$(tmux list-panes -F '#P' | wc -l)
+
+if (( pane_count < 4)); then
+  ~/.tmux.conf.d/tmux-layout-dwindle brvs
+  
+  vim_id=$(tmux list-panes -F '#P #{pane_current_command}' | awk '$2 ~ /vim/ { print $1 }' | head -n 1) 
+
+  if [ -n "$vim_id" ] && [ "$vim_id" != "0" ]; then
+    tmux swap-pane -d -t "$vim_id" -s "0"
+  fi
+
+  # Redraw vim pane
+  tmux send-keys -t "$vim_id" C-l
+
+else
+  tmux select-layout tiled
+fi
