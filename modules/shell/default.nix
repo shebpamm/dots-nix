@@ -39,6 +39,7 @@
     playerctl
     qrencode
     ranger
+    socat
     thefuck
     tmux
     unzip
