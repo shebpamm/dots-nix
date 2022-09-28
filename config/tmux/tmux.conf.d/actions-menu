@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+tmux display-menu -T "#[align=centre fg=yellow]Actions" -x C -y C \
+    "Compact"           c "run -b '~/.tmux.conf.d/compact'" \
+    "Collapse"          o "run -b '~/.tmux.conf.d/collapse'" \
+    "Toggle Sync"       s "set-window-option synchronize-panes" \
+    "Close menu"        q "" ""
+

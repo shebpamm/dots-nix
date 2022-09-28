@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+current_pane=$(tmux display-message -p '#P')
+
+
+# break all panes
+tmux list-panes -F '#P' | sed "/^$current_pane\$/d" | sort -r | xargs -n1 tmux break-pane -d -a -s 

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+current_window=$(tmux display-message -p '#I.0')
+
+# Join all panes
+tmux list-windows -F '#I.0' | sed "/^$current_window\$/d" | sort -r | xargs -n1 tmux join-pane -h -d -t "$current_window" -s
+
+# Set layout to tiled
+tmux select-layout tiled
