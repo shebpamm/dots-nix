@@ -37,10 +37,12 @@
     pamixer
     pass
     playerctl
+    qrencode
     ranger
     thefuck
     tmux
     unzip
+    websocat
     wget
     xclip
     yamllint
