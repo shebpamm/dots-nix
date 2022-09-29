@@ -1,7 +1,31 @@
 #!/usr/bin/env bash
 
+get_wm() {
+    id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
+    id=${id##* }
+    wm=$(xprop -id "$id" -notype -len 100 -f _NET_WM_NAME 8t)
+    wm=${wm/*WM_NAME = }
+    wm=${wm/\"}
+    wm=${wm/\"*}
+
+    echo "$wm"
+}
+
 current_pane=$(tmux display-message -p '#P')
 
 
 # break all panes
 tmux list-panes -F '#P' | sed "/^$current_pane\$/d" | sort -r | xargs -n1 tmux break-pane -d -a -s 
+
+# If awesomewm is used, change sizes
+if [ "$(get_wm)" = "awesome" ]; then
+  awm_screen_width=$(echo "return client.focus.screen.geometry.width" | awesome-client | grep -o '[0-9]*')
+  awm_window_count=$(echo "return #client.focus.screen.clients" | awesome-client | grep -o '[0-9]*')
+  # 2K or bigger screen in question
+  if (( awm_screen_width > 2048 )); then
+    # If only one window on the screen
+    if (( awm_window_count == 1 )); then
+      echo "client.focus.screen.padding = 250" | awesome-client # Set padding to 0
+    fi
+  fi
+fi
