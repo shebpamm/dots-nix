@@ -5,7 +5,7 @@
     nixpkgs-2111.url = "github:NixOS/nixpkgs/nixos-21.11";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay/167ec1a6047ef9051c709e4115fb5f4f90c5febd";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     spicetify.url = "github:shebpamm/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
