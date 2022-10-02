@@ -3,6 +3,7 @@ local wibox = require "wibox"
 local beautiful = require "beautiful"
 local gears = require "gears"
 local machi_layouts = require "../../configuration/layout/machi"
+local bling = require "modules.bling"
 
 -- How much should corners be rounded
 local border_radius = beautiful.border_radius or 9
@@ -151,7 +152,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
   if s ~= screen.primary then
      dl = machi_layouts.secondary -- Default Layout
   else
-     dl = awful.layout.suit.tile  -- Default Layout
+     dl = bling.layout.centered -- Default Layout
   end
 
   awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, { dl, dl, dl, dl, dl, dl, dl, dl, dl })
