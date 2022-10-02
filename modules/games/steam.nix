@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   programs.steam = {
-    enable = true;
+    enable = false;
     remotePlay.openFirewall = true;
   };
 }
