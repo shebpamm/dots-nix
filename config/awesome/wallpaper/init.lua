@@ -16,9 +16,5 @@ surface_ctx:set_source_surface(wallpaper_surface, 0, 0)
 surface_ctx:paint()
 
 for s in screen do
-  if s == screen.primary then
-    gears.wallpaper.maximized(rotated_surface, s)
-  else
-    gears.wallpaper.maximized(theme.wallpaper, s)
-  end
+  gears.wallpaper.centered(theme.wallpaper, s)
 end
