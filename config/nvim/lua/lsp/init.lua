@@ -1,5 +1,7 @@
 local lspconfig = require "lspconfig"
 
+vim.lsp.set_log_level("ERROR")
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat = {
   "markdown",
@@ -36,7 +38,17 @@ local servers = {
   html = { cmd = { "npx", "vscode-html-language-server-bin", "--stdio" } },
   cssls = { cmd = { "npx", "vscode-css-language-server-bin", "--stdio" } },
   rnix = {},
-  pyright = {},
+  pyright = {
+    settings = {
+      python = { 
+        analysis = {
+          autoSearchPaths = false,
+          useLibraryCodeForTypes = false,
+          diagnosticMode = 'openFilesOnly',
+        }
+      }
+    }
+  },
   rust_analyzer = {},
   emmet_ls = emmet_config,
   tsserver = { cmd = { "npx", "typescript-language-server", "--stdio" } },

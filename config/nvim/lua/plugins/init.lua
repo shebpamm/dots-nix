@@ -337,6 +337,10 @@ require("packer").startup {
       cmd = { "UndotreeToggle" },
     }
 
+    use {
+      "dstein64/vim-startuptime"
+    }
+
     -- highlight colors
     use {
       "norcalli/nvim-colorizer.lua",

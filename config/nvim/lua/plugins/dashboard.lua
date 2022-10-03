@@ -13,7 +13,10 @@ s.buttons.val = {
   b("SPC ,", "  Edit Config"),
 }
 
-s.footer.val = vim.fn.system "fortune -s"
+-- Skip spawning a shell to speedup start time
+local fortune_handle = io.popen("fortune -s")
+s.footer.val = fortune_handle:read("*a")
+fortune_handle:close()
 
 local opts = {
   layout = {

@@ -97,6 +97,9 @@ g.vim_markdown_strikethrough = 1
 o.grepprg = [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
 o.grepformat = vim.opt.grepformat ^ { "%f:%l:%c:%m" }
 
+-- Set python executable path by hand
+g.python3_host_prog = "/home/shebpamm/.nix-profile/bin/python"
+
 -- disable inbuilt vim plugins
 g.loaded_gzip = 1
 g.loaded_tar = 1
