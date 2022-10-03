@@ -6,6 +6,7 @@ M.setup = function()
 
   null_ls.setup {
     debounce = 150,
+    debug = false,
     sources = {
       b.diagnostics.flake8.with({
         filter = function(diagnostic)

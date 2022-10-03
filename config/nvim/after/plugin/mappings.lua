@@ -36,7 +36,7 @@ wk.register {
       b = "blame line",
     },
     u = { "<CMD>UndotreeToggle<CR>", "undotree" },
-    F = { vim.lsp.buf.format, "format" },
+    F = { require("lsp.utils").format_sync, "format" },
   },
 
   -- localleader mappings
