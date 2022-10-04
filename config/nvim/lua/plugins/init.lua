@@ -45,7 +45,7 @@ require("packer").startup {
 
     -- file tree
     use {
-      "shebpamm/chadtree",
+      "ms-jpq/chadtree",
       branch = "chad",
       keys = { "<C-n>" },
       cmd = "CHADopen",
@@ -147,6 +147,7 @@ require("packer").startup {
       config = [[require "plugins.treesitter"]],
       requires = {
         { "nvim-treesitter/nvim-treesitter-textobjects" },
+        { "nvim-treesitter/nvim-treesitter-context"},
         { "windwp/nvim-ts-autotag" },
         { "JoosepAlviste/nvim-ts-context-commentstring" },
         {
@@ -164,6 +165,8 @@ require("packer").startup {
         },
       },
     }
+
+    -- Refactoring helpers -------------------------------------
 
     use {
         "ThePrimeagen/refactoring.nvim",
