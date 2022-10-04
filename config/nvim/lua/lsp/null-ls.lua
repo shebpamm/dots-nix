@@ -15,7 +15,6 @@ M.setup = function()
       }),
       b.code_actions.refactoring,
       b.diagnostics.pydocstyle,
-      b.diagnostics.pylint,
       b.diagnostics.shellcheck,
       b.diagnostics.yamllint,
       b.formatting.black,
