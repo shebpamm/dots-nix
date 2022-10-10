@@ -68,6 +68,7 @@ ts_config.setup {
 local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
 ft_to_parser.json = "jsonc"
 ft_to_parser.rasi = "css"
+ft_to_parser["terraform-vars"] = "hcl"
  
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 

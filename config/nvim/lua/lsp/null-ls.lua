@@ -21,6 +21,7 @@ M.setup = function()
       b.formatting.isort,
       b.formatting.prettier_d_slim,
       b.formatting.stylua,
+      b.formatting.terraform_fmt
     },
     on_attach = function(client)
       if client.server_capabilities.document_formatting then
