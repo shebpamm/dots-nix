@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+INVS="$(ls ./inventory)"
+
+GRPS=$(echo "$INVS" | xargs -I {} sh -c "ansible-inventory -i inventory/{} --list 2>/dev/null | jq -r 'keys | .[]?' | sed s/^/{}\:\ /g")
+
+IFS=": " read -r "inv" "group" <<< "$(echo "$GRPS" | fzf)"
+
+hosts=$(ansible -i "inventory/$inv" --list-hosts "$group" 2>/dev/null | tail -n +2 | sed 's/^\s*//')
+
+host=$(printf "%s\nall" "$hosts" | fzf)
+
+if [ "$host" = "all" ]; then
+  echo "$hosts" | xargs
+else
+  echo "$host" 
+fi
