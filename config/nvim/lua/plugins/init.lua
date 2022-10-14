@@ -279,6 +279,13 @@ require("packer").startup {
 
     -- Utilities -----------------------------------------------
 
+    -- Extensive increment/decrement support
+    use {
+      "monaqa/dial.nvim",
+      config = [[require"plugins.dial"]],
+      keys = { "<C-a>", "<C-x>" },
+    }
+
     -- hmm... what was that mapped to?
     use {
       "folke/which-key.nvim",
