@@ -5,8 +5,8 @@
     nixpkgs-2111.url = "github:NixOS/nixpkgs/nixos-21.11";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay/167ec1a6047ef9051c709e4115fb5f4f90c5febd";
-    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k/3322009946e80d441d5156d41a6ef22742708efd";
     spicetify.url = "github:shebpamm/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
     work-nix.url = "/home/shebpamm/work-nix";
@@ -36,7 +36,7 @@
       logiops-pkgs = import logiops { inherit system; };
 
       overlays = [
-        nixpkgs-f2k.overlay
+        nixpkgs-f2k.overlays.default
         neovim-nightly.overlay
         spicetify.overlay
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
@@ -47,72 +47,74 @@
     {
       homemanagerConfigurations = {
         kerosene = home-manager.lib.homeManagerConfiguration {
-          configuration = { pkgs, config, ... }:
+          inherit pkgs;
+          modules = [
             {
-              home.stateVersion = "21.11";
-              programs.home-manager.enable = true;
+              home = {
+                homeDirectory = "/home/shebpamm";
+                username = "shebpamm";
+                stateVersion = "22.11";
+              };
+
               nixpkgs.overlays = overlays;
-              nixpkgs.config.allowUnfree = true;
-              imports = [
-                ./modules/system/openrgb.nix
-                ./modules/shell
-                ./modules/shell/ssh.nix
-                ./modules/editors/neovim.nix
-                ./modules/editors/emacs.nix
-                ./modules/editors/vim.nix
-                ./modules/dev/lua.nix
-                ./modules/dev/node.nix
-                ./modules/dev/rust.nix
-                ./modules/dev/nix.nix
-                ./modules/dev/python.nix
-                ./modules/dev/docker.nix
-                ./modules/programs
-                ./modules/programs/graphics.nix
-                ./modules/desktop
-                ./modules/desktop/windowManagers/awesome.nix
-                ./modules/desktop/windowManagers/berry.nix
-                ./modules/desktop/windowManagers/herbstluftwm.nix
-                ./modules/desktop/windowManagers/i3.nix
-                ./modules/desktop/windowManagers/sway.nix
-              ];
-            };
-          system = "x86_64-linux";
-          homeDirectory = "/home/shebpamm";
-          username = "shebpamm";
-          stateVersion = "21.11";
+              programs.home-manager.enable = true;
+            }
+
+            ./modules/system/openrgb.nix
+            ./modules/shell
+            ./modules/shell/ssh.nix
+            ./modules/editors/neovim.nix
+            ./modules/editors/emacs.nix
+            ./modules/editors/vim.nix
+            ./modules/dev/lua.nix
+            ./modules/dev/node.nix
+            ./modules/dev/rust.nix
+            ./modules/dev/nix.nix
+            ./modules/dev/python.nix
+            ./modules/dev/docker.nix
+            ./modules/programs
+            ./modules/programs/graphics.nix
+            ./modules/desktop
+            ./modules/desktop/windowManagers/awesome.nix
+            ./modules/desktop/windowManagers/berry.nix
+            ./modules/desktop/windowManagers/herbstluftwm.nix
+            ./modules/desktop/windowManagers/i3.nix
+            ./modules/desktop/windowManagers/sway.nix
+          ];
         };
 
         ethylene = home-manager.lib.homeManagerConfiguration {
-          configuration = { pkgs, config, ... }:
+          inherit pkgs;
+          modules = [
             {
-              home.stateVersion = "21.11";
-              programs.home-manager.enable = true;
+              home = {
+                homeDirectory = "/home/shebpamm";
+                username = "shebpamm";
+                stateVersion = "22.11";
+              };
+
               nixpkgs.overlays = overlays;
-              nixpkgs.config.allowUnfree = true;
-              imports = [
-                ./modules/shell
-                ./modules/editors/neovim.nix
-                ./modules/editors/emacs.nix
-                ./modules/editors/vim.nix
-                ./modules/dev/lua.nix
-                ./modules/dev/node.nix
-                ./modules/dev/rust.nix
-                ./modules/dev/nix.nix
-                ./modules/dev/python.nix
-                ./modules/programs
-                ./modules/programs/graphics.nix
-                ./modules/programs/work.nix
-                ./modules/desktop
-                ./modules/desktop/windowManagers/awesome.nix
-                work-nix.homeManagerConfiguration
-              ];
-            };
-          system = "x86_64-linux";
-          homeDirectory = "/home/shebpamm";
-          username = "shebpamm";
-          stateVersion = "21.11";
+              programs.home-manager.enable = true;
+            }
+            ./modules/shell
+            ./modules/editors/neovim.nix
+            ./modules/editors/emacs.nix
+            ./modules/editors/vim.nix
+            ./modules/dev/lua.nix
+            ./modules/dev/node.nix
+            ./modules/dev/rust.nix
+            ./modules/dev/nix.nix
+            ./modules/dev/python.nix
+            ./modules/programs
+            ./modules/programs/graphics.nix
+            ./modules/programs/work.nix
+            ./modules/desktop
+            ./modules/desktop/windowManagers/awesome.nix
+            work-nix.homeManagerConfiguration
+          ];
         };
       };
+
       nixosConfigurations = {
         kerosene = nixpkgs.lib.nixosSystem {
           inherit system;
