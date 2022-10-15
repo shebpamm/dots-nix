@@ -60,6 +60,7 @@ O = {
       "typescript",
       "vue",
       "yaml",
+      "nix",
       -- "markdown",
     },
   },
