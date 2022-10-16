@@ -89,6 +89,8 @@ theme.menu_height = dpi(20)
 theme.menu_width = dpi(150)
 
 theme.titlebar_close_button_normal = theme_path .. "close_normal.svg"
+theme.titlebar_close_button_focus = theme_path .. "close_normal.svg"
+
 theme.wallpaper = theme_path .. "background.png"
 
 theme.layout_floating = gcolor.recolor_image(themes_path .. "default/layouts/floatingw.png", theme.fg_normal)
