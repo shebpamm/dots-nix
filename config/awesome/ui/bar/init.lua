@@ -149,10 +149,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
   -- Set layout depending on screen
   local dl
-  if s ~= screen.primary then
+
+  -- If widescreen
+  if s.geometry.width > 4096 then
      dl = machi_layouts.secondary -- Default Layout
   else
-     dl = bling.layout.centered -- Default Layout
+     dl = awful.layout.suit.tile -- Default Layout
   end
 
   awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, { dl, dl, dl, dl, dl, dl, dl, dl, dl })
