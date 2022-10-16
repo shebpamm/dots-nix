@@ -1,0 +1,39 @@
+#!/bin/sh
+# Written by: John Ellson <ellson@research.att.com>
+
+if [ "$1" = "-?" ]; then
+    echo "Usage: vimdot [file]" >&2
+    exit 0
+fi
+
+error() { echo "$0: $*" >&2; exit 1; }
+
+
+# Try $EDITOR first, else try vim or vi
+editor="$(which $EDITOR)" || editor="/usr/bin/vim"
+[ -x "$editor" ] || editor="/usr/bin/vi"
+[ -x "$editor" ] || error "EDITOR not found or not executable";
+
+default="noname.gv"
+
+if test -z "$1"; then
+  f="$default"
+else
+  f="$1"
+fi
+if ! test -f "$f"; then
+  cat >"$f" <<EOF
+digraph G {
+	graph [layout=dot rankdir=LR]
+}
+EOF
+fi
+
+# dot -Txlib watches the file $f for changes using inotify()
+dot -Txlib "$f" 2>/dev/null &
+
+# Kill dot renderer when exiting vim
+exit_autocmd="autocmd VimLeave * :!kill $!"
+
+# open an editor on the file $f (could be any editor; gvim &'s itself)
+exec $editor -c "$exit_autocmd" "$f"
