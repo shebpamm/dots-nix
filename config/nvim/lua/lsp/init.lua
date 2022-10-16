@@ -37,6 +37,7 @@ local servers = {
   -- sumneko_lua = require("lsp.lang.lua").setup,
   html = { cmd = { "npx", "vscode-html-language-server-bin", "--stdio" } },
   cssls = { cmd = { "npx", "vscode-css-language-server-bin", "--stdio" } },
+  dotls = { cmd = { "npx", "dot-language-server", "--stdio" } },
   rnix = {},
   pyright = {
     settings = {
