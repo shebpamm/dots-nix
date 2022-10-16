@@ -14,7 +14,7 @@ priorities = {
   },
 
   {
-    class = "Discord",
+    class = "discord",
     placement = {
       horizontal = "right",
       vertical = "bottom",
@@ -29,7 +29,7 @@ priorities = {
   },
 }
 
-function empty_with_priority(c, instance, areas, geometry, priorities)
+function empty_with_priority(c, instance, areas, geometry)
   local area_client_count = {}
   for _, oc in ipairs(c.screen.tiled_clients) do
     local cd = instance.client_data[oc]
