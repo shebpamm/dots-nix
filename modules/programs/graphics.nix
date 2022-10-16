@@ -4,5 +4,6 @@
     gimp
     inkscape
     krita
+    graphviz
   ];
 }
