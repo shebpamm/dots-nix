@@ -178,10 +178,10 @@ require("packer").startup {
     }
 
     -- Filetype setting ----------------------------------------
-    use {
-      "nathom/filetype.nvim",
-      config = [[require("plugins.filetype")]],
-    }
+    -- use {
+    --   "nathom/filetype.nvim",
+    --   config = [[require("plugins.filetype")]],
+    -- }
 
     -- Completion and Snippets ---------------------------------
     use {
