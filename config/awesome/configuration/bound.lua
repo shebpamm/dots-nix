@@ -75,6 +75,12 @@ awful.keyboard.append_global_keybindings {
     description = "run password prompt",
     group = "launcher",
   }),
+  awful.key({ modkey, "Shift" }, "p", function()
+    awful.spawn "fish -c 'rofi-vault.sh run'"
+  end, {
+    description = "run password prompt",
+    group = "launcher",
+  }),
   awful.key({ modkey, "Shift" }, "l", function()
     awful.spawn "betterlockscreen -l"
   end, {
