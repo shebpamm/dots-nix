@@ -141,6 +141,26 @@ require("packer").startup {
       end,
     }
 
+    use {
+      "simrat39/inlay-hints.nvim",
+      config = function()
+        require("inlay-hints").setup {
+          only_current_line = true,
+
+          eol = {
+            right_align = true,
+          },
+        }
+      end,
+    }
+
+    use {
+      "simrat39/rust-tools.nvim",
+      requires = {
+        { "nvim-lua/plenary.nvim" },
+      },
+    }
+
     -- Treesitter ----------------------------------------------
     use {
       "nvim-treesitter/nvim-treesitter",

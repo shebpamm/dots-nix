@@ -1,6 +1,6 @@
 local lspconfig = require "lspconfig"
 
-vim.lsp.set_log_level("ERROR")
+vim.lsp.set_log_level "ERROR"
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat = {
@@ -41,21 +41,29 @@ local servers = {
   rnix = {},
   pyright = {
     settings = {
-      python = { 
+      python = {
         analysis = {
           autoSearchPaths = false,
           useLibraryCodeForTypes = false,
-          diagnosticMode = 'openFilesOnly',
-        }
-      }
-    }
+          diagnosticMode = "openFilesOnly",
+        },
+      },
+    },
   },
-  rust_analyzer = {},
+  -- rust_analyzer = {},
   emmet_ls = emmet_config,
   tsserver = { cmd = { "npx", "typescript-language-server", "--stdio" } },
 }
 
 require("lsp.null-ls").setup()
+
+local ih = require "inlay-hints"
+require("rust-tools").setup {
+  server = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  },
+}
 
 for name, opts in pairs(servers) do
   if type(opts) == "function" then
