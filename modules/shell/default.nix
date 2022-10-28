@@ -39,6 +39,7 @@
     playerctl
     qrencode
     ranger
+    silicon
     socat
     thefuck
     tmux

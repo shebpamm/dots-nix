@@ -38,10 +38,10 @@ require("packer").startup {
 
     -- bufferline
     use {
-      'noib3/nvim-cokeline',
-      requires = 'kyazdani42/nvim-web-devicons', 
-      config = [[require"plugins.cokeline"]]
-    }      
+      "noib3/nvim-cokeline",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = [[require"plugins.cokeline"]],
+    }
 
     -- file tree
     use {
@@ -61,7 +61,7 @@ require("packer").startup {
     }
 
     -- Better Quickfix
-    use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+    use { "kevinhwang91/nvim-bqf", ft = "qf" }
 
     -- indent lines
     use {
@@ -147,7 +147,7 @@ require("packer").startup {
       config = [[require "plugins.treesitter"]],
       requires = {
         { "nvim-treesitter/nvim-treesitter-textobjects" },
-        { "nvim-treesitter/nvim-treesitter-context"},
+        { "nvim-treesitter/nvim-treesitter-context" },
         { "windwp/nvim-ts-autotag" },
         { "JoosepAlviste/nvim-ts-context-commentstring" },
         { "p00f/nvim-ts-rainbow" },
@@ -170,11 +170,11 @@ require("packer").startup {
     -- Refactoring helpers -------------------------------------
 
     use {
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-            {"nvim-lua/plenary.nvim"},
-            {"nvim-treesitter/nvim-treesitter"}
-        }
+      "ThePrimeagen/refactoring.nvim",
+      requires = {
+        { "nvim-lua/plenary.nvim" },
+        { "nvim-treesitter/nvim-treesitter" },
+      },
     }
 
     -- Filetype setting ----------------------------------------
@@ -185,21 +185,21 @@ require("packer").startup {
 
     -- Completion and Snippets ---------------------------------
     use {
-      'ms-jpq/coq_nvim',
-      branch = 'coq',
+      "ms-jpq/coq_nvim",
+      branch = "coq",
       requires = {
-        { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+        { "ms-jpq/coq.artifacts", branch = "artifacts" },
         {
-          'ms-jpq/coq.thirdparty',
-          branch = '3p',
+          "ms-jpq/coq.thirdparty",
+          branch = "3p",
         },
       },
       config = function()
         vim.g.coq_settings = {
-          auto_start = 'shut-up',
+          auto_start = "shut-up",
           clients = {
             tree_sitter = { enabled = false },
-            paths = { enabled = true, resolution = { 'file' } },
+            paths = { enabled = true, resolution = { "file" } },
             snippets = { enabled = true, warn = {} },
             tags = { enabled = false },
           },
@@ -211,7 +211,17 @@ require("packer").startup {
       end,
     }
 
-    use 'pearofducks/ansible-vim'
+    -- Snippet rendering ---------------------------------------
+    use {
+      "narutoxy/silicon.lua",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("silicon").setup {}
+      end,
+    }
+
+    -- Ansible filetype matching
+    use "pearofducks/ansible-vim"
 
     -- Project Management --------------------------------------
     use {
@@ -312,13 +322,13 @@ require("packer").startup {
     use {
       "folke/todo-comments.nvim",
       event = "BufRead",
-      config = [[require"plugins.todo"]]
+      config = [[require"plugins.todo"]],
     }
 
-    -- Marks 
+    -- Marks
     use {
       "chentoast/marks.nvim",
-      config = [[require"plugins.marks"]]
+      config = [[require"plugins.marks"]],
     }
 
     -- Zen -------------------------------
@@ -355,7 +365,7 @@ require("packer").startup {
     }
 
     use {
-      "dstein64/vim-startuptime"
+      "dstein64/vim-startuptime",
     }
 
     -- highlight colors
