@@ -1,7 +1,7 @@
 { config, pkgs, libs, ... }:
 {
-  imports = [ ./irssi.nix ./kitty ./fun.nix ./spotify.nix ];
-  home.packages = with pkgs; [ 
+  imports = [ ./irssi.nix ./kitty ./fun.nix ./spotify.nix ./management.nix ];
+  home.packages = with pkgs; [
     bitwarden
     bitwarden-cli
     discord
