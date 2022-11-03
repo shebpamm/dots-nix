@@ -44,19 +44,19 @@
     };
   };
 
-  fileSystems."/" = { 
+  fileSystems."/" = {
     device = "/dev/void/root";
     fsType = "btrfs";
     options = [ "subvol=@nix-root" "compress=zstd" "noatime" ];
   };
 
-  fileSystems."/home" = { 
+  fileSystems."/home" = {
     device = "/dev/void/root";
     fsType = "btrfs";
     options = [ "subvol=@home" "compress=zstd" "noatime" ];
   };
 
-  fileSystems."/home/shebpamm/dots" = { 
+  fileSystems."/home/shebpamm/dots" = {
     device = "/dev/void/root";
     fsType = "btrfs";
     options = [ "subvol=dots/@nix-dots" "compress=zstd" "noatime" ];
@@ -68,7 +68,7 @@
   networking = {
     hostName = "ethylene";
     useDHCP = true;
-    nameservers = ["8.8.8.8" "1.1.1.1"];
+    nameservers = [ "8.8.8.8" "1.1.1.1" ];
     extraHosts = ''
       127.0.0.1 jira.horsch.com 
     '';
@@ -108,16 +108,26 @@
     enable = true;
     settings = {
       devices = [{
-        name = "MX Master 3 for Mac";
-        smartshift = { 
-          on = true; 
+        name = "MX Master 3S";
+        smartshift = {
+          on = true;
           threshold = 20;
         };
 
-        hiresscroll = { 
-          hires = true; 
-          invert = false; 
-          target = false; 
+        hiresscroll = {
+          hires = true;
+          invert = false;
+          target = true;
+          up = {
+            mode = "Axis";
+            axis = "REL_WHEEL_HI_RES";
+            axis_multiplier = 1.2;
+          };
+          down = {
+            mode = "Axis";
+            axis = "REL_WHEEL_HI_RES";
+            axis_multiplier = -1.2;
+          };
         };
       }];
     };
@@ -159,7 +169,7 @@
   ];
 
   security.sudo.wheelNeedsPassword = false;
-  
+
 
   nix = {
     package = pkgs.nixUnstable;
