@@ -38,7 +38,14 @@ local servers = {
   html = { cmd = { "npx", "vscode-html-language-server-bin", "--stdio" } },
   cssls = { cmd = { "npx", "vscode-css-language-server-bin", "--stdio" } },
   dotls = { cmd = { "npx", "dot-language-server", "--stdio" } },
-  rnix = {},
+  -- rnix = {},
+  nil_ls = {
+    settings = {
+      ["nil"] = {
+        formatting = { command = { "nixpkgs-fmt" } },
+      },
+    },
+  },
   pyright = {
     settings = {
       python = {
