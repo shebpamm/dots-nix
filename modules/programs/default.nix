@@ -10,6 +10,7 @@
     iperf3
     kitty
     libnotify
+    mplayer
     nfs-utils
     nomachine
     nyxt
