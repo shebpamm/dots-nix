@@ -82,7 +82,7 @@ awful.keyboard.append_global_keybindings {
     group = "launcher",
   }),
   awful.key({ modkey, "Shift" }, "l", function()
-    awful.spawn "betterlockscreen -l"
+    awful.spawn "fish -c '~/lock.sh'"
   end, {
     description = "run prompt",
     group = "launcher",
