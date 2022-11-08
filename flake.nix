@@ -118,6 +118,7 @@
             ./modules/dev/rust.nix
             ./modules/dev/nix.nix
             ./modules/dev/python.nix
+            ./modules/dev/docker.nix
             ./modules/programs
             ./modules/programs/graphics.nix
             ./modules/programs/work.nix
