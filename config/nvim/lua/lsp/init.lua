@@ -1,6 +1,7 @@
 local lspconfig = require "lspconfig"
+local ih = require "lsp-inlayhints"
 
-vim.lsp.set_log_level "ERROR"
+vim.lsp.set_log_level "DEBUG"
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat = {
@@ -31,6 +32,8 @@ local function on_attach(client, bufnr)
   require("lsp.mappings").setup(bufnr)
   require "lsp.handlers"
   require "lsp.signs"
+
+  ih.on_attach(client, bufnr)
 end
 
 local servers = {
@@ -59,12 +62,37 @@ local servers = {
   },
   -- rust_analyzer = {},
   emmet_ls = emmet_config,
-  tsserver = { cmd = { "npx", "typescript-language-server", "--stdio" } },
+  tsserver = { 
+    cmd = { "npx", "typescript-language-server", "--stdio" },
+    settings = {
+      javascript = {
+        inlayHints = {
+          includeInlayEnumMemberValueHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayVariableTypeHints = true,
+        },
+      },
+      typescript = {
+        inlayHints = {
+          includeInlayEnumMemberValueHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayVariableTypeHints = true,
+        },
+      },
+    },
+  },
 }
 
 require("lsp.null-ls").setup()
 
-local ih = require "inlay-hints"
 require("rust-tools").setup {
   server = {
     on_attach = on_attach,

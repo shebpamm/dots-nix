@@ -142,15 +142,9 @@ require("packer").startup {
     }
 
     use {
-      "simrat39/inlay-hints.nvim",
+      "lvimuser/lsp-inlayhints.nvim",
       config = function()
-        require("inlay-hints").setup {
-          only_current_line = true,
-
-          eol = {
-            right_align = true,
-          },
-        }
+        require("lsp-inlayhints").setup()
       end,
     }
 
