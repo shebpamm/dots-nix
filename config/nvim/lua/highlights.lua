@@ -21,4 +21,6 @@ cmd "hi link NvimTreeLspDiagnosticsError LspDiagnosticsSignError"
 cmd "hi link NvimTreeLspDiagnosticsInformation LspDiagnosticsSignInformation"
 cmd "hi link NvimTreeLspDiagnosticsHint LspDiagnosticsSignHint"
 
+cmd "hi link LspInlayHint Comment"
+
 require("colors." .. O.colorscheme).overrides()
