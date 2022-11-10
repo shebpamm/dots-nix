@@ -143,9 +143,8 @@ require("packer").startup {
 
     use {
       "lvimuser/lsp-inlayhints.nvim",
-      config = function()
-        require("lsp-inlayhints").setup()
-      end,
+      branch = "anticonceal",
+      config = [[require "plugins.inlay-hints"]],
     }
 
     use {

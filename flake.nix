@@ -42,6 +42,19 @@
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
         (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
         (self: super: { formats = logiops-pkgs.formats; })
+        (self: super: {
+          neovim-nightly-anticonceal = super.neovim-nightly.overrideAttrs (_: {
+            patches = [
+              (super.pkgs.fetchpatch
+              {
+                name = "experimental-anticonceal-implementation-20130.patch";
+                url = "https://gist.githubusercontent.com/shebpamm/12e98dfa99973b40254fcffe29b752fa/raw/1adacca492e7fdc8e61818eaba60a485ef710d96/20130.patch";
+                sha256 = "sha256-OsMuJh16NCl/F6XwZP2JaAcC6cLaxJPy+W+iyEvdJYQ=";
+              })
+            ];
+            # patches = [super.fetchpatch {} ];
+          });
+        })
       ];
     in
     {

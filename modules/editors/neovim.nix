@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     black
-    neovim-nightly
+    neovim-nightly-anticonceal
     pylint
     python39Packages.flake8
     python39Packages.isort
