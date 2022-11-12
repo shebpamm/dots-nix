@@ -15,12 +15,19 @@
           };
         };
         channels = {
-          nixos.autoJoin = true;
+          # nixos.autoJoin = true;
         };
-        # saslExternal = true;
       };
     };
+    extraConfig = ''
+      settings = {
+        "fe-common/core" = { theme = "screwer-redux"; };
+      };
+    '';
   };
   home.file.".irssi/scripts".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/irssi/scripts";
+
+  home.file.".irssi/screwer-redux.theme".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/irssi/screwer-redux.theme";
 }
