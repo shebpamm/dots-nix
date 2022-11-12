@@ -126,6 +126,11 @@
     owner = "shebpamm";
   };
 
+  sops.secrets."shebpamm-libera.crt" = {
+    mode = "0400";
+    owner = "shebpamm";
+  };
+
   nix = {
     package = pkgs.nixUnstable;
     settings = {
