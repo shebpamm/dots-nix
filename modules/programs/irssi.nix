@@ -20,9 +20,6 @@
       };
     };
     extraConfig = ''
-      settings = {
-        "fe-common/core" = { theme = "screwer-redux"; };
-      };
     '';
   };
   home.file.".irssi/scripts".source =
