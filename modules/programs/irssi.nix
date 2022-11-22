@@ -18,6 +18,18 @@
           # nixos.autoJoin = true;
         };
       };
+      oftc = {
+        nick = "shebpamm";
+        server = {
+          address = "irc.oftc.net";
+          port = 6697;
+          autoConnect = true;
+          ssl = {
+            enable = true;
+            certificateFile = /run/secrets/shebpamm-libera.crt;
+          };
+        };
+      };
     };
     extraConfig = ''
     '';
