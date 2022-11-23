@@ -12,6 +12,7 @@
       ../../modules/system/sound.nix
       ../../modules/system/xorg.nix
       ../../modules/games/steam.nix
+      ../../modules/secrets
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -108,28 +109,6 @@
     zsh
   ];
 
-  # Expose secrets
-  sops.defaultSopsFile = ../../secrets/kerosene.yaml;
-  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-  sops.secrets.hass-server = {
-    mode = "0400";
-    owner = "shebpamm";
-  };
-
-  sops.secrets.hass-token = {
-    mode = "0400";
-    owner = "shebpamm";
-  };
-
-  sops.secrets.hass-phone = {
-    mode = "0400";
-    owner = "shebpamm";
-  };
-
-  sops.secrets."shebpamm-libera.crt" = {
-    mode = "0400";
-    owner = "shebpamm";
-  };
 
   nix = {
     package = pkgs.nixUnstable;

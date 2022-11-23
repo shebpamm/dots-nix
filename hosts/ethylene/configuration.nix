@@ -11,6 +11,7 @@
       ../../modules/system/fonts.nix
       ../../modules/system/sound.nix
       ../../modules/system/xorg.nix
+      ../../modules/secrets
     ];
 
   nixpkgs.config.allowUnfree = true;
