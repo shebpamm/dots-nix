@@ -2,16 +2,24 @@
 {
   services.xserver = {
     enable = true;
-     displayManager.lightdm = {
-       enable = true;
-#       greeters.gtk.enable = true;
-     };
+    displayManager.lightdm = {
+      enable = true;
+      #       greeters.gtk.enable = true;
+    };
     #displayManager.gdm = {
     #  enable = true;
     #  wayland = false;
     #};
 
-#    displayManager.sessionCommands = ''${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --off --output DP-0 --mode 3840x2160 --pos 0x0 --rotate left --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --rate 240 --pos 2160x1236 --rotate normal --output DP-3 --off --output HDMI-1 --off --output USB-C-0 --off'';
+    #    displayManager.sessionCommands = ''${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --off --output DP-0 --mode 3840x2160 --pos 0x0 --rotate left --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --rate 240 --pos 2160x1236 --rotate normal --output DP-3 --off --output HDMI-1 --off --output USB-C-0 --off'';
+
+    monitorSection = ''
+      Modeline "5120x1440R" 469.00  5120 5168 5200 5280  1440 1443 1453 1481 +hsync -vsync469.00  5120 5168 5200 5280  1440 1443 1453 1481 +hsync -vsync
+    '';
+
+    deviceSection = ''
+      Option "ModeValidation" "AllowNonEdidModes"
+    '';
 
     displayManager = {
       defaultSession = "none+awesome";
