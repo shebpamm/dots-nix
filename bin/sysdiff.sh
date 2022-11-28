@@ -1,11 +1,12 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p fd entr nvd
+#! nix-shell -i bash -p fd entr nvd nix-diff
 
 # shellcheck shell=bash
 
 set -euo pipefail
 IFS=$'\n\t'
-export SHELL=`which bash`
+SHELL=$(which bash)
+export SHELL
 
 function usage() {
     cat <<EOF
@@ -18,7 +19,7 @@ Example use:
 
         ${0} <host>
 
-The command watches until terminated with Ctrl-C or the `q` key.
+The command watches until terminated with Ctrl-C or the q key.
 EOF
 }
 
@@ -39,19 +40,21 @@ function drv() {
         ".#nixosConfigurations.${1}.config.system.build.toplevel"
 }
 
-original=$(drv ${system})
+original=$(drv "${system}")
 
 function drvdiff() {
     clear
     spin &
     spinner=$!
-    revised=$(drv ${system})
+    revised=$(drv "${system}")
     kill $spinner
-    if [[ $original == $revised ]]
+    if [[ $original == "$revised" ]]
     then
         echo "✅ Identical"
     else
-        nvd diff ${original} ${revised}
+        # nvd diff "${original}" "${revised}"
+        nix store diff-closures "${original}" "${revised}"
+        # nix-diff "${original}" "${revised}"
     fi
 }
 
