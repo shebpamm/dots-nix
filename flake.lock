@@ -427,6 +427,21 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1669650076,
+        "narHash": "sha256-4ZjmVNwRktCrtMuUfeBmrptjiJpazwc2SyofbsM+hVQ=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "c72b9a44f197518242c5181c3ab831229c9df678",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "river-src": {
       "flake": false,
       "locked": {
@@ -455,6 +470,7 @@
         "nixpkgs-2111": "nixpkgs-2111",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nomachine": "nomachine",
+        "nur": "nur",
         "sops-nix": "sops-nix",
         "spicetify": "spicetify",
         "work-nix": "work-nix"
