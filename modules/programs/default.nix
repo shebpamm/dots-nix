@@ -27,13 +27,7 @@
     pavucontrol
     pcmanfm
     pulseaudio
-    rofi
     sops
-    wmctrl
-    xdotool
-    xpra
-    xprintidle
-    xsecurelock
     yubikey-manager-qt
     yubioath-desktop
   ];
