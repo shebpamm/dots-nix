@@ -4,5 +4,6 @@
 
   programs.hyprland = {
     enable = true;
+    package = null;
   };
 }
