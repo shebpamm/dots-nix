@@ -1,6 +1,14 @@
 { config, pkgs, libs, ... }:
 {
-  imports = [ ./irssi.nix ./kitty ./fun.nix ./spotify.nix ./management.nix ];
+  imports = [
+    ./fun.nix
+    ./irssi.nix
+    ./kitty
+    ./management.nix
+    ./spotify.nix
+    ./wayland.nix
+    ./xorg.nix
+  ];
   home.packages = with pkgs; [
     bitwarden
     bitwarden-cli

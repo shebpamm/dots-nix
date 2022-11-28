@@ -9,6 +9,7 @@
 
       bind=SUPER,return,exec,kitty
       bind=SUPER,d,exec,rofi -show drun
+      bind=SUPER,Q,killactive,
     '';
   };
   
