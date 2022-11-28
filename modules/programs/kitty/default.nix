@@ -1,6 +1,6 @@
 { config, pkgs, libs, ... }:
 {
-  imports = [ ./colors/nord.nix ];
+  imports = [ ./colors/catppuccin/frappe.nix ];
 
   programs.kitty = {
     enable = true;
