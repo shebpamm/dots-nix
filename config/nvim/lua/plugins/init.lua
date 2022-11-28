@@ -33,6 +33,7 @@ require("packer").startup {
     use "b4skyx/serenade"
     use "mcchrish/zenbones.nvim"
     use "RRethy/nvim-base16" -- for base16 colorschemes
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- UI ------------------------------------------------------
 
