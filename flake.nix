@@ -137,8 +137,8 @@
               nixpkgs.overlays = overlays;
             }
             ./hosts/kerosene/configuration.nix
-            sops-nix.nixosModules.sops
           ];
+          specialArgs = { inherit inputs; };
         };
         ethylene = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -151,6 +151,7 @@
             "${logiops.outPath}/nixos/modules/hardware/logiops"
             work-nix.nixosModule
           ];
+          specialArgs = { inherit inputs; };
         };
       };
     };

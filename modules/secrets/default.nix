@@ -1,10 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
-  modules = [ sops-nix.nixosModules.sops ];
+  imports = [ inputs.sops-nix.nixosModules.sops ];
 
   # Expose secrets
   sops.defaultSopsFile = ../../secrets/default.yaml;
-  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.age.sshKeyPaths = [
+    "/etc/ssh/ssh_host_ed25519_key"
+    "/etc/ssh/ssh_sops_key"
+  ];
   sops.secrets.hass-server = {
     mode = "0400";
     owner = "shebpamm";
