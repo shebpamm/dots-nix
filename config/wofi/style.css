@@ -1,0 +1,82 @@
+@define-color bg-col  #eff1f5;
+@define-color bg-col-light #eff1f5;
+@define-color border-col #eff1f5;
+@define-color selected-col #eff1f5;
+@define-color blue #1e66f5;
+@define-color fg-col #4c4f69;
+@define-color fg-col2 #d20f39;
+@define-color grey #9ca0b0;
+
+window {
+    margin: 0px;
+    background-color: transparent;
+    font: "Fira Code Light 14";
+}
+
+#input {
+    padding: 4px;
+    margin: 4px;
+    padding-left: 20px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #fff;
+    background: linear-gradient(90deg, rgba(203,166,247,1) 0%, rgba(245,194,231,1) 100%);
+    outline: none;
+    border-radius: 15px;
+    margin: 10px;
+    margin-bottom: 2px;
+}
+#input:focus {
+    border: 0px solid #fff;
+    margin-bottom: 0px;
+}
+
+#inner-box {
+    margin: 4px;
+    color: #cba6f7;
+    font-weight: bold;
+    background-color: @bg-col;
+    border-radius: 15px;
+}
+
+#outer-box {
+    margin: 0px;
+    border: none;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+#scroll {
+    margin-top: 5px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    /* background: rgb(255,255,255); */
+}
+
+#text {
+    font-size: 1.5em;
+}
+
+#text:selected {
+    color: #fff;
+    margin: 0px 0px;
+    border: none;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+#entry {
+    margin: 0px 0px;
+    border: none;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+#entry:selected {
+    margin: 0px 0px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgba(203,166,247,1) 30%, rgba(245,194,231,1) 100%);
+}
