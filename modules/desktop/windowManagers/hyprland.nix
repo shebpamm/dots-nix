@@ -8,7 +8,7 @@
       monitor=DP-1,5120x1440@120,auto,1
 
       bind=SUPER,return,exec,kitty
-      bind=SUPER,d,exec,wofi
+      bind=SUPER,d,exec,rofi -show drun
       bind=SUPER,Q,killactive,
 
       bind=SUPER,1,workspace,1
