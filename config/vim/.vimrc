@@ -9,13 +9,12 @@ endif
 call plug#begin()
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'sainnhe/gruvbox-material'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
 
 set termguicolors
 set background=dark
-let g:gruvbox_material_background = 'hard'
-colorscheme gruvbox-material
+colorscheme catppuccin_frappe
 
 set number
 set showtabline=2
