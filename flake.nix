@@ -12,9 +12,10 @@
     work-nix.url = "/home/shebpamm/work-nix";
     nomachine.url = "github:rytec-nl/nixpkgs/submit/add-nomachine-server";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland }:
     let
       system = "x86_64-linux";
 
@@ -46,11 +47,11 @@
           neovim-nightly-anticonceal = super.neovim-nightly.overrideAttrs (_: {
             patches = [
               (super.pkgs.fetchpatch
-              {
-                name = "experimental-anticonceal-implementation-20130.patch";
-                url = "https://gist.githubusercontent.com/shebpamm/12e98dfa99973b40254fcffe29b752fa/raw/1adacca492e7fdc8e61818eaba60a485ef710d96/20130.patch";
-                sha256 = "sha256-OsMuJh16NCl/F6XwZP2JaAcC6cLaxJPy+W+iyEvdJYQ=";
-              })
+                {
+                  name = "experimental-anticonceal-implementation-20130.patch";
+                  url = "https://gist.githubusercontent.com/shebpamm/12e98dfa99973b40254fcffe29b752fa/raw/1adacca492e7fdc8e61818eaba60a485ef710d96/20130.patch";
+                  sha256 = "sha256-OsMuJh16NCl/F6XwZP2JaAcC6cLaxJPy+W+iyEvdJYQ=";
+                })
             ];
             # patches = [super.fetchpatch {} ];
           });
@@ -61,6 +62,7 @@
       homemanagerConfigurations = {
         kerosene = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
           modules = [
             {
               home = {
@@ -89,15 +91,13 @@
             ./modules/programs/graphics.nix
             ./modules/desktop
             ./modules/desktop/windowManagers/awesome.nix
-            ./modules/desktop/windowManagers/berry.nix
-            ./modules/desktop/windowManagers/herbstluftwm.nix
-            ./modules/desktop/windowManagers/i3.nix
-            ./modules/desktop/windowManagers/sway.nix
+            ./modules/desktop/windowManagers/hyprland.nix
           ];
         };
 
         ethylene = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
           modules = [
             {
               home = {

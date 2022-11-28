@@ -10,11 +10,9 @@
       ../../modules/system/env.nix
       ../../modules/system/fonts.nix
       ../../modules/system/sound.nix
-      ../../modules/system/xorg.nix
+      ../../modules/system/graphics/xorg.nix
       ../../modules/secrets
     ];
-
-  nixpkgs.config.allowUnfree = true;
 
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
@@ -25,7 +23,6 @@
     extraPackages = [ pkgs.mesa.drivers ];
   };
 
-  # Use the systemd-boot EFI boot loader.
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
   boot.loader.efi.canTouchEfiVariables = true;
@@ -180,12 +177,14 @@
         "https://cache.nixos.org/"
         "https://nix-community.cachix.org"
         "https://fortuneteller2k.cachix.org"
+        "https://hyprland.cachix.org"
       ];
 
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "fortuneteller2k.cachix.org-1:kXXNkMV5yheEQwT0I4XYh1MaCSz+qg72k8XAi2PthJI="
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
     extraOptions = ''
