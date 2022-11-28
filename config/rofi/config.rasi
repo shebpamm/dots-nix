@@ -1,130 +1,17 @@
-configuration {
-  icon-theme: "Papirus-Dark";
-  show-icons: true;
-  modi: "drun";
-  run-command: "fish -c '{cmd}'";
+configuration{
+    modi: "run,drun";
+    icon-theme: "Oranchelo";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window";
+    display-Network: " 󰤨  Network";
+    sidebar-mode: true;
 }
 
-@theme "/dev/null"
-
-element-text, element-icon {
-    background-color: inherit;
-    text-color:       inherit;
-}
-
-* {
-  bg: #2e3440;
-  fg: #d8dee9;
-  selbg: #3b4252;
-  selfg: #e5e9f0;
-
-  background-color: @bg;
-  text-color: @fg;
-  selected-normal-foreground: @selfg;
-  normal-foreground: @fg;
-  selected-normal-background: @selbg;
-  normal-background: @bg;
-  border-color: @bg;
-  font: "FiraCode Nerd Font 10";
-  margin: 3px;
-  padding: 7px;
-  border: 0px;
-
-  urgent-foreground: @fg;
-  urgent-background: @bg;
-  selected-urgent-foreground: @fg;
-  selected-urgent-background: @bg;
-
-  active-foreground: @fg;
-  active-background: @bg;
-  selected-active-foreground: @fg;
-  selected-active-background: @bg;
-}
-
-window {
-  location: center;
-  anchor: center;
-  height: 55%;
-  width: 35%;
-  border: 2px;
-  orientation: horizontal;
-  children: [mainbox];
-  padding: 0px;
-}
-
-mainbox {
-  padding: 10px;
-  margin: 0px;
-}
-
-inputbar {
-  children: [entry];
-}
-
-listview {
-  dynamic: true;
-  cycle: true;
-  scrollbar: false;
-}
-
-element {
-  padding: 1px;
-}
-
-element-icon {
-  size: 22;
-  vertical-align: 1;
-  horizontal-align: 1;
-}
-
-entry {
-  text-color: @normal-foreground;
-  vertical-align: 1;
-  padding: 1px;
-}
-
-element normal.normal {
-  background-color: @normal-background;
-  text-color: @normal-foreground;
-}
-
-element normal.urgent {
-  background-color: @urgent-background;
-  text-color: @urgent-foreground;
-}
-
-element normal.active {
-  background-color: @active-background;
-  text-color: @active-foreground;
-}
-
-element selected.normal {
-  background-color: @selected-normal-background;
-  text-color: @selected-normal-foreground;
-  font: "FiraCode Nerd Font 10";
-}
-
-element selected.urgent {
-  background-color: @selected-urgent-background;
-  text-color: @selected-urgent-foreground;
-}
-
-element selected.active {
-  background-color: @selected-active-background;
-  text-color: @selected-active-foreground;
-}
-
-element alternate.normal {
-  background-color: @normal-background;
-  text-color: @normal-foreground;
-}
-
-element alternate.urgent {
-  background-color: @urgent-background;
-  text-color: @urgent-foreground;
-}
-
-element alternate.active {
-  background-color: @active-background;
-  text-color: @active-foreground;
-}
+@theme "catppuccin-latte"

@@ -16,8 +16,11 @@
   home.file.".config/dunst".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/dunst";
 
-  home.file.".config/rofi".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi";
+  home.file.".config/rofi/config.rasi".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi/config.rasi";
+
+  home.file.".local/share/rofi/themes".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi/themes";
 
   home.file.".config/wofi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/wofi";
