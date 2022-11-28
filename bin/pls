@@ -48,6 +48,9 @@ while [ "$1" ]; do
     optimise)
       nix-store --optimise
       exit ;;
+    diff)
+      sysdiff.sh "$(hostname -s)"
+      exit ;;
     *)
       printf "\033[0;31merr: invalid command\n"
       exit ;;

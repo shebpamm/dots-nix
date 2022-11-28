@@ -1,6 +1,8 @@
 #!/usr/bin/env nix-shell
 #! nix-shell -i bash -p fd entr nvd
 
+# shellcheck shell=bash
+
 set -euo pipefail
 IFS=$'\n\t'
 export SHELL=`which bash`
@@ -40,6 +42,7 @@ function drv() {
 original=$(drv ${system})
 
 function drvdiff() {
+    clear
     spin &
     spinner=$!
     revised=$(drv ${system})
