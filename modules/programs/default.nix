@@ -15,6 +15,7 @@
     nomachine
     nyxt
     obsidian
+    openssl
     pavucontrol
     pcmanfm
     pulseaudio
