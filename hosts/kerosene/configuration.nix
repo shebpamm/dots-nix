@@ -11,6 +11,7 @@
       ../../modules/system/fonts.nix
       ../../modules/system/sound.nix
       ../../modules/system/xorg.nix
+      ../../modules/system/users.nix
       ../../modules/games/steam.nix
       ../../modules/secrets
     ];
@@ -63,11 +64,6 @@
 
   programs.gnupg.agent.enable = true;
 
-  users.users.shebpamm = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.fish;
-  };
 
   programs.zsh = {
     enable = true;
@@ -97,7 +93,6 @@
   nix = {
     package = pkgs.nixUnstable;
     settings = {
-      trusted-users = [ "root" "shebpamm" "@wheel" ];
       substituters = [
         "https://cache.nixos.org/"
         "https://nix-community.cachix.org"
@@ -118,8 +113,6 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.enableNvidia = true;
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "shebpamm" ];
-  users.extraGroups.docker.members = [ "shebpamm" ];
 
   system.stateVersion = "21.11";
 }
