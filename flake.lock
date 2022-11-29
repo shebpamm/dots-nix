@@ -122,21 +122,6 @@
         "type": "github"
       }
     },
-    "flake-utils_4": {
-      "locked": {
-        "lastModified": 1638122382,
-        "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "74f7e4319258e287b0f9cb95426c9853b282730b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -417,18 +402,17 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1641549189,
-        "narHash": "sha256-eniH46gBJfWMU++/hk239L/HmXYKNDDEqXsxBn+4OR4=",
+        "lastModified": 1669542132,
+        "narHash": "sha256-DRlg++NJAwPh8io3ExBJdNW7Djs3plVI5jgYQ+iXAZQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2320573b696600fc868e3cc35ce7fb4b56a10f8e",
+        "rev": "a115bb9bd56831941be3776c8a94005867f316a7",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
       }
     },
     "nomachine": {
@@ -535,37 +519,19 @@
     },
     "spicetify": {
       "inputs": {
-        "flake-utils": "flake-utils_4",
-        "nixpkgs": "nixpkgs_6",
-        "spicetify-themes": "spicetify-themes"
+        "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1641562078,
-        "narHash": "sha256-iVq3ZPV0uVgkofH1LzhotLAA9mHLSShZ1AqaO43M3uM=",
-        "owner": "shebpamm",
+        "lastModified": 1666059600,
+        "narHash": "sha256-ceVk8Yeg1jwrToeGReF3aphq0JPHykla6FjgVP0+d3s=",
+        "owner": "the-argus",
         "repo": "spicetify-nix",
-        "rev": "eb5177a268964430bb4dbcf1216c0817be8560a6",
+        "rev": "56f9397313b1f97ba94b1b2f947133fff4a12cee",
         "type": "github"
       },
       "original": {
-        "owner": "shebpamm",
+        "owner": "the-argus",
         "repo": "spicetify-nix",
-        "type": "github"
-      }
-    },
-    "spicetify-themes": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1641217296,
-        "narHash": "sha256-TpbmVQZAjG10xi62JiJdtC26uJdMN4jwKt0X1/n4G00=",
-        "owner": "morpheusthewhite",
-        "repo": "spicetify-themes",
-        "rev": "de39c9fad631f830aa912325e3c1afb1d5cb9f73",
-        "type": "github"
-      },
-      "original": {
-        "owner": "morpheusthewhite",
-        "repo": "spicetify-themes",
         "type": "github"
       }
     },

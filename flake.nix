@@ -7,7 +7,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k/3322009946e80d441d5156d41a6ef22742708efd";
-    spicetify.url = "github:shebpamm/spicetify-nix";
+    spicetify.url = "github:the-argus/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
     work-nix.url = "/home/shebpamm/work-nix";
     nomachine.url = "github:rytec-nl/nixpkgs/submit/add-nomachine-server";
@@ -42,7 +42,6 @@
       overlays = [
         nixpkgs-f2k.overlays.default
         neovim-nightly.overlay
-        spicetify.overlay
         hyprpaper.overlays.default
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
         (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
