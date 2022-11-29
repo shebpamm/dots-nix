@@ -301,6 +301,10 @@ require("packer").startup {
       ft = "markdown",
     }
 
+    -- Eww & Lisp 
+    use "gpanders/nvim-parinfer"
+    use "elkowar/yuck.vim"
+
     -- Utilities -----------------------------------------------
 
     -- Extensive increment/decrement support
