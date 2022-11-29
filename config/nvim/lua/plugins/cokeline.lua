@@ -27,7 +27,7 @@ coke.setup {
     },
     {
       text = function(buffer) return buffer.unique_prefix end,
-      fg = hex('Comment', 'fg'),
+      fg = hex('Directory', 'fg'),
       style = 'italic',
     },
     {
