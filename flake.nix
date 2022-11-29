@@ -13,10 +13,12 @@
     nomachine.url = "github:rytec-nl/nixpkgs/submit/add-nomachine-server";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprpaper.url = "github:shebpamm/hyprpaper";
+    hyprpaper.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, nur }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur }:
     let
       system = "x86_64-linux";
 
@@ -41,8 +43,10 @@
         nixpkgs-f2k.overlays.default
         neovim-nightly.overlay
         spicetify.overlay
+        hyprpaper.overlays.default
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
         (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
+        (self: super: { formats = logiops-pkgs.formats; })
         (self: super: { formats = logiops-pkgs.formats; })
         (self: super: {
           nur = import nur {

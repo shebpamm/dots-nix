@@ -178,6 +178,26 @@
         "type": "github"
       }
     },
+    "hyprpaper": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1669675640,
+        "narHash": "sha256-HPxgw/pZDnlY9gYuwpVwoiOvyqoJRhmYN9iEHkgMVgc=",
+        "owner": "shebpamm",
+        "repo": "hyprpaper",
+        "rev": "0e886f1fc6ef48ef574316797816f2203dfe7e11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shebpamm",
+        "repo": "hyprpaper",
+        "type": "github"
+      }
+    },
     "logiops": {
       "locked": {
         "lastModified": 1660381985,
@@ -464,6 +484,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "hyprpaper": "hyprpaper",
         "logiops": "logiops",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_3",
