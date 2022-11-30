@@ -8,40 +8,71 @@
   all: unset;
 }
 
-// Variable Color's
-$background: #1A1B26;
-$foreground: #A9B1D6;
+// Catppuccin latte
+$rosewater: #dc8a78;
+$flamingo: #dd7878;
+$pink: #ea76cb;
+$mauve: #8839ef;
+$red: #d20f39;
+$maroon: #e64553;
+$peach: #fe640b;
+$yellow: #df8e1d;
+$green: #40a02b;
+$teal: #179299;
+$sky: #04a5e5;
+$sapphire: #209fb5;
+$blue: #1e66f5;
+$lavender: #7287fd;
+$text: #4c4f69;
+$subtext1: #5c5f77;
+$subtext0: #6c6f85;
+$overlay2: #7c7f93;
+$overlay1: #8c8fa1;
+$overlay0: #9ca0b0;
+$surface2: #acb0be;
+$surface1: #bcc0cc;
+$surface0: #ccd0da;
+$crust: #dce0e8;
+$mantle: #e6e9ef;
+$base: #eff1f5;
 
-$black: #24283B;
-$gray: #565F89;
-$red: #F7768E;
-$green: #73DACA;
-$yellow: #E0AF68;
-$blue: #7AA2F7;
-$magenta: #BB9AF7;
-$cyan: #7DCFFF;
-$white: $foreground;
+// Variable Color's
+$background: $base;
+$foreground: $surface0;
+
+$border-radius: 15px;
+
+$pane: $crust;
+
+$magenta: $maroon;
+$cyan: $teal;
 
 // EWW BAR
 .eww_bar{
   background-color: $background;
   padding: .3rem;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
 }
 
 // Launcher
 .launcher_icon{
     color: $cyan;
-    font-family: "Font Awesome 6 Pro";
+    font-family: "Font Awesome 6 Free";
     font-size: 1.7em;
     padding: 1rem 0 1rem 0;
 }
 
 // Workspaces
 .works {
-font-family: "Font Awesome 6 Pro";
-padding: .2rem .7rem .2rem .7rem;
-background-color: $black;
-border-radius: 5px;
+}
+
+.active {
+  color: $rosewater;
+}
+
+.inactive {
+  color: $text;
 }
 
 .0 , .01, .02, .03, .04, .05, .06,
@@ -51,12 +82,12 @@ border-radius: 5px;
 
 /* Unoccupied */
 .0 {
-color: $gray;
+color: $text;
 }
 
 /* Occupied */
 .01, .02, .03, .04, .05, .06 {
-  color: $gray;
+  color: $text;
 }
 
 /* Focused */
@@ -109,7 +140,7 @@ color: $gray;
 padding: .5rem;
 font-family: Material Icons;
 font-size: 1.6em;
-background-color: $black;
+background-color: $pane;
 border-radius: 5px;
 }
 .bat{
@@ -120,7 +151,7 @@ border-radius: 5px;
 }
 .wifi-icon{
   margin-bottom: .2rem;
-  color: $magenta;
+  color: $maroon;
 }
 .brightness-icon{
   margin: .2rem 0 .2rem 0;
@@ -128,7 +159,7 @@ border-radius: 5px;
 }
 .volume-icon{
   margin: .2rem 0 .2rem 0;
-  color: $green;
+  color: $lavender;
 }
 scale trough {
   all: unset;
@@ -152,8 +183,8 @@ scale trough {
   font-family: Comic Mono;
   font-weight: bold;
   font-size: 1.2em;
-  background-color: $black;
-  color: $white;
+  background-color: $pane;
+  color: $text;
   border-radius: 5px;
   padding: .7rem 0 .5rem 0;
   margin: .5rem 0 .5rem 0;
@@ -161,10 +192,12 @@ scale trough {
 
 // Calendar
 .cal-box {
-  background-color: $black;
+  background-color: $pane;
   font-family: Comic Mono;
   font-size: 1em;
   font-weight: bold;
+  color: $text;
+  border-radius: $border-radius;
 
   .cal-inner-box {
       padding: 1rem 1rem .2rem;
@@ -181,30 +214,30 @@ scale trough {
 }
 
 calendar:selected {
-  color: $blue;
+  color: $rosewater;
 }
 
 calendar.header {
-color: $blue;
+color: $rosewater;
 font-weight: bold;
 }
 
 calendar.button {
-color: $magenta;
+color: $text;
 }
 
 calendar.highlight {
-color: $magenta;
+color: $text;
 font-weight: bold;
 }
 
 calendar:indeterminate {
-color: $background;
+color: $subtext0;
 }
 
 // Powermenu
 .powermenu {
-  font-family: feather;
+  font-family: Material Icons;
   font-size: 1.4em;
   font-weight: bold;
 }

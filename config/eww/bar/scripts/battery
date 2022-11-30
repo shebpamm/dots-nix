@@ -1,7 +1,6 @@
 #!/bin/sh
 
 bat=/sys/class/power_supply/BAT0/
-per="$(cat "$bat/capacity")"
 
 icon() {
 
@@ -39,6 +38,14 @@ percent() {
 echo $per
 }
 
+present() {
+  [ -f "$bat" ] && echo true && exit
+  echo false
+}
+
+[ "$1" = "present" ] && present && exit
+
+per="$(cat "$bat/capacity")"
+
 [ "$1" = "icon" ] && icon && exit
 [ "$1" = "percent" ] && percent && exit
-exit

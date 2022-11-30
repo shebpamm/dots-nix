@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 calendar(){
 LOCK_FILE="$HOME/.cache/eww-calendar.lock"
-EWW_BIN="$HOME/.local/bin/eww"
+EWW_BIN="eww"
 
 run() {
     ${EWW_BIN} -c $HOME/.config/eww/bar open calendar
@@ -25,11 +25,11 @@ fi
 }
 
 if [ "$1" = "launcher" ]; then
-$HOME/.local/bin/launcher
+  rofi -show drun
 elif [ "$1" = "wifi" ]; then
-kitty -e nmtui
+  kitty -e nmtui
 elif [ "$1" = "audio" ]; then
-pavucontrol
+  pavucontrol
 elif [ "$1" = "calendar" ]; then
-calendar
+  calendar
 fi

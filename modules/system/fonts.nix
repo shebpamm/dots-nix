@@ -1,12 +1,16 @@
 { config, pkgs, ... }:
 {
   fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "3270" "JetBrainsMono" ]; })
+    font-awesome
     cantarell-fonts
+    cascadia-code
+    comic-mono
+    fira-code
+    material-icons
+    meslo-lg
     noto-fonts
     noto-fonts-emoji-blob-bin
-    fira-code
-    meslo-lg
-    (nerdfonts.override { fonts = [ "3270" ]; })
   ];
 
   fonts.fontconfig = {

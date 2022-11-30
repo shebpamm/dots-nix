@@ -3,7 +3,7 @@
 ;; Maintaned by https://github.com/rxyhn
 
 ;; put path to aesthetic bar config files here ;;
-(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
+(defvar eww "eww -c $HOME/.config/eww/bar")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;	
@@ -14,12 +14,13 @@
    :space-evenly "false" 
    :spacing -15
     (button :class "launcher_icon" 
-      :onclick "scripts/popup launcher"  "")))
+      :onclick "scripts/popup launcher"  "")))
 
 ;; Workspaces Widgets ;;
 (defwidget workspaces []
-  (literal :content workspace))
-(deflisten workspace "scripts/workspace")
+  (literal :class "works"
+           :content workspaces_listen))
+(defpoll workspaces_listen :interval "500ms" "scripts/workspaces.lua")
 
 ;; Battery Widgets ;;
 (defwidget bat []
@@ -28,9 +29,11 @@
    (label  :class "bat"    
     :halign "end"    
     :text battery  
-    :tooltip "Battery: ${battery-cappacity}%")))
-(defpoll battery      :interval "1s"  "scripts/battery icon")
-(defpoll battery-cappacity  :interval "1s"  "scripts/battery percent")
+    :visible battery-visibility
+    :tooltip "Battery: ${battery-capacity}%")))
+(defpoll battery-visibility   :interval "1h" :initial "false" "scripts/battery present")
+(defpoll battery              :interval "1s"  "scripts/battery icon")
+(defpoll battery-capacity     :interval "1s"  "scripts/battery percent")
 
 ;; Wifi Widgets ;;
 (defwidget wifi []
@@ -61,7 +64,7 @@
            :min 0))
          (label :class "brightness-icon" 
           :text ""))))
-(defpoll current-brightness :interval "1s" "brightnessctl -m -d amdgpu_bl0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll current-brightness :interval "1s" :initial "0" "brightnessctl g")
 (defvar bright false)
 
 ;; Volume Widgets ;;
@@ -81,9 +84,9 @@
         :tooltip "Volume: ${current-volume}%" 
         :max 101 
         :min 0 
-        :onchange "amixer -D pulse sset Master {}%"))
+        :onchange "pamixer --set-volume {}"))
     (button   :onclick "scripts/popup audio"   :class "volume-icon" ""))))
-(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll current-volume :interval "1s" :initial "0" "pamixer --get-volume")
 (defvar volum false)
 
 ;; Control Panel Widgets ;;	
@@ -139,24 +142,24 @@
         :space-evenly "false"
 
       (button     :class "button-bspres"        
-         :tooltip "BSPWM Restart" 
-         :onclick "bspc wm -r" "")
+         :tooltip "Suspend" 
+         :onclick "systemctl suspend" "⏾")
 
       (button    :class "button-reb"          
          :tooltip "Reboot"     
-       :onclick "reboot"  "")
+       :onclick "reboot"  "")
 
       (button    :class "button-quit"         
          :tooltip "Logout"      
-         :onclick "killall bspwm" "")
+         :onclick "systemctl restart greetd" "")
 
       (button    :class "button-lock"         
          :tooltip "Lock Screen"   
-         :onclick "betterlockscreen -l"  "")))
+         :onclick "betterlockscreen -l"  "")))
 
     (button    :class "button-off"          
-       :tooltip "Shutdown"     
-       :onclick "shutdown now"  ""))))
+       :tooltip "Shutdown?"     
+       :onclick "poweroff"  ""))))
 (defvar power false)
 
 ;; Top Widgets ;;
@@ -164,7 +167,14 @@
   (box  :orientation "v" 
    :space-evenly "false" 
    :valign "start" 
-   (launcher)
+   (launcher)))
+
+;; Center Widgets ;;
+
+(defwidget mid []
+  (box  :orientation "v" 
+   :space-evenly "false" 
+   :valign "center" 
    (workspaces)))
 
 ;; Bottom Widgets ;;
@@ -190,6 +200,7 @@
    :vexpand "false" 
    :hexpand "false"
    (top)
+   (mid)
    (end)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -197,24 +208,20 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bar Windows ;;
 (defwindow bar
-  :geometry (geometry :x "0" 
-             :y "0" 
-             :height "100%" 
-             :width "47px")
+  :geometry (geometry  :anchor "left center"
+                       :height "75%") 
   :monitor 0
-  :reserve (struts :distance "35px" 
-            :side "left")
-  :wm-ignore false
-  :hexpand "false"
-  :vexpand "false"
+  :exclusive "true"
+  :stacking "bottom"
  (bar))
 
 ;; Calendar Windows ;;
 (defwindow calendar
-  :geometry (geometry :x "70px" 
-             :y "65%" 
-             :width "270px" 
-             :height "60px")
+  :geometry (geometry :x "30px" 
+                      :y "78%" 
+                      :width "270px" 
+                      :height "60px")
+  :monitor 0
  (cal))
 
 
