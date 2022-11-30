@@ -16,6 +16,9 @@
   home.file.".config/rofi/config.rasi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi/config.rasi";
 
+  home.file.".config/eww".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/eww";
+
   home.file.".local/share/rofi/themes".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi/themes";
 
