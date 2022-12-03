@@ -31,6 +31,8 @@
 
   systemd.enableUnifiedCgroupHierarchy = false;
 
+  security.sudo.wheelNeedsPassword = false;
+
   networking = {
     hostName = "kerosene";
     useDHCP = false;
