@@ -149,6 +149,10 @@
          :tooltip "Reboot"     
        :onclick "reboot"  "")
 
+      (button    :class "button-win"          
+         :tooltip "Reboot -> Windows"     
+       :onclick "/home/shebpamm/win.sh"  "")
+
       (button    :class "button-quit"         
          :tooltip "Logout"      
          :onclick "systemctl restart greetd" "")
