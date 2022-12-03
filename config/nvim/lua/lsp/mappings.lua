@@ -2,12 +2,22 @@ local M = {}
 
 function M.setup(bufnr)
   local wk = require "which-key"
+  local dap = require "dap"
+  local dui = require "dapui"
 
   wk.register({
     c = {
       name = "+code",
       r = { vim.lsp.buf.rename, "rename" },
       a = { vim.lsp.buf.code_action, "code action" },
+      d = {
+        name = "+debug",
+        b = { dap.toggle_breakpoint, "toggle breakpoint" },
+        c = { dap.continue, "continue" },
+        i = { dap.step_over, "step into" },
+        o = { dap.step_over, "step over" },
+        u = { dui.toggle(), "toggle ui" },
+      },
     },
     g = {
       name = "+goto",
@@ -39,7 +49,7 @@ function M.setup(bufnr)
     },
   }, {
     buffer = bufnr,
-    mode = "v"
+    mode = "v",
   })
 end
 

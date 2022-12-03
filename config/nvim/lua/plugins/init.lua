@@ -155,6 +155,18 @@ require("packer").startup {
       },
     }
 
+    -- Debugging -----------------------------------------------
+    
+    use 'mfussenegger/nvim-dap'
+    use {
+      "rcarriga/nvim-dap-ui",
+      config = function()
+        require("dapui").setup()
+      end,
+      requires = {"mfussenegger/nvim-dap"}
+    }
+
+
     -- Treesitter ----------------------------------------------
     use {
       "nvim-treesitter/nvim-treesitter",
