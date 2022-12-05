@@ -161,7 +161,7 @@ require("packer").startup {
     use {
       "rcarriga/nvim-dap-ui",
       config = function()
-        require("dapui").setup()
+        -- require("dapui").setup()
       end,
       requires = {"mfussenegger/nvim-dap"}
     }
