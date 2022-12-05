@@ -6,7 +6,7 @@
     ./kitty
     ./management.nix
     ./spotify.nix
-    ./wayland.nix
+    # ./wayland.nix
     # ./xorg.nix
   ];
   home.packages = with pkgs; [

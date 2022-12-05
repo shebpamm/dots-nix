@@ -98,6 +98,7 @@
             ./modules/dev/python.nix
             ./modules/dev/docker.nix
             ./modules/programs
+            ./modules/programs/wayland.nix
             ./modules/programs/graphics.nix
             ./modules/desktop
             ./modules/desktop/windowManagers/awesome.nix
@@ -131,6 +132,7 @@
             ./modules/dev/docker.nix
             ./modules/programs
             ./modules/programs/graphics.nix
+            ./modules/programs/xorg.nix
             ./modules/programs/work.nix
             ./modules/desktop
             ./modules/desktop/windowManagers/awesome.nix
