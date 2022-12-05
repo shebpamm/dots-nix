@@ -14,6 +14,8 @@
       ../../modules/secrets
     ];
 
+  nixpkgs.config.allowUnfree = true;
+
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = true;
