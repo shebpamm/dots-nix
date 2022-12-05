@@ -9,5 +9,6 @@
     xpra
     xprintidle
     xsecurelock
+    eww
   ];
 }
