@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     (ripgrep.override { withPCRE2 = true; })
     acpi
+    astyle
     alsa-utils
     ansible-lint
     bat

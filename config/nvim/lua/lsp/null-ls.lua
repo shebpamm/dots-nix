@@ -8,11 +8,14 @@ M.setup = function()
     debounce = 150,
     debug = false,
     sources = {
-      b.diagnostics.flake8.with({
+      b.diagnostics.flake8.with {
         filter = function(diagnostic)
           return diagnostic.code ~= "E501" -- Skip "line too long" errors
         end,
-      }),
+      },
+      b.formatting.astyle.with {
+        extra_filetypes = { "groovy", "Jenkinsfile" },
+      },
       b.code_actions.refactoring,
       b.diagnostics.pydocstyle,
       b.diagnostics.shellcheck,
@@ -21,7 +24,7 @@ M.setup = function()
       b.formatting.isort,
       b.formatting.prettier_d_slim,
       b.formatting.stylua,
-      b.formatting.terraform_fmt
+      b.formatting.terraform_fmt,
     },
     on_attach = function(client)
       if client.server_capabilities.document_formatting then
