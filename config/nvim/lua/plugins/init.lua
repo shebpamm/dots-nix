@@ -125,15 +125,18 @@ require("packer").startup {
       "williamboman/mason.nvim",
       config = [[require "plugins.mason"]],
     }
+
+    use "williamboman/mason-lspconfig.nvim"
+    use "jayp0521/mason-null-ls.nvim"
+
+
     use {
       "neovim/nvim-lspconfig",
-      "williamboman/mason-lspconfig.nvim",
       event = "BufReadPre",
       config = [[require "lsp"]],
     }
     use {
       "jose-elias-alvarez/null-ls.nvim",
-      "jayp0521/mason-null-ls.nvim",
       module = "null-ls",
       after = "nvim-lspconfig",
     }

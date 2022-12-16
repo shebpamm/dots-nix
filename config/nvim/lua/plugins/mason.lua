@@ -1,8 +1,9 @@
-local m = require "mason"
+local m  = require "mason"
 local ml = require "mason-lspconfig"
 local mn = require "mason-null-ls"
 
 m.setup {
+  PATH = "append",
   ui = {
     icons = {
       package_installed = "✓",

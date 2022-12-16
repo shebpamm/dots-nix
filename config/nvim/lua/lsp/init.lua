@@ -2,7 +2,7 @@ local lspconfig = require "lspconfig"
 local ih = require "lsp-inlayhints"
 local ml = require "mason-lspconfig"
 
-vim.lsp.set_log_level "INFO"
+vim.lsp.set_log_level "DEBUG"
 
 ml.setup { automatic_installation = true }
 
@@ -40,11 +40,10 @@ local function on_attach(client, bufnr)
 end
 
 local servers = {
-  -- sumneko_lua = require("lsp.lang.lua").setup,
-  html = { cmd = { "npx", "vscode-html-language-server-bin", "--stdio" } },
-  cssls = { cmd = { "npx", "vscode-css-language-server-bin", "--stdio" } },
-  dotls = { cmd = { "npx", "dot-language-server", "--stdio" } },
-  -- rnix = {},
+  sumneko_lua = require("lsp.lang.lua").setup,
+  html,
+  cssls,
+  dotls,
   nil_ls = {
     settings = {
       ["nil"] = {
@@ -66,7 +65,6 @@ local servers = {
   -- rust_analyzer = {},
   emmet_ls = emmet_config,
   tsserver = { 
-    cmd = { "npx", "typescript-language-server", "--stdio" },
     settings = {
       javascript = {
         inlayHints = {
