@@ -129,7 +129,6 @@ require("packer").startup {
     use "williamboman/mason-lspconfig.nvim"
     use "jayp0521/mason-null-ls.nvim"
 
-
     use {
       "neovim/nvim-lspconfig",
       event = "BufReadPre",
@@ -220,7 +219,8 @@ require("packer").startup {
     -- Completion and Snippets ---------------------------------
     use {
       "ms-jpq/coq_nvim",
-      branch = "coq",
+      -- branch = "coq",
+      commit = "5eddd31bf8a98d1b893b0101047d0bb31ed20c49",
       requires = {
         { "ms-jpq/coq.artifacts", branch = "artifacts" },
         {
