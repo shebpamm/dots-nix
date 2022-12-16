@@ -11,7 +11,6 @@
     acpi
     astyle
     alsa-utils
-    ansible-lint
     bat
     bind
     bottom
@@ -34,7 +33,6 @@
     lazygit
     maim
     ncdu
-    nodePackages.prettier_d_slim
     pamixer
     pass
     playerctl
@@ -48,7 +46,6 @@
     websocat
     wget
     xclip
-    yamllint
     yq
     yubikey-agent
     yubikey-manager
