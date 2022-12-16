@@ -1,5 +1,7 @@
 local M = {}
 
+require("mason-null-ls").setup { automatic_installation = true }
+
 M.setup = function()
   local null_ls = require "null-ls"
   local b = null_ls.builtins
@@ -22,7 +24,7 @@ M.setup = function()
       b.diagnostics.yamllint,
       b.formatting.black,
       b.formatting.isort,
-      b.formatting.prettier_d_slim,
+      b.formatting.prettierd,
       b.formatting.stylua,
       b.formatting.terraform_fmt,
     },

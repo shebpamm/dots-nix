@@ -1,6 +1,4 @@
-local m  = require "mason"
-local ml = require "mason-lspconfig"
-local mn = require "mason-null-ls"
+local m = require "mason"
 
 m.setup {
   PATH = "append",
@@ -11,8 +9,4 @@ m.setup {
       package_uninstalled = "✗",
     },
   },
-}
-
-mn.setup {
-  automatic_installation = true,
 }
