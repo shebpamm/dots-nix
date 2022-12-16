@@ -5,7 +5,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local configs = require "lspconfig/configs"
 local emmet_config = {
-    cmd = { "npx", "emmet-ls", "--stdio" },
     filetypes = {
       "html",
       "css",

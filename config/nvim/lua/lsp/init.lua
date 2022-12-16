@@ -6,26 +6,7 @@ vim.lsp.set_log_level "DEBUG"
 
 ml.setup { automatic_installation = true }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.documentationFormat = {
-  "markdown",
-}
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.preselectSupport = false
-capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-capabilities.textDocument.completion.completionItem.tagSupport = {
-  valueSet = { 1 },
-}
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    "documentation",
-    "detail",
-    "additionalTextEdits",
-  },
-}
+local capabilities = require "lsp.capabilities"
 
 local emmet_config = require "lsp.emmet"
 
@@ -40,53 +21,28 @@ local function on_attach(client, bufnr)
 end
 
 local servers = {
+  emmet_ls = emmet_config,
+
   sumneko_lua = require("lsp.lang.lua").setup,
-  html,
-  cssls,
-  dotls,
+  pyright = require("lsp.lang.python").setup,
+  tsserver = require("lsp.lang.typescript").setup,
+
+  html = {},
+  cssls = {},
+  dotls = {},
+  ansiblels = {},
+  dockerls = {},
+  jsonls = {},
+  robotframework_ls = {},
+  sqlls = {},
+  taplo = {},
+  terraformls = {},
+  tflint = {},
+
   nil_ls = {
     settings = {
       ["nil"] = {
         formatting = { command = { "nixpkgs-fmt" } },
-      },
-    },
-  },
-  pyright = {
-    settings = {
-      python = {
-        analysis = {
-          autoSearchPaths = false,
-          useLibraryCodeForTypes = false,
-          diagnosticMode = "openFilesOnly",
-        },
-      },
-    },
-  },
-  -- rust_analyzer = {},
-  emmet_ls = emmet_config,
-  tsserver = { 
-    settings = {
-      javascript = {
-        inlayHints = {
-          includeInlayEnumMemberValueHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayVariableTypeHints = true,
-        },
-      },
-      typescript = {
-        inlayHints = {
-          includeInlayEnumMemberValueHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayVariableTypeHints = true,
-        },
       },
     },
   },
