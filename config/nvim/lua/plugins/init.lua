@@ -122,6 +122,10 @@ require("packer").startup {
 
     --  LSP ----------------------------------------------------
     use {
+      "williamboman/mason.nvim",
+      config = [[require "plugins.mason"]]
+    }
+    use {
       "neovim/nvim-lspconfig",
       event = "BufReadPre",
       config = [[require "lsp"]],
@@ -156,16 +160,15 @@ require("packer").startup {
     }
 
     -- Debugging -----------------------------------------------
-    
-    use 'mfussenegger/nvim-dap'
+
+    use "mfussenegger/nvim-dap"
     use {
       "rcarriga/nvim-dap-ui",
       config = function()
         -- require("dapui").setup()
       end,
-      requires = {"mfussenegger/nvim-dap"}
+      requires = { "mfussenegger/nvim-dap" },
     }
-
 
     -- Treesitter ----------------------------------------------
     use {
@@ -313,7 +316,7 @@ require("packer").startup {
       ft = "markdown",
     }
 
-    -- Eww & Lisp 
+    -- Eww & Lisp
     use "gpanders/nvim-parinfer"
     use "elkowar/yuck.vim"
 
