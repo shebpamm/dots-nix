@@ -53,6 +53,20 @@ require("packer").startup {
       config = [[require"plugins.chadtree"]],
     }
 
+    -- speedy movement
+    use {
+      "ggandor/leap.nvim",
+      config = [[require"plugins.leap"]],
+    }
+
+    use {
+      "ggandor/leap-spooky.nvim",
+      after = "leap.nvim",
+      config = function()
+        require("leap-spooky").setup()
+      end,
+    }
+
     -- dashboard
     use {
       "goolord/alpha-nvim",
