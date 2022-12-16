@@ -26,11 +26,11 @@ local servers = {
   sumneko_lua = require("lsp.lang.lua").setup,
   pyright = require("lsp.lang.python").setup,
   tsserver = require("lsp.lang.typescript").setup,
+  ansiblels = require("lsp.lang.ansible").setup,
 
   html = {},
   cssls = {},
   dotls = {},
-  ansiblels = {},
   dockerls = {},
   jsonls = {},
   robotframework_ls = {},
