@@ -219,14 +219,10 @@ require("packer").startup {
     -- Completion and Snippets ---------------------------------
     use {
       "ms-jpq/coq_nvim",
-      -- branch = "coq",
-      commit = "5eddd31bf8a98d1b893b0101047d0bb31ed20c49",
+      branch = "coq",
+      -- commit = "5eddd31bf8a98d1b893b0101047d0bb31ed20c49",
       requires = {
         { "ms-jpq/coq.artifacts", branch = "artifacts" },
-        {
-          "ms-jpq/coq.thirdparty",
-          branch = "3p",
-        },
       },
       config = function()
         vim.g.coq_settings = {

@@ -8,7 +8,7 @@ M.setup = {
     ansible = {
       ansible = {
         path = "ansible",
-        useFullyQualifiedCollectionNames = true,
+        useFullyQualifiedCollectionNames = false,
       },
       ansibleLint = {
         enabled = true,

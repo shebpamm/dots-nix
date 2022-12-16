@@ -1,6 +1,7 @@
 local lspconfig = require "lspconfig"
 local ih = require "lsp-inlayhints"
 local ml = require "mason-lspconfig"
+local coq = require "coq"
 
 vim.lsp.set_log_level "DEBUG"
 
@@ -62,10 +63,10 @@ for name, opts in pairs(servers) do
     opts()
   else
     local client = lspconfig[name]
-    client.setup(vim.tbl_extend("force", {
+    client.setup(coq.lsp_ensure_capabilities(vim.tbl_extend("force", {
       flags = { debounce_text_changes = 150 },
       on_attach = on_attach,
       capabilities = capabilities,
-    }, opts))
+    }, opts)))
   end
 end
