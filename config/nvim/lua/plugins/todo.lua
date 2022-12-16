@@ -1,5 +1,4 @@
-local todo = require "todo-comments" 
-local wk = require "which-key"
+local todo = require "todo-comments"
 
 todo.setup {
   signs = false,

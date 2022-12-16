@@ -16,5 +16,5 @@ wk.register {
       l = { "<cmd>MarksQFListAll<cr>", "list all marks" },
       b = { "<cmd>BookmarksQFListAll<cr>", "list all bookmarks" },
     },
-  }
+  },
 }

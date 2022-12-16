@@ -365,6 +365,12 @@ require("packer").startup {
       config = [[require"plugins.marks"]],
     }
 
+    use {
+      "cbochs/grapple.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = [[require"plugins.grapple"]],
+    }
+
     -- Zen -------------------------------
     use {
       "folke/zen-mode.nvim",
