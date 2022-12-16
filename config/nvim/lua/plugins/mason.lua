@@ -1,6 +1,8 @@
-local mason = require "mason"
+local m = require "mason"
+local ml = require "mason-lspconfig"
+local mn = require "mason-null-ls"
 
-mason.setup({
+m.setup {
   ui = {
     icons = {
       package_installed = "✓",
@@ -8,4 +10,8 @@ mason.setup({
       package_uninstalled = "✗",
     },
   },
-})
+}
+
+mn.setup {
+  automatic_installation = true,
+}

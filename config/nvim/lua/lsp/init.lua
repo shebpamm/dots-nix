@@ -1,7 +1,10 @@
 local lspconfig = require "lspconfig"
 local ih = require "lsp-inlayhints"
+local ml = require "mason-lspconfig"
 
-vim.lsp.set_log_level "DEBUG"
+vim.lsp.set_log_level "INFO"
+
+ml.setup { automatic_installation = true }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat = {
