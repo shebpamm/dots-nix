@@ -1,7 +1,6 @@
 { config, pkgs, libs, ... }:
 {
   home.packages = [ 
-    pkgs.rustup
     pkgs.cargo
     pkgs.rust-analyzer
   ];
