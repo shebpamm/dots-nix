@@ -224,6 +224,44 @@ require("packer").startup {
       },
     }
 
+    -- AI ------------------------------------------------------
+    use {
+      "jameshiew/nvim-magic",
+      config = function()
+        require("nvim-magic").setup {
+          backends = {
+            default = require("nvim-magic-openai").new {
+              api_endpoint = "https://api.openai.com/v1/engines/code-davinci-002/completions",
+            },
+          },
+        }
+      end,
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+      },
+    }
+
+    use {
+      "jackMort/ChatGPT.nvim",
+      config = function()
+        require("chatgpt").setup {
+          openai_params = {
+            model = "code-davinci-002",
+          },
+        }
+      end,
+      cmd = {
+        "ChatGPT",
+        "ChatGPTActAs",
+      },
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim",
+      },
+    }
+
     -- Filetype setting ----------------------------------------
     -- use {
     --   "nathom/filetype.nvim",
