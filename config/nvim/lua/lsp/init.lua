@@ -29,10 +29,11 @@ local servers = {
   tsserver = require("lsp.lang.typescript").setup,
   ansiblels = require("lsp.lang.ansible").setup,
 
-  html = {},
+  awk_ls = {},
   cssls = {},
-  dotls = {},
   dockerls = {},
+  dotls = {},
+  html = {},
   jsonls = {},
   robotframework_ls = {},
   sqlls = {},
