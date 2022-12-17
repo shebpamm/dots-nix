@@ -25,7 +25,7 @@ while [ "$1" ]; do
       nix-collect-garbage
       exit ;;
     home)
-      NIXPKGS_ALLOW_UNFREE=1 nix build "$HOME/dotfiles#homemanagerConfigurations.$(hostname -s).activationPackage" --impure && ./result/activate
+      NIXPKGS_ALLOW_UNFREE=1 nix build "$HOME/dotfiles#homemanagerConfigurations.$(hostname -s).activationPackage" --impure --no-link --print-out-paths | sh "$(cat -)/activate"
       exit ;;
     rebuild)
       sudo nixos-rebuild "${2:-switch}" --flake "$HOME/dotfiles#$(hostname -s)"
