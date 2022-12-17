@@ -5,5 +5,6 @@
     hyprpaper
     nur.repos.c0deaddict.rofi-wayland
     eww-wayland
+    wl-clipboard
   ];
 }
