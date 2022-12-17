@@ -11,4 +11,6 @@ set __done_min_cmd_duration 60000
 set __done_notification_command "afk-notify \$title \$message"
 
 set fish_prompt_pwd_dir_length 0
+
+printf '\033[3 q'
 ''
