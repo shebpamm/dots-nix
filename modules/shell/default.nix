@@ -1,7 +1,5 @@
 { config, pkgs, libs, ... }:
-{
-  imports = [
-    ./git.nix
+{ imports = [ ./git.nix
     ./zsh.nix
     ./fish
     ./lorri.nix
@@ -50,6 +48,7 @@
     yubikey-agent
     yubikey-manager
     zoxide
+    kubectl
   ];
 
   # not big enough for their own modules
