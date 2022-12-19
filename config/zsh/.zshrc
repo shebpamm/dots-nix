@@ -130,3 +130,6 @@ PROMPT='%F{blue}%~%f'$'\n''%F{green}>%f '
 precmd() { print "" }
 
 eval "$(zoxide init zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /nix/store/lwf1vi3rcalfy3jpkic648daijmqjdkx-boundary-0.10.1/bin/boundary boundary
