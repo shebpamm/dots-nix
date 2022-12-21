@@ -49,6 +49,9 @@
     yubikey-manager
     zoxide
     kubectl
+    kubernetes-helm
+    teleport
+    vault
   ];
 
   # not big enough for their own modules
