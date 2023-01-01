@@ -40,6 +40,7 @@ local servers = {
   taplo = {},
   terraformls = {},
   tflint = {},
+  gopls = {},
 
   nil_ls = {
     settings = {
