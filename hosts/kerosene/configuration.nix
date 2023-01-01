@@ -32,6 +32,7 @@
   systemd.enableUnifiedCgroupHierarchy = false;
 
   security.sudo.wheelNeedsPassword = false;
+  security.pki.certificateFiles = [ ../../home.crt ];
 
   networking = {
     hostName = "kerosene";
