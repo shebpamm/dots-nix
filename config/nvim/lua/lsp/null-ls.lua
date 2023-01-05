@@ -18,6 +18,12 @@ M.setup = function()
       b.formatting.astyle.with {
         extra_filetypes = { "groovy", "Jenkinsfile" },
       },
+      b.diagnostics.sqlfluff.with {
+        extra_args = { "--dialect", "postgres" }, -- change to your dialect
+      },
+      b.formatting.sqlfluff.with {
+        extra_args = { "--dialect", "postgres" }, -- change to your dialect
+      },
       b.code_actions.refactoring,
       b.diagnostics.pydocstyle,
       b.diagnostics.shellcheck,
