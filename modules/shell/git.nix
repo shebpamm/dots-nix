@@ -13,17 +13,19 @@
       co = "checkout";
       br = "branch";
       st = "status";
-      cm = "commit -m";  
+      cm = "commit -m";
       amend = "commit --amend";
       dfs = "diff --staged";
       a = "add";
     };
 
+    diff-so-fancy.enable = true;
+
     extraConfig = {
       safe.directory = "/home/shebpamm/dotfiles";
       init = {
-          defaultBranch = "main";
-        };
+        defaultBranch = "main";
+      };
       url = {
         "git://github.com/" = {
           insteadOf = "github:";
@@ -34,8 +36,8 @@
         };
       };
       "credential \"https://github.com\"" = {
-          helper = "!${pkgs.github-cli}/bin/gh auth git-credential";
-        };
+        helper = "!${pkgs.github-cli}/bin/gh auth git-credential";
+      };
     };
   };
 }
