@@ -50,6 +50,7 @@
     zoxide
     kubectl
     kubernetes-helm
+    kustomize
     teleport
     vault
   ];
