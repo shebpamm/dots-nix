@@ -33,6 +33,7 @@ M.setup = function()
       b.formatting.prettierd,
       b.formatting.stylua,
       b.formatting.terraform_fmt,
+      b.formatting.yamlfmt,
     },
     on_attach = function(client)
       if client.server_capabilities.document_formatting then
