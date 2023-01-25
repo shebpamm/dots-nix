@@ -7,7 +7,7 @@
 
       matchBlocks = {
           "*" = {
-              user = "shebpamm@ad.sorsa.cloud";
+              user = "shebpamm";
               extraOptions = {
                 SetEnv = "TERM=xterm";
               };
