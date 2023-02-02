@@ -46,7 +46,6 @@
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
         (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
         (self: super: { formats = logiops-pkgs.formats; })
-        (self: super: { formats = logiops-pkgs.formats; })
         (self: super: {
           nur = import nur {
             nurpkgs = super;
