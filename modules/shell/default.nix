@@ -14,6 +14,7 @@
     bottom
     brightnessctl
     cloudflared
+    devenv
     exa
     exa
     fd

@@ -16,9 +16,11 @@
     hyprpaper.url = "github:shebpamm/hyprpaper";
     hyprpaper.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
+    devenv.url = "github:cachix/devenv";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv }:
     let
       system = "x86_64-linux";
 
@@ -45,6 +47,7 @@
         hyprpaper.overlays.default
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
         (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
+        (self: super: { devenv = devenv.packages.${system}.devenv; })
         (self: super: { formats = logiops-pkgs.formats; })
         (self: super: {
           nur = import nur {
