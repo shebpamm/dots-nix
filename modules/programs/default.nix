@@ -29,6 +29,6 @@
     pulseaudio
     sops
     yubikey-manager-qt
-    yubioath-desktop
+    yubioath-flutter
   ];
 }
