@@ -22,6 +22,7 @@
     ffmpeg
     fish
     fortune
+    hyperfine
     fzf
     github-cli
     github-cli
