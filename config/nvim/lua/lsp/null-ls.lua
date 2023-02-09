@@ -15,6 +15,11 @@ M.setup = function()
           return diagnostic.code ~= "E501" -- Skip "line too long" errors
         end,
       },
+      b.diagnostics.yamllint.with {
+        filter = function(diagnostic)
+          return diagnostic.code ~= "document-start" -- Skip errors about file not starting with '---'
+        end,
+      },
       b.formatting.astyle.with {
         extra_filetypes = { "groovy", "Jenkinsfile" },
       },
@@ -27,7 +32,6 @@ M.setup = function()
       b.code_actions.refactoring,
       b.diagnostics.pydocstyle,
       b.diagnostics.shellcheck,
-      b.diagnostics.yamllint,
       b.formatting.black,
       b.formatting.isort,
       b.formatting.prettierd,
