@@ -8,6 +8,7 @@
     {
       enable = true;
       theme = spicePkgs.themes.catppuccin-latte;
+      spotifyPackage = pkgs.spotifywm;
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         shuffle
