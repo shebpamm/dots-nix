@@ -10,9 +10,13 @@ M.setup = {
         path = "ansible",
         useFullyQualifiedCollectionNames = false,
       },
-      ansibleLint = {
+      validation = {
         enabled = true,
-        path = "ansible-lint",
+        lint = {
+          enabled = true,
+          path = "ansible-lint",
+          arguments = "-x=fqcn[action-core],yaml[line-length],fqcn[action]",
+        }
       },
       executionEnvironment = {
         enabled = false,

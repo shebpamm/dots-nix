@@ -16,8 +16,11 @@ M.setup = function()
         end,
       },
       b.diagnostics.yamllint.with {
-        filter = function(diagnostic)
-          return diagnostic.code ~= "document-start" -- Skip errors about file not starting with '---'
+        filter = function(d)
+          if d.code == "document-start" then return false end
+          if d.code == "line-length" then return false end
+
+          return true
         end,
       },
       b.formatting.astyle.with {
