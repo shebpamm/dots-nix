@@ -24,7 +24,7 @@ end
 local servers = {
   emmet_ls = emmet_config,
 
-  sumneko_lua = require("lsp.lang.lua").setup,
+  lua_ls = require("lsp.lang.lua").setup,
   pyright = require("lsp.lang.python").setup,
   tsserver = require("lsp.lang.typescript").setup,
   ansiblels = require("lsp.lang.ansible").setup,
