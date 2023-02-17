@@ -35,6 +35,7 @@ M.setup = function()
       b.code_actions.refactoring,
       b.diagnostics.pydocstyle,
       b.diagnostics.shellcheck,
+      b.diagnostics.tfsec,
       b.formatting.black,
       b.formatting.isort,
       b.formatting.prettierd,
