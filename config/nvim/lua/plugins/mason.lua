@@ -1,4 +1,5 @@
 local m = require "mason"
+local md = require "mason-nvim-dap"
 
 m.setup {
   PATH = "append",
@@ -10,3 +11,9 @@ m.setup {
     },
   },
 }
+
+md.setup {
+  automatic_setup = true,
+}
+
+md.setup_handlers {}

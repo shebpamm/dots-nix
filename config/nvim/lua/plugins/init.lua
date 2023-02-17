@@ -142,6 +142,7 @@ require("packer").startup {
 
     use "williamboman/mason-lspconfig.nvim"
     use "jayp0521/mason-null-ls.nvim"
+    use "jay-babu/mason-nvim-dap.nvim"
 
     use {
       "neovim/nvim-lspconfig",
