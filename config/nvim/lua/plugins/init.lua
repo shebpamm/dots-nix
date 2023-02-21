@@ -183,6 +183,7 @@ require("packer").startup {
     use "mfussenegger/nvim-dap"
     use {
       "rcarriga/nvim-dap-ui",
+      tag = "v3.6.4",
       config = function()
         -- require("dapui").setup()
       end,
