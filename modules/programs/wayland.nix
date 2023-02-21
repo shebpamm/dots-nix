@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     wofi
     hyprpaper
-    nur.repos.c0deaddict.rofi-wayland
+    rofi-wayland
     eww-wayland
     wl-clipboard
   ];
