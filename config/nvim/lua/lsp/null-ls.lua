@@ -8,7 +8,7 @@ M.setup = function()
 
   null_ls.setup {
     debounce = 150,
-    debug = false,
+    debug = true,
     sources = {
       b.diagnostics.flake8.with {
         filter = function(diagnostic)
@@ -43,17 +43,17 @@ M.setup = function()
       b.formatting.terraform_fmt,
       b.formatting.yamlfmt,
     },
-    on_attach = function(client)
-      if client.server_capabilities.document_formatting then
-        utils.augroup("lsp_format", {
-          {
-            events = { "BufWritePre" },
-            targets = { "<buffer>" },
-            command = require("lsp.utils").format_on_save,
-          },
-        })
-      end
-    end,
+    -- on_attach = function(client)
+    --   if client.server_capabilities.document_formatting then
+    --     utils.augroup("lsp_format", {
+    --       {
+    --         events = { "BufWritePre" },
+    --         targets = { "<buffer>" },
+    --         command = require("lsp.utils").format_on_save,
+    --       },
+    --     })
+    --   end
+    -- end,
   }
 end
 
