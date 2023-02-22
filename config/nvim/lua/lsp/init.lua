@@ -3,7 +3,7 @@ local ih = require "lsp-inlayhints"
 local ml = require "mason-lspconfig"
 local coq = require "coq"
 
-vim.lsp.set_log_level "DEBUG"
+vim.lsp.set_log_level "INFO"
 
 ml.setup { automatic_installation = true }
 
