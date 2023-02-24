@@ -7,13 +7,14 @@
   home.packages = with pkgs; [
     (ripgrep.override { withPCRE2 = true; })
     acpi
-    astyle
     alsa-utils
+    astyle
     bat
     bind
     bottom
     brightnessctl
     cloudflared
+    comma
     devenv
     exa
     exa
@@ -22,14 +23,17 @@
     ffmpeg
     fish
     fortune
-    hyperfine
     fzf
     github-cli
     github-cli
     gnumake
     home-assistant-cli
     htop
+    hyperfine
     jq
+    kubectl
+    kubernetes-helm
+    kustomize
     lazygit
     maim
     ncdu
@@ -40,9 +44,11 @@
     ranger
     silicon
     socat
+    teleport
     thefuck
     tmux
     unzip
+    vault
     websocat
     wget
     xclip
@@ -50,11 +56,6 @@
     yubikey-agent
     yubikey-manager
     zoxide
-    kubectl
-    kubernetes-helm
-    kustomize
-    teleport
-    vault
   ];
 
   # not big enough for their own modules
