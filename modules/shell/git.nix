@@ -7,6 +7,7 @@
     ignores = [
       "*.o"
       ".DS_Store"
+      ".nvimrc.lua"
     ];
 
     aliases = {
@@ -26,6 +27,7 @@
       init = {
         defaultBranch = "main";
       };
+
       url = {
         "git://github.com/" = {
           insteadOf = "github:";
