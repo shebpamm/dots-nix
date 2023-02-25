@@ -15,11 +15,12 @@
       # ../../modules/system/graphics/xorg.nix
       ../../modules/games/steam.nix
       ../../modules/secrets
+      ../../modules/virtualization/lxd.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_bleeding;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
