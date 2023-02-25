@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-2111.url = "github:NixOS/nixpkgs/nixos-21.11";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
@@ -20,26 +21,20 @@
     devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv }:
     let
       system = "x86_64-linux";
 
-      nomachine-pkgs = import nomachine {
+      unfreeImport = pkgs: import pkgs {
         inherit system;
         config = { allowUnfree = true; }; # Forgive me Mr. Stallman
       };
 
-      pkgs = import nixpkgs {
-        inherit system;
-        config = { allowUnfree = true; }; # Forgive me Mr. Stallman
-      };
-
-      stable-pkgs = import nixpkgs-2111 {
-        inherit system;
-        config = { allowUnfree = true; }; # Forgive me Mr. Stallman
-      };
-
-      logiops-pkgs = import logiops { inherit system; };
+      nomachine-pkgs = unfreeImport nomachine;
+      pkgs = unfreeImport nixpkgs;
+      stable-pkgs = unfreeImport nixpkgs-2111;
+      master-pkgs = unfreeImport nixpkgs-master;
+      logiops-pkgs = unfreeImport logiops;
 
       overlays = [
         nixpkgs-f2k.overlays.default
@@ -48,6 +43,7 @@
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
         (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
         (self: super: { devenv = devenv.packages.${system}.devenv; })
+        (self: super: { linuxPackages_bleeding = master-pkgs.linuxPackages_latest; })
         (self: super: { formats = logiops-pkgs.formats; })
         (self: super: {
           nur = import nur {
