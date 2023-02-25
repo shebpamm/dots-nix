@@ -31,8 +31,12 @@ local default_overrides = {
   },
   yamllint = {
     filter = function(d)
-      if d.code == "document-start" then return false end
-      if d.code == "line-length" then return false end
+      if d.code == "document-start" then
+        return false
+      end
+      if d.code == "line-length" then
+        return false
+      end
 
       return true
     end,
@@ -42,6 +46,25 @@ local default_overrides = {
   },
   sqlfluff = {
     extra_args = { "--dialect", "postgres" }, -- change to your dialect
+  },
+  prettierd = {
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "vue",
+      "css",
+      "scss",
+      "less",
+      "html",
+      "json",
+      "jsonc",
+      "markdown",
+      "markdown.mdx",
+      "graphql",
+      "handlebars",
+    },
   },
 }
 
@@ -54,10 +77,7 @@ local function configure_sources(srcs, defaults)
     if override == nil then
       table.insert(configured_sources, src)
     else
-      table.insert(
-        configured_sources,
-        src.with(override)
-      )
+      table.insert(configured_sources, src.with(override))
     end
   end
 
@@ -65,7 +85,6 @@ local function configure_sources(srcs, defaults)
 end
 
 M.setup = function()
-
   null_ls.setup {
     debounce = 150,
     debug = true,
