@@ -29,12 +29,12 @@
         enable = true;
         package = pkgs.awesome-git;
       };
-      i3 = {
-        enable = true;
-        package = pkgs.i3-gaps;
-      };
-      berry.enable = true;
-      herbstluftwm.enable = true;
+      # i3 = {
+      #   enable = true;
+      #   package = pkgs.i3-gaps;
+      # };
+      # berry.enable = true;
+      # herbstluftwm.enable = true;
     };
   };
 
