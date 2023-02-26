@@ -11,8 +11,8 @@
       ../../modules/system/fonts.nix
       ../../modules/system/sound.nix
       ../../modules/system/users.nix
-      ../../modules/system/graphics/wayland.nix
-      # ../../modules/system/graphics/xorg.nix
+      # ../../modules/system/graphics/wayland.nix
+      ../../modules/system/graphics/xorg.nix
       ../../modules/games/steam.nix
       ../../modules/secrets
       ../../modules/virtualization/lxd.nix
