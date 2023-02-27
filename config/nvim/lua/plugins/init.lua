@@ -227,6 +227,7 @@ require("packer").startup {
     }
 
     -- AI ------------------------------------------------------
+    use "github/copilot.vim"
     use {
       "jameshiew/nvim-magic",
       config = function()
@@ -277,8 +278,12 @@ require("packer").startup {
       -- commit = "5eddd31bf8a98d1b893b0101047d0bb31ed20c49",
       requires = {
         { "ms-jpq/coq.artifacts", branch = "artifacts" },
+        { "ms-jpq/coq.thirdparty", branch = "3p" },
       },
       config = function()
+        require("coq_3p") {
+          { src = "copilot", short_name = "COP", accept_key = "<c-f>" }
+        }
         vim.g.coq_settings = {
           auto_start = "shut-up",
           clients = {
