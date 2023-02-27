@@ -30,5 +30,6 @@
     sops
     yubikey-manager-qt
     yubioath-flutter
+    nixopsUnstable
   ];
 }
