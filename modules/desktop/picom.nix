@@ -21,6 +21,7 @@
     fade = true;
     fadeDelta = 3;
     fadeSteps = [ 0.03 0.03 ];
+    fadeExclude = [ "class_g = 'xsecurelock'" ];
 
     backend = "glx";
 
