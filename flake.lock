@@ -807,7 +807,7 @@
     "work-nix": {
       "locked": {
         "lastModified": 1677340763,
-        "narHash": "sha256-k+CWSvX2xk1GUeUu9cAYQgKu7Rl75wXAk4zaTL+t8QQ=",
+        "narHash": "sha256-loSaJmOzWsLRAL5z741XujmSUwUcwYLi9o6M5L+toCI=",
         "type": "git",
         "url": "file:///home/shebpamm/work-nix"
       },
