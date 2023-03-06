@@ -54,6 +54,7 @@
     packages = [ pkgs.openrgb ];
   };
 
+  services.pcscd.enable = true;
   services.sshd.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
