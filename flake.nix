@@ -56,9 +56,9 @@
             patches = [
               (super.pkgs.fetchpatch
                 {
-                  name = "experimental-anticonceal-implementation-20130.patch";
-                  url = "https://gist.githubusercontent.com/shebpamm/280b5cfa8236d04ddee31c957b9f8cb7/raw/fa9cd21eef2ef7a8cb45c2122001fc7ebaee2fe3/anticonceal-feb.patch";
-                  sha256 = "sha256-L2F0h52sIqIs77CYXvqHN8KXjpWDkGH93t2DT5iI4ak=";
+                  name = "experimental-anticonceal-implementation.patch";
+                  url = "https://gist.githubusercontent.com/shebpamm/5eaa7a43ba6fa5eca6075af67f2d6b60/raw/02cb5d386df2a3b350d50a1a5cacfbf9a11d9a46/anticonceal.patch";
+                  sha256 = "sha256-1TSYd9Im0Xnb0WE3nJJxOqHjQBHrL622dTBq16Jlzrs=";
                 })
             ];
             # patches = [super.fetchpatch {} ];
