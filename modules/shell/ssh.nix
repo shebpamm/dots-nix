@@ -10,6 +10,9 @@
               user = "shebpamm";
               extraOptions = {
                 SetEnv = "TERM=xterm";
+                ControlMaster = "auto";
+                ControlPath = "/run/user/%i/master-%l-%r@%h:%p";
+                ControlPersist = "5m";
               };
           };
           showrunner = {
