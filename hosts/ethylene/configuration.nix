@@ -66,9 +66,11 @@
   time.timeZone = "Europe/Helsinki";
 
   networking = {
+    dhcpcd.extraConfig = "nohook resolv.conf";
     hostName = "ethylene";
     useDHCP = true;
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    interfaces.wlan0.useDHCP = true;
 
     wireless.iwd.enable = true;
     firewall.allowedTCPPorts = [ 80 443 22 4713 6742 5201 ];
