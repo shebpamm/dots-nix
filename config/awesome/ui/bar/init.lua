@@ -23,8 +23,8 @@ end
 
 function tray_widget()
   local widget = wibox.widget {
-    bg = beautiful.bg_normal,
-    fg = beautiful.fg_time,
+    fg = beautiful.bg_normal,
+    bg = beautiful.fg_time,
     shape = rounded_rect,
     widget = wibox.container.background,
     {
@@ -56,8 +56,8 @@ end
 
 function battery()
   local widget = wibox.widget {
-    bg = beautiful.bg_normal,
-    fg = beautiful.fg_bat,
+    fg = beautiful.bg_normal,
+    bg = beautiful.fg_bat,
     shape = rounded_rect,
     widget = wibox.container.background,
     {
@@ -82,7 +82,7 @@ function battery()
 end
 
 function time()
-  local format_prefix = '<span color="#ffffff" font="Meslo LG L 10" weight="bold">'
+  local format_prefix = '<span font="Meslo LG L 10" weight="bold">'
   local format_postfix = '</span>'
 
   local short_format = format_prefix .. " %H.%M " .. format_postfix
@@ -93,8 +93,8 @@ function time()
   )
 
   local widget = wibox.widget {
-    bg = beautiful.bg_normal,
-    fg = beautiful.fg_time,
+    fg = beautiful.bg_normal,
+    bg = beautiful.fg_time,
     shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, math.floor(border_radius/1.5)) end,  -- Make clock a bit less rounded
     widget = wibox.container.background,
     {
@@ -115,8 +115,8 @@ end
 
 function layoutbox(s)
   return wibox.widget {
-    bg = beautiful.bg_normal,
-    fg = beautiful.fg_time,
+    fg = beautiful.bg_normal,
+    bg = beautiful.fg_time,
     shape = rounded_rect,
     widget = wibox.container.background,
     {

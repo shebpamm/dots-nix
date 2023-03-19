@@ -15,7 +15,7 @@ naughty.connect_signal("request::display_error", function(message, startup)
 end)
 
 -- truly beautiful
-beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/lake/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/latte/theme.lua")
 
 -- *gulp*
 require("modules.bling").module.window_swallowing.start()
