@@ -83,24 +83,22 @@
               programs.home-manager.enable = true;
             }
 
-            ./modules/system/openrgb.nix
-            ./modules/shell
-            ./modules/shell/ssh.nix
-            ./modules/editors/neovim.nix
-            ./modules/editors/emacs.nix
-            ./modules/editors/vim.nix
-            ./modules/dev/lua.nix
-            ./modules/dev/node.nix
-            ./modules/dev/rust.nix
-            ./modules/dev/nix.nix
-            ./modules/dev/python.nix
-            ./modules/dev/docker.nix
-            ./modules/programs
-            ./modules/programs/wayland.nix
-            ./modules/programs/graphics.nix
-            ./modules/desktop
-            ./modules/desktop/windowManagers/awesome.nix
-            ./modules/desktop/windowManagers/hyprland.nix
+            ./home/system/openrgb.nix
+            ./home/shell
+            ./home/shell/ssh.nix
+            ./home/editors/neovim.nix
+            ./home/editors/vim.nix
+            ./home/dev/lua.nix
+            ./home/dev/node.nix
+            ./home/dev/nix.nix
+            ./home/dev/python.nix
+            ./home/dev/docker.nix
+            ./home/programs
+            ./home/programs/wayland.nix
+            ./home/programs/graphics.nix
+            ./home/desktop
+            ./home/desktop/windowManagers/awesome.nix
+            ./home/desktop/windowManagers/hyprland.nix
           ];
         };
 
@@ -118,22 +116,20 @@
               nixpkgs.overlays = overlays;
               programs.home-manager.enable = true;
             }
-            ./modules/shell
-            ./modules/editors/neovim.nix
-            ./modules/editors/emacs.nix
-            ./modules/editors/vim.nix
-            ./modules/dev/lua.nix
-            ./modules/dev/node.nix
-            ./modules/dev/rust.nix
-            ./modules/dev/nix.nix
-            ./modules/dev/python.nix
-            ./modules/dev/docker.nix
-            ./modules/programs
-            ./modules/programs/graphics.nix
-            ./modules/programs/xorg.nix
-            ./modules/programs/work.nix
-            ./modules/desktop
-            ./modules/desktop/windowManagers/awesome.nix
+            ./home/shell
+            ./home/editors/neovim.nix
+            ./home/editors/vim.nix
+            ./home/dev/lua.nix
+            ./home/dev/node.nix
+            ./home/dev/nix.nix
+            ./home/dev/python.nix
+            ./home/dev/docker.nix
+            ./home/programs
+            ./home/programs/graphics.nix
+            ./home/programs/xorg.nix
+            ./home/programs/work.nix
+            ./home/desktop
+            ./home/desktop/windowManagers/awesome.nix
             work-nix.homeManagerConfiguration
           ];
         };
