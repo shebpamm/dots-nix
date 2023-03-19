@@ -1,6 +1,5 @@
 local machi = require "../../modules/layout-machi"
 local awful = require "awful"
-local gears = require "gears"
 
 local placement = awful.placement
 

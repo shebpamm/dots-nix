@@ -3,7 +3,8 @@ local gcolor = require("gears").color
 
 local themes_path = require("gears").filesystem.get_themes_dir()
 local bling_path = require("gears").filesystem.get_configuration_dir() .. "modules/bling/icons/layouts/"
-local machi_path = require("gears").filesystem.get_configuration_dir() .. "modules/layout-machi/"
+
+local machi = require "../../modules/layout-machi"
 
 theme = {}
 
@@ -33,6 +34,6 @@ theme.layout_equalarea = gcolor.recolor_image(bling_path .. "equalarea.png", ico
 theme.layout_deck = gcolor.recolor_image(bling_path .. "deck.png", icon_color)
 
 -- Layout machi
-theme.layout_machi = gcolor.recolor_image(machi_path .. "icon.png", icon_color)
+theme.layout_machi = gcolor.recolor_image(machi.icon_raw, icon_color)
 
 return theme
