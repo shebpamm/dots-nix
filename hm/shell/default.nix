@@ -1,5 +1,7 @@
 { config, pkgs, libs, ... }:
-{ imports = [ ./git.nix
+{
+  imports = [
+    ./git.nix
     ./zsh.nix
     ./fish
     ./lorri.nix

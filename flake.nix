@@ -88,11 +88,7 @@
             ./hm/shell/ssh.nix
             ./hm/editors/neovim.nix
             ./hm/editors/vim.nix
-            ./hm/dev/lua.nix
-            ./hm/dev/node.nix
-            ./hm/dev/nix.nix
-            ./hm/dev/python.nix
-            ./hm/dev/docker.nix
+            ./hm/dev
             ./hm/programs
             ./hm/programs/wayland.nix
             ./hm/programs/graphics.nix
@@ -119,11 +115,7 @@
             ./hm/shell
             ./hm/editors/neovim.nix
             ./hm/editors/vim.nix
-            ./hm/dev/lua.nix
-            ./hm/dev/node.nix
-            ./hm/dev/nix.nix
-            ./hm/dev/python.nix
-            ./hm/dev/docker.nix
+            ./hm/dev
             ./hm/programs
             ./hm/programs/graphics.nix
             ./hm/programs/xorg.nix
