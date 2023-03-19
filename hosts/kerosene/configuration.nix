@@ -7,15 +7,15 @@
       ./hardware-configuration.nix
 
       # Other Modules
-      ../../modules/system/env.nix
-      ../../modules/system/fonts.nix
-      ../../modules/system/sound.nix
-      ../../modules/system/users.nix
-      # ../../modules/system/graphics/wayland.nix
-      ../../modules/system/graphics/xorg.nix
-      ../../modules/games/steam.nix
-      ../../modules/secrets
-      ../../modules/virtualization/lxd.nix
+      ../../os/system/env.nix
+      ../../os/system/fonts.nix
+      ../../os/system/sound.nix
+      ../../os/system/users.nix
+      # ../../os/system/graphics/wayland.nix
+      ../../os/system/graphics/xorg.nix
+      ../../os/games/steam.nix
+      ../../os/secrets
+      ../../os/virtualization/lxd.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
