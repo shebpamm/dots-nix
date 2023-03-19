@@ -16,5 +16,5 @@ surface_ctx:set_source_surface(wallpaper_surface, 0, 0)
 surface_ctx:paint()
 
 for s in screen do
-  gears.wallpaper.centered(theme.wallpaper, s)
+  gears.wallpaper.maximized(theme.wallpaper, s)
 end

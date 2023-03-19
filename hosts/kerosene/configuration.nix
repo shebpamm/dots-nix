@@ -11,8 +11,8 @@
       ../../modules/system/fonts.nix
       ../../modules/system/sound.nix
       ../../modules/system/users.nix
-      ../../modules/system/graphics/wayland.nix
-      # ../../modules/system/graphics/xorg.nix
+      # ../../modules/system/graphics/wayland.nix
+      ../../modules/system/graphics/xorg.nix
       ../../modules/games/steam.nix
       ../../modules/secrets
       ../../modules/virtualization/lxd.nix
@@ -28,6 +28,7 @@
   time.timeZone = "Europe/Helsinki";
 
   hardware.nvidia.modesetting.enable = true;
+  # hardware.nvidia.powerManagement.enable = false;
   hardware.opengl.driSupport32Bit = true;
 
   systemd.enableUnifiedCgroupHierarchy = false;
@@ -73,13 +74,20 @@
   };
 
 
+
+  hardware.video.hidpi.enable = true;
   services.xserver = {
     videoDrivers = [ "nvidia" ];
     displayManager.sessionCommands = ''${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --mode 5120x1440'';
+    dpi = 96;
   };
 
   environment.binsh = "${pkgs.dash}/bin/dash";
-
+  environment.variables = {
+    GDK_SCALE = "1";
+    GDK_DPI_SCALE = "1";
+    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1";
+  };
   environment.systemPackages = with pkgs; [
     coreutils
     gcc
