@@ -22,7 +22,6 @@ theme.bg_focus = c.mantle
 theme.bg_dark = c.crust
 theme.bg_urgent = c.rosewater
 theme.bg_minimize = c.mantle
-theme.bg_systray = theme.bg_normal
 
 theme.fg_normal = c.text
 theme.fg_focus = c.blue
@@ -30,8 +29,17 @@ theme.fg_urgent = c.rosewater
 theme.fg_minimize = c.overlay1
 theme.fg_dark = c.subtext1
 
-theme.fg_bat = c.peach
-theme.fg_time = c.text
+local tray_text = "#555555"
+
+theme.fg_systray = tray_text
+theme.fg_bat = tray_text
+theme.fg_time = tray_text
+theme.fg_layoutbox = tray_text
+
+theme.bg_systray = "#F8C1B8"
+theme.bg_bat = "#F2ACB9"
+theme.bg_time = "#C7B2DE"
+theme.bg_layoutbox = "#A7C6ED"
 
 theme.useless_gap = dpi(10)
 theme.border_width = dpi(0)
@@ -55,7 +63,7 @@ theme.taglist_bg_empty = c.rosewater  -- Inactive diamond outline
 theme.taglist_bg_occupied = c.rosewater -- Occupied diamond outline
 theme.taglist_bg_focus = c.rosewater -- Active diamond outline
 theme.taglist_fg_empty = c.mantle -- Inside of diamond
-theme.taglist_fg_occupied = c.surface1
+theme.taglist_fg_occupied = c.surface0
 theme.taglist_fg_focus = c.rosewater
 
 -- Generate taglist squares:

@@ -8,7 +8,7 @@ local machi = require "../../modules/layout-machi"
 
 theme = {}
 
-local icon_color = c.base
+local icon_color = "#555555"
 
 theme.layout_fairh = gcolor.recolor_image(themes_path.."default/layouts/fairhw.png", icon_color)
 theme.layout_fairv = gcolor.recolor_image(themes_path.."default/layouts/fairvw.png", icon_color)

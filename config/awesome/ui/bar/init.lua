@@ -23,8 +23,8 @@ end
 
 function tray_widget()
   local widget = wibox.widget {
-    fg = beautiful.bg_normal,
-    bg = beautiful.fg_time,
+    fg = beautiful.fg_systray,
+    bg = beautiful.bg_systray,
     shape = rounded_rect,
     widget = wibox.container.background,
     {
@@ -55,14 +55,18 @@ function tray_widget()
 end
 
 function battery()
+  local format_prefix = '<span font="Meslo LG L 10" weight="bold">'
+  local format_postfix = '</span>'
   local widget = wibox.widget {
-    fg = beautiful.bg_normal,
-    bg = beautiful.fg_bat,
+    fg = beautiful.fg_bat,
+    bg = beautiful.bg_bat,
     shape = rounded_rect,
     widget = wibox.container.background,
     {
       {
-        widget = awful.widget.watch("stts bat", 30),
+        widget = awful.widget.watch("stts bat", 30, function(widget, stdout)
+          widget:set_markup(format_prefix .. stdout .. format_postfix)
+        end),
       },
       left = 7,
       right = 7,
@@ -93,8 +97,8 @@ function time()
   )
 
   local widget = wibox.widget {
-    fg = beautiful.bg_normal,
-    bg = beautiful.fg_time,
+    fg = beautiful.fg_time,
+    bg = beautiful.bg_time,
     shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, math.floor(border_radius/1.5)) end,  -- Make clock a bit less rounded
     widget = wibox.container.background,
     {
@@ -115,8 +119,8 @@ end
 
 function layoutbox(s)
   return wibox.widget {
-    fg = beautiful.bg_normal,
-    bg = beautiful.fg_time,
+    fg = beautiful.fg_layoutbox,
+    bg = beautiful.bg_layoutbox,
     shape = rounded_rect,
     widget = wibox.container.background,
     {
