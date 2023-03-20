@@ -58,6 +58,7 @@
     yubikey-agent
     yubikey-manager
     zoxide
+    toke-rs
   ];
 
   # not big enough for their own modules

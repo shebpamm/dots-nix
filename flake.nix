@@ -8,6 +8,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k/3322009946e80d441d5156d41a6ef22742708efd";
+    nixpkgs-sheb.url = "github:shebpamm/nixpkgs-sheb";
+    nixpkgs-sheb.inputs.nixpkgs.follows = "nixpkgs";
     spicetify.url = "github:the-argus/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
     work-nix.url = "/home/shebpamm/work-nix";
@@ -21,7 +23,7 @@
     devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv }:
     let
       system = "x86_64-linux";
 
@@ -38,6 +40,7 @@
 
       overlays = [
         nixpkgs-f2k.overlays.default
+        nixpkgs-sheb.overlay
         neovim-nightly.overlay
         hyprpaper.overlays.default
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
