@@ -65,6 +65,8 @@
 
   time.timeZone = "Europe/Helsinki";
 
+  services.resolved.enable = true;
+
   networking = {
     dhcpcd.extraConfig = "nohook resolv.conf";
     hostName = "ethylene";
