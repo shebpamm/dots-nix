@@ -199,7 +199,7 @@ require("packer").startup {
         { "nvim-treesitter/nvim-treesitter-context" },
         { "windwp/nvim-ts-autotag" },
         { "JoosepAlviste/nvim-ts-context-commentstring" },
-        { "p00f/nvim-ts-rainbow" },
+        { "HiPhish/nvim-ts-rainbow2" },
         {
           "nvim-treesitter/playground",
           keys = { "<localleader>s" },
