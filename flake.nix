@@ -93,7 +93,7 @@
             ./hm/editors/vim.nix
             ./hm/dev
             ./hm/programs
-            ./hm/programs/wayland.nix
+            ./hm/programs/xorg.nix
             ./hm/programs/graphics.nix
             ./hm/desktop
             ./hm/desktop/windowManagers/awesome.nix
