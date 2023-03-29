@@ -156,6 +156,6 @@
         };
       };
 
-      diskoConfigurations.hexane = import ./hosts/hexane/disks.nix
+      diskoConfigurations.hexane = import ./hosts/hexane/disks.nix;
     };
 }
