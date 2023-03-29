@@ -155,5 +155,7 @@
           specialArgs = { inherit inputs; };
         };
       };
+
+      diskoConfigurations.hexane = import ./hosts/hexane/disks.nix
     };
 }
