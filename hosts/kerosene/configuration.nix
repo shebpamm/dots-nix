@@ -16,6 +16,7 @@
       ../../os/games/steam.nix
       ../../os/secrets
       ../../os/virtualization/lxd.nix
+      ../../os/virtualization/kvm.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
