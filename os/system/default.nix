@@ -4,6 +4,7 @@
     ./fonts.nix
     ./sound.nix
     ./env.nix
+    ./users.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
