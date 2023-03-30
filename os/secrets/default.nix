@@ -15,6 +15,9 @@
   # Enable smart card service to access Yubikeys
   services.pcscd.enable = true;
 
+  environment.systemPackages = [ pkgs.gnupg pkgs.pinentry ];
+
+
   # Expose secrets
   sops.defaultSopsFile = ../../secrets/default.yaml;
 
