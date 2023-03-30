@@ -167,4 +167,5 @@
           specialArgs = { inherit inputs; };
         };
       };
-    }
+    };
+}
