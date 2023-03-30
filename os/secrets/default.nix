@@ -17,10 +17,11 @@
 
   # Expose secrets
   sops.defaultSopsFile = ../../secrets/default.yaml;
-  sops.age.sshKeyPaths = [
-    "/etc/ssh/ssh_host_ed25519_key"
-    "/etc/ssh/ssh_sops_key"
-  ];
+
+  sops.gnupg.home = "/home/shebpamm/.gnupg";
+  sops.gnupg.sshKeyPaths = [];
+
+  sops.age.sshKeyPaths = [];
 
   sops.secrets = {
     hass-server = {
