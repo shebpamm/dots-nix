@@ -21,9 +21,10 @@
     nur.url = "github:nix-community/NUR";
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko }:
     let
       system = "x86_64-linux";
 
@@ -154,8 +155,16 @@
           ];
           specialArgs = { inherit inputs; };
         };
+        hexane = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            {
+              nixpkgs.overlays = overlays;
+            }
+            ./hosts/hexane/configuration.nix
+            disko.nixosModules.disko
+          ];
+          specialArgs = { inherit inputs; };
+        };
       };
-
-      diskoConfigurations.hexane = import ./hosts/hexane/disks.nix;
-    };
-}
+    }

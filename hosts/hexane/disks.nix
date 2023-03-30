@@ -1,7 +1,8 @@
+{ config, pkgs, ... }:
 {
   disko.devices = {
-    disk.sda = {
-      device = "/dev/sda";
+    disk.vda = {
+      device = "/dev/vda";
       type = "disk";
       content = {
         type = "table";
@@ -28,24 +29,17 @@
               type = "luks";
               name = "crypted";
               extraOpenArgs = [ "--allow-discards" ];
-              keyFile = "tbd";
               content = {
-                name = "root";
-                type = "partition";
-                start = "0";
-                end = "100%";
-                content = {
-                  type = "btrfs";
-                  subvolumes = {
-                    "/rootfs" = {
-                      mountpoint = "/";
-                    };
-                    "/home" = {
-                      mountOptions = [ "compress=zstrd" ];
-                    };
-                    "/nix" = {
-                      mountOptions = [ "compress=zstd" "noatime" ];
-                    };
+                type = "btrfs";
+                subvolumes = {
+                  "/rootfs" = {
+                    mountpoint = "/";
+                  };
+                  "/home" = {
+                    mountOptions = [ "compress=zstrd" ];
+                  };
+                  "/nix" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
                   };
                 };
               };
