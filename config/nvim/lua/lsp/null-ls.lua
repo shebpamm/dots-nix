@@ -21,6 +21,7 @@ local sources = {
   b.formatting.stylua,
   b.formatting.terraform_fmt,
   b.formatting.yamlfmt,
+  b.formatting.nixpkgs_fmt,
 }
 
 local default_overrides = {

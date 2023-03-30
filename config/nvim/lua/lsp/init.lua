@@ -41,14 +41,6 @@ local servers = {
   terraformls = {},
   tflint = {},
   gopls = {},
-
-  nil_ls = {
-    settings = {
-      ["nil"] = {
-        formatting = { command = { "nixpkgs-fmt" } },
-      },
-    },
-  },
 }
 
 require("lsp.null-ls").setup()
