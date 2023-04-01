@@ -102,6 +102,33 @@
           ];
         };
 
+        hexane = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            {
+              home = {
+                homeDirectory = "/home/shebpamm";
+                username = "shebpamm";
+                stateVersion = "22.11";
+              };
+
+              nixpkgs.overlays = overlays;
+              programs.home-manager.enable = true;
+            }
+            ./hm/desktop
+            ./hm/desktop/windowManagers/awesome.nix
+            ./hm/dev
+            ./hm/editors/neovim.nix
+            ./hm/editors/vim.nix
+            ./hm/programs
+            ./hm/programs/graphics.nix
+            ./hm/programs/xorg.nix
+            ./hm/shell
+            work-nix.homeManagerConfiguration
+          ];
+        };
+
         ethylene = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs; };
