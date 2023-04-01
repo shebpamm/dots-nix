@@ -12,7 +12,6 @@
     nixpkgs-sheb.inputs.nixpkgs.follows = "nixpkgs";
     spicetify.url = "github:the-argus/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
-    work-nix.url = "/home/shebpamm/work-nix";
     nomachine.url = "github:rytec-nl/nixpkgs/submit/add-nomachine-server";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -24,7 +23,7 @@
     disko.url = "github:nix-community/disko";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, work-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko }:
     let
       system = "x86_64-linux";
 
@@ -125,7 +124,6 @@
             ./hm/programs/graphics.nix
             ./hm/programs/xorg.nix
             ./hm/shell
-            work-nix.homeManagerConfiguration
           ];
         };
 
@@ -153,7 +151,6 @@
             ./hm/programs/work.nix
             ./hm/desktop
             ./hm/desktop/windowManagers/awesome.nix
-            work-nix.homeManagerConfiguration
           ];
         };
       };
@@ -178,7 +175,6 @@
             ./hosts/ethylene/configuration.nix
             "${nomachine.outPath}/nixos/modules/services/admin/nomachine.nix"
             "${logiops.outPath}/nixos/modules/hardware/logiops"
-            work-nix.nixosModule
           ];
           specialArgs = { inherit inputs; };
         };
