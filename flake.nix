@@ -88,7 +88,6 @@
             }
 
             ./hm/system/openrgb.nix
-            ./hm/system/gpg.nix
             ./hm/shell
             ./hm/shell/ssh.nix
             ./hm/editors/neovim.nix
