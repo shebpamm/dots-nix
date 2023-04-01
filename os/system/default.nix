@@ -8,6 +8,18 @@
     ./nix.nix
   ];
 
+  
+  environment.systemPackages = with pkgs; [
+    coreutils
+    git
+    gcc
+    gnupg
+    pinentry
+    usbutils
+    vim
+    zsh
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   hardware.enableRedistributableFirmware = true;
