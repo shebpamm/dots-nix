@@ -15,10 +15,7 @@
     ];
 
   boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
-    };
+    efi.canTouchEfiVariables = true;
     grub = {
       enable = true;
       version = 2;
@@ -34,12 +31,6 @@
       allowDiscards = true;
     };
   };
-
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-partlabel/ESP";
-      fsType = "vfat";
-    };
 
   fileSystems."/" =
     {
