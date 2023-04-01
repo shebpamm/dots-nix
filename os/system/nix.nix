@@ -12,6 +12,7 @@
         "https://domenkozar.cachix.org"
         "https://fortuneteller2k.cachix.org"
         "https://hyprland.cachix.org"
+        "https://sorsalab.cachix.org"
       ];
 
       trusted-public-keys = [
@@ -21,6 +22,7 @@
         "domenkozar.cachix.org-1:Qf0xcQX3VUvo5/c6xTvbAET3EEtq1E2Mk1vojgwBprE="
         "fortuneteller2k.cachix.org-1:kXXNkMV5yheEQwT0I4XYh1MaCSz+qg72k8XAi2PthJI="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        "sorsalab.cachix.org-1:22M3UMmBtHT2loPkKMNf9wCeO5JFluaOPeDK0Acb8BI="
       ];
     };
     extraOptions = ''
