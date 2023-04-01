@@ -27,4 +27,45 @@
       enableCryptodisk = true;
     };
   };
+
+  boot.initrd.luks.devices = {
+    root = {
+      device = "/dev/disk/by-partlabel/luks";
+      allowDiscards = true;
+    };
+  };
+
+  fileSystems."/boot" =
+    {
+      device = "/dev/disk/by-partlabel/ESP";
+      fsType = "vfat";
+    };
+
+  fileSystems."/" =
+    {
+      device = "/dev/mapper/crypted";
+      fsType = "btrfs";
+      options = [ "subvol=@" "compress=zstd" "noatime" ];
+    };
+
+  fileSystems."/home" =
+    {
+      device = "/dev/mapper/crypted";
+      fsType = "btrfs";
+      options = [ "subvol=@home" "compress=zstd" "noatime" ];
+    };
+
+  fileSystems."/swap" =
+    {
+      device = "/dev/mapper/crypted";
+      fsType = "btrfs";
+      options = [ "subvol=@swap" ];
+    };
+
+  fileSystems."/nix" =
+    {
+      device = "/dev/mapper/crypted";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
+    };
 }

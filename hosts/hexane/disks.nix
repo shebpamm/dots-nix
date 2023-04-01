@@ -32,13 +32,24 @@
               content = {
                 type = "btrfs";
                 subvolumes = {
-                  "/rootfs" = {
+                  "/@" = {
                     mountpoint = "/";
+                    mountOptions = [ "compress=zstd" ];
                   };
-                  "/home" = {
-                    mountOptions = [ "compress=zstrd" ];
+                  "/@home" = {
+                    mountpoint = "/home";
+                    mountOptions = [ "compress=zstd" ];
                   };
-                  "/nix" = {
+                  "/@nix" = {
+                    mountpoint = "/nix";
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                  };
+                  "/@swap" = {
+                    mountpoint = "/swap";
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                  };
+                  "/@snapshots" = {
+                    mountpoint = "/snapshots";
                     mountOptions = [ "compress=zstd" "noatime" ];
                   };
                 };
