@@ -52,4 +52,6 @@
       fsType = "btrfs";
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
+
+  services.sshd.enable = true;
 }
