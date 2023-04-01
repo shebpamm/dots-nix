@@ -25,13 +25,6 @@
     };
   };
 
-  boot.initrd.luks.devices = {
-    root = {
-      device = "/dev/disk/by-partlabel/luks";
-      allowDiscards = true;
-    };
-  };
-
   fileSystems."/" =
     {
       device = "/dev/mapper/crypted";
