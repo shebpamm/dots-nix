@@ -14,6 +14,8 @@
       ../../os/secrets
     ];
 
+  networking.hostName = "hexane";
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
