@@ -5,7 +5,6 @@ local coq = require "coq"
 
 vim.lsp.set_log_level "INFO"
 
-ml.setup { automatic_installation = true }
 
 local capabilities = require "lsp.capabilities"
 
@@ -64,3 +63,5 @@ for name, opts in pairs(servers) do
     }, opts)))
   end
 end
+
+ml.setup { automatic_installation = true }

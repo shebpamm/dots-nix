@@ -1,7 +1,5 @@
 local M = {}
 
-require("mason-null-ls").setup { automatic_installation = true }
-
 local null_ls = require "null-ls"
 local b = null_ls.builtins
 
@@ -91,6 +89,11 @@ M.setup = function()
     debug = true,
     sources = configure_sources(sources, default_overrides),
   }
+
+  require("mason-null-ls").setup { 
+    automatic_installation = true 
+  }
 end
+
 
 return M
