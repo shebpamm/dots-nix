@@ -7,6 +7,10 @@
     functions = import ./functions.nix;
     interactiveShellInit = import ./interactiveShellInit.nix;
 
+    shellInit = ''
+      source ~/.config/fish/static_variables.fish
+    '';
+
     plugins = [
       # https://github.com/jethrokuan/z
       {
