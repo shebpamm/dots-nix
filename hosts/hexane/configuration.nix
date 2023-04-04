@@ -14,6 +14,8 @@
       ../../os/secrets
     ];
 
+  hardware.bluetooth.enable = true;
+
   networking = {
     hostName = "hexane";
     useDHCP = true;
