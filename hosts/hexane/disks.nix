@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
   disko.devices = {
-    disk.vda = {
-      device = "/dev/vda";
+    disk.nvme = {
+      device = "/dev/nvme0n1";
       type = "disk";
       content = {
         type = "table";

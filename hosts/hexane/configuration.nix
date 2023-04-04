@@ -14,7 +14,11 @@
       ../../os/secrets
     ];
 
-  networking.hostName = "hexane";
+  networking = {
+    hostName = "hexane";
+    useDHCP = true;
+    wireless.iwd.enable = true;
+  };
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
