@@ -815,8 +815,7 @@
         "nomachine": "nomachine",
         "nur": "nur",
         "sops-nix": "sops-nix",
-        "spicetify": "spicetify",
-        "work-nix": "work-nix"
+        "spicetify": "spicetify"
       }
     },
     "rust-analyzer-src": {
@@ -943,21 +942,6 @@
         "owner": "wlroots",
         "repo": "wlroots",
         "type": "gitlab"
-      }
-    },
-    "work-nix": {
-      "locked": {
-        "lastModified": 1678789468,
-        "narHash": "sha256-A2wEecUizsLvumpZMA+/XrxNFz4XnzHZAMaX7pGrIKw=",
-        "ref": "refs/heads/main",
-        "rev": "d99778d0592cae4464b716ee0f2e90cd89a3c105",
-        "revCount": 17,
-        "type": "git",
-        "url": "file:///home/shebpamm/work-nix"
-      },
-      "original": {
-        "type": "git",
-        "url": "file:///home/shebpamm/work-nix"
       }
     },
     "xdph": {
