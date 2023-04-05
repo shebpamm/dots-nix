@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ config, pkgs, lib, ... }:
 {
   programs.ssh = {
     enable = true;
@@ -11,7 +11,7 @@
 
     matchBlocks = {
       "*" = {
-        user = "shebpamm";
+        user = lib.mkDefault "shebpamm";
         extraOptions = {
           SetEnv = "TERM=xterm";
         };
