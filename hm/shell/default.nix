@@ -34,6 +34,7 @@
     hyperfine
     jq
     kubectl
+    kubectx
     kubernetes-helm
     kustomize
     lazygit
