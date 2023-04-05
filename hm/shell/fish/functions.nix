@@ -36,6 +36,7 @@
   k = {
     description = "alias k=kubectl";
     body = "kubectl $argv";
+    wraps = "kubectl";
   };
 
   afk-notify = {
