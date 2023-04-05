@@ -6,8 +6,6 @@
     openvpn
     libsecret
     vault
-    _1password-gui
-    _1password
     git-crypt
     aws-vault
   ];
