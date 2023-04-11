@@ -4,3 +4,6 @@
 [submodule "config/awesome/modules/layout-machi"]
 	path = config/awesome/modules/layout-machi
 	url = https://github.com/xinhaoyuan/layout-machi
+[submodule "config/tmux/tpm"]
+	path = config/tmux/tpm
+	url = https://github.com/tmux-plugins/tpm
