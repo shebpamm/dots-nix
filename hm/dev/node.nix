@@ -1,6 +1,9 @@
 { config, pkgs, libs, ... }:
 {
-  home.packages = [ pkgs.nodejs_latest ];
+  home.packages = with pkgs; [
+    nodejs_latest
+    deno
+  ];
   home.sessionVariables = {
     NPM_CONFIG_USERCONFIG = "$XDG_CONFIG_HOME/npm/config";
     NPM_CONFIG_CACHE = "$XDG_CACHE_HOME/npm";
