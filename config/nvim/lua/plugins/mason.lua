@@ -15,5 +15,3 @@ m.setup {
 md.setup {
   automatic_setup = true,
 }
-
-md.setup_handlers {}
