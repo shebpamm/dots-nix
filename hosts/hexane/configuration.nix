@@ -49,6 +49,7 @@
       device = "nodev";
       efiSupport = true;
       enableCryptodisk = true;
+      configurationLimit = 3;
     };
   };
 
