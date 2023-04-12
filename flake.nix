@@ -21,9 +21,10 @@
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
     disko.url = "github:nix-community/disko";
+    flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko, flake-utils-plus }:
     let
       system = "x86_64-linux";
 

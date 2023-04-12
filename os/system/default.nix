@@ -1,6 +1,8 @@
-{ config, pkgs, libs, ... }:
+{ config, pkgs, libs, inputs, ... }:
 {
   imports = [
+    inputs.flake-utils-plus.nixosModules.autoGenFromInputs
+
     ./fonts.nix
     ./sound.nix
     ./env.nix
@@ -8,7 +10,6 @@
     ./nix.nix
   ];
 
-  
   environment.systemPackages = with pkgs; [
     coreutils
     git
@@ -24,6 +25,10 @@
 
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
+
+  nix.linkInputs = true;
+  nix.generateRegistryFromInputs = true;
+  nix.generateNixPathFromInputs = true;
 
   time.timeZone = "Europe/Helsinki";
 }
