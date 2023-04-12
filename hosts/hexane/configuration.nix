@@ -38,6 +38,9 @@
     wireless.iwd.enable = true;
   };
 
+  boot.resumeDevice = "/dev/mapper/crypted";
+  boot.kernelParams = [ "resume_offset=5797350" ];
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -48,6 +51,12 @@
       enableCryptodisk = true;
     };
   };
+
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+    }
+  ];
 
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
