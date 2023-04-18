@@ -2,7 +2,7 @@
 {
   programs.git = {
     enable = true;
-    userName = "shebpamm";
+    userName = "Erik Karsten";
     userEmail = "erik@opcode.xyz";
     ignores = [
       "*.o"
