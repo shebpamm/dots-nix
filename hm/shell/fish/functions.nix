@@ -28,6 +28,14 @@
     '';
   };
 
+  qc45 = {
+    description = "Connect my Bose QuietComfort 45 Headphones";
+    body = ''
+      bluetoothctl power on
+      bluetoothctl connect C8:7B:23:4C:04:5B
+    '';
+  };
+
   p = {
     description = "Print using bat";
     body = "bat --pager=never $argv";
