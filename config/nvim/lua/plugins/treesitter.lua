@@ -1,4 +1,14 @@
 local ts_config = require "nvim-treesitter.configs"
+local ts_parser_configs = require "nvim-treesitter.parsers".get_parser_configs()
+
+ts_parser_configs.gotmpl = {
+ install_info = {
+    url = "https://github.com/ngalaiko/tree-sitter-go-template",
+    files = {"src/parser.c"}
+  },
+  filetype = "gotmpl",
+  used_by = {"gohtmltmpl", "gotexttmpl", "gotmpl", "yaml"}
+}
 
 ts_config.setup {
   ensure_installed = O.treesitter.ensure_installed,
