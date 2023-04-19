@@ -8,6 +8,7 @@
     ./env.nix
     ./users.nix
     ./nix.nix
+    ./shell.nix
   ];
 
   environment.systemPackages = with pkgs; [
