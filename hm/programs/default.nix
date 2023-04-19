@@ -20,7 +20,6 @@
     nfs-utils
     nomachine
     nyxt
-    obsidian
     openssl
     pavucontrol
     pcmanfm
@@ -28,6 +27,5 @@
     sops
     yubikey-manager-qt
     yubioath-flutter
-    nixopsUnstable
   ];
 }
