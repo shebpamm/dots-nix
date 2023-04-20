@@ -41,12 +41,6 @@
     body = "bat --pager=never $argv";
   };
 
-  k = {
-    description = "alias k=kubectl";
-    body = "kubectl $argv";
-    wraps = "kubectl";
-  };
-
   afk-notify = {
     description = "check if used is afk and if so, send notification to phone";
     body = ''

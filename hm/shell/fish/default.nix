@@ -14,6 +14,7 @@
 
     shellInit = ''
       source ~/.config/fish/static_variables.fish
+      source ~/.config/fish/kubectl_aliases.fish
     '';
 
     plugins = [
@@ -81,5 +82,6 @@
 
   # Symlink individually to not point conf.d to nix store
   home.file.".config/fish/static_variables.fish".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/fish/static_variables.fish";
+  home.file.".config/fish/kubectl_aliases.fish".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/fish/kubectl_aliases.fish";
   home.file.".config/fish/completions".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/fish/completions";
 }
