@@ -25,6 +25,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
+  boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/mnt/storage" = {
     device = "hc4nas.sorsa.cloud:/mnt/tank/storage";
