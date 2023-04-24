@@ -17,6 +17,11 @@
       source ~/.config/fish/kubectl_aliases.fish
     '';
 
+    shellAbbrs = {
+      "cert" = "openssl x509 -text -noout -in ";
+      "ghf" = "gh run list -u (gh-user) -s failure";
+    };
+
     plugins = [
       # https://github.com/jethrokuan/z
       {

@@ -41,6 +41,11 @@
     body = "bat --pager=never $argv";
   };
 
+  gh-user = {
+    description = "Get github user from gh api";
+    body = "gh api user | jq -r '.login'";
+  };
+
   afk-notify = {
     description = "check if used is afk and if so, send notification to phone";
     body = ''
