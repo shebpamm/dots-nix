@@ -42,11 +42,11 @@ theme.bg_time = "#C7B2DE"
 theme.bg_layoutbox = "#A7C6ED"
 
 theme.useless_gap = dpi(10)
-theme.border_width = dpi(0)
-theme.border_color_normal = c.rosewater
-theme.border_color_active = c.peach
-theme.border_color_marked = c.maroon
-theme.border_radius = 9 
+theme.border_width = dpi(3)
+theme.border_color_normal = c.base
+theme.border_color_active = c.rosewater
+theme.border_color_marked = c.lavender
+theme.border_radius = 9
 
 -- There are other variable sets
 -- overriding the default one when
