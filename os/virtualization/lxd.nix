@@ -7,6 +7,9 @@
 
   environment.systemPackages = with pkgs; [ lxc ];
 
+
+  users.extraGroups.lxd.members = [ "shebpamm" ];
+
   virtualisation.lxc.lxcfs.enable = true;
   networking.bridges = { lxdbr0.interfaces = [ ]; };
 
