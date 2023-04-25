@@ -61,6 +61,9 @@
 
   services.udev = {
     packages = [ pkgs.openrgb ];
+    # extraRules = ''
+    #   ACTION=="change", SUBSYSTEM=="drm", RUN+="notify-awesome %k"
+    # '';
   };
 
   services.pcscd.enable = true;
@@ -74,7 +77,7 @@
 
   programs.gnupg.agent.enable = true;
 
-
+  programs.fish.enable = true;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -83,7 +86,6 @@
 
 
 
-  hardware.video.hidpi.enable = true;
   services.xserver = {
     videoDrivers = [ "nvidia" ];
     displayManager.sessionCommands = ''${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --mode 5120x1440'';
