@@ -10,5 +10,7 @@
     xprintidle
     xsecurelock
     eww
+    autorandr
+    arandr
   ];
 }
