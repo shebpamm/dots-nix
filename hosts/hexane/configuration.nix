@@ -34,6 +34,7 @@
 
   networking = {
     hostName = "hexane";
+    nameservers = [ "8.8.8.8" "1.1.1.1" ];
     useDHCP = true;
     wireless.iwd.enable = true;
   };
