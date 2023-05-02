@@ -15,6 +15,7 @@
     ];
 
   hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
   security.polkit.enable = true;
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
