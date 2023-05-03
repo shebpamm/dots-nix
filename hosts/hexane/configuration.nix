@@ -34,7 +34,6 @@
   };
 
   virtualisation.docker.enable = true;
-  virtualisation.docker.enableNvidia = true;
 
   networking = {
     hostName = "hexane";
@@ -44,7 +43,12 @@
   };
 
   boot.resumeDevice = "/dev/mapper/crypted";
-  boot.kernelParams = [ "resume_offset=3155204" ];
+  boot.kernelParams = [
+    "resume_offset=3155204"
+    "cgroup_enable=memory"
+    "cgroup_enable=cpuset"
+    "cgroup_memory=1"
+  ];
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
