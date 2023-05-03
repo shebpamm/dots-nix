@@ -33,6 +33,9 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.enableNvidia = true;
+
   networking = {
     hostName = "hexane";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
