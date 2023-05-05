@@ -17,6 +17,7 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   security.polkit.enable = true;
+  services.xserver.libinput.touchpad.naturalScrolling = true;
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
@@ -117,6 +118,7 @@
   };
 
   services.sshd.enable = true;
+  services.touchegg.enable = true;
 
   system.stateVersion = "21.11";
 }
