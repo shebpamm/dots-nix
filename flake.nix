@@ -132,6 +132,7 @@
             ./hm/dev
             ./hm/editors/neovim.nix
             ./hm/editors/vim.nix
+            ./hm/editors/vscode.nix
             ./hm/programs
             ./hm/programs/graphics.nix
             ./hm/programs/xorg.nix
