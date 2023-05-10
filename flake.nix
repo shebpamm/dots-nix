@@ -67,6 +67,15 @@
             # patches = [super.fetchpatch {} ];
           });
         })
+        (self: super: {
+          vscode-insider = (master-pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: rec {
+            src = (builtins.fetchTarball {
+              url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
+              sha256 = "1ygn7pw9wps0jhp6bhgn4bsvzk8cqcq4k2ys502s792psx5s5c9n";
+            });
+            version = "latest";
+          });
+        })
       ];
     in
     {
@@ -114,7 +123,7 @@
 
               nixpkgs.overlays = overlays;
               programs.home-manager.enable = true;
-              
+
               programs.ssh.matchBlocks."*".extraOptions = { IdentityAgent = "~/.1password/agent.sock"; };
               home.sessionVariables.SSH_AUTH_SOCK = "${home.homeDirectory}/.1password/agent.sock";
             }
