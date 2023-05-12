@@ -5,9 +5,9 @@
     forwardAgent = true;
     hashKnownHosts = true;
 
-    controlMaster = "auto";
-    controlPath = "/run/user/%i/master-%l-%r@%h:%p";
-    controlPersist = "15m";
+    # controlMaster = "auto";
+    # controlPath = "/run/user/%i/master-%l-%r@%h:%p";
+    # controlPersist = "15m";
 
     matchBlocks = {
       "*" = {
