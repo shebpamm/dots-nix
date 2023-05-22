@@ -9,6 +9,7 @@
 
     PATH = [
       "\$HOME/.bin"
+      "\$HOME/.krew/bin"
       "\$XDG_BIN_HOME"
       "\$HOME/.node_modules"
     ];
