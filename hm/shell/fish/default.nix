@@ -20,6 +20,8 @@
     shellAbbrs = {
       "cert" = "openssl x509 -text -noout -in ";
       "ghf" = "gh run list -u (gh-user) -s failure";
+      "kx" = "kubectx";
+      "kns" = "kubens";
     };
 
     plugins = [
