@@ -8,6 +8,7 @@
   ];
   home.packages = with pkgs; [
     (ripgrep.override { withPCRE2 = true; })
+    xcli
     acpi
     act-latest
     alsa-utils

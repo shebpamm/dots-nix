@@ -275,6 +275,42 @@
       }
     },
     "flake-utils_7": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1681202837,
+        "narHash": "sha256-H+Rh19JDwRtpVPAWp64F+rlEtxUWBAQW28eAi3SRSzg=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "cfacdce06f30d2b68473a46042957675eebb3401",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_8": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1681202837,
+        "narHash": "sha256-H+Rh19JDwRtpVPAWp64F+rlEtxUWBAQW28eAi3SRSzg=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "cfacdce06f30d2b68473a46042957675eebb3401",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_9": {
       "locked": {
         "lastModified": 1676283394,
         "narHash": "sha256-XX2f9c3iySLCw54rJ/CZs+ZK6IQy7GXNY4nSOyu2QG4=",
@@ -610,14 +646,15 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "toke-flake": "toke-flake"
+        "toke-flake": "toke-flake",
+        "xcli-flake": "xcli-flake"
       },
       "locked": {
-        "lastModified": 1679305834,
-        "narHash": "sha256-M49F5raTNsE6sGWAYbgDC+tEBvo23XJ4Y7jAudq30Xc=",
+        "lastModified": 1685036450,
+        "narHash": "sha256-a2eLIr3u4UrgUd71jJJhjXzNL58FDgDWUUp9CODTlmg=",
         "owner": "shebpamm",
         "repo": "nixpkgs-sheb",
-        "rev": "a44402d4bfe480670230b0acb4f4ccd9d1eee5ac",
+        "rev": "017b9644396dfdf1e47f191717ed1b8a92fbbe10",
         "type": "github"
       },
       "original": {
@@ -800,6 +837,29 @@
         "type": "github"
       }
     },
+    "poetry2nix": {
+      "inputs": {
+        "flake-utils": "flake-utils_8",
+        "nixpkgs": [
+          "nixpkgs-sheb",
+          "xcli-flake",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1684849338,
+        "narHash": "sha256-xXnWTe96Cog0Ed3/sEymB9m7W6W3fcRsry7Ekf5slIw=",
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "rev": "7d7376e8fc166cf14a46c320c3b345bda329dac6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": [
@@ -905,7 +965,7 @@
     },
     "spicetify": {
       "inputs": {
-        "flake-utils": "flake-utils_7",
+        "flake-utils": "flake-utils_9",
         "nixpkgs": "nixpkgs_7",
         "spicetify-cli": "spicetify-cli"
       },
@@ -936,6 +996,36 @@
       "original": {
         "owner": "spicetify",
         "repo": "spicetify-cli",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
         "type": "github"
       }
     },
@@ -994,6 +1084,29 @@
         "owner": "wlroots",
         "repo": "wlroots",
         "type": "gitlab"
+      }
+    },
+    "xcli-flake": {
+      "inputs": {
+        "flake-utils": "flake-utils_7",
+        "nixpkgs": [
+          "nixpkgs-sheb",
+          "nixpkgs"
+        ],
+        "poetry2nix": "poetry2nix"
+      },
+      "locked": {
+        "lastModified": 1685036356,
+        "narHash": "sha256-EFs3/2R8COsqDl9AnV814pYwu79SFvE99r4IiDUqwOo=",
+        "owner": "shebpamm",
+        "repo": "copilot-x-cli",
+        "rev": "4be7ac4cbaa1b58401bb000859de24f05b0179de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shebpamm",
+        "repo": "copilot-x-cli",
+        "type": "github"
       }
     },
     "xdph": {
