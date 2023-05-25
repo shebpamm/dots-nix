@@ -6,6 +6,7 @@ g.mapleader = O.leader -- set the leader
 g.maplocalleader = O.localleader -- set the localleader
 o.number = true -- show numbers
 o.numberwidth = 4 -- width of the number column
+o.relativenumber = true -- Relative numbers by default
 o.title = true -- enable window title
 o.titlestring = "%f - nvim" -- set the window title to "nvim"
 
