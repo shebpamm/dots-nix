@@ -1,12 +1,12 @@
 {
   __complete_remote_path = {
-      description = "same as __fish_complete_path but specify path to list";
-      body = ''
-        set PREV_PWD ( pwd )
-        cd "$argv[1]"
-        __fish_complete_path $argv[2..-1]
-        cd "$PREV_PWD"
-      '';
+    description = "same as __fish_complete_path but specify path to list";
+    body = ''
+      set PREV_PWD ( pwd )
+      cd "$argv[1]"
+      __fish_complete_path $argv[2..-1]
+      cd "$PREV_PWD"
+    '';
   };
 
   fish_greeting = {
@@ -46,11 +46,29 @@
     body = "gh api user | jq -r '.login'";
   };
 
+  gh-last-pr = {
+    description = "Get last pull request from gh api";
+    body = "gh pr list -L 1 --json number --jq '.[0].number'";
+  };
+
   afk-notify = {
     description = "check if used is afk and if so, send notification to phone";
     body = ''
       if test (xprintidle) -ge (math -s 0 $__done_min_cmd_duration/2)
         phone notify $argv
+      end
+    '';
+  };
+
+  kubectl-gd-toggle = {
+    description = "use commandline to toggle between the keywords 'get' and 'describe'";
+    body = ''
+      set -l prompt (commandline)
+      switch $prompt
+      case "kubectl get*"
+        commandline -r (string replace get describe "$prompt")
+      case "kubectl describe*"
+        commandline -r (string replace describe get "$prompt")
       end
     '';
   };

@@ -22,6 +22,10 @@
       "ghf" = "gh run list -u (gh-user) -s failure";
       "kx" = "kubectx";
       "kns" = "kubens";
+      "gpc" = "gh pr checkout";
+      "gpcl" = "gh pr checkout (gh-last-pr)";
+      "grb" = "gh repo browse -w";
+      "gpcr" = "gh pr create -w";
     };
 
     plugins = [

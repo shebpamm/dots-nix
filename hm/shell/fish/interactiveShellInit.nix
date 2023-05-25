@@ -5,6 +5,7 @@ for secret in hass-server hass-token hass-imaginary openai-api-key
   end
 end
 
+bind \ew kubectl-gd-toggle
 
 set __done_enabled 1
 set __done_min_cmd_duration 60000
