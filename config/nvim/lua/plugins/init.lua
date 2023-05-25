@@ -128,7 +128,7 @@ require("packer").startup {
       wants = "project.nvim",
       config = [[require"plugins.telescope"]],
       requires = {
-        { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+        { "nvim-telescope/telescope-fzf-native.nvim",   run = "make" },
         { "nvim-telescope/telescope-file-browser.nvim" },
         { "nvim-telescope/telescope-live-grep-raw.nvim" },
       },
@@ -176,6 +176,15 @@ require("packer").startup {
       requires = {
         { "nvim-lua/plenary.nvim" },
       },
+    }
+
+    use {
+      'rmagatti/goto-preview',
+      config = function()
+        require('goto-preview').setup {
+          preview_window_title = { enable = true, position = "left" }, -- Whether to set the preview window title as the filename
+        }
+      end
     }
 
     -- Debugging -----------------------------------------------
@@ -277,7 +286,7 @@ require("packer").startup {
       branch = "coq",
       -- commit = "5eddd31bf8a98d1b893b0101047d0bb31ed20c49",
       requires = {
-        { "ms-jpq/coq.artifacts", branch = "artifacts" },
+        { "ms-jpq/coq.artifacts",  branch = "artifacts" },
         { "ms-jpq/coq.thirdparty", branch = "3p" },
       },
       config = function()

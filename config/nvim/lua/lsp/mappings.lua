@@ -1,4 +1,5 @@
 local M = {}
+local goto = require "goto-preview"
 
 function M.setup(bufnr)
   local wk = require "which-key"
@@ -21,10 +22,10 @@ function M.setup(bufnr)
     },
     g = {
       name = "+goto",
-      d = { vim.lsp.buf.definition, "definition" },
-      D = { vim.lsp.buf.type_definition, "type definition" },
-      i = { vim.lsp.buf.implementation, "implementation" },
-      r = { vim.lsp.buf.references, "references" },
+      d = { goto.goto_preview_definition, "definition" },
+      D = { goto.goto_preview_type_definition, "type definition" },
+      i = { goto.goto_preview_implementation, "implementation" },
+      r = { goto.goto_preview_references, "references" },
     },
     K = { vim.lsp.buf.hover, "lsp: hover" },
     ["<C-k>"] = { vim.lsp.buf.signature_help, "signature help" },
