@@ -180,11 +180,7 @@ require("packer").startup {
 
     use {
       'rmagatti/goto-preview',
-      config = function()
-        require('goto-preview').setup {
-          preview_window_title = { enable = true, position = "left" }, -- Whether to set the preview window title as the filename
-        }
-      end
+      config = [[require "plugins.goto"]],
     }
 
     -- Debugging -----------------------------------------------
