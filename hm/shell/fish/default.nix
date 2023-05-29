@@ -26,6 +26,7 @@
       "gpcl" = "gh pr checkout (gh-last-pr)";
       "grb" = "gh repo browse -w";
       "gpcr" = "gh pr create -w";
+      "gpv" = "gh pr view -w";
     };
 
     plugins = [
