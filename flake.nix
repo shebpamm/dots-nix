@@ -72,7 +72,7 @@
           vscode-insider = (master-pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: rec {
             src = (builtins.fetchTarball {
               url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
-              sha256 = "1ygn7pw9wps0jhp6bhgn4bsvzk8cqcq4k2ys502s792psx5s5c9n";
+              sha256 = "1gdsacvsiwh4qkrbkgbpls6808rfyhzh853a46vv63pgpadv1v9p";
             });
             version = "latest";
           });
@@ -101,6 +101,7 @@
             ./hm/shell/ssh.nix
             ./hm/editors/neovim.nix
             ./hm/editors/vim.nix
+            ./hm/editors/vscode.nix
             ./hm/dev
             ./hm/programs
             ./hm/programs/xorg.nix

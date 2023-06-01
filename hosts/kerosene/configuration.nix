@@ -54,6 +54,8 @@
 
   };
 
+  services.gnome.gnome-keyring.enable = true;
+
   services.avahi = {
     enable = true;
     nssmdns = true;
