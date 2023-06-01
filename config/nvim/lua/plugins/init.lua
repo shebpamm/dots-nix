@@ -250,26 +250,6 @@ require("packer").startup {
       },
     }
 
-    use {
-      "jackMort/ChatGPT.nvim",
-      config = function()
-        require("chatgpt").setup {
-          openai_params = {
-            model = "code-davinci-002",
-          },
-        }
-      end,
-      cmd = {
-        "ChatGPT",
-        "ChatGPTActAs",
-      },
-      requires = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim",
-      },
-    }
-
     -- Filetype setting ----------------------------------------
     -- use {
     --   "nathom/filetype.nvim",
