@@ -81,7 +81,7 @@ awful.keyboard.append_global_keybindings {
     description = "run password prompt",
     group = "launcher",
   }),
-  awful.key({ modkey, "Shift" }, "l", function()
+  awful.key({ modkey, "Shift" }, "/", function()
     awful.spawn "fish -c '~/lock.sh'"
   end, {
     description = "run prompt",
