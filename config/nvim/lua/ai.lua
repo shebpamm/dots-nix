@@ -27,23 +27,25 @@ local function prompt(cmd, instruction)
 
   -- Get the :election to be included in the prompt
   local filename = vim.api.nvim_buf_get_name(0)
-  local selection = filename .. "::" .. cmd.line1 .. ":1-" .. cmd.line2 .. ":1"
+  local selection = filename .. ":" .. cmd.line1 .. "-" .. cmd.line2
 
   -- Encode the prompt and construct the command to ask the question
-  local answer_query = "x-cli action " .. selection .. " --base64 --prompt " .. enc(instruction)
+  local answer_query = "x-cli action " .. selection .. " --json --base64 --prompt " .. enc(instruction)
 
   -- Ask the question and get the answer
-  local answer = vim.fn.system(answer_query)
+  local response = vim.fn.system(answer_query)
+  response = vim.json.decode(response)
 
   -- Display an empty message to indicate that the question has been asked
   vim.api.nvim_echo({ { "" } }, false, {})
 
+
   -- Split the answer into a list of lines and return it
   local answer_lines = {}
-  for s in answer:gmatch("[^\r\n]+") do
+  for s in response['answer']:gmatch("[^\r\n]+") do
     table.insert(answer_lines, s)
   end
-  return answer_lines
+  return vim.tbl_deep_extend("force", response, { answer = answer_lines })
 end
 
 local function create_popup()
@@ -93,9 +95,16 @@ local function create_popup()
 end
 
 local function xcli_modify(cmd, instruction)
-  local answer_lines = prompt(cmd, instruction)
+  local response = prompt(cmd, instruction)
 
-  vim.api.nvim_buf_set_lines(0, cmd.line1 - 1, cmd.line2, false, answer_lines)
+  if response['type'] == 'edit' then
+    vim.api.nvim_buf_set_lines(0, cmd.line1 - 1, cmd.line2, false, response['answer'])
+  elseif response['type'] == 'code' then
+    vim.api.nvim_buf_set_lines(0, cmd.line1 - 1, cmd.line2, false, response['answer'])
+  else
+    local popup = create_popup()
+    vim.api.nvim_buf_set_lines(popup.bufnr, 0, 1, false, response['answer'])
+  end
 end
 
 local function xcli_free(cmd)

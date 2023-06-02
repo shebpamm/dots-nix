@@ -650,11 +650,11 @@
         "xcli-flake": "xcli-flake"
       },
       "locked": {
-        "lastModified": 1685648447,
-        "narHash": "sha256-jHJ4J0cUUJUCsMGqoJxOF9stNVnUbsEIVQXLyv1pDkk=",
+        "lastModified": 1685720733,
+        "narHash": "sha256-I2VCB527h336oVrerauNc1CyvaCUnVhHqeAcIMRhmUg=",
         "owner": "shebpamm",
         "repo": "nixpkgs-sheb",
-        "rev": "4edd3156533d48305a77925d6f0e8958d82d8b80",
+        "rev": "ee9fda09483c28bdb773660a979c0aaa6428b5c3",
         "type": "github"
       },
       "original": {
@@ -1083,11 +1083,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1685648403,
-        "narHash": "sha256-yWf4aw8Bzli37t9vlqgEhaEv7lv65Ufo5fgXtIrFVJg=",
+        "lastModified": 1685720686,
+        "narHash": "sha256-663OFVRfMbEe76cd5x06hZjKo6kvNsnY1NnEKkKWRys=",
         "owner": "shebpamm",
         "repo": "copilot-x-cli",
-        "rev": "8e5eb47531e50db7705413b60df0c7900e2b853a",
+        "rev": "c317b8f92027a3c3eae1c88557f3031e6693f3f1",
         "type": "github"
       },
       "original": {
