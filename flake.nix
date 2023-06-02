@@ -70,9 +70,10 @@
         (self: super: {
           act-latest = master-pkgs.act;
           vscode-insider = (master-pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: rec {
+            name = "vscode-insiders-june";
             src = (builtins.fetchTarball {
               url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
-              sha256 = "1gdsacvsiwh4qkrbkgbpls6808rfyhzh853a46vv63pgpadv1v9p";
+              sha256 = "0llfcs07gcssgbgp66zx8cmbvhmmij1lgmhbnqbi7gp82ssqy5qs";
             });
             version = "latest";
           });
