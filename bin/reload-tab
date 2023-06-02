@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+
+while getopts u:t: flag
+do
+    case "${flag}" in
+        u) url=${OPTARG};;
+        t) title=${OPTARG};;
+    esac
+done
+
+if [ -n "$url" ]; then
+  echo '{"id":2,"method":"Page.reload","params":{"ignoreCache":true,"scriptToEvaluateOnLoad":""}}' | websocat $(curl -s http://127.0.0.1:9222/json | jq --arg URL "$url" -r '.[] | select(.url | startswith($URL)) | .webSocketDebuggerUrl')
+elif [ -n "$title" ]; then
+  echo '{"id":2,"method":"Page.reload","params":{"ignoreCache":true,"scriptToEvaluateOnLoad":""}}' | websocat $(curl -s http://127.0.0.1:9222/json | jq --arg TITLE "$title" -r '.[] | select(.title | contains($TITLE)) | .webSocketDebuggerUrl')
+fi
