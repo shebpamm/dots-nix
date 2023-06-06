@@ -150,7 +150,7 @@ require("lazy").setup {
     {
       "lvimuser/lsp-inlayhints.nvim",
       branch = "anticonceal",
-      config = [[require "plugins.inlay-hints"]],
+      config = function() require  "plugins.inlay-hints" end,
     },
 
     {
@@ -162,7 +162,7 @@ require("lazy").setup {
 
     {
       'rmagatti/goto-preview',
-      config = [[require "plugins.goto"]],
+      config = function() require  "plugins.goto" end,
     },
 
     -- Debugging -----------------------------------------------
@@ -180,7 +180,7 @@ require("lazy").setup {
     -- Treesitter ----------------------------------------------
     {
       "nvim-treesitter/nvim-treesitter",
-      config = [[require "plugins.treesitter"]],
+      config = function() require  "plugins.treesitter" end,
       dependencies = {
         { "nvim-treesitter/nvim-treesitter-textobjects" },
         { "nvim-treesitter/nvim-treesitter-context" },
