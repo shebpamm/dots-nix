@@ -89,10 +89,6 @@ M.setup = function()
     debug = true,
     sources = configure_sources(sources, default_overrides),
   }
-
-  require("mason-null-ls").setup { 
-    automatic_installation = true 
-  }
 end
 
 

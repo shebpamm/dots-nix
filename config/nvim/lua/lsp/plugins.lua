@@ -9,5 +9,3 @@ require("rust-tools").setup {
     capabilities = capabilities,
   },
 }
-
-require("mason-lspconfig").setup { automatic_installation = true }
