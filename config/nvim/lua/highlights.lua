@@ -16,11 +16,13 @@ cmd "hi QuickFixLine ctermfg=NONE cterm=bold guifg=NONE gui=bold"
 
 cmd("hi CursorLineNr guibg=" .. c.lightbg)
 
-cmd "hi link NvimTreeLspDiagnosticsWarning LspDiagnosticsSignWarning"
-cmd "hi link NvimTreeLspDiagnosticsError LspDiagnosticsSignError"
-cmd "hi link NvimTreeLspDiagnosticsInformation LspDiagnosticsSignInformation"
-cmd "hi link NvimTreeLspDiagnosticsHint LspDiagnosticsSignHint"
-
+-- Inlay hints
 cmd "hi link LspInlayHint Comment"
+
+-- On-hover highlighting of references
+cmd "hi LspReferenceText cterm=bold gui=bold"
+cmd "hi LspReferenceRead cterm=bold gui=bold"
+cmd "hi LspReferenceWrite cterm=bold gui=bold"
+
 
 require("colors." .. O.colorscheme).overrides()
