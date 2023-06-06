@@ -309,7 +309,7 @@ require("lazy").setup {
     {
       "Shatur/neovim-session-manager",
       event = "VimEnter",
-      config = [[require("plugins.sessions")]],
+      config = function() require("plugins.sessions") end,
     },
 
     -- Git -----------------------------------------------------
@@ -317,7 +317,7 @@ require("lazy").setup {
       "lewis6991/gitsigns.nvim",
       event = "BufRead",
       module = "gitsigns",
-      config = [[require("plugins.gitsigns")]],
+      config = function() require("plugins.gitsigns") end,
     },
     {
       "TimUntersberger/neogit",
