@@ -1,4 +1,32 @@
 { config, pkgs, libs, ... }:
+let
+  extras = with pkgs; [
+    nodePackages.prettier_d_slim
+    nodePackages.typescript-language-server
+    nodePackages.dockerfile-language-server-nodejs
+    nodePackages.vscode-css-languageserver-bin
+    shellcheck
+    sqlfluff
+    stylua
+    tfsec
+    yamlfmt
+    yamllint
+    gopls
+    tflint
+    terraform-ls
+    taplo
+    sqls
+    dot-language-server
+    ansible-language-server
+  ];
+  python-extras = with pkgs.python39Packages; [
+    black
+    isort
+    flake8
+    pydocstyle
+  ];
+
+in
 {
   programs.neovim = {
     enable = true;
@@ -7,31 +35,7 @@
     withPython3 = true;
     withNodeJs = true;
     withRuby = true;
-    extraPackages = with pkgs; [
-      nodePackages.prettier_d_slim
-      nodePackages.typescript-language-server
-      nodePackages.dockerfile-language-server-nodejs
-      nodePackages.vscode-css-languageserver-bin
-      shellcheck
-      sqlfluff
-      stylua
-      tfsec
-      yamlfmt
-      yamllint
-      gopls
-      tflint
-      terraform-ls
-      taplo
-      sqls
-      dot-language-server
-      ansible-language-server
-    ];
-    extraPython3Packages = ppkgs: with ppkgs; [
-      black
-      isort
-      flake8
-      pydocstyle
-    ];
+    extraPackages = extras ++ python-extras;
   };
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/nvim";
