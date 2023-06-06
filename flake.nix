@@ -102,7 +102,6 @@
             ./hm/shell/ssh.nix
             ./hm/editors/neovim.nix
             ./hm/editors/vim.nix
-            ./hm/editors/vscode.nix
             ./hm/dev
             ./hm/programs
             ./hm/programs/xorg.nix
