@@ -9,6 +9,7 @@ O = {
   format_on_save = false,
   icon_colors = false,
   smart_close = "help,startuptime,qf,lspinfo,packer,tsplayground", -- windows to close with 'q'
+  lsp_log_level = "INFO",
   icons = {
     kinds = {
       Class = "ﴯ ",
