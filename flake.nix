@@ -55,19 +55,6 @@
           };
         })
         (self: super: {
-          neovim-nightly-anticonceal = super.neovim-nightly.overrideAttrs (_: {
-            patches = [
-              (super.pkgs.fetchpatch
-                {
-                  name = "experimental-anticonceal-implementation.patch";
-                  url = "https://gist.githubusercontent.com/shebpamm/5eaa7a43ba6fa5eca6075af67f2d6b60/raw/02cb5d386df2a3b350d50a1a5cacfbf9a11d9a46/anticonceal.patch";
-                  sha256 = "sha256-1TSYd9Im0Xnb0WE3nJJxOqHjQBHrL622dTBq16Jlzrs=";
-                })
-            ];
-            # patches = [super.fetchpatch {} ];
-          });
-        })
-        (self: super: {
           act-latest = master-pkgs.act;
           vscode-insider = (master-pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: rec {
             name = "vscode-insiders-june";
