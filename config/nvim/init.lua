@@ -1,7 +1,7 @@
 require "config"
 require "utils"
-require "plugins"
 require "options"
+require "pm"
 require "highlights"
 require "statusline"
 require "misc"
