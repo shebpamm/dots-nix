@@ -5,22 +5,6 @@ _G.utils = {
   _functions = {},
 }
 
--- USAGE
--- utils.inspect(utils._functions)
--- or
--- :lua utils.inspect(utils._functions)
----@vararg any
-function utils.inspect(...)
-  local objects, v = {}, nil
-  for i = 1, select("#", ...) do
-    v = select(i, ...)
-    table.insert(objects, vim.inspect(v))
-  end
-
-  print(table.concat(objects, "\n"))
-  return ...
-end
-
 function utils.create(f)
   table.insert(utils._functions, f)
   return #utils._functions
