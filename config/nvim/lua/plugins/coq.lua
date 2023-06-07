@@ -6,10 +6,7 @@ return {
     { "ms-jpq/coq.artifacts", branch = "artifacts" },
     { "ms-jpq/coq.thirdparty", branch = "3p" },
   },
-  config = function()
-    require "coq_3p" {
-      { src = "copilot", short_name = "COP", accept_key = "<c-f>" },
-    }
+  init = function()
     vim.g.coq_settings = {
       auto_start = "shut-up",
       clients = {
@@ -22,6 +19,9 @@ return {
       display = {
         preview = { positions = { north = 4, south = nil, west = 2, east = 3 } },
       },
+    }
+    require "coq_3p" {
+      { src = "copilot", short_name = "COP", accept_key = "<c-f>" },
     }
   end,
 }
