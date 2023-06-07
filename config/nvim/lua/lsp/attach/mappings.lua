@@ -22,13 +22,13 @@ function M.setup(bufnr)
     },
     g = {
       name = "+goto",
-      p = {
-        name = "+preview",
-        d = { goto.goto_preview_definition, "preview definition" },
-        D = { goto.goto_preview_type_definition, "preview type definition" },
-        i = { goto.goto_preview_implementation, "preview implementation" },
-        r = { goto.goto_preview_references, "preview references" },
-      },
+      -- p = {
+      --   name = "+preview",
+      --   d = { goto.goto_preview_definition, "preview definition" },
+      --   D = { goto.goto_preview_type_definition, "preview type definition" },
+      --   i = { goto.goto_preview_implementation, "preview implementation" },
+      --   r = { goto.goto_preview_references, "preview references" },
+      -- },
       d = { vim.lsp.buf.definition, "definition" },
       D = { vim.lsp.buf.type_definition, "type definition" },
       i = { vim.lsp.buf.implementation, "implementation" },
