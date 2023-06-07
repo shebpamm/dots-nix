@@ -1,7 +1,34 @@
+local utils = require "utils"
+
+-- Only load alpha if vim is started without arguments
+-- This will proc lazy to also run the config function if it is started.
+utils.augroup("alpha", {
+  {
+    events = { "VimEnter" },
+    targets = { "*" },
+    command = function()
+      local should_skip = false
+      if vim.fn.argc() > 0 or vim.fn.line2byte "$" ~= -1 or not vim.o.modifiable then
+        should_skip = true
+      else
+        for _, arg in pairs(vim.v.argv) do
+          if arg == "-b" or arg == "-c" or vim.startswith(arg, "+") or arg == "-S" then
+            should_skip = true
+            break
+          end
+        end
+      end
+      if not should_skip then
+        require("alpha").start(true, require("alpha").default_config)
+      end
+    end,
+  },
+})
+
 return {
   "goolord/alpha-nvim",
   dependencies = "nvim-web-devicons",
-  event = "VimEnter",
+  cmd = "Alpha",
   config = function()
     local a = require "alpha"
     local d = require "alpha.themes.dashboard"
