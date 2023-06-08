@@ -4,6 +4,7 @@
   "ansible-vim": { "branch": "master", "commit": "93798e8c89c441d29d4678da0c0d5e1429eb43b0" },
   "catppuccin": { "branch": "main", "commit": "233c4175780d9b4e39ae4fe4535c1e4c14bd76ed" },
   "chadtree": { "branch": "chad", "commit": "e9dacf34363ad9a63c7d27caf5d07a9f713e600c" },
+  "copilot.vim": { "branch": "release", "commit": "1358e8e45ecedc53daf971924a0541ddf6224faf" },
   "coq.artifacts": { "branch": "artifacts", "commit": "c5f5546a89acc9c423d883199f641db99ba28b5b" },
   "coq.thirdparty": { "branch": "3p", "commit": "ba47209b2c029dd4b6eb42e267dc7e716b12eb5d" },
   "coq_nvim": { "branch": "coq", "commit": "55ca08083cab18bb5cd1b08f2d5c295b87fce0ef" },
