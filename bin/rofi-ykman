@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ -n "$*" ]; then
+  code=$(ykman oath accounts code "$*" | awk '{ print $2 }')
+  echo -n "$code" | xclip -sel clip >/dev/null 2>&1
+else
+  ykman oath accounts list
+fi
