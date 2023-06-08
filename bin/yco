@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p yubikey-manager xclip maim zbar
+
+# shellcheck shell=bash
+
+
+while [ "$1" ]; do
+  case $1 in
+    get)
+
+      ykman oath accounts code RIPE_NCC | awk '{ print $2 }' | xclip -sel clipboard
+      printf "OTP for %s copied to clipboard\n" "$2"
+      exit ;;
+    *)
+      printf "Usage: %s [COMMAND]\n" "$0"
+      printf "  get [ACCOUNT]\t\tGet the OTP for the given account\n"
+      printf "  qr \t\tShow the QR code for the given account\n"
+      exit ;;
+  esac
+done
