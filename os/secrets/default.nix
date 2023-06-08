@@ -46,6 +46,11 @@
       owner = "shebpamm";
     };
 
+    jira-api-token = {
+      mode = "0400";
+      owner = "shebpamm";
+    };
+
     "shebpamm-libera.crt" = {
       mode = "0400";
       owner = "shebpamm";

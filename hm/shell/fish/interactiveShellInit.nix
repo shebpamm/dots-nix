@@ -1,5 +1,5 @@
 ''
-for secret in hass-server hass-token hass-imaginary openai-api-key
+for secret in hass-server hass-token hass-imaginary openai-api-key jira-api-token
   if test -O /run/secrets/$secret
     set -x (string upper $secret | tr - _ ) (cat /run/secrets/$secret)
   end
