@@ -69,18 +69,6 @@ awful.keyboard.append_global_keybindings {
     description = "run prompt",
     group = "launcher",
   }),
-  awful.key({ modkey }, "p", function()
-    awful.spawn "fish -c rofi-pass"
-  end, {
-    description = "run password prompt",
-    group = "launcher",
-  }),
-  awful.key({ modkey, "Shift" }, "p", function()
-    awful.spawn "fish -c 'rofi-vault.sh run'"
-  end, {
-    description = "run password prompt",
-    group = "launcher",
-  }),
   awful.key({ modkey, "Shift" }, "/", function()
     awful.spawn "fish -c '~/lock.sh'"
   end, {
@@ -154,7 +142,7 @@ awful.keyboard.append_global_keybindings {
     end
   end, {
     description = "switch focus between master and last client",
-    group = "client"
+    group = "client",
   }),
 }
 
