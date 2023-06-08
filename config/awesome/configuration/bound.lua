@@ -64,7 +64,7 @@ awful.keyboard.append_global_keybindings {
     group = "launcher",
   }),
   awful.key({ modkey }, "d", function()
-    awful.spawn "rofi -show drun"
+    awful.spawn "rofi -modes drun,' Code:rofi-ykman',window -show drun"
   end, {
     description = "run prompt",
     group = "launcher",
