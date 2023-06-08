@@ -29,10 +29,7 @@
       };
 
       url = {
-        "git://github.com/" = {
-          insteadOf = "github:";
-        };
-        "git@github.com:" = {
+        "https://github.com/" = {
           insteadOf = "gh:";
           pushInsteadOf = [ "github:" "git://github.com/" ];
         };
