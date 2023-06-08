@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 #!/usr/bin/env nix-shell
 #! nix-shell -i bash -p yubikey-manager xclip maim zbar
 
@@ -8,9 +7,11 @@
 while [ "$1" ]; do
   case $1 in
     get)
-
       ykman oath accounts code RIPE_NCC | awk '{ print $2 }' | xclip -sel clipboard
       printf "OTP for %s copied to clipboard\n" "$2"
+      exit ;;
+    qr)
+      maim -s /tmp/qrcode && zbarimg /tmp/qrcode -1 -q | sed "s/^QR-Code://" | xclip -sel clipboard
       exit ;;
     *)
       printf "Usage: %s [COMMAND]\n" "$0"
