@@ -3,5 +3,9 @@ if [ -n "$*" ]; then
   code=$(ykman oath accounts code "$*" | awk '{ print $2 }')
   echo -n "$code" | xclip -sel clip >/dev/null 2>&1
 else
-  ykman oath accounts list
+  if lsusb -d 1050: >/dev/null 2>&1; then
+    ykman oath accounts list
+  else
+    echo "No Yubikey found"
+  fi
 fi
