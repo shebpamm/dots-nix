@@ -26,7 +26,7 @@ wk.register {
     [","] = { "<CMD>edit ~/.config/nvim/lua/config.lua<CR>", "edit config" },
     d = { "<CMD>TroubleToggle<CR>", "trouble" },
     -- git
-    g = {
+    v = {
       name = "+git",
       s = "stage hunk",
       u = "undo stage hunk",

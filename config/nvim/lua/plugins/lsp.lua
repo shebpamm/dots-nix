@@ -13,6 +13,7 @@ return {
       require("lsp-inlayhints").setup()
     end,
   },
+
   "simrat39/rust-tools.nvim",
   "jose-elias-alvarez/null-ls.nvim",
 }

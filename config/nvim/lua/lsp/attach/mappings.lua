@@ -1,5 +1,4 @@
 local M = {}
-local goto = require "goto-preview"
 
 function M.setup(bufnr)
   local wk = require "which-key"
@@ -7,44 +6,46 @@ function M.setup(bufnr)
   local dui = require "dapui"
 
   wk.register({
-    c = {
-      name = "+code",
-      r = { vim.lsp.buf.rename, "rename" },
-      a = { vim.lsp.buf.code_action, "code action" },
-      d = {
-        name = "+debug",
-        b = { dap.toggle_breakpoint, "toggle breakpoint" },
-        c = { dap.continue, "continue" },
-        i = { dap.step_over, "step into" },
-        o = { dap.step_over, "step over" },
-        u = { dui.toggle(), "toggle ui" },
+    ["<leader>"] = {
+      c = {
+        name = "+code",
+        r = { vim.lsp.buf.rename, "rename" },
+        a = { vim.lsp.buf.code_action, "code action" },
+        d = {
+          name = "+debug",
+          b = { dap.toggle_breakpoint, "toggle breakpoint" },
+          c = { dap.continue, "continue" },
+          i = { dap.step_over, "step into" },
+          o = { dap.step_over, "step over" },
+          u = { dui.toggle(), "toggle ui" },
+        },
       },
-    },
-    g = {
-      name = "+goto",
-      -- p = {
-      --   name = "+preview",
-      --   d = { goto.goto_preview_definition, "preview definition" },
-      --   D = { goto.goto_preview_type_definition, "preview type definition" },
-      --   i = { goto.goto_preview_implementation, "preview implementation" },
-      --   r = { goto.goto_preview_references, "preview references" },
-      -- },
-      d = { vim.lsp.buf.definition, "definition" },
-      D = { vim.lsp.buf.type_definition, "type definition" },
-      i = { vim.lsp.buf.implementation, "implementation" },
-      r = { vim.lsp.buf.references, "references" },
-    },
-    K = { vim.lsp.buf.hover, "lsp: hover" },
-    ["<C-k>"] = { vim.lsp.buf.signature_help, "signature help" },
-    ["<leader>l"] = {
-      name = "+lsp",
-      i = { "<cmd>LspInfo<cr>", "Lsp Info" },
-      a = { vim.lsp.buf.add_workspace_folder, "Add Folder" },
-      r = { vim.lsp.buf.remove_workspace_folder, "Remove Folder" },
-      l = { vim.lsp.buf.list_workspace_folders, "List Folders" },
+      g = {
+        name = "+goto",
+        -- p = {
+        --   name = "+preview",
+        --   d = { goto.goto_preview_definition, "preview definition" },
+        --   D = { goto.goto_preview_type_definition, "preview type definition" },
+        --   i = { goto.goto_preview_implementation, "preview implementation" },
+        --   r = { goto.goto_preview_references, "preview references" },
+        -- },
+        d = { vim.lsp.buf.definition, "definition" },
+        D = { vim.lsp.buf.type_definition, "type definition" },
+        i = { vim.lsp.buf.implementation, "implementation" },
+        r = { vim.lsp.buf.references, "references" },
+      },
+      l = {
+        name = "+lsp",
+        i = { "<cmd>LspInfo<cr>", "Lsp Info" },
+        a = { vim.lsp.buf.add_workspace_folder, "Add Folder" },
+        r = { vim.lsp.buf.remove_workspace_folder, "Remove Folder" },
+        l = { vim.lsp.buf.list_workspace_folders, "List Folders" },
+      },
     },
     ["]d"] = { vim.diagnostic.goto_next, "next diagnostic" },
     ["[d"] = { vim.diagnostic.goto_prev, "prev diagnostic" },
+    ["<C-k>"] = { vim.lsp.buf.signature_help, "signature help" },
+    K = { vim.lsp.buf.hover, "lsp: hover" },
   }, {
     buffer = bufnr,
   })

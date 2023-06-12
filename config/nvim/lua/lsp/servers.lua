@@ -23,6 +23,7 @@ local servers = {
   terraformls = {},
   tflint = {},
   gopls = {},
+  nil_ls = {},
 }
 
 for name, opts in pairs(servers) do
