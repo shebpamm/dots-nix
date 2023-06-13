@@ -2,6 +2,7 @@
 let
   extras = with pkgs; [
     nodePackages.prettier_d_slim
+    nodePackages.prettier
     nodePackages.typescript-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.vscode-css-languageserver-bin

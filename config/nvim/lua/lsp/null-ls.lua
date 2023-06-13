@@ -14,7 +14,7 @@ local sources = {
   b.formatting.astyle,
   b.formatting.black,
   b.formatting.isort,
-  b.formatting.prettierd,
+  b.formatting.prettier,
   b.formatting.sqlfluff,
   b.formatting.stylua,
   b.formatting.terraform_fmt,
@@ -46,7 +46,7 @@ local default_overrides = {
   sqlfluff = {
     extra_args = { "--dialect", "postgres" }, -- change to your dialect
   },
-  prettierd = {
+  prettier = {
     filetypes = {
       "javascript",
       "javascriptreact",
