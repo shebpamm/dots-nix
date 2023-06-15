@@ -6,6 +6,7 @@ let
     nodePackages.typescript-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.vscode-css-languageserver-bin
+    nodePackages.pyright
     shellcheck
     sqlfluff
     stylua
