@@ -26,14 +26,14 @@ return {
             "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'",
           },
 
-          ["n <leader>gs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-          ["v <leader>gs"] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-          ["n <leader>gu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-          ["n <leader>gr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-          ["v <leader>gr"] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-          ["n <leader>gR"] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
-          ["n <leader>gp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-          ["n <leader>gb"] = '<cmd>lua require"gitsigns".toggle_current_line_blame()<CR>',
+          ["n <leader>vs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+          ["v <leader>vs"] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+          ["n <leader>vu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+          ["n <leader>vr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+          ["v <leader>vr"] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+          ["n <leader>vR"] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
+          ["n <leader>vp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+          ["n <leader>vb"] = '<cmd>lua require"gitsigns".toggle_current_line_blame()<CR>',
 
           -- Text objects
           ["o ih"] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
