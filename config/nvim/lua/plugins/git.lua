@@ -42,6 +42,7 @@ return {
       }
     end,
   },
+  "tpope/vim-fugitive",
   {
     "TimUntersberger/neogit",
     cmd = "Neogit",
