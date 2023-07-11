@@ -28,6 +28,8 @@
         defaultBranch = "main";
       };
 
+      push.autoSetupRemote = true;
+
       url = {
         "https://github.com/" = {
           insteadOf = "gh:";
