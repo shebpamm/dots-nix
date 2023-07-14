@@ -6,6 +6,7 @@ return {
     { "ms-jpq/coq.artifacts", branch = "artifacts" },
     { "ms-jpq/coq.thirdparty", branch = "3p" },
   },
+  build = ":COQDeps",
   init = function()
     vim.g.coq_settings = {
       auto_start = "shut-up",
