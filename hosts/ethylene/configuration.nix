@@ -32,7 +32,6 @@
   boot.extraModprobeConfig = "options kvm_intel nested=1";
   boot.loader.grub = {
     enable = true;
-    version = 2;
     device = "nodev";
     efiSupport = true;
     enableCryptodisk = true;
