@@ -5,6 +5,7 @@
     ./zsh.nix
     ./fish
     ./lorri.nix
+    ./tmux.nix
   ];
   home.packages = with pkgs; [
     (ripgrep.override { withPCRE2 = true; })
@@ -51,7 +52,6 @@
     socat
     teleport
     thefuck
-    tmux
     unzip
     vault
     websocat
