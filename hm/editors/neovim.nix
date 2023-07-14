@@ -1,12 +1,13 @@
 { config, pkgs, libs, ... }:
 let
   extras = with pkgs; [
-    nodePackages.prettier_d_slim
-    nodePackages.prettier
-    nodePackages.typescript-language-server
     nodePackages.dockerfile-language-server-nodejs
-    nodePackages.vscode-css-languageserver-bin
+    nodePackages.prettier
+    nodePackages.prettier_d_slim
     nodePackages.pyright
+    nodePackages.typescript-language-server
+    nodePackages.vscode-css-languageserver-bin
+    nodePackages.vscode-html-languageserver-bin
     shellcheck
     sqlfluff
     stylua
