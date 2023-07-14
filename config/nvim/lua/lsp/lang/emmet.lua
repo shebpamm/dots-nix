@@ -19,6 +19,7 @@ M.setup = {
       "less",
       "sss",
     },
+    cmd = { "npx", "emmet-ls", "--stdio" },
     root_dir = function(fname)
       return vim.loop.cwd()
     end,
