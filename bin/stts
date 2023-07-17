@@ -20,10 +20,33 @@ status_battery() {
   STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
   ramp0=󰂎; ramp1=󰁺; ramp2=󰁻; ramp3=󰁼; ramp4=󰁽; ramp5=󰁾;
-  ramp6=󰁿; ramp7=󰂀; ramp8=󰂁; ramp9=󰂂; rampf=󰁹; rampc=󰂇
+  ramp6=󰁿; ramp7=󰂀; ramp8=󰂁; ramp9=󰂂; rampf=󰁹;
+
+  rampc0=󰢟; rampc1=󰢜; rampc2=󰂆; rampc3=󰂈; rampc4=󰂈; rampc5=󰢝;
+  rampc6=󰂉; rampc7=󰢞; rampc8=󰂊; rampc9=󰂋;
 
   if [ "$STATUS" = "Charging" ]; then
-    icon=$rampc
+    if [ "$CHARGE" -lt 10 ]; then
+      icon=$rampc0
+    elif [ "$CHARGE" -lt 20 ]; then
+      icon=$rampc1
+    elif [ "$CHARGE" -lt 30 ]; then
+      icon=$rampc2
+    elif [ "$CHARGE" -lt 40 ]; then
+      icon=$rampc3
+    elif [ "$CHARGE" -lt 50 ]; then 
+      icon=$rampc4
+    elif [ "$CHARGE" -lt 60 ]; then
+      icon=$rampc5
+    elif [ "$CHARGE" -lt 70 ]; then
+      icon=$rampc6
+    elif [ "$CHARGE" -lt 80 ]; then
+      icon=$rampc7
+    elif [ "$CHARGE" -lt 90 ]; then
+      icon=$rampc8
+    elif [ "$CHARGE" -lt 100 ]; then
+      icon=$rampc9
+    fi
   elif [ "$STATUS" = "Discharging" ]; then
     if [ "$CHARGE" -lt 10 ]; then
       icon=$ramp0
