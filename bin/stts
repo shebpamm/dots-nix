@@ -19,8 +19,8 @@ status_battery() {
   CHARGE=$(cat /sys/class/power_supply/BAT0/capacity)
   STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
-  ramp0=; ramp1=; ramp2=; ramp3=; ramp4=; ramp5=
-  ramp6=; ramp7=; ramp8=; ramp9=; rampc=
+  ramp0=󰂎; ramp1=󰁺; ramp2=󰁻; ramp3=󰁼; ramp4=󰁽; ramp5=󰁾;
+  ramp6=󰁿; ramp7=󰂀; ramp8=󰂁; ramp9=󰂂; rampf=󰁹; rampc=󰂇
 
   if [ "$STATUS" = "Charging" ]; then
     icon=$rampc
@@ -45,13 +45,12 @@ status_battery() {
       icon=$ramp8
     elif [ "$CHARGE" -lt 100 ]; then
       icon=$ramp9
-      icon=$ramp9
     fi
   elif [ "$STATUS" = "Full" ]; then
-    icon=$ramp9
+    icon=$rampf
   fi
 
-  echo $icon "$CHARGE""%"
+  echo "$icon" "$CHARGE""%"
 }
 
 status_temperature() {
