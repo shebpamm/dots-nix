@@ -15,14 +15,15 @@ return {
         paths = { enabled = true, resolution = { "file" } },
         snippets = { enabled = true, warn = {} },
         tags = { enabled = false },
+        tmux = { enabled = false },
       },
       keymap = { recommended = true },
       display = {
         preview = { positions = { north = 4, south = nil, west = 2, east = 3 } },
       },
     }
-    require "coq_3p" {
-      { src = "copilot", short_name = "COP", accept_key = "<c-f>" },
-    }
+    -- require "coq_3p" {
+    --   { src = "copilot", short_name = "COP", accept_key = "<c-f>" },
+    -- }
   end,
 }
