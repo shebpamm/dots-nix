@@ -48,6 +48,7 @@
         (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
         (self: super: { devenv = devenv.packages.${system}.devenv; })
         (self: super: { formats = logiops-pkgs.formats; })
+        (self: super: { nixMaster = master-pkgs.nix; })
         (self: super: {
           nur = import nur {
             nurpkgs = super;

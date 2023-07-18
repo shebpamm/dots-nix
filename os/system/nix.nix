@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixMaster;
     settings = {
       trusted-users = [ "root" "shebpamm" "@wheel" ];
 
