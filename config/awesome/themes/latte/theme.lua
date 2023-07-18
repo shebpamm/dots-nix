@@ -87,6 +87,7 @@ theme.control_center_bri_slider_active = c.rosewater
 
 theme.notification_font = "arimo:mono 16"
 theme.notification_bg = theme.fg
+theme.notification_icon_size = dpi(128)
 
 -- Variables set for theming the menu:/nix/store/wzj6n6x8z9xplr7q02pin4aj92sym7cn-awesome-963622af8e6cc718ab4be4799c1599107b610387/share/awesome/themes/
 -- menu_[bg|fg]_[normal|focus]
