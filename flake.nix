@@ -89,6 +89,7 @@
             ./hm/shell
             ./hm/shell/ssh.nix
             ./hm/editors/neovim.nix
+            ./hm/editors/vscode.nix
             ./hm/editors/vim.nix
             ./hm/dev
             ./hm/programs
