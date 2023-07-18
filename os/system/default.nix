@@ -3,12 +3,12 @@
   imports = [
     inputs.flake-utils-plus.nixosModules.autoGenFromInputs
 
-    ./fonts.nix
-    ./sound.nix
     ./env.nix
-    ./users.nix
+    ./fonts.nix
     ./nix.nix
     ./shell.nix
+    ./sound.nix
+    ./users.nix
   ];
 
   environment.systemPackages = with pkgs; [
