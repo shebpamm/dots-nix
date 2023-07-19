@@ -6,7 +6,7 @@
     enable = true;
     font = {
       name = "Fira Code Regular";
-      size = 11;
+      size = 12;
     };
     settings = {
       cursor_shape = "underline";
