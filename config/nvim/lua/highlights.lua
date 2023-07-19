@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return
+end
+
 require("colors." .. O.colorscheme).setup()
 local c = require("colors." .. O.colorscheme).colors
 
