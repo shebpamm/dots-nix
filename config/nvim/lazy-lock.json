@@ -8,6 +8,7 @@
   "coq.artifacts": { "branch": "artifacts", "commit": "39bdecdcb3df41ba7f93c2b5acd4c6e25d80ba07" },
   "coq.thirdparty": { "branch": "3p", "commit": "dedb7387a50a797a7bd871d009cf711fbf00eb20" },
   "coq_nvim": { "branch": "coq", "commit": "a8ff103b50a9a4ba3dec9a485699b3382b59ab92" },
+  "delaytrain.nvim": { "branch": "main", "commit": "eb8d2157e6a7de1b4f024f7ca5bccc4014d88b05" },
   "dial.nvim": { "branch": "master", "commit": "c6657df5453a6cbe4e8356e1675e9652cadc332f" },
   "dressing.nvim": { "branch": "master", "commit": "39611852fd7bbac117e939a26759bb37361f0c90" },
   "gitsigns.nvim": { "branch": "main", "commit": "11b80e7eea249affc8776483272bcfc627b5552a" },
