@@ -1,16 +1,15 @@
 return {
-  "chentoast/marks.nvim",
-  config = function()
-    local marks = require "marks"
-    local wk = require "which-key"
-
-    marks.setup {
+  {
+    "chentoast/marks.nvim",
+    opts = {
       default_mappings = true,
       builtin_marks = { ".", "^", "<", ">" },
       cyclic = true,
-    }
-
-    wk.register {
+    },
+  },
+  {
+    "folke/which-key.nvim",
+    opts = {
       ["<leader>"] = {
         -- find
         m = {
@@ -20,6 +19,6 @@ return {
           b = { "<cmd>BookmarksQFListAll<cr>", "list all bookmarks" },
         },
       },
-    }
-  end,
+    },
+  },
 }

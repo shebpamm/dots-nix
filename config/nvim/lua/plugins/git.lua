@@ -14,18 +14,17 @@ return {
       { "<leader>vb",	function() require"gitsigns".toggle_current_line_blame() end,	                        mode = "n" },
 
     },
-    config = function()
-      require("gitsigns").setup {
-        signs = {
-          add = { text = "+" },
-          change = { text = "~" },
-          delete = { text = "-" },
-          topdelete = { text = "-" },
-          changedelete = { text = "~" },
-        },
-      }
-    end,
+    opts = {
+      signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        delete = { text = "-" },
+        topdelete = { text = "-" },
+        changedelete = { text = "~" },
+      },
+    }
   },
+
   "tpope/vim-fugitive",
   {
     "TimUntersberger/neogit",

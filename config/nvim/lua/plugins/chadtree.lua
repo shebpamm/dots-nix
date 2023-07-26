@@ -3,6 +3,7 @@ return {
   branch = "chad",
   keys = { "<C-n>" },
   cmd = "CHADopen",
+  build = ":CHADdeps",
   config = function()
     local chadtree_settings = {
       theme = {

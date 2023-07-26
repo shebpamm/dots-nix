@@ -1,5 +1,5 @@
 return {
-  "shebpamm/neovim-session-manager", 
+  "shebpamm/neovim-session-manager",
   event = "VimEnter",
   config = function()
     local s = require "session_manager"

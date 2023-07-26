@@ -9,14 +9,12 @@ return {
     { "gc", mode = "v" },
     { "gb", mode = "v" }
   },
-  config = function()
-    require("Comment").setup {
-      padding = true,
-      sticky = true,
-      mappings = {
-        basic = true,
-        extra = true,
-      },
-    }
-  end,
+  opts = {
+    padding = true,
+    sticky = true,
+    mappings = {
+      basic = true,
+      extra = true,
+    },
+  }
 }

@@ -4,7 +4,7 @@ return {
   cmd = { "ProjectRoot" },
   event = "VimEnter",
   config = function()
-    require("project_nvim").setup {
+    require("project_nvim").setup { -- Lazy can't find this module so don't use opts
       manual_mode = false,
       ignore_lsp = { "null-ls" },
       show_hidden = true,
