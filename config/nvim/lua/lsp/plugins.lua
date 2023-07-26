@@ -9,3 +9,7 @@ require("rust-tools").setup {
     capabilities = capabilities,
   },
 }
+
+require("go").setup {
+  lsp_cfg = true
+}

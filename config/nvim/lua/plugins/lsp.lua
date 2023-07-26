@@ -6,14 +6,8 @@ return {
       require "lsp"
     end,
   },
-  {
-    "lvimuser/lsp-inlayhints.nvim",
-    branch = "anticonceal",
-    config = function()
-      require("lsp-inlayhints").setup()
-    end,
-  },
 
   "simrat39/rust-tools.nvim",
+  "ray-x/go.nvim",
   "jose-elias-alvarez/null-ls.nvim",
 }

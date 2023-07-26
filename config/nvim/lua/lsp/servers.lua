@@ -22,7 +22,7 @@ local servers = {
   taplo = {},
   terraformls = {},
   tflint = {},
-  gopls = {},
+  -- gopls = {},
   nil_ls = {},
 }
 
