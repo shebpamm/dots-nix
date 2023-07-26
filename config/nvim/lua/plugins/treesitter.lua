@@ -51,8 +51,9 @@ local function setup()
           ["is"] = "@statement.inner",
           ["as"] = "@statement.outer",
           ["ad"] = "@comment.outer",
-          ["am"] = "@call.outer",
-          ["im"] = "@call.inner",
+          ["au"] = "@call.outer",
+          ["iu"] = "@call.inner",
+
         },
       },
       move = {
