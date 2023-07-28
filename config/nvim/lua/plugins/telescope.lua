@@ -69,6 +69,13 @@ return {
       }
     end
 
+    local function grep_open_files()
+      b.live_grep {
+        grep_open_files = true,
+        path_display = { "shorten" },
+      }
+    end
+
     local function ivy()
       vim.cmd [[ set laststatus=0 ]]
       b.find_files {
@@ -152,6 +159,7 @@ return {
           f = { b.find_files, "files" },
           -- r = { x.frecency.frecency, "frecent files" },
           w = { grep, "grep" },
+          o = { grep_open_files, "grep open files" },
           b = { b.current_buffer_fuzzy_find, "find in buffer" },
           m = { b.man_pages, "man pages" },
           h = { b.help_tags, "help" },
