@@ -53,7 +53,8 @@ local function setup()
           ["ad"] = "@comment.outer",
           ["au"] = "@call.outer",
           ["iu"] = "@call.inner",
-
+          ["ia"] = "@parameter.inner",
+          ["aa"] = "@parameter.outer",
         },
       },
       move = {
