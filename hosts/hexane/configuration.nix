@@ -19,6 +19,7 @@
   services.blueman.enable = true;
   security.polkit.enable = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.xserver.videoDrivers = [ "displaylink" ];
   services.gnome.gnome-keyring.enable = true;
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
