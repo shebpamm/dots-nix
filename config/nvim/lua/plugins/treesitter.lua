@@ -55,6 +55,10 @@ local function setup()
           ["iu"] = "@call.inner",
           ["ia"] = "@parameter.inner",
           ["aa"] = "@parameter.outer",
+          ["ik"] = "@assignment.lhs",
+          ["ak"] = "@assignment.lhs",
+          ["iv"] = "@assignment.rhs",
+          ["av"] = "@assignment.rhs",
         },
       },
       move = {
