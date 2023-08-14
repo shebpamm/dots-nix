@@ -8,7 +8,6 @@ return {
     { "gd",  vim.lsp.buf.definition,                                                desc = "definition" },
     { "gD",  vim.lsp.buf.type_definition,                                           desc = "type definition" },
     { "gi",  vim.lsp.buf.implementation,                                            desc = "implementation" },
-    { "gr",  vim.lsp.buf.references,                                                desc = "references" },
 
   },
   opts = {
