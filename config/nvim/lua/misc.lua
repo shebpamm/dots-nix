@@ -6,3 +6,7 @@ utils.augroup("tmux-cursor", {
     command = "set guicursor=a:hor25"
   },
 })
+
+-- Center screen after up-down movement
+utils.nnoremap("<C-d>", "<C-d>zz")
+utils.nnoremap("<C-u>", "<C-u>zz")
