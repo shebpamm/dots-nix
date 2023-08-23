@@ -38,6 +38,7 @@
     jq
     kubectl
     kubectx
+    k9s
     kubernetes-helm
     kustomize
     lazygit
