@@ -51,6 +51,11 @@
       owner = "shebpamm";
     };
 
+    pagerduty-api-token = {
+      mode = "0400";
+      owner = "shebpamm";
+    };
+
     spotify-password = {
       mode = "0400";
       owner = "shebpamm";
