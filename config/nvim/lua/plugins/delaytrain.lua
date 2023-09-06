@@ -3,7 +3,7 @@ return {
   init = function()
     require("delaytrain").setup {
       delay_ms = 800,
-      grace_period = 1,
+      grace_period = 2,
     }
   end,
   keys = {
