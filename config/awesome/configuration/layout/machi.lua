@@ -26,6 +26,18 @@ priorities = {
       horizontal = "left",
     },
   },
+  {
+    class = "Google-chrome",
+    placement = {
+      horizontal = "left",
+    },
+  },
+  {
+    class = "Slack",
+    placement = {
+      horizontal = "right",
+    },
+  },
 }
 
 function empty_with_priority(c, instance, areas, geometry)
@@ -53,7 +65,6 @@ function empty_with_priority(c, instance, areas, geometry)
       for j = 1, #priorities do
         local rule = priorities[j]
         if c.class == rule.class then
-
           if rule.placement then
             if rule.placement.horizontal == "right" then
               placement_score = placement_score + a.x + a.width
