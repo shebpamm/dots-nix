@@ -63,6 +63,7 @@
     yubikey-manager
     zoxide
     toke-rs
+    shell_gpt
   ];
 
   # not big enough for their own modules
