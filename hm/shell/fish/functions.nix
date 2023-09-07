@@ -88,4 +88,9 @@
       nix-shell -p $argv[1] --run $argv[1] &
     '';
   };
+
+  base = {
+    description = "go to git root directory";
+    body = "cd (git rev-parse --show-toplevel)";
+  };
 }
