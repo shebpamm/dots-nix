@@ -48,7 +48,7 @@
           owner = "shebpamm";
           repo = "theme-bobthefish";
           rev = "f226864d956f8ad056604ca65d37e338ac5930b3";
-          sha256="sha256-YYSanau67IvnfHn24hWfoM1w2XSLU0isqBqdf/vuGIY=";
+          sha256 = "sha256-YYSanau67IvnfHn24hWfoM1w2XSLU0isqBqdf/vuGIY=";
         };
       }
 
@@ -58,8 +58,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "franciscolourenco";
           repo = "done";
-          rev= "d6abb267bb3fb7e987a9352bc43dcdb67bac9f06";
-          sha256="sha256-6oeyN9ngXWvps1c5QAUjlyPDQwRWAoxBiVTNmZ4sG8E=";
+          rev = "d6abb267bb3fb7e987a9352bc43dcdb67bac9f06";
+          sha256 = "sha256-6oeyN9ngXWvps1c5QAUjlyPDQwRWAoxBiVTNmZ4sG8E=";
         };
       }
 
@@ -69,8 +69,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "tom-doerr";
           repo = "codex.fish";
-          rev= "de47a14cabb7e47cc24b6f723362e4795799a893";
-          sha256="sha256-JTxFYEeRc9IPTuU0rwoWnwd9+IoJ/2WNLVREeMH1C7s=";
+          rev = "de47a14cabb7e47cc24b6f723362e4795799a893";
+          sha256 = "sha256-JTxFYEeRc9IPTuU0rwoWnwd9+IoJ/2WNLVREeMH1C7s=";
         };
       }
 
@@ -80,9 +80,17 @@
         src = pkgs.fetchFromGitHub {
           owner = "oh-my-fish";
           repo = "plugin-thefuck";
-          rev= "6c9a926d045dc404a11854a645917b368f78fc4d";
-          sha256="sha256-9MbkyEsMsZH+3ct7qJSPvLeLRfVkDEkXRTdg/Rhe0dg=";
+          rev = "6c9a926d045dc404a11854a645917b368f78fc4d";
+          sha256 = "sha256-9MbkyEsMsZH+3ct7qJSPvLeLRfVkDEkXRTdg/Rhe0dg=";
         };
+      }
+      {
+        name = "foreign-env";
+        src = pkgs.fishPlugins.foreign-env.src;
+      }
+      {
+        name = "puffer";
+        src = pkgs.fishPlugins.puffer.src;
       }
     ];
 
