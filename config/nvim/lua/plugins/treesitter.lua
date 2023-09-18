@@ -17,7 +17,7 @@ local function setup()
       enable = true,
       use_languagetree = true,
     },
-    indent = { enable = false },
+    indent = { enable = true },
     playground = { enable = true },
     autotag = { enable = true },
     context_commentstring = { enable = true },
@@ -28,11 +28,6 @@ local function setup()
         node_incremental = "<Enter>",
         node_decremental = "<BS>",
       },
-    },
-    rainbow = {
-      enable = true,
-      query = "rainbow-parens",
-      strategy = require("ts-rainbow").strategy.global,
     },
     textobjects = {
       select = {
@@ -129,7 +124,6 @@ return {
     { "nvim-treesitter/nvim-treesitter-context" },
     { "windwp/nvim-ts-autotag" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-    { "HiPhish/nvim-ts-rainbow2" },
     {
       "nvim-treesitter/playground",
       keys = { "<localleader>s" },
