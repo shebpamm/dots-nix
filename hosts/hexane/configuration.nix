@@ -21,6 +21,7 @@
   services.xserver.libinput.touchpad.naturalScrolling = true;
   services.xserver.videoDrivers = [ "displaylink" ];
   services.gnome.gnome-keyring.enable = true;
+  services.tlp.enable = true;
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
