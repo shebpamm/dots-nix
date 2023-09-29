@@ -21,8 +21,7 @@
     cloudflared
     comma
     devenv
-    exa
-    exa
+    eza
     fd
     feh
     ffmpeg
