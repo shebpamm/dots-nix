@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# This script is used to rebase the current branch on top of the master branch.
+
+# Exit on error
+set -e
+
+# Get the current branch
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Check if the current branch is master
+if [ "$current_branch" = "master" ]; then
+    echo "Cannot rebase master branch"
+    exit 1
+fi
+
+# Fetch all remotes
+git fetch --all
+
+# Check if the current branch is up to date with the remote
+if [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
+    echo "Current branch is not up to date with remote"
+    exit 1
+fi
+
+# Stash all changes
+git stash
+
+# Rebase the current branch on top of the master branch
+git rebase origin/master
+
+# Pop the stash
+git stash pop
