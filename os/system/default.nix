@@ -31,5 +31,5 @@
   nix.generateRegistryFromInputs = true;
   nix.generateNixPathFromInputs = true;
 
-  time.timeZone = "Europe/Helsinki";
+  services.automatic-timezoned.enable = true;
 }
