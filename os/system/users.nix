@@ -20,6 +20,7 @@
   users.extraGroups.docker.members = [ "shebpamm" ];
   users.extraGroups.libvirtd.members = [ "shebpamm" ];
   users.extraGroups.audio.members = [ "shebpamm" ];
+  users.extraGroups.plugdev.members = [ "shebpamm" ];
 
   nix.settings.trusted-users = [ "root" "shebpamm" "@wheel" ];
 

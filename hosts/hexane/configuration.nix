@@ -16,6 +16,7 @@
     ];
 
   hardware.bluetooth.enable = true;
+  hardware.rtl-sdr.enable = true;
   services.blueman.enable = true;
   security.polkit.enable = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
