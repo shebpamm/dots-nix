@@ -2,7 +2,6 @@
   description = "My NixOS Configuration";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-2111.url = "github:NixOS/nixpkgs/nixos-21.11";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +23,7 @@
     flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-2111, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko, flake-utils-plus }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko, flake-utils-plus }:
     let
       system = "x86_64-linux";
 
@@ -35,7 +34,6 @@
 
       nomachine-pkgs = unfreeImport nomachine;
       pkgs = unfreeImport nixpkgs;
-      stable-pkgs = unfreeImport nixpkgs-2111;
       master-pkgs = unfreeImport nixpkgs-master;
       logiops-pkgs = unfreeImport logiops;
 
@@ -45,7 +43,6 @@
         neovim-nightly.overlay
         hyprpaper.overlays.default
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
-        (self: super: { keepassxc-stable = stable-pkgs.keepassxc; })
         (self: super: { devenv = devenv.packages.${system}.devenv; })
         (self: super: { formats = logiops-pkgs.formats; })
         (self: super: { nixMaster = master-pkgs.nix; })

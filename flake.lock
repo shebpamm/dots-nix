@@ -681,22 +681,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-2111": {
-      "locked": {
-        "lastModified": 1659446231,
-        "narHash": "sha256-hekabNdTdgR/iLsgce5TGWmfIDZ86qjPhxDg/8TlzhE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "eabc38219184cc3e04a974fe31857d8e0eac098d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-f2k": {
       "inputs": {
         "crane": "crane",
@@ -1070,7 +1054,6 @@
         "logiops": "logiops",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_5",
-        "nixpkgs-2111": "nixpkgs-2111",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-sheb": "nixpkgs-sheb",
