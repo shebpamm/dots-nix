@@ -1,6 +1,8 @@
 local attach = require "lsp.attach"
 local capabilities = require "lsp.capabilities"
 
+require "lsp.mappings"
+
 require("lsp.null-ls").setup()
 
 require("rust-tools").setup {
