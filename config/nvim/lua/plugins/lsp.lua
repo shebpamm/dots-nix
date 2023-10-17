@@ -9,5 +9,5 @@ return {
 
   "simrat39/rust-tools.nvim",
   "ray-x/go.nvim",
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
 }
