@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "3270" "JetBrainsMono" ]; })
     font-awesome
     cantarell-fonts
