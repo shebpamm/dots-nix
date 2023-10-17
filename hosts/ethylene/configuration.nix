@@ -208,5 +208,5 @@
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "shebpamm" ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }
