@@ -3,18 +3,18 @@ return {
   dependencies = "kyazdani42/nvim-web-devicons",
   config = function()
     local coke = require "cokeline"
-    local coke_utils = require "cokeline.utils"
-    local hex = coke_utils.get_hex
+    local hlgroups = require("cokeline.hlgroups")
+
 
     coke.setup {
       show_if_buffers_are_at_least = 2,
 
       default_hl = {
         fg = function(buffer)
-          return buffer.is_focused and hex("TabLineSel", "fg") or hex("TabLineFill", "fg")
+          return buffer.is_focused and hlgroups.get_hl_attr("TabLineSel", "fg") or hlgroups.get_hl_attr("TabLineFill", "fg")
         end,
         bg = function(buffer)
-          return buffer.is_focused and hex("TabLineSel", "bg") or hex("TabLineFill", "bg")
+          return buffer.is_focused and hlgroups.get_hl_attr("TabLineSel", "bg") or hlgroups.get_hl_attr("TabLineFill", "bg")
         end,
       },
 
@@ -31,7 +31,7 @@ return {
           text = function(buffer)
             return buffer.unique_prefix
           end,
-          fg = hex("Directory", "fg"),
+          fg = hlgroups.get_hl_attr("Directory", "fg"),
           style = "italic",
         },
         {
