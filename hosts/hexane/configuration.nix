@@ -13,6 +13,8 @@
       ../../os/system/graphics/xorg.nix
       ../../os/system/fingerprint.nix
       ../../os/secrets
+
+      ../../os/games/steam.nix
     ];
 
   hardware.bluetooth.enable = true;
