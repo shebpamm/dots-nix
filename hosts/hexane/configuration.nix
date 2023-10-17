@@ -130,5 +130,5 @@
   services.sshd.enable = true;
   services.touchegg.enable = true;
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "23.05";
 }

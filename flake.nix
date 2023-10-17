@@ -70,7 +70,7 @@
               home = {
                 homeDirectory = "/home/shebpamm";
                 username = "shebpamm";
-                stateVersion = "22.11";
+                stateVersion = "23.05";
               };
 
               nixpkgs.overlays = overlays;
@@ -101,7 +101,7 @@
               home = {
                 homeDirectory = "/home/shebpamm";
                 username = "shebpamm";
-                stateVersion = "22.11";
+                stateVersion = "23.05";
               };
 
               nixpkgs.overlays = overlays;
@@ -132,7 +132,7 @@
               home = {
                 homeDirectory = "/home/shebpamm";
                 username = "shebpamm";
-                stateVersion = "22.11";
+                stateVersion = "23.05";
               };
 
               nixpkgs.overlays = overlays;

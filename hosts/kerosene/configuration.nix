@@ -112,5 +112,5 @@
   virtualisation.docker.enableNvidia = true;
   virtualisation.virtualbox.host.enable = true;
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "23.05";
 }
