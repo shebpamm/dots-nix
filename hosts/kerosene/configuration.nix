@@ -9,7 +9,7 @@
       # Other Modules
       ../../os/system
       # ../../os/system/graphics/wayland.nix
-      ../../os/games/steam.nix
+      # ../../os/games/steam.nix
       ../../os/secrets
       ../../os/system/graphics/xorg.nix
       ../../os/virtualization/kvm.nix
