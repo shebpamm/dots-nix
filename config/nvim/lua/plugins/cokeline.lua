@@ -1,6 +1,6 @@
 return {
   "noib3/nvim-cokeline",
-  dependencies = "kyazdani42/nvim-web-devicons",
+  dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
     local coke = require "cokeline"
     local hlgroups = require("cokeline.hlgroups")
