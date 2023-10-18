@@ -22,7 +22,7 @@
     keyboards = {
       integrated = {
         device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
-        config = builtins.readFile ../../config/xmonad/testing.kbd;
+        config = builtins.readFile ../../config/xmonad/miryoku.kbd;
       };
     };
   };
