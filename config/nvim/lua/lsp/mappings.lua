@@ -26,8 +26,6 @@ wk.register({
   ["[d"] = { vim.diagnostic.goto_prev, "prev diagnostic" },
   ["<C-k>"] = { vim.lsp.buf.signature_help, "signature help" },
   K = { vim.lsp.buf.hover, "lsp: hover" },
-}, {
-  buffer = bufnr,
 })
 
 -- Visual mode mappings
@@ -36,7 +34,4 @@ wk.register({
     name = "+code",
     a = { vim.lsp.buf.range_code_action, "range code action" },
   },
-}, {
-  buffer = bufnr,
-  mode = "v",
 })
