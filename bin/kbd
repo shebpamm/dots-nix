@@ -1,0 +1,42 @@
+#!/bin/sh
+
+while [ "$1" ]; do
+  case $1 in
+    help)
+      printf "\033[0;32musage: \033[0;0mkbd \033[38;5;8m[command]\n\n"
+      printf "\033[0;32mavailable commands:\033[0;0m\n"
+      printf "    status                \033[38;5;8mGet current kmonad status\n\033[0;0m"
+      printf "    toggle                \033[38;5;8mToggle kmonad\n\033[0;0m"
+      printf "    enable                \033[38;5;8mEnable kmonad\n\033[0;0m"
+      printf "    disable               \033[38;5;8mDisable kmonad\n\033[0;0m"
+      printf "    help                  \033[38;5;8mprint this help message\n"
+      exit ;;
+
+    status)
+      if systemctl is-active --quiet kmonad-integrated.service; then
+        printf "on"
+        exit 0;
+      else
+        printf "off"
+        exit 1;
+      fi ;;
+    toggle)
+      if systemctl is-active --quiet kmonad-integrated.service; then
+        systemctl stop kmonad-integrated.path
+        systemctl stop kmonad-integrated.service
+      else
+        systemctl start kmonad-integrated.service
+      fi
+      exit ;;
+    enable)
+      systemctl start kmonad-integrated.service
+      exit ;;
+    disable)
+      systemctl stop kmonad-integrated.path
+      systemctl stop kmonad-integrated.service
+      exit ;;
+    *)
+      printf "\033[0;31merr: invalid command\n"
+      exit ;;
+  esac
+done

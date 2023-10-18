@@ -18,7 +18,7 @@ function rounded_rect(cr, width, height)
 end
 
 function dribble_rect(cr, width, height)
-  return gears.shape.partially_rounded_rect(cr, width, height, true, true, true, false, border_radius*2)
+  return gears.shape.partially_rounded_rect(cr, width, height, true, true, true, false, border_radius * 2)
 end
 
 function tray_widget()
@@ -43,7 +43,7 @@ function tray_widget()
     widget.visible = true
   end
 
-  systray:connect_signal('widget::redraw_needed', function()
+  systray:connect_signal("widget::redraw_needed", function()
     if awesome.systray() == 0 then
       widget.visible = false
     else
@@ -56,7 +56,7 @@ end
 
 function battery()
   local format_prefix = '<span font="Meslo LG L 10" weight="bold">'
-  local format_postfix = '</span>'
+  local format_postfix = "</span>"
   local widget = wibox.widget {
     fg = beautiful.fg_bat,
     bg = beautiful.bg_bat,
@@ -75,7 +75,7 @@ function battery()
       widget = wibox.container.margin,
     },
   }
-  
+
   awful.spawn.easy_async("stts bat", function(stdout, stderr, reason, exit_code)
     if exit_code == 2 then
       widget.visible = false
@@ -85,21 +85,67 @@ function battery()
   return widget
 end
 
+local function kmonad()
+  local icon_running = "󰌌 "
+  local icon_stopped = "󰌐 "
+
+  local status_text = wibox.widget.textbox(icon_running)
+
+  local widget = wibox.widget {
+    fg = beautiful.fg_bat,
+    bg = beautiful.bg_bat,
+    shape = rounded_rect,
+    widget = wibox.container.background,
+    {
+      {
+        widget = status_text,
+        font = "nerd 16",
+      },
+      left = 7,
+      right = 7,
+      top = 5,
+      bottom = 5,
+      widget = wibox.container.margin,
+    },
+  }
+
+  widget:connect_signal("button::press", function(w)
+    awful.spawn "kbd toggle"
+    awful.spawn.easy_async("kbd status", function(_, _, _, exit_code)
+      if exit_code == 1 then
+        status_text.text = icon_stopped
+      else
+        status_text.text = icon_running
+      end
+    end)
+  end)
+
+  awful.spawn.easy_async("kbd status", function(_, _, _, exit_code)
+    if exit_code == 1 then
+      status_text.text = icon_stopped
+    else
+      status_text.text = icon_running
+    end
+  end)
+
+  return widget
+end
+
 function time()
   local format_prefix = '<span font="Meslo LG L 10" weight="bold">'
-  local format_postfix = '</span>'
+  local format_postfix = "</span>"
 
   local short_format = format_prefix .. " %H.%M " .. format_postfix
   local long_format = format_prefix .. " %a %b %d " .. format_postfix
 
-  local clockwidget = wibox.widget.textclock(
-        short_format, 1
-  )
+  local clockwidget = wibox.widget.textclock(short_format, 1)
 
   local widget = wibox.widget {
     fg = beautiful.fg_time,
     bg = beautiful.bg_time,
-    shape = function(cr, width, height) gears.shape.rounded_rect(cr, width, height, math.floor(border_radius/1.5)) end,  -- Make clock a bit less rounded
+    shape = function(cr, width, height)
+      gears.shape.rounded_rect(cr, width, height, math.floor(border_radius / 1.5))
+    end, -- Make clock a bit less rounded
     widget = wibox.container.background,
     {
       widget = clockwidget,
@@ -150,23 +196,21 @@ function layoutbox(s)
 end
 
 screen.connect_signal("request::desktop_decoration", function(s)
-
   -- Set layout depending on screen
   local dl
 
   -- If widescreen
   if s.geometry.width > 4096 then
-     dl = machi_layouts.secondary -- Default Layout
+    dl = machi_layouts.secondary -- Default Layout
   else
-     dl = awful.layout.suit.tile -- Default Layout
+    dl = awful.layout.suit.tile -- Default Layout
   end
 
   awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, { dl, dl, dl, dl, dl, dl, dl, dl, dl })
 
   local anchor_side = (s == screen.primary and "bottom" or "top")
 
-  local bar_startwidgets =
-  {
+  local bar_startwidgets = {
     {
       {
         widget = require "ui.bar.taglist"(s),
@@ -178,18 +222,17 @@ screen.connect_signal("request::desktop_decoration", function(s)
     bg = beautiful.bg_normal,
     shape = dribble_rect,
   }
-  
-  local bar_centerwidgets =
-  {
+
+  local bar_centerwidgets = {
     widget = wibox.container.place,
     halign = "center",
     {
       widget = require "ui.bar.tasklist"(s),
     },
   }
-  
-  local bar_endwidgets =
-  {
+
+  local bar_endwidgets = {
+    { widget = kmonad() },
     { widget = battery() },
     { widget = time() },
     { widget = layoutbox(s) },
@@ -201,34 +244,36 @@ screen.connect_signal("request::desktop_decoration", function(s)
     table.insert(bar_endwidgets, 1, { widget = tray_widget() })
   end
 
-  awful.popup({
-    bg = beautiful.none,
-    shape = gears.shape.rect,
-    screen = s,
+  awful
+    .popup({
+      bg = beautiful.none,
+      shape = gears.shape.rect,
+      screen = s,
 
-    -- Place on bottom if primary, otherwise on top
-    placement = function(c)
-      local anchor = (s == screen.primary and awful.placement.bottom or awful.placement.top)
+      -- Place on bottom if primary, otherwise on top
+      placement = function(c)
+        local anchor = (s == screen.primary and awful.placement.bottom or awful.placement.top)
 
-      return (anchor + awful.placement.maximize_horizontally)(
-        c,
-        { margins = { [anchor_side] = 10, left = 20, right = 20 } }
-      )
-    end,
+        return (anchor + awful.placement.maximize_horizontally)(
+          c,
+          { margins = { [anchor_side] = 10, left = 20, right = 20 } }
+        )
+      end,
 
-    widget = {
-      -- Dimensions & Placement
-      layout = wibox.layout.align.horizontal,
-      forced_height = 30,
+      widget = {
+        -- Dimensions & Placement
+        layout = wibox.layout.align.horizontal,
+        forced_height = 30,
 
-      -- Left side
-      bar_startwidgets,
+        -- Left side
+        bar_startwidgets,
 
-      -- Center
-      bar_centerwidgets,
+        -- Center
+        bar_centerwidgets,
 
-      -- Right side
-      bar_endwidgets,
-    },
-  }):struts { [anchor_side] = 40 } -- Add padding of 40 to anchor_side
+        -- Right side
+        bar_endwidgets,
+      },
+    })
+    :struts { [anchor_side] = 40 } -- Add padding of 40 to anchor_side
 end)
