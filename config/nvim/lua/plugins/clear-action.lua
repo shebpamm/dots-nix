@@ -1,5 +1,5 @@
 return {
-  "shebpamm/clear-action.nvim",
+  "luckasRanarison/clear-action.nvim",
   opts = {
     signs = {
       show_label = true,
