@@ -88,7 +88,8 @@
 
   services.xserver = {
     videoDrivers = [ "nvidia" ];
-    displayManager.sessionCommands = ''${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --mode 5120x1440'';
+    displayManager.sessionCommands = ''
+      ${pkgs.xorg.xrandr} --fb 5120x3600 --output DP-2 --crtc 0 --gamma 1.0:1.0:1.0 --mode 5120x1440 --pos 0x2160 --primary --rate 119.97 --reflect normal --rotate normal --set non-desktop 0 --output DP-0 --crtc 1 --gamma 1.0:1.0:1.0--mode 3840x2160 --pos 707x0 --rate 60.00 --reflect normal --rotate normal --set non-desktop 0; ${pkgs.xorg.xrandr} --fb 5120x3600'';
     dpi = 96;
   };
 
