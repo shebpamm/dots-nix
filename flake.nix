@@ -158,6 +158,7 @@
               nixpkgs.overlays = overlays;
             }
             ./hosts/kerosene/configuration.nix
+            disko.nixosModules.disko
           ];
           specialArgs = { inherit inputs; };
         };
