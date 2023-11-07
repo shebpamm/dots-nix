@@ -9,7 +9,15 @@ return {
   },
 
   {
-    "ggandor/leap-spooky.nvim",
-    config = true,
+    "shebpamm/leap-spooky.nvim",
+    config = function()
+      require("leap-spooky").setup {
+        extra_text_objects = {
+          "iq", "aq",
+          "iv", "av",
+          "ik", "ak",
+        },
+      }
+    end,
   },
 }
