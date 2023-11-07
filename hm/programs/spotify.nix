@@ -10,7 +10,7 @@
     in
     {
       enable = true;
-      theme = spicePkgs.themes.catppuccin-latte;
+      theme = spicePkgs.themes.catppuccin;
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         shuffle
