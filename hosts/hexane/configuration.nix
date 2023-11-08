@@ -24,6 +24,7 @@
   security.polkit.enable = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
   services.xserver.videoDrivers = [ "displaylink" ];
+  services.x2goserver.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.tlp.enable = true;
   services.tlp.settings = {
