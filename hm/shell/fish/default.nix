@@ -27,6 +27,7 @@
       "grb" = "gh repo browse -w";
       "gpcr" = "gh pr create -w";
       "gpv" = "gh pr view -w";
+      "c" = "clear";
     };
 
     plugins = [
