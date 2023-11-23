@@ -3,6 +3,7 @@
   imports = [
     ./fun.nix
     ./irssi.nix
+    ./weechat.nix
     ./kitty
     ./management.nix
     ./spotify.nix
