@@ -9,4 +9,4 @@
 	url = https://github.com/tmux-plugins/tpm
 [submodule "config/awesome/collision"]
 	path = config/awesome/collision
-	url = https://github.com/Elv13/collision
+	url = https://github.com/shebpamm/collision
