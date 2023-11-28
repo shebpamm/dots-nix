@@ -98,6 +98,7 @@
     shellAliases = {
       vim = "nvim";
       ls = "eza";
+      book = "./run-ansible-playbook.sh -D -e@(ansible-pass | psub)";
     };
   };
 
