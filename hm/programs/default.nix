@@ -5,6 +5,7 @@
     ./irssi.nix
     ./weechat.nix
     ./kitty
+    ./wezterm.nix
     ./management.nix
     ./spotify.nix
   ];
