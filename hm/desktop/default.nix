@@ -1,7 +1,8 @@
 { config, pkgs, libs, ... }:
 {
   imports = [
-    ./picom.nix
+    # ./picom.nix
+    # ./compfy.nix
     ./gtk.nix
   ];
   home.packages = with pkgs; [

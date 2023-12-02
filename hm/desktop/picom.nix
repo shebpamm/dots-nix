@@ -1,7 +1,7 @@
 { config, pkgs, libs, ... }:
 {
   services.picom = {
-    enable = true;
+    enable = false;
     package = pkgs.picom-pijulius;
 
     shadow = true;
