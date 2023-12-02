@@ -43,5 +43,9 @@
     defaultWindowManager = "awesome";
   };
 
+  services.autorandr.enable = true;
+  systemd.services.autorandr.after = [ "graphical-session-pre.target" ];
+  systemd.services.autorandr.partOf = [ "graphical-session.target" ];
+
   programs.dconf.enable = true;
 }
