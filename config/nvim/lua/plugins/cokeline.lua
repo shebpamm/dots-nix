@@ -3,18 +3,19 @@ return {
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
     local coke = require "cokeline"
-    local hlgroups = require("cokeline.hlgroups")
-
+    local hlgroups = require "cokeline.hlgroups"
 
     coke.setup {
       show_if_buffers_are_at_least = 2,
 
       default_hl = {
         fg = function(buffer)
-          return buffer.is_focused and hlgroups.get_hl_attr("TabLineSel", "fg") or hlgroups.get_hl_attr("TabLineFill", "fg")
+          return buffer.is_focused and hlgroups.get_hl_attr("TabLineSel", "fg")
+            or hlgroups.get_hl_attr("TabLineFill", "fg")
         end,
         bg = function(buffer)
-          return buffer.is_focused and hlgroups.get_hl_attr("TabLineSel", "bg") or hlgroups.get_hl_attr("TabLineFill", "bg")
+          return buffer.is_focused and hlgroups.get_hl_attr("TabLineSel", "bg")
+            or hlgroups.get_hl_attr("TabLineFill", "bg")
         end,
       },
 
@@ -25,6 +26,15 @@ return {
           end,
           fg = function(buffer)
             return buffer.devicon.color
+          end,
+        },
+        {
+          text = function(buffer)
+            if buffer.is_focused then
+              return ""
+            end
+
+            return buffer.index .. ". "
           end,
         },
         {
