@@ -6,6 +6,7 @@
     ./fish
     ./lorri.nix
     ./tmux.nix
+    ./fortunes.nix
   ];
   home.packages = with pkgs; [
     (ripgrep.override { withPCRE2 = true; })

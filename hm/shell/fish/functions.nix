@@ -12,9 +12,9 @@
   fish_greeting = {
     description = "Greeting displayed at start of shell";
     body = ''
-      set_color $fish_color_autosuggestion
+      set_color yellow
 
-      fortune -s
+      fortune ~/.fortunes
 
       set_color normal
     '';
