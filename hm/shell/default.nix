@@ -61,7 +61,6 @@
     yubikey-agent
     yubikey-manager
     zoxide
-    toke-rs
     shell_gpt
   ];
 
