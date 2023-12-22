@@ -24,6 +24,7 @@ local servers = {
   tflint = {},
   -- gopls = {},
   nil_ls = {},
+  clangd = {},
 }
 
 for name, opts in pairs(servers) do

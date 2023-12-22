@@ -21,6 +21,7 @@ let
     sqls
     dot-language-server
     ansible-language-server
+    clang-tools
   ];
   python-extras = with pkgs.python39Packages; [
     black
