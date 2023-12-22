@@ -13,6 +13,14 @@ local function merge(a, b)
 	return a
 end
 
+local function concat(a, b)
+    for i=1,#b do
+        a[#a+1] = b[i]
+    end
+    return a
+end
+
 module.merge = merge
+module.concat = concat
 
 return module
