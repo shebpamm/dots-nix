@@ -20,6 +20,7 @@
     usbutils
     vim
     zsh
+    jmtpfs
   ];
 
   nixpkgs.config.allowUnfree = true;
