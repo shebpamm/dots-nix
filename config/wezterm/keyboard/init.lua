@@ -3,7 +3,7 @@ local tbl = require("utils.tables")
 
 local config = {}
 
-config.disable_default_key_bindings = true
+config.disable_default_key_bindings = false
 
 local keys = {}
 
