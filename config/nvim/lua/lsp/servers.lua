@@ -20,11 +20,12 @@ local servers = {
   robotframework_ls = {},
   sqlls = {},
   taplo = {},
-  terraformls = {},
+  -- terraformls = {},
   tflint = {},
   -- gopls = {},
   nil_ls = {},
   clangd = {},
+  hls = {},
 }
 
 for name, opts in pairs(servers) do

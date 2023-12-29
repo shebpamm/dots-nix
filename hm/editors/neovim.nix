@@ -22,6 +22,8 @@ let
     dot-language-server
     ansible-language-server
     clang-tools
+    stylish-haskell
+    haskellPackages.haskell-language-server
   ];
   python-extras = with pkgs.python39Packages; [
     black

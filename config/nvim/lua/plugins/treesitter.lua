@@ -20,7 +20,6 @@ local function setup()
     indent = { enable = true },
     playground = { enable = true },
     autotag = { enable = true },
-    context_commentstring = { enable = true },
     incremental_selection = {
       enable = true,
       keymaps = {
@@ -123,7 +122,18 @@ return {
     { "nvim-treesitter/nvim-treesitter-textobjects" },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "windwp/nvim-ts-autotag" },
-    { "JoosepAlviste/nvim-ts-context-commentstring" },
+    {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      config = function()
+        require("ts_context_commentstring").setup {
+          context_commentstring = {
+            enable = true,
+            enable_autocmd = false,
+          },
+        }
+        vim.g.skip_ts_context_commentstring_module = true
+      end,
+    },
     {
       "nvim-treesitter/playground",
       keys = { "<localleader>s" },

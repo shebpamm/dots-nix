@@ -20,6 +20,7 @@ local sources = {
   b.formatting.terraform_fmt,
   b.formatting.yamlfmt,
   b.formatting.nixpkgs_fmt,
+  b.formatting.stylish_haskell
 }
 
 local default_overrides = {
