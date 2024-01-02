@@ -25,7 +25,7 @@ let
     stylish-haskell
     haskellPackages.haskell-language-server
   ];
-  python-extras = with pkgs.python39Packages; [
+  python-extras = with pkgs.python311Packages; [
     black
     isort
     flake8
