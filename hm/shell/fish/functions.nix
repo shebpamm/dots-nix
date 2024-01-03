@@ -20,6 +20,23 @@
     '';
   };
 
+  clear = {
+    description = "Custom clear implementation";
+    body = ''
+      for i in (seq 3 (tput lines))
+        printf '\n'
+      end
+      printf '\33[H\33[2J'
+    '';
+  };
+
+  fish_user_key_bindings = {
+    description = "Key bindings";
+    body = ''
+      bind \cw backward-kill-word
+    '';
+  };
+
   xm4 = {
     description = "Connect my Sony XM4 Headphones";
     body = ''
