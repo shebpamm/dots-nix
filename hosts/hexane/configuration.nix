@@ -54,6 +54,9 @@
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     useDHCP = true;
     wireless.iwd.enable = true;
+    search = [
+      "smartly.io"
+    ];
   };
 
   boot.resumeDevice = "/dev/mapper/crypted";
