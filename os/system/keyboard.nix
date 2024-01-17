@@ -55,4 +55,6 @@
       };
     };
   };
+
+  services.clipcat.enable = true;
 }

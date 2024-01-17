@@ -42,6 +42,9 @@ awful.keyboard.append_global_keybindings {
   awful.key({ modkey, "Control" }, "Print", function()
     awful.spawn "scr windowtoclip"
   end),
+  awful.key({ modkey }, "v", function()
+    awful.spawn "clipcat-menu"
+  end),
 }
 
 -- General Awesome keys

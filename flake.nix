@@ -78,6 +78,7 @@
             }
 
             ./hm/system/openrgb.nix
+            ./hm/system/clipcat.nix
             ./hm/shell
             ./hm/shell/ssh.nix
             ./hm/editors/neovim.nix
@@ -116,6 +117,7 @@
             ./hm/editors/neovim.nix
             ./hm/editors/vim.nix
             ./hm/editors/vscode.nix
+            ./hm/system/clipcat.nix
             ./hm/programs
             ./hm/programs/graphics.nix
             ./hm/programs/xorg.nix
