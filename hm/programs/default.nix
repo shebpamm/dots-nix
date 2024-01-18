@@ -29,5 +29,6 @@
     sops
     yubikey-manager-qt
     yubioath-flutter
+    wireshark
   ];
 }
