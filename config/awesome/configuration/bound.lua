@@ -134,6 +134,12 @@ awful.keyboard.append_global_keybindings {
     description = "focus previous by index",
     group = "client",
   }),
+  awful.key({ modkey }, "i", function()
+    awful.screen.focus_relative(1)
+  end, {
+    description = "switch focus of screen",
+    group = "client",
+  }),
   awful.key({ modkey }, "Tab", function()
     awful.screen.focus_relative(1)
   end, {
