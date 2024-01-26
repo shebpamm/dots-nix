@@ -1,6 +1,7 @@
 local awful = require "awful"
 local ruled = require "ruled"
 local naughty = require "naughty"
+local wibox = require "wibox"
 
 ruled.client.connect_signal("request::rules", function()
   -- All clients will match this rule.
@@ -51,14 +52,14 @@ ruled.client.connect_signal("request::rules", function()
   ruled.client.append_rule {
     rule = { class = "quake" },
     properties = {
-      titlebars_enabled = false
-    }
+      titlebars_enabled = false,
+    },
   }
 
   ruled.client.append_rule {
     id = "vncviewer",
     rule_any = { class = { "Vncviewer" } },
-    properties = { 
+    properties = {
       titlebars_enabled = false,
       screen = "DP-2",
       fullscreen = true,
@@ -75,8 +76,42 @@ ruled.notification.connect_signal("request::rules", function()
       screen = awful.screen.preferred,
       implicit_timeout = 5,
       position = "top_middle",
+      widget_template = {
+        {
+          {
+            {
+              {
+                naughty.widget.icon,
+                {
+                  naughty.widget.title,
+                  naughty.widget.message,
+                  spacing = 4,
+                  layout = wibox.layout.fixed.vertical,
+                },
+                fill_space = true,
+                spacing = 4,
+                layout = wibox.layout.fixed.horizontal,
+              },
+              naughty.list.actions,
+              spacing = 10,
+              layout = wibox.layout.fixed.vertical,
+            },
+            margins = 0,
+            widget = wibox.container.margin,
+          },
+          id = "background_role",
+          widget = naughty.container.background,
+        },
+        strategy = "max",
+        width = 500,
+        widget = wibox.container.constraint,
+      },
     },
   }
+end)
+
+naughty.connect_signal("request::display", function(n)
+  naughty.layout.box { notification = n }
 end)
 
 naughty.expiration_paused = false
