@@ -95,7 +95,6 @@
 
   services.xserver = {
     videoDrivers = [ "nvidia" ];
-    displayManager.sessionCommands = "systemctl start autorandr.service";
     dpi = 96;
   };
 
