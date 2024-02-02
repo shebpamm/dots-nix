@@ -97,7 +97,7 @@
 
     shellAliases = {
       vim = "nvim";
-      ls = "eza";
+      ls = "eza --group-directories-first --icons";
       book = "./run-ansible-playbook.sh -D -e@(ansible-pass | psub)";
     };
   };
