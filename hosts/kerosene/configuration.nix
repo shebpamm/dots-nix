@@ -38,6 +38,8 @@
 
   time.timeZone = "Europe/Helsinki";
 
+  hardware.flipperzero.enable = true;
+
   hardware.nvidia.modesetting.enable = true;
   # hardware.nvidia.powerManagement.enable = false;
   hardware.opengl.driSupport32Bit = true;
