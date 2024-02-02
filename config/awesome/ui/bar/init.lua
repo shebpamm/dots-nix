@@ -249,6 +249,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
       bg = beautiful.none,
       shape = gears.shape.rect,
       screen = s,
+      type = "dock",
 
       -- Place on bottom if primary, otherwise on top
       placement = function(c)

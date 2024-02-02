@@ -2,7 +2,7 @@
 {
   imports = [
     # ./picom.nix
-    # ./compfy.nix
+    ./compfy.nix
     ./gtk.nix
   ];
   home.packages = with pkgs; [

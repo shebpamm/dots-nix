@@ -72,6 +72,8 @@ end)
 naughty.connect_signal("request::display", function(n)
   n.timeout = 30
   n.position = "top_middle"
+  n.title = "<b>" .. n.title .. "</b>"
+
   if n.app_name == "Slack" then
     n.position = "top_right"
     -- example: [company] in #channel -> #channel
@@ -90,43 +92,43 @@ naughty.connect_signal("request::display", function(n)
         n.bg = "#BF616A"
       end
     end
+  end
 
-    n.widget_template = {
+  n.widget_template = {
+    {
       {
         {
           {
+            naughty.widget.icon,
             {
-              naughty.widget.icon,
-              {
-                naughty.widget.title,
-                naughty.widget.message,
-                spacing = 4,
-                layout = wibox.layout.fixed.vertical,
-              },
-              fill_space = true,
+              naughty.widget.title,
+              naughty.widget.message,
               spacing = 4,
-              layout = wibox.layout.fixed.horizontal,
+              layout = wibox.layout.fixed.vertical,
             },
-            naughty.list.actions,
-            spacing = 10,
-            layout = wibox.layout.fixed.vertical,
+            fill_space = true,
+            spacing = 4,
+            layout = wibox.layout.fixed.horizontal,
           },
-          margins = 10,
-          widget = wibox.container.margin,
+          naughty.list.actions,
+          spacing = 10,
+          layout = wibox.layout.fixed.vertical,
         },
-        id = "background_role",
-        widget = naughty.container.background,
-        shape = function(cr, width, height)
-          gears.shape.rounded_rect(cr, width, height, 9)
-        end,
+        margins = 20,
+        widget = wibox.container.margin,
       },
-      strategy = "max",
-      width = 500,
-      widget = wibox.container.constraint,
-    }
-  end
+      id = "background_role",
+      widget = naughty.container.background,
+    },
+    strategy = "max",
+    width = 500,
+    widget = wibox.container.constraint,
+    shape = function(cr, width, height)
+      gears.shape.rounded_rect(cr, width, height, 9)
+    end,
+  }
 
-  naughty.layout.box { notification = n }
+  naughty.layout.box { notification = n, type = "notification" }
 end)
 
 naughty.expiration_paused = false
