@@ -77,7 +77,8 @@ naughty.connect_signal("request::display", function(n)
     local _, _, _, channel = string.find(n.title, "%[(.+)%] in #(.+)")
     n.title = "<b>#" .. channel .. "</b>"
 
-    local _, _, status, message = string.find(n.message, "PagerDuty: %*([a-zA-Z]*)%*.*#%d*:(.*)>%*")
+    -- local _, _, status, message = string.find(n.message, "PagerDuty: %*([a-zA-Z]*)%*.*#%d*:(.*)>%*")
+    local _, _, status, message = string.find(n.message, "PagerDuty: %*([a-zA-Z]*):*%*.*#%d*:*%s*([^>]*)")
 
     if status and message then
       n.timeout = 5
