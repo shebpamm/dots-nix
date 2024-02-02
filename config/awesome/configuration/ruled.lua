@@ -70,6 +70,7 @@ end)
 
 -- Notifications
 naughty.connect_signal("request::display", function(n)
+  n.timeout = 30
   n.position = "top_middle"
   if n.app_name == "Slack" then
     n.position = "top_right"
