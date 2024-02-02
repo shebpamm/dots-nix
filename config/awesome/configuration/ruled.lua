@@ -2,6 +2,7 @@ local awful = require "awful"
 local ruled = require "ruled"
 local naughty = require "naughty"
 local wibox = require "wibox"
+local gears = require "gears"
 
 ruled.client.connect_signal("request::rules", function()
   -- All clients will match this rule.
@@ -68,49 +69,61 @@ ruled.client.connect_signal("request::rules", function()
 end)
 
 -- Notifications
-ruled.notification.connect_signal("request::rules", function()
-  -- All notifications will match this rule.
-  ruled.notification.append_rule {
-    rule = {},
-    properties = {
-      screen = awful.screen.preferred,
-      implicit_timeout = 5,
-      position = "top_middle",
-      widget_template = {
+naughty.connect_signal("request::display", function(n)
+  n.position = "top_middle"
+  if n.app_name == "Slack" then
+    n.position = "top_right"
+    -- example: [company] in #channel -> #channel
+    local _, _, _, channel = string.find(n.title, "%[(.+)%] in #(.+)")
+    n.title = "<b>#" .. channel .. "</b>"
+
+    local _, _, status, message = string.find(n.message, "PagerDuty: %*([a-zA-Z]*)%*.*#%d*:(.*)>%*")
+
+    if status and message then
+      n.timeout = 5
+      n.text = "<b>" .. status .. "</b>: " .. message
+      if status == "Resolved" then
+        n.bg = "#A3BE8C"
+      elseif status == "Triggered" then
+        n.bg = "#BF616A"
+      end
+    end
+
+    n.widget_template = {
+      {
         {
           {
             {
+              naughty.widget.icon,
               {
-                naughty.widget.icon,
-                {
-                  naughty.widget.title,
-                  naughty.widget.message,
-                  spacing = 4,
-                  layout = wibox.layout.fixed.vertical,
-                },
-                fill_space = true,
+                naughty.widget.title,
+                naughty.widget.message,
                 spacing = 4,
-                layout = wibox.layout.fixed.horizontal,
+                layout = wibox.layout.fixed.vertical,
               },
-              naughty.list.actions,
-              spacing = 10,
-              layout = wibox.layout.fixed.vertical,
+              fill_space = true,
+              spacing = 4,
+              layout = wibox.layout.fixed.horizontal,
             },
-            margins = 0,
-            widget = wibox.container.margin,
+            naughty.list.actions,
+            spacing = 10,
+            layout = wibox.layout.fixed.vertical,
           },
-          id = "background_role",
-          widget = naughty.container.background,
+          margins = 10,
+          widget = wibox.container.margin,
         },
-        strategy = "max",
-        width = 500,
-        widget = wibox.container.constraint,
+        id = "background_role",
+        widget = naughty.container.background,
+        shape = function(cr, width, height)
+          gears.shape.rounded_rect(cr, width, height, 9)
+        end,
       },
-    },
-  }
-end)
+      strategy = "max",
+      width = 500,
+      widget = wibox.container.constraint,
+    }
+  end
 
-naughty.connect_signal("request::display", function(n)
   naughty.layout.box { notification = n }
 end)
 
