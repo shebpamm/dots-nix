@@ -4,6 +4,7 @@ require "awful.autofocus"
 local beautiful = require "beautiful"
 local naughty = require "naughty"
 local gears = require "gears"
+local awful = require "awful"
 
 -- err handling
 naughty.connect_signal("request::display_error", function(message, startup)
@@ -32,4 +33,5 @@ require "squeals"
 -- user interfaces
 require "ui"
 
-naughty.notification {title = "kaka",message = "asdasd"}
+-- execute autorandr
+awful.spawn.with_shell("autorandr -c")
