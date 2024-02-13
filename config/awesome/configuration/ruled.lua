@@ -70,7 +70,7 @@ end)
 
 -- Notifications
 naughty.connect_signal("request::display", function(n)
-  n.timeout = 30
+  n.timeout = 15
   n.position = "top_middle"
   n.title = "<b>" .. n.title .. "</b>"
 
