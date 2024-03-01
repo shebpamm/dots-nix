@@ -1,6 +1,6 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
-    python39
+    python311
   ];
 }
