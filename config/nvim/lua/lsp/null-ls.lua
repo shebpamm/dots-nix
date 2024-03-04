@@ -5,7 +5,6 @@ local b = null_ls.builtins
 
 local sources = {
   b.code_actions.refactoring,
-  b.diagnostics.ruff,
   b.diagnostics.sqlfluff,
   b.diagnostics.tfsec,
   b.diagnostics.yamllint,
