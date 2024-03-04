@@ -1,7 +1,7 @@
 return {
   "ms-jpq/coq_nvim",
   branch = "coq",
-  -- commit = "5eddd31bf8a98d1b893b0101047d0bb31ed20c49",
+  commit = "e7304683400a65e3f85e6973fcc2ad2a1bc811e6",
   dependencies = {
     { "ms-jpq/coq.artifacts", branch = "artifacts" },
     { "ms-jpq/coq.thirdparty", branch = "3p" },
