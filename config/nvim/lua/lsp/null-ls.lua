@@ -5,9 +5,7 @@ local b = null_ls.builtins
 
 local sources = {
   b.code_actions.refactoring,
-  b.diagnostics.flake8,
-  b.diagnostics.pydocstyle,
-  b.diagnostics.shellcheck,
+  b.diagnostics.ruff,
   b.diagnostics.sqlfluff,
   b.diagnostics.tfsec,
   b.diagnostics.yamllint,
@@ -20,15 +18,9 @@ local sources = {
   b.formatting.terraform_fmt,
   b.formatting.yamlfmt,
   b.formatting.nixpkgs_fmt,
-  b.formatting.stylish_haskell
 }
 
 local default_overrides = {
-  flake8 = {
-    filter = function(diagnostic)
-      return diagnostic.code ~= "E501" -- Skip "line too long" errors
-    end,
-  },
   yamllint = {
     filter = function(d)
       if d.code == "document-start" then
