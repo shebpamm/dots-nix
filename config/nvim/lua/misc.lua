@@ -22,3 +22,14 @@ utils.nnoremap("<M-v>", ":VSCode<CR>")
 -- Center screen after up-down movement
 utils.nnoremap("<C-d>", "<C-d>zz")
 utils.nnoremap("<C-u>", "<C-u>zz")
+
+-- Generate a password to default register
+local function generate_password()
+  local password = vim.fn.system("pwgen -s 30 1")
+  -- trim last character
+  password = password:sub(1, -2)
+  vim.fn.setreg("+", password)
+  print("Password copied to default register")
+end
+
+utils.command("GeneratePassword", generate_password)
