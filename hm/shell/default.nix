@@ -62,6 +62,7 @@
     yubikey-manager
     zoxide
     shell_gpt
+    pwgen
   ];
 
   # not big enough for their own modules
