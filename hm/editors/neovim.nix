@@ -24,6 +24,8 @@ let
     clang-tools
     stylish-haskell
     haskellPackages.haskell-language-server
+    ruff
+    ruff-lsp
   ];
   python-extras = with pkgs.python311Packages; [
     black
