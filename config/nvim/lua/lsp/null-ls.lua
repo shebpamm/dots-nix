@@ -9,8 +9,6 @@ local sources = {
   b.diagnostics.tfsec,
   b.diagnostics.yamllint,
   b.formatting.astyle,
-  b.formatting.black,
-  b.formatting.isort,
   b.formatting.prettier,
   b.formatting.sqlfluff,
   b.formatting.stylua,
