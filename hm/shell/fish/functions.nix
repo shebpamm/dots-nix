@@ -106,6 +106,11 @@
     '';
   };
 
+  fuq = {
+    description = "fix command using copilot";
+    body = ''gh copilot suggest -t shell "fix the following command: $history[1]"'';
+  };
+
   base = {
     description = "go to git root directory";
     body = "cd (git rev-parse --show-toplevel)";
