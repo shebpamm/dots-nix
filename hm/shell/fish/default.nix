@@ -28,6 +28,8 @@
       "gpcr" = "gh pr create -w";
       "gpv" = "gh pr view -w";
       "c" = "clear";
+      "ks" = "k9s";
+      "ksw" = "k9s --write";
     };
 
     plugins = [
