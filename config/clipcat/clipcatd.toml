@@ -30,7 +30,7 @@ port = 45045
 local_socket = "/run/user/1000/clipcat/grpc.sock"
 
 [desktop_notification]
-enable = true
+enable = false
 icon = "accessories-clipboard"
 timeout_ms = 2000
 long_plaintext_length = 2000
