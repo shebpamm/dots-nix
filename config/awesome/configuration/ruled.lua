@@ -80,17 +80,26 @@ naughty.connect_signal("request::display", function(n)
     local _, _, _, channel = string.find(n.title, "%[(.+)%] in #(.+)")
     n.title = "<b>#" .. channel .. "</b>"
 
-    -- local _, _, status, message = string.find(n.message, "PagerDuty: %*([a-zA-Z]*)%*.*#%d*:(.*)>%*")
-    local _, _, status, message = string.find(n.message, "PagerDuty: %*([a-zA-Z]*):*%*.*#%d*:*%s*([^>]*)")
+    local is_triggered = string.find(n.message, "🔴")
+    local is_resolved = string.find(n.message, "%*Resolved%*")
 
-    if status and message then
+    local title = n.title
+    if is_triggered then
+      n.bg = "#BF616A"
+      title = "Triggered"
+    end
+
+    if is_resolved then
+      n.bg = "#A3BE8C"
+      title = "Resolved"
+    end
+
+    -- local _, _, status, message = string.find(n.message, "PagerDuty: %*([a-zA-Z]*)%*.*#%d*:(.*)>%*")
+    local _, _, message = string.find(n.message, "PagerDuty:[^<]*<([^>]*)")
+
+    if message then
       n.timeout = 5
-      n.text = "<b>" .. status .. "</b>: " .. message
-      if status == "Resolved" then
-        n.bg = "#A3BE8C"
-      elseif status == "Triggered" then
-        n.bg = "#BF616A"
-      end
+      n.text = "<b>" .. title .. "</b>: " .. message
     end
   end
 
