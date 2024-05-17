@@ -18,7 +18,7 @@
     hyprpaper.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
     devenv.url = "github:cachix/devenv";
-    devenv.inputs.nixpkgs.follows = "nixpkgs";
+    # devenv.inputs.nixpkgs.follows = "nixpkgs"; -- some gc breaks
     disko.url = "github:nix-community/disko";
     flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
