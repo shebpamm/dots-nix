@@ -58,6 +58,9 @@
     dhcpcd.wait = "if-carrier-up";
 
   };
+  services.ollama.enable = true;
+  services.ollama.package = (pkgs.ollama.override { acceleration = "cuda"; });
+  services.ollama.acceleration = "cuda";
 
   services.gnome.gnome-keyring.enable = true;
 
