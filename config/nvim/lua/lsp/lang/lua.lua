@@ -5,6 +5,9 @@ M.setup = {
   root_dir = require("lspconfig.util").root_pattern("stylua.toml", "rc.lua", ".git") or vim.loop.cwd,
   settings = {
     Lua = {
+      hint = {
+        enable = true,
+      },
       completion = {
         enable = true,
         callSnippet = "Replace",
