@@ -61,7 +61,6 @@
     yubikey-agent
     yubikey-manager
     zoxide
-    shell_gpt
     pwgen
   ];
 
