@@ -2,7 +2,6 @@
 {
   imports = [
     ./docker.nix
-    ./lisp.nix
     ./lua.nix
     ./nix.nix
     ./node.nix
