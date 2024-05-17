@@ -90,7 +90,7 @@
             ./hm/programs/graphics.nix
             ./hm/desktop
             ./hm/desktop/windowManagers/awesome.nix
-            ./hm/desktop/windowManagers/hyprland.nix
+            # ./hm/desktop/windowManagers/hyprland.nix
           ];
         };
 
