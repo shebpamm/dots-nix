@@ -30,5 +30,6 @@
     yubikey-manager-qt
     yubioath-flutter
     wireshark
+    ollama
   ];
 }
