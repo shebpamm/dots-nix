@@ -7,7 +7,7 @@
 )
 
 (defsrc
-    a    s    d    f    g    h    j    k    l    ;
+    a    s    d    f    g    h    j    k    l    ;    spc
 )
 
 (defalias
@@ -20,8 +20,15 @@
     ctl_k (tap-hold-next-release 200 k rctl)
     alt_l (tap-hold-next-release 200 l lalt)
     met_; (tap-hold-next-release 200 ; rmet)
+
+    spc_layer (tap-hold-next-release 200 spc (layer-toggle extras))
+
 )
 
 (deflayer homerowmods
-    @met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_;
+    @met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_;    @spc_layer
+)
+
+(deflayer extras
+    a    s    d    f    g   left  down  up  right  ; _
 )
