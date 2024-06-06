@@ -1,3 +1,3 @@
 vim.wo.spell = true
-vim.wo.number = false
-vim.wo.relativenumber = false
+vim.wo.number = true
+vim.wo.relativenumber = true
