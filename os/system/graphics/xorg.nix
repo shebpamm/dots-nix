@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 {
+  services.libinput.enable = true;
+  services.displayManager.defaultSession = "none+awesome";
   services.xserver = {
     enable = true;
     displayManager.lightdm = {

@@ -22,7 +22,7 @@
   hardware.rtl-sdr.enable = true;
   services.blueman.enable = true;
   security.polkit.enable = true;
-  services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.libinput.touchpad.naturalScrolling = true;
   services.x2goserver.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.tlp.enable = true;
