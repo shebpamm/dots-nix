@@ -79,7 +79,7 @@
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
   };
 
   services.udev.packages = [ pkgs.yubikey-personalization ];

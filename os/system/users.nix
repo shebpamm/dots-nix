@@ -5,13 +5,13 @@
     users = {
       root = {
         shell = pkgs.fish;
-        passwordFile = config.sops.secrets.root-password.path;
+        hashedPasswordFile = config.sops.secrets.root-password.path;
       };
       shebpamm = {
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
         shell = pkgs.fish;
-        passwordFile = config.sops.secrets.main-password.path;
+        hashedPasswordFile = config.sops.secrets.main-password.path;
       };
     };
   };

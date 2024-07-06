@@ -42,7 +42,7 @@
       overlays = [
         nixpkgs-f2k.overlays.default
         nixpkgs-sheb.overlay
-        neovim-nightly.overlay
+        neovim-nightly.overlays.default
         hyprpaper.overlays.default
         (self: super: { compfy = compfy.packages.${system}.compfy; })
         (self: super: { nomachine = nomachine-pkgs.nomachine; })

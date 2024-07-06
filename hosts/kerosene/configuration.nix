@@ -42,7 +42,7 @@
 
   hardware.nvidia.modesetting.enable = true;
   # hardware.nvidia.powerManagement.enable = false;
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
 
   systemd.enableUnifiedCgroupHierarchy = false;
 
@@ -66,7 +66,7 @@
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
   };
 
   services.udev = {

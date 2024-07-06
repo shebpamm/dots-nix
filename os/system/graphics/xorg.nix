@@ -17,13 +17,11 @@
       Option "ModeValidation" "AllowNonEdidModes"
     '';
 
-    displayManager = {
-      defaultSession = "none+awesome";
-    };
+    
+    
 
-    libinput.enable = true;
-    layout = "eu";
-    xkbOptions = "caps:escape";
+    xkb.layout = "eu";
+    xkb.options = "caps:escape";
     windowManager = {
       awesome = {
         enable = true;
@@ -46,6 +44,8 @@
   services.autorandr.enable = true;
   systemd.services.autorandr.after = [ "graphical-session-pre.target" ];
   systemd.services.autorandr.partOf = [ "graphical-session.target" ];
+  services.libinput.enable = true;
+  services.displayManager.defaultSession = "none+awesome";
 
   programs.dconf.enable = true;
 }

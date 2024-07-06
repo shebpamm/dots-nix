@@ -1,31 +1,30 @@
 { config, pkgs, libs, ... }:
 let
   extras = with pkgs; [
+    ansible-language-server
+    clang-tools
+    dot-language-server
+    gopls
+    haskellPackages.haskell-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.prettier
     nodePackages.prettier_d_slim
-    nodePackages.pyright
     nodePackages.typescript-language-server
-    nodePackages.vscode-css-languageserver-bin
-    nodePackages.vscode-html-languageserver-bin
+    vscode-langservers-extracted
+    pyright
+    ruff
+    ruff-lsp
     shellcheck
     sqlfluff
+    sqls
+    stylish-haskell
     stylua
+    taplo
+    terraform-ls
+    tflint
     tfsec
     yamlfmt
     yamllint
-    gopls
-    tflint
-    terraform-ls
-    taplo
-    sqls
-    dot-language-server
-    ansible-language-server
-    clang-tools
-    stylish-haskell
-    haskellPackages.haskell-language-server
-    ruff
-    ruff-lsp
   ];
   python-extras = with pkgs.python311Packages; [
     black
@@ -38,7 +37,6 @@ in
 {
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
     defaultEditor = true;
     withPython3 = true;
     withNodeJs = true;
