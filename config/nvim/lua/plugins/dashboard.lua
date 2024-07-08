@@ -40,8 +40,8 @@ return {
       b("SPC s c", "  Directory Session"),
       b("SPC f f", "  Find File"),
       b("SPC f r", "  Recent Files"),
-      b("SPC f w", "  Find Word"),
-      b("SPC f p", "  Projects"),
+      b("SPC f w", "  Find Word"),
+      b("SPC f p", "  Projects"),
       b("SPC ,", "  Edit Config"),
     }
 
