@@ -1,7 +1,4 @@
-local gears = require "gears"
 local awful = require "awful"
-
-local dump = gears.debug.dump
 
 module = {}
 
