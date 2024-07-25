@@ -50,7 +50,7 @@
 
   networking = {
     hostName = "hexane";
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
     useDHCP = true;
     wireless.iwd.enable = true;
     search = [
