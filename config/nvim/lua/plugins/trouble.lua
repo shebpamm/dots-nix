@@ -4,12 +4,21 @@ return {
     {
       "gr",
       function()
-        require("trouble").open "lsp_references"
+        require("trouble").toggle "lsp_references"
+        require("trouble").focus()
+      end,
+      desc = "references",
+    },
+    {
+      "<leader>d",
+      function()
+        require("trouble").toggle "diagnostics"
+        require("trouble").focus()
       end,
       desc = "references",
     },
   },
-  cmd = { "Trouble", "TroubleToggle" },
+  cmd = { "Trouble" },
   opts = {
     auto_close = true,
     auto_preview = true,

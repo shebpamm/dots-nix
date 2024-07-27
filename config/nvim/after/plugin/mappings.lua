@@ -28,7 +28,6 @@ wk.register {
       p = { "<CMD>PackerProfile<CR>", "Profile" },
     },
     [","] = { "<CMD>edit ~/.config/nvim/lua/config.lua<CR>", "edit config" },
-    d = { "<CMD>TroubleToggle<CR>", "trouble" },
     -- git
     v = {
       name = "+git",
