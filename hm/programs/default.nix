@@ -12,7 +12,9 @@
   home.packages = with pkgs; [
     bitwarden
     bitwarden-cli
-    discord
+    (discord.override {
+      withVencord = true;
+    })
     firefox
     google-chrome
     iperf3
