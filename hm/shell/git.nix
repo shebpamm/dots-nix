@@ -18,12 +18,16 @@
       amend = "commit --amend";
       dfs = "diff --staged";
       a = "add";
+      stashgrep = "!f() { for i in `git stash list --format=\"%gd\"` ; do git stash show -p $i | grep -H --label=\"$i\" \"$@\" ; done ; }; f";
+      stashrg = "!f() { for i in `git stash list --format=\"%gd\"` ; do git stash show -p $i | sed \"s/^/$i:/\" | rg \"$@\" ; done ; }; f";
+      stashfd = "!f() { for i in `git stash list --format=\"%gd\"`; do git stash show --name-only $i | grep -H --label=\"$i\" \"$@\" ; done ; }; f";
     };
 
     diff-so-fancy.enable = true;
 
     extraConfig = {
       safe.directory = "/home/shebpamm/dotfiles";
+      stash.showIncludeUntracked = true;
       init = {
         defaultBranch = "main";
       };
