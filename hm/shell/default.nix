@@ -35,9 +35,9 @@
     htop
     hyperfine
     jq
+    k9s
     kubectl
     kubectx
-    k9s
     kubernetes-helm
     kustomize
     lazygit
@@ -46,7 +46,9 @@
     pamixer
     pass
     playerctl
+    pwgen
     qrencode
+    rabtap
     ranger
     silicon
     socat
@@ -61,7 +63,6 @@
     yubikey-agent
     yubikey-manager
     zoxide
-    pwgen
   ];
 
   # not big enough for their own modules
