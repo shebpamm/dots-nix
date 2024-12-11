@@ -33,5 +33,6 @@
     yubioath-flutter
     wireshark
     ollama
+    cfssl
   ];
 }
