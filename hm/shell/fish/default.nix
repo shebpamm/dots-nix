@@ -15,6 +15,15 @@
     shellInit = ''
       source ~/.config/fish/static_variables.fish
       source ~/.config/fish/kubectl_aliases.fish
+
+      # Source all files in ~/.fish if exists
+      if test -d ~/.fish
+          for file in ~/.fish/*.fish
+              if test -e $file
+                  source $file
+              end
+          end
+      end
     '';
 
     shellAbbrs = {
