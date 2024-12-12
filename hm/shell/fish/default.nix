@@ -2,7 +2,7 @@
 {
 
   programs.nix-index = {
-    enable = true;
+    enable = false;
     enableFishIntegration = true;
   };
 
