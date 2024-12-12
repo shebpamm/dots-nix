@@ -6,6 +6,7 @@ for secret in hass-server hass-token hass-imaginary openai-api-key jira-api-toke
 end
 
 bind \ew kubectl-gd-toggle
+bind \ef thefuck-command-line
 
 set __done_enabled 1
 set __done_min_cmd_duration 60000
