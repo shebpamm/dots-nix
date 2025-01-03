@@ -11,7 +11,7 @@
 
       # Other Modules
       ../../os/system
-     ../../os/system/keyboard.nix
+      ../../os/system/keyboard.nix
       # ../../os/system/graphics/wayland.nix
       ../../os/games/steam.nix
       ../../os/programs
@@ -145,6 +145,12 @@
 
   virtualisation.docker.enable = true;
   virtualisation.docker.enableNvidia = true;
+  virtualisation.docker.daemon.settings = {
+    default-address-pools = [
+      { base = "172.80.0.0/16"; size = 24; }
+      { base = "172.90.0.0/16"; size = 24; }
+    ];
+  };
   virtualisation.virtualbox.host.enable = true;
 
   system.stateVersion = "23.11";
