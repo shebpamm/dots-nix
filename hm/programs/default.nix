@@ -34,5 +34,6 @@
     wireshark
     ollama
     cfssl
+    talosctl
   ];
 }
