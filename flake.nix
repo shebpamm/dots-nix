@@ -23,9 +23,10 @@
     flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
     compfy.url = "github:allusive-dev/compfy";
+    flox.url = "github:flox/flox";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko, flake-utils-plus, kmonad, compfy }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko, flake-utils-plus, kmonad, compfy, flox }:
     let
       system = "x86_64-linux";
 
@@ -44,6 +45,7 @@
         nixpkgs-sheb.overlay
         neovim-nightly.overlays.default
         hyprpaper.overlays.default
+        (self: super: { flox = flox.packages.${system}.flox; })
         (self: super: { compfy = compfy.packages.${system}.compfy; })
         (self: super: { nomachine = nomachine-pkgs.nomachine; })
         (self: super: { devenv = devenv.packages.${system}.devenv; })

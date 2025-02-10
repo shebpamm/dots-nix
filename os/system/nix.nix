@@ -13,6 +13,7 @@
         "https://fortuneteller2k.cachix.org"
         "https://hyprland.cachix.org"
         "https://sorsalab.cachix.org"
+        "https://cache.flox.dev"
       ];
 
       trusted-public-keys = [
@@ -23,6 +24,7 @@
         "fortuneteller2k.cachix.org-1:kXXNkMV5yheEQwT0I4XYh1MaCSz+qg72k8XAi2PthJI="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "sorsalab.cachix.org-1:22M3UMmBtHT2loPkKMNf9wCeO5JFluaOPeDK0Acb8BI="
+        "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
       ];
     };
     extraOptions = ''

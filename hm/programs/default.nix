@@ -36,5 +36,6 @@
     cfssl
     file
     talosctl
+    flox
   ];
 }
