@@ -363,7 +363,8 @@ client.connect_signal("request::default_keybindings", function()
       group = "client",
     }),
     awful.key({ modkey }, "m", function(c)
-      awful.spawn "clipcat-menu"
+      c.maximized = not c.maximized
+      c:raise()
     end, {
       description = "(un)maximize",
       group = "client",
