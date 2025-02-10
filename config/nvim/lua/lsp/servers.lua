@@ -12,19 +12,20 @@ local servers = {
   ansiblels = require("lsp.lang.ansible").setup,
 
   awk_ls = {},
+  bashls = {},
+  clangd = {},
   cssls = {},
   dockerls = {},
   dotls = {},
+  hls = {},
   html = {},
   jsonls = {},
+  nil_ls = {},
   robotframework_ls = {},
+  ruff_lsp = {},
   sqlls = {},
   taplo = {},
   tflint = {},
-  nil_ls = {},
-  clangd = {},
-  hls = {},
-  ruff_lsp = {},
 }
 
 for name, opts in pairs(servers) do

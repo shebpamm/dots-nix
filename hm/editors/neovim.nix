@@ -25,6 +25,8 @@ let
     tfsec
     yamlfmt
     yamllint
+    bash-language-server
+    shfmt
   ];
   python-extras = with pkgs.python311Packages; [
     black
