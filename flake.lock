@@ -570,11 +570,11 @@
         "t3-src": "t3-src"
       },
       "locked": {
-        "lastModified": 1736797654,
-        "narHash": "sha256-LZN7ToREVzfM89MDrhEznVqF6yvJW0cIZIzRnxEz0vU=",
+        "lastModified": 1738954751,
+        "narHash": "sha256-rvTkT0KUq/EhoPA1HtwVO4nJOJKZQDopGB31PWXOBPY=",
         "owner": "flox",
         "repo": "flox",
-        "rev": "dddfb8612601c07f39f10fce951a861bae0255b4",
+        "rev": "e50bfbdb71e38bb60f84cacb6261a00ad00307bc",
         "type": "github"
       },
       "original": {
