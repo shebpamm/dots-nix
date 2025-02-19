@@ -48,7 +48,7 @@ local function get_center_client()
   local center_client = nil
   local center_client_x = 0
   for _, c in ipairs(clients) do
-    local midpoint = c.x + c.width / 2 
+    local midpoint = c.x + c.width / 2
     if math.abs(midpoint - center_point) < math.abs(center_client_x - center_point) then
       center_client = c
       center_client_x = midpoint
@@ -71,7 +71,7 @@ end
 function module.focus_direction(direction)
   local client = get_direction_client(direction)
   if client then
-    client:emit_signal("request::activate", "nav.focus_direction", {raise = true})
+    client:emit_signal("request::activate", "nav.focus_direction", { raise = true })
   end
 end
 
