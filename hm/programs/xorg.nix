@@ -8,7 +8,11 @@
     xdotool
     xpra
     xprintidle
-    xsecurelock
+    (xsecurelock.overrideAttrs
+      (oldAttrs: {
+        buildInputs = oldAttrs.buildInputs ++ [ mplayer ];
+        configureFlags = oldAttrs.configureFlags ++ [ "--with-mplayer=${mplayer}/bin/mplayer" ];
+      }))
     eww
     autorandr
     arandr
