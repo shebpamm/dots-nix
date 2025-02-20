@@ -48,8 +48,15 @@ local function get_center_client()
   local center_client = nil
   local center_client_x = 0
   for _, c in ipairs(clients) do
-    local midpoint = c.x + c.width / 2
-    if math.abs(midpoint - center_point) < math.abs(center_client_x - center_point) then
+    local midpoint = (c.x + c.width) / 2
+    local distance = math.abs(midpoint - center_point)
+    local previous_distance = math.abs(center_client_x - center_point)
+    if distance < previous_distance then
+      center_client = c
+      center_client_x = midpoint
+    end
+
+    if distance == previous_distance and center_client == client.focus then
       center_client = c
       center_client_x = midpoint
     end
