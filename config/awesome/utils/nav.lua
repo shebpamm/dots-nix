@@ -48,7 +48,7 @@ local function get_center_client()
   local center_client = nil
   local center_client_x = 0
   for _, c in ipairs(clients) do
-    local midpoint = (c.x + c.width) / 2
+    local midpoint = c.x + (c.width / 2)
     local distance = math.abs(midpoint - center_point)
     local previous_distance = math.abs(center_client_x - center_point)
     if distance < previous_distance then
