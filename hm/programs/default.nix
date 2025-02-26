@@ -22,7 +22,6 @@
     libnotify
     mplayer
     nfs-utils
-    nomachine
     nyxt
     openssl
     pavucontrol
