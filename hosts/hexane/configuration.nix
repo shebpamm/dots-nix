@@ -48,7 +48,7 @@
 
   virtualisation.docker.enable = true;
 
-  services.xserver.dpi = 144;
+  services.xserver.dpi = 96 + 16;
 
   networking = {
     hostName = "hexane";
@@ -78,12 +78,6 @@
       configurationLimit = 3;
     };
   };
-
-  swapDevices = [
-    {
-      device = "/swap/swapfile";
-    }
-  ];
 
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
