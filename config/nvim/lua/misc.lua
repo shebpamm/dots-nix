@@ -23,6 +23,15 @@ utils.nnoremap("<M-v>", ":VSCode<CR>")
 utils.nnoremap("<C-d>", "<C-d>zz")
 utils.nnoremap("<C-u>", "<C-u>zz")
 
+-- Make x work like d but without yanking
+utils.nnoremap("x", '"_d')
+utils.vnoremap("x", '"_d')
+utils.onoremap("x", '"_d')
+utils.nnoremap("X", '"_D')
+
+-- Make xx work like dd but without yanking
+utils.nnoremap("xx", '"_dd')
+
 -- Generate a password to default register
 local function generate_password()
   local password = vim.fn.system("pwgen -s 30 1")
