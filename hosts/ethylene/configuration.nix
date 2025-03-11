@@ -174,7 +174,7 @@
 
 
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.git;
     settings = {
       trusted-users = [ "root" "shebpamm" "@wheel" ];
 
