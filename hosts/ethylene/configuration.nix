@@ -208,5 +208,13 @@
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "shebpamm" ];
 
+  virtualisation.vmVariant = {
+    virtualization = {
+      memorysize = 2048;
+      cores = 8;
+      graphics = true;
+    };
+  };
+
   system.stateVersion = "23.11";
 }
