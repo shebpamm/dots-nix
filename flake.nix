@@ -28,6 +28,10 @@
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
+      context = {
+        system = system;
+        mainUser = "shebpamm";
+      };
 
       unfreeImport = pkgs: import pkgs {
         inherit system;
@@ -61,12 +65,12 @@
       homemanagerConfigurations = {
         kerosene = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs context; };
           modules = [
             {
               home = {
-                homeDirectory = "/home/shebpamm";
-                username = "shebpamm";
+                homeDirectory = "/home/${context.mainUser}";
+                username = context.mainUser;
                 stateVersion = "23.11";
               };
 
@@ -93,12 +97,12 @@
 
         hexane = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs context; };
           modules = [
             rec {
               home = {
-                homeDirectory = "/home/shebpamm";
-                username = "shebpamm";
+                homeDirectory = "/home/${context.mainUser}";
+                username = context.mainUser;
                 stateVersion = "23.11";
               };
 
@@ -125,12 +129,12 @@
 
         ethylene = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs context; };
           modules = [
             {
               home = {
-                homeDirectory = "/home/shebpamm";
-                username = "shebpamm";
+                homeDirectory = "/home/${context.mainUser}";
+                username = context.mainUser;
                 stateVersion = "23.11";
               };
 
@@ -161,7 +165,7 @@
             ./hosts/kerosene/configuration.nix
             inputs.disko.nixosModules.disko
           ];
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs context; };
         };
         ethylene = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -172,7 +176,7 @@
             ./hosts/ethylene/configuration.nix
             "${inputs.logiops.outPath}/nixos/modules/hardware/logiops"
           ];
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs context; };
         };
         hexane = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -183,7 +187,7 @@
             ./hosts/hexane/configuration.nix
             inputs.disko.nixosModules.disko
           ];
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs context; };
         };
       };
     };
