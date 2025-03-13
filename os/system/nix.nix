@@ -1,9 +1,13 @@
 { config, pkgs, ... }:
 {
+  boot.binfmt.emulatedSystems = ["i686-linux" "aarch64-linux"];
   nix = {
     package = pkgs.nixMaster;
+
+
     settings = {
       trusted-users = [ "root" "shebpamm" "@wheel" ];
+      extra-platforms = config.boot.binfmt.emulatedSystems;
 
       substituters = [
         "https://cache.nixos.org/"
