@@ -1,4 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, context, ... }:
+let
+  user = context.mainUser;
+in
 {
   users = {
     mutableUsers = false;
@@ -7,7 +10,7 @@
         shell = pkgs.fish;
         hashedPasswordFile = config.sops.secrets.root-password.path;
       };
-      shebpamm = {
+      ${user} = {
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
         shell = pkgs.fish;
@@ -16,12 +19,12 @@
     };
   };
 
-  users.extraGroups.vboxusers.members = [ "shebpamm" ];
-  users.extraGroups.docker.members = [ "shebpamm" ];
-  users.extraGroups.libvirtd.members = [ "shebpamm" ];
-  users.extraGroups.audio.members = [ "shebpamm" ];
-  users.extraGroups.plugdev.members = [ "shebpamm" ];
+  users.extraGroups.vboxusers.members = [ user ];
+  users.extraGroups.docker.members = [ user ];
+  users.extraGroups.libvirtd.members = [ user ];
+  users.extraGroups.audio.members = [ user ];
+  users.extraGroups.plugdev.members = [ user ];
 
-  nix.settings.trusted-users = [ "root" "shebpamm" "@wheel" ];
+  nix.settings.trusted-users = [ "root" user "@wheel" ];
 
 }

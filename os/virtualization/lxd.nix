@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ context, pkgs, ... }:
 {
   virtualisation.lxd = {
     enable = true;
@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs; [ lxc ];
 
 
-  users.extraGroups.lxd.members = [ "shebpamm" ];
+  users.extraGroups.lxd.members = [ context.mainUser ];
 
   virtualisation.lxc.lxcfs.enable = true;
   networking.bridges = { lxdbr0.interfaces = [ ]; };
