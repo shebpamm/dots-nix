@@ -11,7 +11,6 @@
     nixpkgs-sheb.inputs.nixpkgs.follows = "nixpkgs";
     spicetify.url = "github:the-argus/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
-    nomachine.url = "github:rytec-nl/nixpkgs/submit/add-nomachine-server";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpaper.url = "github:shebpamm/hyprpaper";
@@ -26,7 +25,7 @@
     flox.url = "github:flox/flox";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-master, home-manager, neovim-nightly, nixpkgs-f2k, nixpkgs-sheb, spicetify, sops-nix, nomachine, logiops, hyprland, hyprpaper, nur, devenv, disko, flake-utils-plus, kmonad, compfy, flox }:
+  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
 
@@ -35,29 +34,25 @@
         config = { allowUnfree = true; }; # Forgive me Mr. Stallman
       };
 
-      nomachine-pkgs = unfreeImport nomachine;
       pkgs = unfreeImport nixpkgs;
-      master-pkgs = unfreeImport nixpkgs-master;
-      logiops-pkgs = unfreeImport logiops;
+      master-pkgs = unfreeImport inputs.nixpkgs-master;
+      logiops-pkgs = unfreeImport inputs.logiops;
 
       overlays = [
-        nixpkgs-f2k.overlays.default
-        nixpkgs-sheb.overlay
-        neovim-nightly.overlays.default
-        hyprpaper.overlays.default
-        (self: super: { flox = flox.packages.${system}.flox; })
-        (self: super: { compfy = compfy.packages.${system}.compfy; })
-        (self: super: { nomachine = nomachine-pkgs.nomachine; })
-        (self: super: { devenv = devenv.packages.${system}.devenv; })
-        (self: super: { formats = logiops-pkgs.formats; })
-        (self: super: { nixMaster = master-pkgs.nix; })
+        inputs.nixpkgs-f2k.overlays.default
+        inputs.nixpkgs-sheb.overlay
+        inputs.neovim-nightly.overlays.default
+        inputs.hyprpaper.overlays.default
         (self: super: {
-          nur = import nur {
+          flox = inputs.flox.packages.${system}.flox;
+          compfy = inputs.compfy.packages.${system}.compfy;
+          devenv = inputs.devenv.packages.${system}.devenv;
+          formats = logiops-pkgs.formats;
+          nixMaster = master-pkgs.nix;
+          nur = import inputs.nur {
             nurpkgs = super;
             pkgs = super;
           };
-        })
-        (self: super: {
           act-latest = master-pkgs.act;
         })
       ];
@@ -164,7 +159,7 @@
               nixpkgs.overlays = overlays;
             }
             ./hosts/kerosene/configuration.nix
-            disko.nixosModules.disko
+            inputs.disko.nixosModules.disko
           ];
           specialArgs = { inherit inputs; };
         };
@@ -175,8 +170,7 @@
               nixpkgs.overlays = overlays;
             }
             ./hosts/ethylene/configuration.nix
-            "${nomachine.outPath}/nixos/modules/services/admin/nomachine.nix"
-            "${logiops.outPath}/nixos/modules/hardware/logiops"
+            "${inputs.logiops.outPath}/nixos/modules/hardware/logiops"
           ];
           specialArgs = { inherit inputs; };
         };
@@ -187,7 +181,7 @@
               nixpkgs.overlays = overlays;
             }
             ./hosts/hexane/configuration.nix
-            disko.nixosModules.disko
+            inputs.disko.nixosModules.disko
           ];
           specialArgs = { inherit inputs; };
         };

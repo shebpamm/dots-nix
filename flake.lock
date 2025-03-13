@@ -1406,22 +1406,6 @@
         "type": "indirect"
       }
     },
-    "nomachine": {
-      "locked": {
-        "lastModified": 1682367457,
-        "narHash": "sha256-Hec3l+TYmE9ICUz7NxmRtfljUl6ludm8QKSdiW21WRg=",
-        "owner": "rytec-nl",
-        "repo": "nixpkgs",
-        "rev": "63686e66b7441ef5d5e7a6277d1c36c413548b05",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rytec-nl",
-        "ref": "submit/add-nomachine-server",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nur": {
       "locked": {
         "lastModified": 1720246927,
@@ -1572,7 +1556,6 @@
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-sheb": "nixpkgs-sheb",
-        "nomachine": "nomachine",
         "nur": "nur",
         "sops-nix": "sops-nix",
         "spicetify": "spicetify"
