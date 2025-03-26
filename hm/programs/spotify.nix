@@ -9,7 +9,7 @@
       spicePkgs = inputs.spicetify.packages.${pkgs.system}.default;
     in
     {
-      enable = true;
+      enable = false;
       theme = spicePkgs.themes.catppuccin;
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay

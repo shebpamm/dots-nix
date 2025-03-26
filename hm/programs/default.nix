@@ -28,7 +28,6 @@
     pcmanfm
     pulseaudio
     sops
-    yubikey-manager-qt
     yubioath-flutter
     wireshark
     ollama
@@ -36,5 +35,6 @@
     file
     talosctl
     flox
+    code-cursor
   ];
 }
