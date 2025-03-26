@@ -9,7 +9,7 @@
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k/3322009946e80d441d5156d41a6ef22742708efd";
     nixpkgs-sheb.url = "github:shebpamm/nixpkgs-sheb";
     nixpkgs-sheb.inputs.nixpkgs.follows = "nixpkgs";
-    spicetify.url = "github:the-argus/spicetify-nix";
+    spicetify.url = "github:Gerg-L/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
     hyprland.url = "github:hyprwm/Hyprland";

@@ -1,20 +1,20 @@
 { config, pkgs, libs, inputs, ... }:
 {
-  imports = [ inputs.spicetify.homeManagerModule ];
+  imports = [ inputs.spicetify.homeManagerModules.default ];
   home.packages = with pkgs; [
     spotify-player
   ];
   programs.spicetify =
     let
-      spicePkgs = inputs.spicetify.packages.${pkgs.system}.default;
+      spicePkgs = inputs.spicetify.legacyPackages.${pkgs.system};
     in
     {
-      enable = false;
+      enable = true;
       theme = spicePkgs.themes.catppuccin;
       enabledExtensions = with spicePkgs.extensions; [
-        fullAppDisplay
-        shuffle
-        hidePodcasts
+        # fullAppDisplay
+        # shuffle
+        # hidePodcasts
       ];
     };
 
