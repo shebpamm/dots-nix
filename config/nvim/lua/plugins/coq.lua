@@ -22,8 +22,5 @@ return {
         preview = { positions = { north = 4, south = nil, west = 2, east = 3 } },
       },
     }
-    require "coq_3p" {
-      { src = "copilot", short_name = "COP", accept_key = "<c-f>" },
-    }
   end,
 }

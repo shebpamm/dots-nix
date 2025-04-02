@@ -32,6 +32,6 @@ wk.register({
 wk.register({
   c = {
     name = "+code",
-    a = { vim.lsp.buf.range_code_action, "range code action" },
+    a = { vim.lsp.buf.code_action, "range code action" },
   },
 })

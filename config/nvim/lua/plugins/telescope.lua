@@ -177,7 +177,7 @@ return {
           l = {
             name = "+lsp",
             d = { b.lsp_definitions, "definitions" },
-            r = { b.references, "references" },
+            r = { b.lsp_references, "references" },
             i = { b.lsp_implementations, "implementations" },
             s = { b.lsp_document_symbols, "document symbols" },
             w = { b.lsp_workspace_symbols, "workspace symbols" },

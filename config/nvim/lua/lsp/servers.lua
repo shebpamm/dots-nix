@@ -8,7 +8,7 @@ local servers = {
   emmet_ls = require("lsp.lang.emmet").setup,
   lua_ls = require("lsp.lang.lua").setup,
   pyright = require("lsp.lang.python").setup,
-  tsserver = require("lsp.lang.typescript").setup,
+  ts_ls = require("lsp.lang.typescript").setup,
   ansiblels = require("lsp.lang.ansible").setup,
 
   awk_ls = {},
@@ -22,7 +22,7 @@ local servers = {
   jsonls = {},
   nil_ls = {},
   robotframework_ls = {},
-  ruff_lsp = {},
+  ruff = {},
   sqlls = {},
   taplo = {},
   tflint = {},
