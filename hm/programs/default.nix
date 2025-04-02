@@ -17,6 +17,7 @@
     })
     firefox
     google-chrome
+    zen-browser
     iperf3
     kitty
     libnotify

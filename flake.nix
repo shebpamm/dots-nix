@@ -23,6 +23,7 @@
     kmonad.url = "github:kmonad/kmonad?dir=nix";
     compfy.url = "github:allusive-dev/compfy";
     flox.url = "github:flox/flox";
+    zen.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -48,6 +49,7 @@
         inputs.neovim-nightly.overlays.default
         inputs.hyprpaper.overlays.default
         (self: super: {
+          zen-browser = inputs.zen.packages.${system}.default;
           flox = inputs.flox.packages.${system}.flox;
           compfy = inputs.compfy.packages.${system}.compfy;
           devenv = inputs.devenv.packages.${system}.devenv;
