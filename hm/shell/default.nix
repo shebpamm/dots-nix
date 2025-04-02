@@ -22,6 +22,7 @@
     cloudflared
     comma
     devenv
+    dyff
     eza
     fd
     feh
