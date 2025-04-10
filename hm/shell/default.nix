@@ -65,6 +65,10 @@
     yubikey-agent
     yubikey-manager
     zoxide
+    lefthook
+    actionlint
+    action-validator
+    shellcheck
   ];
 
   # not big enough for their own modules
