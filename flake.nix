@@ -24,6 +24,7 @@
     compfy.url = "github:allusive-dev/compfy";
     flox.url = "github:flox/flox";
     zen.url = "github:0xc000022070/zen-browser-flake";
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -62,6 +63,10 @@
           act-latest = master-pkgs.act;
         })
       ];
+
+      defaultHomeManagerModules = [
+        inputs.catppuccin.homeManagerModules.catppuccin
+      ];
     in
     {
       homemanagerConfigurations = {
@@ -94,7 +99,7 @@
             ./hm/desktop
             ./hm/desktop/windowManagers/awesome.nix
             # ./hm/desktop/windowManagers/hyprland.nix
-          ];
+          ] ++ defaultHomeManagerModules;
         };
 
         hexane = home-manager.lib.homeManagerConfiguration {
@@ -126,7 +131,7 @@
             ./hm/programs/xorg.nix
             ./hm/programs/work.nix
             ./hm/shell
-          ];
+          ] ++ defaultHomeManagerModules;
         };
 
         ethylene = home-manager.lib.homeManagerConfiguration {
@@ -153,7 +158,7 @@
             ./hm/programs/work.nix
             ./hm/desktop
             ./hm/desktop/windowManagers/awesome.nix
-          ];
+          ] ++ defaultHomeManagerModules;
         };
       };
 
