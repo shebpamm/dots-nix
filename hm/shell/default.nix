@@ -71,6 +71,7 @@
     action-validator
     shellcheck
     erdtree
+    granted
   ];
 
   # not big enough for their own modules

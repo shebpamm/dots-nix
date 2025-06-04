@@ -110,6 +110,7 @@
       vim = "nvim";
       ls = "eza --group-directories-first --icons";
       book = "./run-ansible-playbook.sh -D -e@(ansible-pass | psub)";
+      assume = "source ${pkgs.granted}/share/assume.fish";
     };
   };
 
