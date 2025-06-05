@@ -62,7 +62,7 @@
     websocat
     wget
     xclip
-    yq
+    yq-go
     yubikey-agent
     yubikey-manager
     zoxide
