@@ -72,6 +72,7 @@
     shellcheck
     erdtree
     granted
+    relcheck
   ];
 
   # not big enough for their own modules

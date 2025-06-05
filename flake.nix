@@ -25,6 +25,7 @@
     flox.url = "github:flox/flox";
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
+    relcheck.url = "github:anttiharju/relcheck";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -54,6 +55,7 @@
           flox = inputs.flox.packages.${system}.flox;
           compfy = inputs.compfy.packages.${system}.compfy;
           devenv = inputs.devenv.packages.${system}.devenv;
+          relcheck = inputs.relcheck.packages.${system}.default;
           formats = logiops-pkgs.formats;
           nixMaster = master-pkgs.nix;
           nur = import inputs.nur {
