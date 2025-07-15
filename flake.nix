@@ -26,6 +26,7 @@
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
     relcheck.url = "github:anttiharju/relcheck";
+    kat.url = "github:macropower/nur-packages";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -56,6 +57,7 @@
           compfy = inputs.compfy.packages.${system}.compfy;
           devenv = inputs.devenv.packages.${system}.devenv;
           relcheck = inputs.relcheck.packages.${system}.default;
+          kat = inputs.kat.packages.${system}.kat;
           formats = logiops-pkgs.formats;
           nixMaster = master-pkgs.nix;
           nur = import inputs.nur {
