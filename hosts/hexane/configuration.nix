@@ -18,6 +18,7 @@
       ../../os/games/steam.nix
     ];
 
+  services.upower.enable = true;
   hardware.bluetooth.enable = true;
   hardware.rtl-sdr.enable = true;
   services.blueman.enable = true;
@@ -60,6 +61,8 @@
   #       EndSection
   #     '';
   #   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 
 
   networking = {
@@ -143,11 +146,24 @@
 
   services.sshd.enable = true;
   services.touchegg.enable = true;
+  hardware.opengl = {
+    enable = true;
+  };
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    prime = {
+      sync.enable = true;
+      offload.enable = false;
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = with pkgs; [ libva vaapiVdpau ];
+    extraPackages = with pkgs; [ libva vaapiVdpau intel-media-driver ];
   };
 
   system.stateVersion = "23.11";
