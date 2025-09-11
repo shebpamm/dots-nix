@@ -14,7 +14,6 @@ let
     vscode-langservers-extracted
     pyright
     ruff
-    ruff-lsp
     shellcheck
     sqlfluff
     sqls
