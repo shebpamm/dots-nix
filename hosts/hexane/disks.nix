@@ -11,7 +11,7 @@
           {
             name = "ESP";
             start = "1MiB";
-            end = "100MiB";
+            end = "1000MiB";
             bootable = true;
             content = {
               type = "filesystem";
@@ -21,7 +21,7 @@
           }
           {
             name = "luks";
-            start = "100MiB";
+            start = "1000MiB";
             end = "100%";
             content = {
               type = "luks";
