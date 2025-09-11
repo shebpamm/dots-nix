@@ -62,7 +62,6 @@
           devenv = inputs.devenv.packages.${system}.devenv;
           relcheck = inputs.relcheck.packages.${system}.default;
           kat = inputs.kat.packages.${system}.kat;
-          formats = logiops-pkgs.formats;
           nixMaster = master-pkgs.nix;
           nur = import inputs.nur {
             nurpkgs = super;
