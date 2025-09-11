@@ -1,7 +1,7 @@
 { config, pkgs, libs, ... }:
 {
   programs.irssi = {
-    enable = true;
+    enable = false;
     networks = {
       liberachat = {
         nick = "shebpamm";
