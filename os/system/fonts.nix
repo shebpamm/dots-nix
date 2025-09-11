@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 {
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "3270" "JetBrainsMono" ]; })
+    # (nerdfonts.override { fonts = [ "3270" "JetBrainsMono" ]; })
+    nerd-fonts._3270
+    nerd-fonts.jetbrains-mono
     font-awesome
     cantarell-fonts
     cascadia-code

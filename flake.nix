@@ -20,13 +20,17 @@
     # devenv.inputs.nixpkgs.follows = "nixpkgs"; -- some gc breaks
     disko.url = "github:nix-community/disko";
     flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
-    kmonad.url = "github:kmonad/kmonad?dir=nix";
     compfy.url = "github:allusive-dev/compfy";
     flox.url = "github:flox/flox";
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
     relcheck.url = "github:anttiharju/relcheck";
     kat.url = "github:macropower/nur-packages";
+    cursor = {
+      url = "github:thinktankmachine/cursor-nixos-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -65,6 +69,7 @@
             pkgs = super;
           };
           act-latest = master-pkgs.act;
+          cursor-latest = inputs.cursor.packages.${system}.cursor;
         })
       ];
 

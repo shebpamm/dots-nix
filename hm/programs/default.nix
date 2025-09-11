@@ -36,6 +36,6 @@
     file
     talosctl
     flox
-    code-cursor
+    cursor-latest
   ];
 }

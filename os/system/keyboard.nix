@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   imports = [
-    inputs.kmonad.nixosModules.default
+    # inputs.kmonad.nixosModules.default
   ];
 
   # hardware.keyboard.zsa.enable = true;

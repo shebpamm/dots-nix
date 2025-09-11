@@ -13,7 +13,7 @@
       ../../os/system/graphics/xorg.nix
       # ../../os/system/fingerprint.nix
       ../../os/secrets
-     ../../os/system/keyboard.nix
+      ../../os/system/keyboard.nix
 
       ../../os/games/steam.nix
     ];
@@ -23,7 +23,7 @@
   services.blueman.enable = true;
   security.polkit.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
-  services.x2goserver.enable = true;
+  services.x2goserver.enable = false;
   services.gnome.gnome-keyring.enable = true;
   services.tlp.enable = true;
   services.tlp.settings = {
@@ -48,7 +48,19 @@
 
   virtualisation.docker.enable = true;
 
-  services.xserver.dpi = 96 + 16;
+  # services.xserver.dpi = 96 + 16;
+  # services.xserver =
+  #   {
+  #     dpi = 96 + 16;
+  #     deviceSection = ''
+  #       Section "Device"
+  #           Identifier "intelGpu"
+  #           Driver "intel"
+  #           Option "VirtualHeads" "1"
+  #       EndSection
+  #     '';
+  #   };
+
 
   networking = {
     hostName = "hexane";
@@ -60,6 +72,7 @@
     ];
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.resumeDevice = "/dev/mapper/crypted";
   boot.kernelParams = [
     "resume_offset=3155204"
@@ -79,6 +92,7 @@
     };
   };
 
+  # programs.immersed.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
   programs._1password-gui.polkitPolicyOwners = [ context.mainUser ];
@@ -129,6 +143,12 @@
 
   services.sshd.enable = true;
   services.touchegg.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [ libva vaapiVdpau ];
+  };
 
   system.stateVersion = "23.11";
 }
