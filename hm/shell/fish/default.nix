@@ -86,16 +86,6 @@
         };
       }
 
-      # https://github.com/oh-my-fish/plugin-thefuck
-      {
-        name = "thefuck";
-        src = pkgs.fetchFromGitHub {
-          owner = "oh-my-fish";
-          repo = "plugin-thefuck";
-          rev = "6c9a926d045dc404a11854a645917b368f78fc4d";
-          sha256 = "sha256-9MbkyEsMsZH+3ct7qJSPvLeLRfVkDEkXRTdg/Rhe0dg=";
-        };
-      }
       {
         name = "foreign-env";
         src = pkgs.fishPlugins.foreign-env.src;

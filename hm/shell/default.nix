@@ -56,7 +56,6 @@
     silicon
     socat
     teleport
-    thefuck
     unzip
     vault
     websocat
