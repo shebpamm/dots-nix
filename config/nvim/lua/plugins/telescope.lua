@@ -57,7 +57,7 @@ return {
     }
 
     l "fzf"
-    l "projects"
+    l "project"
     l "file_browser"
     l "live_grep_args"
 
@@ -164,7 +164,7 @@ return {
           m = { b.man_pages, "man pages" },
           h = { b.help_tags, "help" },
           i = { ivy, "ivy" },
-          p = { x.projects.projects, "projects" },
+          p = { x.project.project, "projects" },
           t = { "<cmd>TodoTelescope<cr>", "todos" },
           g = {
             name = "+git",
@@ -195,5 +195,6 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "nvim-telescope/telescope-file-browser.nvim" },
     { "nvim-telescope/telescope-live-grep-raw.nvim" },
+    { "nvim-telescope/telescope-project.nvim" },
   },
 }
