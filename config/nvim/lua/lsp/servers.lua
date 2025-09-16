@@ -26,7 +26,7 @@ for name, opts in pairs(servers) do
   if type(opts) == "function" then
     opts()
   else
-    vim.lsp.enable(name)
     vim.lsp.config(name, opts)
+    vim.lsp.enable(name)
   end
 end

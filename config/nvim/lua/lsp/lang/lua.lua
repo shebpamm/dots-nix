@@ -1,30 +1,15 @@
 local M = {}
 
 M.setup = {
-  cmd = { "lua-language-server" },
-  root_dir = require("lspconfig.util").root_pattern("stylua.toml", "rc.lua", ".git") or vim.loop.cwd,
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
+  root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
   settings = {
     Lua = {
-      hint = {
-        enable = true,
-      },
-      completion = {
-        enable = true,
-        callSnippet = "Replace",
-      },
-      runtime = {
-        version = "LuaJIT",
-        path = (function()
-          local runtime_path = vim.split(package.path, ";")
-          table.insert(runtime_path, "lua/?.lua")
-          table.insert(runtime_path, "lua/?/init.lua")
-          return runtime_path
-        end)(),
-      },
+      runtime = { version = 'LuaJIT' },
       diagnostics = {
-        enable = true,
         globals = {
-          "vim",
+          'vim',
           "O",
           "utils",
 
@@ -32,10 +17,7 @@ M.setup = {
           "awesome",
           "client",
           "screen",
-        },
-      },
-      telemetry = {
-        enable = false,
+        }
       },
     },
   },
