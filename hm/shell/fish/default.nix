@@ -35,6 +35,7 @@
       "gpcl" = "gh pr checkout (gh-last-pr)";
       "grb" = "gh repo browse -w";
       "gpcr" = "gh pr create -w";
+      "ssls" = "openssl x509 -noout -text -in ";
       "gpv" = "gh pr view -w";
       "c" = "clear";
       "ks" = "k9s";
