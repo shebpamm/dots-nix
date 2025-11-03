@@ -26,6 +26,7 @@ let
     yamlfmt
     yamllint
     bash-language-server
+    yaml-language-server
     shfmt
   ];
   python-extras = with pkgs.python311Packages; [
