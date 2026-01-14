@@ -68,6 +68,7 @@
   networking = {
     hostName = "hexane";
     nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    enableIPv6 = false;
     useDHCP = true;
     wireless.iwd.enable = true;
     search = [
@@ -165,6 +166,13 @@
     enable32Bit = true;
     extraPackages = with pkgs; [ libva vaapiVdpau intel-media-driver ];
   };
+
+  users.users.ws1user = {
+    isSystemUser = true;
+    group = "ws1user";
+  };
+
+  users.groups.ws1user = {};
 
   system.stateVersion = "23.11";
 }
