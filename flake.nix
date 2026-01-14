@@ -24,7 +24,8 @@
     flox.url = "github:flox/flox";
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
-    relcheck.url = "github:anttiharju/relcheck";
+    anttipkgs.url = "github:anttiharju/nur-packages";
+    anttipkgs.inputs.nixpkgs.follows = "nixpkgs";
     kat.url = "github:macropower/nur-packages";
     cursor = {
       url = "github:thinktankmachine/cursor-nixos-flake";
@@ -55,12 +56,12 @@
         inputs.nixpkgs-sheb.overlay
         inputs.neovim-nightly.overlays.default
         inputs.hyprpaper.overlays.default
+        inputs.anttipkgs.overlays.default
         (self: super: {
           zen-browser = inputs.zen.packages.${system}.default;
           flox = inputs.flox.packages.${system}.flox;
           compfy = inputs.compfy.packages.${system}.compfy;
           devenv = inputs.devenv.packages.${system}.devenv;
-          relcheck = inputs.relcheck.packages.${system}.default;
           kat = inputs.kat.packages.${system}.kat;
           nixMaster = master-pkgs.nix;
           nur = import inputs.nur {
