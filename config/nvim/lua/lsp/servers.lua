@@ -2,7 +2,6 @@ local servers = {
   lua_ls = require("lsp.lang.lua").setup,
   pyright = require("lsp.lang.python").setup,
   ts_ls = require("lsp.lang.typescript").setup,
-  ansiblels = require("lsp.lang.ansible").setup,
   yamlls = require("lsp.lang.yaml").setup,
 
   awk_ls = nil,

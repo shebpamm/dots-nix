@@ -1,7 +1,6 @@
 { config, pkgs, libs, ... }:
 let
   extras = with pkgs; [
-    ansible-language-server
     ansible-lint
     clang-tools
     dot-language-server
