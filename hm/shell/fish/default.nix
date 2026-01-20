@@ -40,6 +40,7 @@
       "c" = "clear";
       "ks" = "k9s";
       "ksw" = "k9s --write";
+      "xc" = "xclip -selection clipboard ";
     };
 
     plugins = [
