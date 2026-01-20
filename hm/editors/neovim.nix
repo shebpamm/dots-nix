@@ -28,7 +28,7 @@ let
     yaml-language-server
     shfmt
   ];
-  python-extras = with pkgs.python311Packages; [
+  python-extras = with pkgs.python314Packages; [
     black
     isort
     flake8

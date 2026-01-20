@@ -10,7 +10,7 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    bitwarden
+    bitwarden-desktop
     bitwarden-cli
     (discord.override {
       withVencord = true;

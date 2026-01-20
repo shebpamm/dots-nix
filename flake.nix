@@ -23,7 +23,6 @@
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
     anttipkgs.url = "github:anttiharju/nur-packages";
-    anttipkgs.inputs.nixpkgs.follows = "nixpkgs";
     kat.url = "github:macropower/nur-packages";
     cursor = {
       url = "github:thinktankmachine/cursor-nixos-flake";
