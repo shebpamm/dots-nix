@@ -72,34 +72,49 @@ end)
 naughty.connect_signal("request::display", function(n)
   n.timeout = 15
   n.position = "top_middle"
-  n.title = "<b>" .. n.title .. "</b>"
+
+  local title = n.title or ""
+  local message = n.message or n.text or ""
+
+  -- Always safe bolding
+  n.title = "<b>" .. title .. "</b>"
 
   if n.app_name == "Slack" then
     n.position = "top_right"
-    -- example: [company] in #channel -> #channel
-    local _, _, _, channel = string.find(n.title, "%[(.+)%] in #(.+)")
-    n.title = "<b>#" .. channel .. "</b>"
 
-    local is_triggered = string.find(n.message, "🔴")
-    local is_resolved = string.find(n.message, "%*Resolved%*")
+    -- Only rewrite title if we actually matched the pattern
+    local channel = title:match("%[.+%] in #(.+)")
+    if channel then
+      n.title = "<b>#" .. channel .. "</b>"
+    end
 
-    local title = n.title
+    local is_triggered = message:find("🔴", 1, true) ~= nil
+    local is_resolved  = message:find("%*Resolved%*") ~= nil
+
+    local label = channel and ("#" .. channel) or title
+    local state_title = label
+
     if is_triggered then
+      n.fg = "#222222"
       n.bg = "#BF616A"
-      title = "Triggered"
-    end
-
-    if is_resolved then
+      state_title = "Triggered"
+    elseif is_resolved then
       n.bg = "#A3BE8C"
-      title = "Resolved"
+      state_title = "Resolved"
     end
 
-    -- local _, _, status, message = string.find(n.message, "PagerDuty: %*([a-zA-Z]*)%*.*#%d*:(.*)>%*")
-    local _, _, message = string.find(n.message, "PagerDuty:[^<]*<([^>]*)")
+    local pd_message
+    if is_resolved then
+    --  "PagerDuty: *Resolved* <*#477477: [test] bot-devops notification test*> "
+      pd_message = message:match("PagerDuty:%s*%*Resolved%*%s*<%*#%d+:%s*(.-)%*%s*>")
+    elseif is_triggered then
+    --  "PagerDuty: 🔴 *<[test] bot-devops notification test>* Assigned: <Dummy>\n"
+      pd_message = message:match("PagerDuty:.-%*<(.-)>%*")
+    end
 
-    if message then
+    if pd_message then
       n.timeout = 5
-      n.text = "<b>" .. title .. "</b>: " .. message
+      n.text = "<b>" .. state_title .. "</b>: " .. pd_message
     end
   end
 
