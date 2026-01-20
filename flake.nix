@@ -6,7 +6,7 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k/3322009946e80d441d5156d41a6ef22742708efd";
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nixpkgs-sheb.url = "github:shebpamm/nixpkgs-sheb";
     nixpkgs-sheb.inputs.nixpkgs.follows = "nixpkgs";
     spicetify.url = "github:Gerg-L/spicetify-nix";

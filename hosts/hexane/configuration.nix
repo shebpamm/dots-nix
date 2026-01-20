@@ -172,7 +172,7 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = with pkgs; [ libva vaapiVdpau intel-media-driver ];
+    extraPackages = with pkgs; [ libva libva-vdpau-driver intel-media-driver ];
   };
 
   users.users.ws1user = {

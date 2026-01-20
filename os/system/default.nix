@@ -16,7 +16,7 @@
     git
     gcc
     gnupg
-    pinentry
+    pinentry-curses
     usbutils
     vim
     zsh

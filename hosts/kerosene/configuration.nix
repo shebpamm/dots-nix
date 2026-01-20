@@ -136,7 +136,6 @@
     coreutils
     gcc
     gnupg
-    pinentry
     usbutils
     vim
     zsh
