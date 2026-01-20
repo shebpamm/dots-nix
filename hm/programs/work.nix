@@ -21,6 +21,7 @@ in
     vault
     git-crypt-worktrees
     aws-vault
+    awscli2
     go-jira
   ];
 }
