@@ -31,6 +31,14 @@
     CPU_SCALING_GOVERNOR_ON_AC = "performance";
     CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
   };
+
+  environment.systemPackages = [
+    pkgs.clamav
+  ];
+  services.clamav.daemon.enable = true;
+
+  services.clamav.updater.enable = true;
+
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
