@@ -22,7 +22,6 @@
     brightnessctl
     cloudflared
     comma
-    devenv
     dyff
     eza
     fd
