@@ -988,15 +988,15 @@
         "parts": "parts"
       },
       "locked": {
-        "lastModified": 1768880854,
-        "narHash": "sha256-6heBkywmbmXqJfOpaF56lGJWJ0oGL50xM/ntGgq1p6Q=",
-        "owner": "fortuneteller2k",
+        "lastModified": 1768928220,
+        "narHash": "sha256-WlvAtzmarEV8adRFr1HbPvQcr0hgrZoI9VFjRQDerfY=",
+        "owner": "shebpamm",
         "repo": "nixpkgs-f2k",
-        "rev": "eeba5ca684dd0b85c6814557d1fae102fabcaa00",
+        "rev": "c5875fc44d2238b09d3a37d848c31371c5f792cb",
         "type": "github"
       },
       "original": {
-        "owner": "fortuneteller2k",
+        "owner": "shebpamm",
         "repo": "nixpkgs-f2k",
         "type": "github"
       }
