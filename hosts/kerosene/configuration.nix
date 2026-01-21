@@ -35,15 +35,12 @@
     options = [ "nfsvers=3" "soft" "intr" "x-systemd.idle-timeout=600" "x-systemd.automount" "noatime" "noauto" "nolock" "rsize=8192" "wsize=8192" "timeo=14" "retrans=2" ];
   };
 
-  time.timeZone = "Europe/Helsinki";
-
   hardware.flipperzero.enable = true;
 
   hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.open = true;
   # hardware.nvidia.powerManagement.enable = false;
   hardware.graphics.enable32Bit = true;
-
-  systemd.enableUnifiedCgroupHierarchy = false;
 
   security.sudo.wheelNeedsPassword = false;
   security.pki.certificateFiles = [ ../../home.crt ];
@@ -58,8 +55,7 @@
 
   };
   services.ollama.enable = true;
-  services.ollama.package = (pkgs.ollama.override { acceleration = "cuda"; });
-  services.ollama.acceleration = "cuda";
+  services.ollama.package = pkgs.ollama-cuda;
 
   services.gnome.gnome-keyring.enable = true;
 
