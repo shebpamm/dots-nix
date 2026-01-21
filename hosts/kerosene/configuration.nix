@@ -18,7 +18,6 @@
       ../../os/secrets
       ../../os/system/graphics/xorg.nix
       ../../os/virtualization/kvm.nix
-      ../../os/virtualization/lxd.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
