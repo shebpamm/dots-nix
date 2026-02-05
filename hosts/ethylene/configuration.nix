@@ -144,12 +144,6 @@
 
   programs.gnupg.agent.enable = true;
 
-  users.users.shebpamm = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.fish;
-  };
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;

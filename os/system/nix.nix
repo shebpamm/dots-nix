@@ -1,13 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
-  boot.binfmt.emulatedSystems = ["i686-linux" "aarch64-linux"];
+  boot.binfmt.emulatedSystems = lib.mkDefault [ "i686-linux" "aarch64-linux" ];
   nix = {
-    package = pkgs.nixMaster;
-
-
     settings = {
       trusted-users = [ "root" "shebpamm" "@wheel" ];
-      extra-platforms = config.boot.binfmt.emulatedSystems;
+      extra-platforms = lib.mkDefault config.boot.binfmt.emulatedSystems;
 
       substituters = [
         "https://cache.nixos.org/"
@@ -17,6 +14,7 @@
         "https://hyprland.cachix.org"
         "https://sorsalab.cachix.org"
         "https://cache.flox.dev"
+        "https://nixos-raspberrypi.cachix.org"
       ];
 
       trusted-public-keys = [
@@ -27,6 +25,7 @@
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "sorsalab.cachix.org-1:22M3UMmBtHT2loPkKMNf9wCeO5JFluaOPeDK0Acb8BI="
         "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
+        "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
       ];
     };
     extraOptions = ''

@@ -29,6 +29,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -201,6 +202,28 @@
             inputs.disko.nixosModules.disko
           ];
           specialArgs = { inherit inputs context; };
+        };
+        ender = inputs.nixos-raspberrypi.lib.nixosSystem {
+          system = "aarch64-linux";
+          modules = [
+            {
+              nixpkgs.flake = {
+                setFlakeRegistry = false;
+                setNixPath = false;
+              };
+              imports = with inputs.nixos-raspberrypi.nixosModules; [
+                sd-image
+                raspberry-pi-5.base
+                raspberry-pi-5.page-size-16k
+                raspberry-pi-5.display-vc4
+              ];
+            }
+            ./hosts/ender/configuration.nix
+          ];
+          specialArgs = {
+            inherit inputs context;
+            nixos-raspberrypi = inputs.nixos-raspberrypi;
+          };
         };
       };
     };
