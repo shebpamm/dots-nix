@@ -4,28 +4,28 @@ local servers = {
   ts_ls = require("lsp.lang.typescript").setup,
   yamlls = require("lsp.lang.yaml").setup,
 
-  awk_ls = nil,
-  bashls = nil,
-  clangd = nil,
-  cssls = nil,
-  dockerls = nil,
-  dotls = nil,
-  hls = nil,
-  html = nil,
-  jsonls = nil,
-  nil_ls = nil,
-  robotframework_ls = nil,
-  ruff = nil,
-  sqlls = nil,
-  taplo = nil,
-  tflint = nil,
+  awk_ls = true,
+  bashls = true,
+  clangd = true,
+  cssls = true,
+  dockerls = true,
+  dotls = true,
+  hls = true,
+  html = true,
+  jsonls = true,
+  true_ls = nil,
+  robotframework_ls = true,
+  ruff = true,
+  sqlls = true,
+  taplo = true,
+  tflint = true,
 }
 
 for name, opts in pairs(servers) do
   if type(opts) == "function" then
     opts()
   else
-    if opts ~= nil then
+    if type(opts) == "table" then
       vim.lsp.config(name, opts)
     end
     vim.lsp.enable(name)

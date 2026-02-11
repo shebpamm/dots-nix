@@ -1,2 +1,3 @@
 -- Ansible filetype matching
-return { "pearofducks/ansible-vim" }
+return {}
+-- return { "pearofducks/ansible-vim" }
