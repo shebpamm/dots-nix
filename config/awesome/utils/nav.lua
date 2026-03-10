@@ -2,20 +2,12 @@ local awful = require "awful"
 
 module = {}
 
-local function get_tag_clients()
-  local clients = {}
-  local current_screen = awful.screen.focused()
-  local current_tag = current_screen.selected_tag
-  for _, c in ipairs(client.get()) do
-    if c.screen == current_screen and c.first_tag == current_tag and c.floating == false then
-      table.insert(clients, c)
-    end
-  end
-  return clients
+local function get_visible_clients()
+  return awful.screen.focused().get_clients()
 end
 
 local function get_left_client()
-  local clients = get_tag_clients()
+  local clients = get_visible_clients()
   local left_client = nil
   local left_client_x = awful.screen.focused().geometry.width
   for _, c in ipairs(clients) do
@@ -29,7 +21,7 @@ local function get_left_client()
 end
 
 local function get_right_client()
-  local clients = get_tag_clients()
+  local clients = get_visible_clients()
   local right_client = nil
   local right_client_x = 0
   for _, c in ipairs(clients) do
@@ -43,7 +35,7 @@ local function get_right_client()
 end
 
 local function get_center_client()
-  local clients = get_tag_clients()
+  local clients = get_visible_clients()
   local center_point = awful.screen.focused().geometry.width / 2
   local center_client = nil
   local center_client_x = 0
