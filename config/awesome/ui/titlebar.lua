@@ -41,6 +41,9 @@ end)
 
 -- imagine using titlebars for tiled windows
 screen.connect_signal("arrange", function(s)
+  -- don't do anything if there's no selected tag
+  if not s.selected_tag then return end
+
   local layout = s.selected_tag.layout.name
   for _, c in pairs(s.clients) do
     if layout == "floating" or c.floating or c.maximized then
