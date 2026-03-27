@@ -8,6 +8,7 @@
     ./wezterm.nix
     ./management.nix
     ./spotify.nix
+    ./discord.nix
   ];
   home.packages = with pkgs; [
     bitwarden-desktop
