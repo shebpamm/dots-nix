@@ -138,17 +138,17 @@
       };
 
       nixosConfigurations = {
-        kerosene = inputs.nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            {
-              nixpkgs.overlays = overlays;
-            }
-            ../hosts/kerosene/configuration.nix
-            inputs.disko.nixosModules.disko
-          ];
-          specialArgs = { inherit inputs context; };
-        };
+        # kerosene = inputs.nixpkgs.lib.nixosSystem {
+        #   inherit system;
+        #   modules = [
+        #     {
+        #       nixpkgs.overlays = overlays;
+        #     }
+        #     ../hosts/kerosene/configuration.nix
+        #     inputs.disko.nixosModules.disko
+        #   ];
+        #   specialArgs = { inherit inputs context; };
+        # };
         ethylene = inputs.nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [

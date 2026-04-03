@@ -14,7 +14,6 @@
   home.packages = with pkgs; [
     (ripgrep.override { withPCRE2 = true; })
     acpi
-    act-latest
     alsa-utils
     astyle
     bind
