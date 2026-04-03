@@ -19,6 +19,7 @@ local servers = {
   sqlls = true,
   taplo = true,
   tflint = true,
+  nixd = true,
 }
 
 for name, opts in pairs(servers) do
