@@ -1,7 +1,7 @@
 # DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
 # Use `nix run .#write-flake` to regenerate it.
 {
-  outputs = inputs: import ./outputs.nix inputs;
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
     anttipkgs.url = "github:anttiharju/nur-packages";
@@ -28,6 +28,7 @@
       url = "github:shebpamm/hyprpaper";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    import-tree.url = "github:vic/import-tree";
     kat.url = "github:macropower/nur-packages";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
