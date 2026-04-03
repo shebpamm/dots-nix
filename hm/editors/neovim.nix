@@ -24,6 +24,7 @@ let
     tfsec
     yamlfmt
     yamllint
+    nixd
     bash-language-server
     yaml-language-server
     shfmt
