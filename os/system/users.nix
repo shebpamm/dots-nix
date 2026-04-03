@@ -1,6 +1,6 @@
-{ config, pkgs, context, ... }:
+{ config, pkgs, ... }:
 let
-  user = context.mainUser;
+  user = "shebpamm";
 in
 {
   users = {
