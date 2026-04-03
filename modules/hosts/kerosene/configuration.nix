@@ -1,6 +1,10 @@
-{ inputs, ...}:
+{ inputs, ... }:
 {
-  flake.modules.nixos.kerosene = {
-
-  };
+  flake.modules.nixos.kerosene =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = [
+        pkgs.blahaj # first package added in dendritic!
+      ];
+    };
 }
