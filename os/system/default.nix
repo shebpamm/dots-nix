@@ -1,8 +1,6 @@
-{ config, pkgs, libs, inputs, ... }:
+{ pkgs, ... }:
 {
   imports = [
-    inputs.flake-utils-plus.nixosModules.autoGenFromInputs
-
     ./env.nix
     ./fonts.nix
     ./nix.nix
@@ -28,9 +26,9 @@
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
 
-  nix.linkInputs = true;
-  nix.generateRegistryFromInputs = true;
-  nix.generateNixPathFromInputs = true;
+  # nix.linkInputs = true;
+  # nix.generateRegistryFromInputs = true;
+  # nix.generateNixPathFromInputs = true;
 
   services.automatic-timezoned.enable = true;
 }
