@@ -5,8 +5,6 @@
   ];
 
   flake-file.inputs = {
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-file.url = "github:vic/flake-file";
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     home-manager.url = "github:nix-community/home-manager/master";
