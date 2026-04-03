@@ -10,14 +10,44 @@ gray_stderr() {
   }' >&2
 }
 
-for system in "hexane" "kerosene" "ender"; do
-  echo "Comparing NixOS configuration for $system"
-  current=$(nix build .#nixosConfigurations.$system.config.system.build.toplevel --print-out-paths --no-link 2> >(gray_stderr))
-  nvd diff "roots/nixos/$system" "$current"
-done
-
-for system in "hexane" "kerosene"; do
+hm() {
+  system="$1"
   echo "Comparing Home Manager configuration for $system"
-  current=$(nix build .#homemanagerConfigurations.$system.activationPackage --print-out-paths --no-link 2> >(gray_stderr))
+  current=$(nix build ".#homemanagerConfigurations.$system.activationPackage" --print-out-paths --no-link 2> >(gray_stderr))
   nvd diff "./roots/hm/$system" "$current"
-done
+}
+
+nixos() {
+  system="$1"
+  echo "Comparing NixOS configuration for $system"
+  current=$(nix build ".#nixosConfigurations.$system.config.system.build.toplevel" --print-out-paths --no-link 2> >(gray_stderr))
+  nvd diff "roots/nixos/$system" "$current"
+}
+
+all() {
+  for system in "hexane" "kerosene" "ender"; do
+    nixos "$system"
+  done
+
+  for system in "hexane" "kerosene"; do
+    hm "$system"
+  done
+}
+
+# if no arguments are given, compare all systems
+# otherwise, compare only the specified systems
+# usage: compare.sh [nixos|hm] [system...]
+
+if [[ "$1" == "nixos" ]]; then
+  shift
+  for system in "$@"; do
+    nixos "$system"
+  done
+elif [[ "$1" == "hm" ]]; then
+  shift
+  for system in "$@"; do
+    hm "$system"
+  done
+else
+  all
+fi
