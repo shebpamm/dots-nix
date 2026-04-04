@@ -25,7 +25,10 @@
         ${name} = nixosSystem {
           modules = [
             inputs.self.modules.nixos.${name}
-            { nixpkgs.hostPlatform = lib.mkDefault system; }
+            { 
+              nixpkgs.hostPlatform = lib.mkDefault system;
+              nixpkgs.config.allowUnfree = true;
+            }
           ];
 
           # Don't use this unless strictly required by an external module
