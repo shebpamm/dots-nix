@@ -3,18 +3,22 @@
   flake.aspects = {
     legacy =
       let
-        generateMiscOverlay = system: self: super: {
-          zen-browser = inputs.zen.packages.${system}.default;
-          flox = inputs.flox.packages.${system}.flox;
-          compfy = inputs.compfy.packages.${system}.compfy;
-          devenv = inputs.devenv.packages.${system}.devenv;
-          kat = inputs.kat.packages.${system}.kat;
-          nur = import inputs.nur {
-            nurpkgs = super;
-            pkgs = super;
+        miscOverlay = self: super:
+          let
+            system = self.stdenv.hostPlatform.system;
+          in
+          {
+            zen-browser = inputs.zen.packages.${system}.default;
+            flox = inputs.flox.packages.${system}.flox;
+            compfy = inputs.compfy.packages.${system}.compfy;
+            devenv = inputs.devenv.packages.${system}.devenv;
+            kat = inputs.kat.packages.${system}.kat;
+            nur = import inputs.nur {
+              nurpkgs = super;
+              pkgs = super;
+            };
+            cursor-latest = inputs.cursor.packages.${system}.cursor;
           };
-          cursor-latest = inputs.cursor.packages.${system}.cursor;
-        };
 
         legacyOverlays = [
           inputs.nixpkgs-f2k.overlays.default
@@ -22,19 +26,16 @@
           inputs.neovim-nightly.overlays.default
           inputs.hyprpaper.overlays.default
           inputs.anttipkgs.overlays.default
+          miscOverlay
         ];
-
-        overlaysForSystem = system: legacyOverlays ++ [ generateMiscOverlay system ];
       in
       {
-        nixos = { system, ... }:
-          {
-            nixpkgs.overlays = overlaysForSystem system;
-          };
-        homeManager = { system, ... }:
-          {
-            nixpkgs.overlays = overlaysForSystem system;
-          };
+        nixos = {
+          nixpkgs.overlays = legacyOverlays;
+        };
+        homeManager = {
+          nixpkgs.overlays = legacyOverlays;
+        };
       };
   };
 }

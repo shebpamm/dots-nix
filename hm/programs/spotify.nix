@@ -1,6 +1,5 @@
 { config, pkgs, libs, inputs, ... }:
 {
-  imports = [ inputs.spicetify.homeManagerModules.default ];
   home.packages = with pkgs; [
     spotify-player
   ];
