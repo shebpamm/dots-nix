@@ -13,7 +13,7 @@ gray_stderr() {
 hm() {
   system="$1"
   echo "Comparing Home Manager configuration for $system"
-  current=$(nix build ".#homemanagerConfigurations.$system.activationPackage" --print-out-paths --no-link 2> >(gray_stderr))
+  current=$(nix build ".#homeConfigurations.$system.activationPackage" --print-out-paths --no-link 2> >(gray_stderr))
   nvd diff "./roots/hm/$system" "$current"
 }
 
