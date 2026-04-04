@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 {
   flake.aspects = { aspects, ... }: {
     kerosene = {
