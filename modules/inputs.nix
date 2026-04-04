@@ -33,6 +33,5 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
   };
 }
