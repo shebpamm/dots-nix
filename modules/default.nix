@@ -138,39 +138,17 @@
       };
 
       nixosConfigurations = {
-        # kerosene = inputs.nixpkgs.lib.nixosSystem {
+        # hexane = inputs.nixpkgs.lib.nixosSystem {
         #   inherit system;
         #   modules = [
         #     {
         #       nixpkgs.overlays = overlays;
         #     }
-        #     ../hosts/kerosene/configuration.nix
+        #     ../hosts/hexane/configuration.nix
         #     inputs.disko.nixosModules.disko
         #   ];
         #   specialArgs = { inherit inputs context; };
         # };
-        ethylene = inputs.nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            {
-              nixpkgs.overlays = overlays;
-            }
-            ../hosts/ethylene/configuration.nix
-            "${inputs.logiops.outPath}/nixos/modules/hardware/logiops"
-          ];
-          specialArgs = { inherit inputs context; };
-        };
-        hexane = inputs.nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            {
-              nixpkgs.overlays = overlays;
-            }
-            ../hosts/hexane/configuration.nix
-            inputs.disko.nixosModules.disko
-          ];
-          specialArgs = { inherit inputs context; };
-        };
         ender = inputs.nixos-raspberrypi.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
