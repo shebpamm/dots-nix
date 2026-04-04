@@ -138,17 +138,6 @@
       };
 
       nixosConfigurations = {
-        # hexane = inputs.nixpkgs.lib.nixosSystem {
-        #   inherit system;
-        #   modules = [
-        #     {
-        #       nixpkgs.overlays = overlays;
-        #     }
-        #     ../hosts/hexane/configuration.nix
-        #     inputs.disko.nixosModules.disko
-        #   ];
-        #   specialArgs = { inherit inputs context; };
-        # };
         ender = inputs.nixos-raspberrypi.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
