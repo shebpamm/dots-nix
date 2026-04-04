@@ -108,33 +108,6 @@
             ../hm/shell
           ] ++ defaultHomeManagerModules;
         };
-
-        ethylene = inputs.home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs context; };
-          modules = [
-            {
-              home = {
-                homeDirectory = "/home/${context.mainUser}";
-                username = context.mainUser;
-                stateVersion = "23.11";
-              };
-
-              nixpkgs.overlays = overlays;
-              programs.home-manager.enable = true;
-            }
-            ../hm/shell
-            ../hm/editors/neovim.nix
-            ../hm/editors/vim.nix
-            ../hm/dev
-            ../hm/programs
-            ../hm/programs/graphics.nix
-            ../hm/programs/xorg.nix
-            ../hm/programs/work.nix
-            ../hm/desktop
-            ../hm/desktop/windowManagers/awesome.nix
-          ] ++ defaultHomeManagerModules;
-        };
       };
     };
 }
