@@ -9,14 +9,22 @@
 
   config.flake.lib = {
 
-    mkNixos = { system, name, nixosSystem ? inputs.nixpkgs.lib.nixosSystem }: {
-      ${name} = nixosSystem {
-        modules = [
-          inputs.self.modules.nixos.${name}
-          { nixpkgs.hostPlatform = lib.mkDefault system; }
-        ];
+    mkNixos =
+      { system
+      , name
+      , nixosSystem ? inputs.nixpkgs.lib.nixosSystem
+      , specialArgs ? { }
+      }: {
+        ${name} = nixosSystem {
+          modules = [
+            inputs.self.modules.nixos.${name}
+            { nixpkgs.hostPlatform = lib.mkDefault system; }
+          ];
+
+          # Don't use this unless strictly required by an external module
+          inherit specialArgs;
+        };
       };
-    };
 
     mkDarwin = { system, name }: {
       ${name} = inputs.nix-darwin.lib.darwinSystem {
