@@ -15,6 +15,7 @@
       };
     };
     disko.url = "github:nix-community/disko";
+    flake-aspects.url = "github:vic/flake-aspects";
     flake-file.url = "github:vic/flake-file";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";

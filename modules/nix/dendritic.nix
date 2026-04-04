@@ -1,6 +1,5 @@
-{
-  inputs,
-  ...
+{ inputs
+, ...
 }:
 {
   # setup of tools for dendritic pattern
@@ -17,12 +16,14 @@
   flake-file.inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-file.url = "github:vic/flake-file";
+    flake-aspects.url = "github:vic/flake-aspects";
     import-tree.url = "github:vic/import-tree";
   };
 
   imports = [
     inputs.flake-parts.flakeModules.modules
     inputs.flake-file.flakeModules.default
+    inputs.flake-aspects.flakeModule
   ];
 
   # import all modules recursively with import-tree
