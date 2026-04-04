@@ -7,6 +7,13 @@
     default = { };
   };
 
+  # compatability layer for home-manager,
+  # without this hm does not allow multiple definitions of the attribute
+  options.flake.homeConfigurations = lib.mkOption {
+    type = lib.types.attrsOf lib.types.raw;
+    default = { };
+  };
+
   config.flake.lib = {
 
     mkNixos =
