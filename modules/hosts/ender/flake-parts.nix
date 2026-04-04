@@ -10,9 +10,4 @@
       nixos-raspberrypi = inputs.nixos-raspberrypi;
     };
   };
-
-  flake.homeConfigurations = inputs.self.lib.mkHomeManager {
-    system = "aarch64-linux";
-    name = "ender";
-  };
 }
