@@ -18,6 +18,7 @@
               pkgs = super;
             };
             cursor-latest = inputs.cursor.packages.${system}.cursor;
+            spicetifyPackages = inputs.spicetify.legacyPackages.${system};
           };
 
         legacyOverlays = [

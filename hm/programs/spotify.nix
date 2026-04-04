@@ -3,19 +3,10 @@
   home.packages = with pkgs; [
     spotify-player
   ];
-  programs.spicetify =
-    let
-      spicePkgs = inputs.spicetify.legacyPackages.${pkgs.system};
-    in
-    {
-      enable = true;
-      theme = spicePkgs.themes.catppuccin;
-      enabledExtensions = with spicePkgs.extensions; [
-        # fullAppDisplay
-        # shuffle
-        # hidePodcasts
-      ];
-    };
+  programs.spicetify = {
+    enable = true;
+    theme = pkgs.spicetifyPackages.themes.catppuccin;
+  };
 
   services.spotifyd.enable = true;
   services.spotifyd.settings.global = {
