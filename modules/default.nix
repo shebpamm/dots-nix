@@ -45,38 +45,6 @@
     in
     {
       homemanagerConfigurations = {
-        kerosene = inputs.home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs context; };
-          modules = [
-            {
-              home = {
-                homeDirectory = "/home/${context.mainUser}";
-                username = context.mainUser;
-                stateVersion = "23.11";
-              };
-
-              nixpkgs.overlays = overlays;
-              programs.home-manager.enable = true;
-            }
-
-            ../hm/system/openrgb.nix
-            ../hm/system/clipcat.nix
-            ../hm/shell
-            ../hm/shell/ssh.nix
-            ../hm/editors/neovim.nix
-            ../hm/editors/vscode.nix
-            ../hm/editors/vim.nix
-            ../hm/dev
-            ../hm/programs
-            ../hm/programs/xorg.nix
-            ../hm/programs/graphics.nix
-            ../hm/desktop
-            ../hm/desktop/windowManagers/awesome.nix
-            # ../hm/desktop/windowManagers/hyprland.nix
-          ] ++ defaultHomeManagerModules;
-        };
-
         hexane = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs context; };

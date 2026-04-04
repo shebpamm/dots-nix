@@ -9,6 +9,12 @@
           inputs.disko.nixosModules.disko
         ];
       };
+      homeManager = {
+        imports = [
+          inputs.catppuccin.homeManagerModules.catppuccin
+          inputs.spicetify.homeManagerModules.default
+        ];
+      };
     };
   };
 }
