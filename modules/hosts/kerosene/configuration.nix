@@ -2,7 +2,10 @@
 {
   flake.aspects = { aspects, ... }: {
     kerosene = {
-      includes = [ aspects.system-base ];
+      includes = [ 
+        aspects.system-base
+        aspects.openrgb
+      ];
 
       nixos = { pkgs, ... }: {
         environment.systemPackages = [

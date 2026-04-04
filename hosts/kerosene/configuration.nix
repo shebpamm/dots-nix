@@ -21,7 +21,6 @@
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_6_1;
-  boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
   boot.supportedFilesystems = [ "ntfs" ];
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
@@ -58,13 +57,6 @@
   services.avahi = {
     enable = true;
     nssmdns4 = true;
-  };
-
-  services.udev = {
-    packages = [ pkgs.openrgb ];
-    # extraRules = ''
-    #   ACTION=="change", SUBSYSTEM=="drm", RUN+="notify-awesome %k"
-    # '';
   };
 
   services.pcscd.enable = true;

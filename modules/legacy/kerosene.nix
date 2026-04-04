@@ -20,7 +20,6 @@
             programs.home-manager.enable = true;
           }
 
-          ../../hm/system/openrgb.nix
           ../../hm/system/clipcat.nix
           ../../hm/shell
           ../../hm/shell/ssh.nix
