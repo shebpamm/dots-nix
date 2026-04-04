@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.kerosene =
+  flake.aspects.kerosene.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = [
