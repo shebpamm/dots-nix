@@ -13,8 +13,8 @@
             offload.enable = false;
           };
 
-          extraPackages = with pkgs; [ libva libva-vdpau-driver intel-media-driver ];
         };
+        hardware.graphics.extraPackages = with pkgs; [ libva libva-vdpau-driver intel-media-driver ];
       };
     };
   };
