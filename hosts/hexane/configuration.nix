@@ -70,8 +70,6 @@
   #     '';
   #   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-
   boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.resumeDevice = "/dev/mapper/crypted";
   boot.kernelParams = [
