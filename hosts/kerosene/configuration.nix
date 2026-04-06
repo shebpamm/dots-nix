@@ -20,12 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.open = true;
-  # hardware.nvidia.powerManagement.enable = false;
-  hardware.graphics.enable32Bit = true;
-
-  security.sudo.wheelNeedsPassword = false;
   security.pki.certificateFiles = [ ../../home.crt ];
 
   networking = {

@@ -155,25 +155,6 @@
 
   services.sshd.enable = true;
   services.touchegg.enable = true;
-  hardware.opengl = {
-    enable = true;
-  };
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false;
-    prime = {
-      sync.enable = true;
-      offload.enable = false;
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [ libva libva-vdpau-driver intel-media-driver ];
-  };
 
   users.users.ws1user = {
     isSystemUser = true;
