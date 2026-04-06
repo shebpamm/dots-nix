@@ -20,8 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
-
   hardware.flipperzero.enable = true;
 
   hardware.nvidia.modesetting.enable = true;
