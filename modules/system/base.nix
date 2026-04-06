@@ -6,6 +6,7 @@
         aspects.bootloader
         aspects.nix
         aspects.homemanager-base
+        aspects.homelab-cert
       ];
 
       nixos = { };

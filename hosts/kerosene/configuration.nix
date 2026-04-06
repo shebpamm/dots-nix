@@ -20,8 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  security.pki.certificateFiles = [ ../../home.crt ];
-
   networking = {
     hostName = "kerosene";
     useDHCP = false;
