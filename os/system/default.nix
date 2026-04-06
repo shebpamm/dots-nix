@@ -3,7 +3,6 @@
   imports = [
     ./env.nix
     ./fonts.nix
-    ./nix.nix
     ./shell.nix
     ./sound.nix
     ./users.nix
