@@ -20,8 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  hardware.flipperzero.enable = true;
-
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.open = true;
   # hardware.nvidia.powerManagement.enable = false;

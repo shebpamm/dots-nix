@@ -7,6 +7,7 @@
         aspects.openrgb
         aspects.ntfs
         aspects.nas-mount
+        aspects.flipperzero
       ];
 
       nixos = { pkgs, ... }: {
