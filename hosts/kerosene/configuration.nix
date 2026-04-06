@@ -21,7 +21,6 @@
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_6_1;
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   fileSystems."/mnt/storage" = {
     device = "hc4nas.sorsa.cloud:/mnt/tank/storage";

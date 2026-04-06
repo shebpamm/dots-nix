@@ -3,7 +3,7 @@
   flake.aspects = { aspects, ... }: {
     kerosene = {
       includes = [ 
-        aspects.system-base
+        aspects.workstation
         aspects.openrgb
         aspects.ntfs
       ];

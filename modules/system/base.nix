@@ -2,7 +2,10 @@
 {
   flake.aspects = { aspects, ... }: {
     system-base = {
-      includes = [ aspects.bootloader ];
+      includes = [ 
+        aspects.bootloader
+        aspects.nix
+      ];
 
       nixos = { };
     };
