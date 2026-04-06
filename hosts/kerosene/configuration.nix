@@ -20,9 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  services.ollama.enable = true;
-  services.ollama.package = pkgs.ollama-cuda;
-
   services.gnome.gnome-keyring.enable = true;
 
   services.avahi = {

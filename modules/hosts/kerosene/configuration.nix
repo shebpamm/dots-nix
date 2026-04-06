@@ -10,6 +10,7 @@
         aspects.nas-mount
         aspects.flipperzero
         aspects.nvidia-base
+        aspects.ollama
       ];
 
       nixos = { pkgs, ... }: {
