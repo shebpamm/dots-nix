@@ -21,7 +21,6 @@
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_6_1;
-  boot.supportedFilesystems = [ "ntfs" ];
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   fileSystems."/mnt/storage" = {

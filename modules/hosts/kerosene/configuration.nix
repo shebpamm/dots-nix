@@ -5,6 +5,7 @@
       includes = [ 
         aspects.system-base
         aspects.openrgb
+        aspects.ntfs
       ];
 
       nixos = { pkgs, ... }: {
