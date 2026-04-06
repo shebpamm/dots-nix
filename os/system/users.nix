@@ -24,7 +24,4 @@ in
   users.extraGroups.libvirtd.members = [ user ];
   users.extraGroups.audio.members = [ user ];
   users.extraGroups.plugdev.members = [ user ];
-
-  nix.settings.trusted-users = [ "root" user "@wheel" ];
-
 }

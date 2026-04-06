@@ -4,7 +4,6 @@
   imports = [
     ../../os/secrets
     ../../os/system/env.nix
-    ../../os/system/nix.nix
     ../../os/system/shell.nix
     ../../os/system/users.nix
   ];
@@ -31,8 +30,6 @@
 
   environment.systemPackages = with pkgs; [
   ];
-
-  nix.settings.trusted-users = [ "shebpamm" ];
 
   programs.zsh.enable = true;
 
