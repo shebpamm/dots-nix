@@ -79,17 +79,6 @@
     "cgroup_memory=1"
   ];
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      device = "nodev";
-      efiSupport = true;
-      enableCryptodisk = true;
-      configurationLimit = 3;
-    };
-  };
-
   # programs.immersed.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;

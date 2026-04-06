@@ -3,6 +3,7 @@
   flake.aspects = { aspects, ... }: {
     kerosene = {
       includes = [ 
+        aspects.systemd-boot
         aspects.workstation
         aspects.openrgb
         aspects.ntfs
