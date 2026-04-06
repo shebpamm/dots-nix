@@ -6,6 +6,7 @@
         aspects.workstation
         aspects.openrgb
         aspects.ntfs
+        aspects.nas-mount
       ];
 
       nixos = { pkgs, ... }: {
