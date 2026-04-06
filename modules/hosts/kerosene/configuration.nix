@@ -8,6 +8,7 @@
         aspects.ntfs
         aspects.nas-mount
         aspects.flipperzero
+        aspects.nvidia-base
       ];
 
       nixos = { pkgs, ... }: {
