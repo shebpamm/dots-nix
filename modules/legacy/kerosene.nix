@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.aspects = { aspects, ... }: {
     kerosene = {
@@ -10,16 +10,6 @@
       };
       homeManager = {
         imports = [
-          {
-            home = {
-              homeDirectory = "/home/shebpamm";
-              username = "shebpamm";
-              stateVersion = "23.11";
-            };
-
-            programs.home-manager.enable = true;
-          }
-
           ../../hm/system/clipcat.nix
           ../../hm/shell
           ../../hm/shell/ssh.nix
