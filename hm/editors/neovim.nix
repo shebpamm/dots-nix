@@ -11,7 +11,7 @@ let
     nodePackages.prettier_d_slim
     nodePackages.typescript-language-server
     vscode-langservers-extracted
-    pyright
+    ty
     ruff
     shellcheck
     sqlfluff
