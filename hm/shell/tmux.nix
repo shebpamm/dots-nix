@@ -12,5 +12,5 @@ let
   });
 in
 {
-  home.packages = [ tmux-git ];
+  home.packages = [ pkgs.tmux ];
 }

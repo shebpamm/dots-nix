@@ -6,10 +6,10 @@ let
     dot-language-server
     gopls
     haskellPackages.haskell-language-server
-    nodePackages.dockerfile-language-server-nodejs
-    nodePackages.prettier
-    nodePackages.prettier_d_slim
-    nodePackages.typescript-language-server
+    dockerfile-language-server
+    prettier
+    prettierd 
+    typescript-language-server
     vscode-langservers-extracted
     ty
     ruff

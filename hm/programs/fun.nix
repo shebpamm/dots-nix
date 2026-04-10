@@ -6,6 +6,6 @@
     lolcat
     pipes-rs
     pfetch
-    neofetch
+    fastfetch
   ];
 }
