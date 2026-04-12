@@ -35,7 +35,10 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-f2k.url = "github:shebpamm/nixpkgs-f2k";
+    nixpkgs-f2k = {
+      url = "github:shebpamm/nixpkgs-f2k";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nixpkgs-sheb = {
       url = "github:shebpamm/nixpkgs-sheb";
