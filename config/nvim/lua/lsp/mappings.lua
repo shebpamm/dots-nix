@@ -5,7 +5,7 @@ wk.register({
     c = {
       name = "+code",
       r = { vim.lsp.buf.rename, "rename" },
-      a = { function() require("clear-action.actions").code_action() end, "code action" },
+      a = { function() require("fastaction").code_action() end, "code action" },
     },
     l = {
       name = "+lsp",
