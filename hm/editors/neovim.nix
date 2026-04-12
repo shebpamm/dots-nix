@@ -28,6 +28,7 @@ let
     bash-language-server
     yaml-language-server
     shfmt
+    tree-sitter
   ];
   python-extras = with pkgs.python314Packages; [
     black

@@ -1,103 +1,15 @@
-local function setup()
-  local ts_config = require "nvim-treesitter.configs"
-  local ts_parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
-
-  ts_parser_configs.gotmpl = {
+local function add_custom_parsers()
+  parsers = require "nvim-treesitter.parsers"
+  parsers.gotmpl = {
     install_info = {
       url = "https://github.com/ngalaiko/tree-sitter-go-template",
       files = { "src/parser.c" },
     },
     filetype = "gotmpl",
-    used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml" },
+    used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl" },
   }
 
-  ts_config.setup {
-    ensure_installed = O.treesitter.ensure_installed,
-    highlight = {
-      enable = true,
-      use_languagetree = true,
-    },
-    indent = { enable = true },
-    playground = { enable = true },
-    autotag = { enable = true },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = "<Enter>",
-        node_incremental = "<Enter>",
-        node_decremental = "<BS>",
-      },
-    },
-    textobjects = {
-      select = {
-        enable = true,
-        keymaps = {
-          ["af"] = "@function.outer",
-          ["if"] = "@function.inner",
-          ["aC"] = "@class.outer",
-          ["iC"] = "@class.inner",
-          ["ac"] = "@conditional.outer",
-          ["ic"] = "@conditional.inner",
-          ["ae"] = "@block.outer",
-          ["ie"] = "@block.inner",
-          ["al"] = "@loop.outer",
-          ["il"] = "@loop.inner",
-          ["is"] = "@statement.inner",
-          ["as"] = "@statement.outer",
-          ["ad"] = "@comment.outer",
-          ["au"] = "@call.outer",
-          ["iu"] = "@call.inner",
-          ["ia"] = "@parameter.inner",
-          ["aa"] = "@parameter.outer",
-          ["ik"] = "@assignment.lhs",
-          ["ak"] = "@assignment.lhs",
-          ["iv"] = "@assignment.rhs",
-          ["av"] = "@assignment.rhs",
-        },
-      },
-      move = {
-        enable = true,
-        set_jumps = true, -- whether to set jumps in the jumplist
-        goto_next_start = {
-          ["]m"] = "@function.outer",
-          ["]]"] = "@class.outer",
-        },
-        goto_next_end = {
-          ["]M"] = "@function.outer",
-          ["]["] = "@class.outer",
-        },
-        goto_previous_start = {
-          ["[m"] = "@function.outer",
-          ["[["] = "@class.outer",
-        },
-        goto_previous_end = {
-          ["[M"] = "@function.outer",
-          ["[]"] = "@class.outer",
-        },
-      },
-      swap = {
-        enable = true,
-        swap_next = {
-          ["<localleader>a"] = "@parameter.inner",
-        },
-        swap_previous = {
-          ["<localleader>A"] = "@parameter.inner",
-        },
-      },
-      lsp_interop = {
-        enable = true,
-      },
-    },
-  }
-
-  local lang_register = vim.treesitter.language.register
-  lang_register("json", "jsonc")
-  lang_register("rasi", "css")
-  lang_register("terraform-vars", "hcl")
-
-  local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
-  parser_config.jinja2 = {
+  parsers.jinja2 = {
     install_info = {
       url = "https://github.com/dbt-labs/tree-sitter-jinja2",
       branch = "main",
@@ -107,7 +19,7 @@ local function setup()
   }
 
   -- add markdown (credit: folke)
-  parser_config.markdown = {
+  parsers.markdown = {
     install_info = {
       url = "https://github.com/ikatyang/tree-sitter-markdown",
       files = { "src/parser.c", "src/scanner.cc" },
@@ -115,13 +27,105 @@ local function setup()
   }
 end
 
+local function ensure_parsers()
+  local ensure_installed = O.treesitter.ensure_installed
+
+  local already_installed = require("nvim-treesitter.config").get_installed()
+  local parsers_to_install = vim
+    .iter(ensure_installed)
+    :filter(function(lang)
+      return not vim.tbl_contains(already_installed, lang)
+    end)
+    :totable()
+  require("nvim-treesitter").install(parsers_to_install)
+end
+
+local function bind_textobjects()
+  local function select(object)
+    s = require "nvim-treesitter-textobjects.select"
+    return function()
+      s.select_textobject(object)
+    end
+  end
+
+  vim.keymap.set({ "x", "o" }, "af", select "@function.outer", { desc = "Select around function" })
+  vim.keymap.set({ "x", "o" }, "if", select "@function.inner", { desc = "Select inside function" })
+
+  vim.keymap.set({ "x", "o" }, "aC", select "@class.outer", { desc = "Select around class" })
+  vim.keymap.set({ "x", "o" }, "iC", select "@class.inner", { desc = "Select inside class" })
+
+  vim.keymap.set({ "x", "o" }, "ac", select "@conditional.outer", { desc = "Select around conditional" })
+  vim.keymap.set({ "x", "o" }, "ic", select "@conditional.inner", { desc = "Select inside conditional" })
+
+  vim.keymap.set({ "x", "o" }, "ae", select "@block.outer", { desc = "Select around block" })
+  vim.keymap.set({ "x", "o" }, "ie", select "@block.inner", { desc = "Select inside block" })
+
+  vim.keymap.set({ "x", "o" }, "al", select "@loop.outer", { desc = "Select around loop" })
+  vim.keymap.set({ "x", "o" }, "il", select "@loop.inner", { desc = "Select inside loop" })
+
+  vim.keymap.set({ "x", "o" }, "as", select "@statement.outer", { desc = "Select around statement" })
+  vim.keymap.set({ "x", "o" }, "is", select "@statement.inner", { desc = "Select inside statement" })
+
+  vim.keymap.set({ "x", "o" }, "ad", select "@comment.outer", { desc = "Select around comment" })
+
+  vim.keymap.set({ "x", "o" }, "au", select "@call.outer", { desc = "Select around call" })
+  vim.keymap.set({ "x", "o" }, "iu", select "@call.inner", { desc = "Select inside call" })
+
+  vim.keymap.set({ "x", "o" }, "aa", select "@parameter.outer", { desc = "Select around parameter" })
+  vim.keymap.set({ "x", "o" }, "ia", select "@parameter.inner", { desc = "Select inside parameter" })
+
+  vim.keymap.set({ "x", "o" }, "ak", select "@assignment.lhs", { desc = "Select assignment LHS" })
+  vim.keymap.set({ "x", "o" }, "ik", select "@assignment.lhs", { desc = "Select assignment LHS (inner)" })
+
+  vim.keymap.set({ "x", "o" }, "av", select "@assignment.rhs", { desc = "Select assignment RHS" })
+  vim.keymap.set({ "x", "o" }, "iv", select "@assignment.rhs", { desc = "Select assignment RHS (inner)" })
+end
+
+local function setup()
+  local ts = require "nvim-treesitter"
+
+  ensure_parsers()
+  vim.api.nvim_create_autocmd("User", { pattern = "TSUpdate", callback = add_custom_parsers })
+
+  local select = require "vim.treesitter._select"
+
+  vim.keymap.set({ "x" }, "<BS>", function()
+    select.select_child(vim.v.count1)
+  end, { desc = "wip" })
+
+  vim.keymap.set({ "x", "n" }, "<Enter>", function()
+    select.select_parent(vim.v.count1)
+  end, { desc = "wip" })
+
+  ts.setup {
+    highlight = {
+      enable = true,
+      use_languagetree = true,
+    },
+    indent = { enable = true },
+  }
+
+  bind_textobjects()
+
+  vim.treesitter.language.register("json", "jsonc")
+  vim.treesitter.language.register("rasi", "css")
+  vim.treesitter.language.register("terraform-vars", "hcl")
+end
+
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "main",
   config = setup,
   dependencies = {
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      branch = "main",
+    },
     { "nvim-treesitter/nvim-treesitter-context" },
-    { "windwp/nvim-ts-autotag" },
+    {
+      "windwp/nvim-ts-autotag",
+      opts = {},
+    },
     {
       "JoosepAlviste/nvim-ts-context-commentstring",
       config = function()
@@ -132,19 +136,6 @@ return {
           },
         }
         vim.g.skip_ts_context_commentstring_module = true
-      end,
-    },
-    {
-      "nvim-treesitter/playground",
-      keys = { "<localleader>s" },
-      cmd = { "TSPlaygroundToggle", "TSHighlightCapturesUnderCursor" },
-      config = function()
-        require("which-key").register {
-          ["<localleader>s"] = {
-            "<CMD>TSHighlightCapturesUnderCursor<CR>",
-            "syntax highlight group under the cursor",
-          },
-        }
       end,
     },
   },
