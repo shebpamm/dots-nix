@@ -40,7 +40,7 @@ local function ensure_parsers()
   require("nvim-treesitter").install(parsers_to_install)
 end
 
-local function bind_textobjects()
+local function bind_textobjects(buf)
   local function select(object)
     s = require "nvim-treesitter-textobjects.select"
     return function()
@@ -48,37 +48,73 @@ local function bind_textobjects()
     end
   end
 
-  vim.keymap.set({ "x", "o" }, "af", select "@function.outer", { desc = "Select around function" })
-  vim.keymap.set({ "x", "o" }, "if", select "@function.inner", { desc = "Select inside function" })
+  local function bind(key, callback, desc)
+    vim.keymap.set({ "x", "o" }, key, callback, { buffer = buf, desc = desc })
+  end
 
-  vim.keymap.set({ "x", "o" }, "aC", select "@class.outer", { desc = "Select around class" })
-  vim.keymap.set({ "x", "o" }, "iC", select "@class.inner", { desc = "Select inside class" })
+  bind("af", select "@function.outer", "Select around function")
+  bind("if", select "@function.inner", "Select inside function")
 
-  vim.keymap.set({ "x", "o" }, "ac", select "@conditional.outer", { desc = "Select around conditional" })
-  vim.keymap.set({ "x", "o" }, "ic", select "@conditional.inner", { desc = "Select inside conditional" })
+  bind("aC", select "@class.outer", "Select around class")
+  bind("iC", select "@class.inner", "Select inside class")
 
-  vim.keymap.set({ "x", "o" }, "ae", select "@block.outer", { desc = "Select around block" })
-  vim.keymap.set({ "x", "o" }, "ie", select "@block.inner", { desc = "Select inside block" })
+  bind("ac", select "@conditional.outer", "Select around conditional")
+  bind("ic", select "@conditional.inner", "Select inside conditional")
 
-  vim.keymap.set({ "x", "o" }, "al", select "@loop.outer", { desc = "Select around loop" })
-  vim.keymap.set({ "x", "o" }, "il", select "@loop.inner", { desc = "Select inside loop" })
+  bind("ae", select "@block.outer", "Select around block")
+  bind("ie", select "@block.inner", "Select inside block")
 
-  vim.keymap.set({ "x", "o" }, "as", select "@statement.outer", { desc = "Select around statement" })
-  vim.keymap.set({ "x", "o" }, "is", select "@statement.inner", { desc = "Select inside statement" })
+  bind("al", select "@loop.outer", "Select around loop")
+  bind("il", select "@loop.inner", "Select inside loop")
 
-  vim.keymap.set({ "x", "o" }, "ad", select "@comment.outer", { desc = "Select around comment" })
+  bind("as", select "@statement.outer", "Select around statement")
+  bind("is", select "@statement.inner", "Select inside statement")
 
-  vim.keymap.set({ "x", "o" }, "au", select "@call.outer", { desc = "Select around call" })
-  vim.keymap.set({ "x", "o" }, "iu", select "@call.inner", { desc = "Select inside call" })
+  bind("ad", select "@comment.outer", "Select around comment")
 
-  vim.keymap.set({ "x", "o" }, "aa", select "@parameter.outer", { desc = "Select around parameter" })
-  vim.keymap.set({ "x", "o" }, "ia", select "@parameter.inner", { desc = "Select inside parameter" })
+  bind("au", select "@call.outer", "Select around call")
+  bind("iu", select "@call.inner", "Select inside call")
 
-  vim.keymap.set({ "x", "o" }, "ak", select "@assignment.lhs", { desc = "Select assignment LHS" })
-  vim.keymap.set({ "x", "o" }, "ik", select "@assignment.lhs", { desc = "Select assignment LHS (inner)" })
+  bind("aa", select "@parameter.outer", "Select around parameter")
+  bind("ia", select "@parameter.inner", "Select inside parameter")
 
-  vim.keymap.set({ "x", "o" }, "av", select "@assignment.rhs", { desc = "Select assignment RHS" })
-  vim.keymap.set({ "x", "o" }, "iv", select "@assignment.rhs", { desc = "Select assignment RHS (inner)" })
+  bind("ak", select "@assignment.lhs", "Select assignment LHS")
+  bind("ik", select "@assignment.lhs", "Select assignment LHS (inner)")
+
+  bind("av", select "@assignment.rhs", "Select assignment RHS")
+  bind("iv", select "@assignment.rhs", "Select assignment RHS (inner)")
+end
+
+local function bind_select(buf)
+  local select = require "vim.treesitter._select"
+
+  vim.keymap.set({ "x" }, "<BS>", function()
+    select.select_child(vim.v.count1)
+  end, { buffer = buf, desc = "Select Inner" })
+
+  vim.keymap.set({ "x", "n" }, "<Enter>", function()
+    select.select_parent(vim.v.count1)
+  end, { buffer = buf, desc = "Select Outer" })
+end
+
+local function setup_binds()
+  local group = vim.api.nvim_create_augroup("TreesitterKeymaps", { clear = true })
+
+  vim.api.nvim_create_autocmd("FileType", {
+    group = group,
+    callback = function(args)
+      local ft = args.match
+
+      parser = vim.treesitter.language.get_lang(ft)
+
+      if not parser then
+        return
+      end
+
+      bind_textobjects(args.buf)
+      bind_select(args.buf)
+    end,
+  })
 end
 
 local function setup()
@@ -86,16 +122,6 @@ local function setup()
 
   ensure_parsers()
   vim.api.nvim_create_autocmd("User", { pattern = "TSUpdate", callback = add_custom_parsers })
-
-  local select = require "vim.treesitter._select"
-
-  vim.keymap.set({ "x" }, "<BS>", function()
-    select.select_child(vim.v.count1)
-  end, { desc = "wip" })
-
-  vim.keymap.set({ "x", "n" }, "<Enter>", function()
-    select.select_parent(vim.v.count1)
-  end, { desc = "wip" })
 
   ts.setup {
     highlight = {
@@ -105,7 +131,7 @@ local function setup()
     indent = { enable = true },
   }
 
-  bind_textobjects()
+  setup_binds()
 
   vim.treesitter.language.register("json", "jsonc")
   vim.treesitter.language.register("rasi", "css")
