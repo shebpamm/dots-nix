@@ -105,6 +105,11 @@ local function setup_binds()
     callback = function(args)
       local ft = args.match
 
+      -- Skip quickfix buffers, otherwise enter select
+      if ft == "qf" then
+        return
+      end
+
       parser = vim.treesitter.language.get_lang(ft)
 
       if not parser then
