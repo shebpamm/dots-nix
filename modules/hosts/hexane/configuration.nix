@@ -5,6 +5,7 @@
       includes = [
         aspects.grub
         aspects.workstation
+        aspects.polkit
       ];
     };
   };

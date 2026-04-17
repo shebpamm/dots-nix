@@ -22,7 +22,6 @@
   hardware.bluetooth.enable = true;
   hardware.rtl-sdr.enable = true;
   services.blueman.enable = true;
-  security.polkit.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
   services.x2goserver.enable = false;
   services.gnome.gnome-keyring.enable = true;
@@ -38,22 +37,6 @@
   services.clamav.daemon.enable = true;
 
   services.clamav.updater.enable = true;
-
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
 
   virtualisation.docker.enable = true;
 

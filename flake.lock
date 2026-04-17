@@ -1214,6 +1214,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-polkit-pin": {
+      "locked": {
+        "lastModified": 1769018530,
+        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
+        "type": "github"
+      }
+    },
     "nixpkgs-sheb": {
       "inputs": {
         "flake-compat": "flake-compat_4",
@@ -1605,6 +1621,7 @@
         "nixpkgs": "nixpkgs_10",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nixpkgs-master": "nixpkgs-master",
+        "nixpkgs-polkit-pin": "nixpkgs-polkit-pin",
         "nixpkgs-sheb": "nixpkgs-sheb",
         "nur": "nur",
         "sops-nix": "sops-nix",
