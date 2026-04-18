@@ -23,6 +23,9 @@
               usbutils
               vim
             ];
+
+            hardware.enableRedistributableFirmware = true;
+            hardware.enableAllFirmware = true;
           };
       };
     };
