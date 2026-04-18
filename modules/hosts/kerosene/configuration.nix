@@ -14,6 +14,7 @@
           aspects.nvidia-base
           aspects.ollama
           aspects.virtualbox
+          aspects.kvm
         ];
 
         nixos =

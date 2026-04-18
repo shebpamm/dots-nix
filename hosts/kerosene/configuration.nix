@@ -9,6 +9,5 @@
       ../../os/programs
       ../../os/secrets
       ../../os/system/graphics/xorg.nix
-      ../../os/virtualization/kvm.nix
     ];
 }
