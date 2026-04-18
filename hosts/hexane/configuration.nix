@@ -18,7 +18,6 @@
       ../../os/games/steam.nix
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.resumeDevice = "/dev/mapper/crypted";
   boot.kernelParams = [
     "resume_offset=3155204"
