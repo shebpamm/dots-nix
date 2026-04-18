@@ -19,6 +19,4 @@
       ../../os/system/graphics/xorg.nix
       ../../os/virtualization/kvm.nix
     ];
-
-  system.stateVersion = "23.11";
 }

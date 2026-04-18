@@ -111,6 +111,4 @@
   };
 
   users.groups.ws1user = {};
-
-  system.stateVersion = "23.11";
 }
