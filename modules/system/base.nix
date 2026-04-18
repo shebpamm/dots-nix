@@ -26,6 +26,8 @@
 
             hardware.enableRedistributableFirmware = true;
             hardware.enableAllFirmware = true;
+
+            services.automatic-timezoned.enable = true;
           };
       };
     };
