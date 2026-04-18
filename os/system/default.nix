@@ -8,10 +8,6 @@
     ./users.nix
   ];
 
-  environment.systemPackages = with pkgs; [
-    jmtpfs
-  ];
-
   nixpkgs.config.allowUnfree = true;
 
   hardware.enableRedistributableFirmware = true;
