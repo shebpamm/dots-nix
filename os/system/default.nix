@@ -9,8 +9,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    usbutils
-    vim
     zsh
     jmtpfs
   ];

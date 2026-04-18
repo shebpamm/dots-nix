@@ -21,9 +21,6 @@
     ];
 
   environment.systemPackages = with pkgs; [
-    gcc
-    usbutils
-    vim
     zsh
   ];
 
