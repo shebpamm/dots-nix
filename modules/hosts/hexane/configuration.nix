@@ -10,6 +10,7 @@
           aspects.laptop-base
           aspects.polkit
           aspects.autorandr
+          aspects.wsone
         ];
 
         nixos =
