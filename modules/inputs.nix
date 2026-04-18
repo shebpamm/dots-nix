@@ -22,7 +22,6 @@
     hyprpaper.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
     disko.url = "github:nix-community/disko";
-    flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
     compfy.url = "github:allusive-dev/compfy";
     flox.url = "github:flox/flox";
     zen.url = "github:0xc000022070/zen-browser-flake";

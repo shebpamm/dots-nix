@@ -18,7 +18,6 @@
     flake-aspects.url = "github:vic/flake-aspects";
     flake-file.url = "github:vic/flake-file";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
     flox.url = "github:flox/flox";
     home-manager = {
       url = "github:nix-community/home-manager/master";

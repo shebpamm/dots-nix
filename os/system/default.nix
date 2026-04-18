@@ -17,9 +17,5 @@
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
 
-  # nix.linkInputs = true;
-  # nix.generateRegistryFromInputs = true;
-  # nix.generateNixPathFromInputs = true;
-
   services.automatic-timezoned.enable = true;
 }
