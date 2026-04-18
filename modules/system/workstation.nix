@@ -13,6 +13,7 @@
           aspects.docker
           aspects.rtl-sdr
           aspects.clamav
+          aspects.steam
         ];
 
         nixos =
