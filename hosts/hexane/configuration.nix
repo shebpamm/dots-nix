@@ -18,7 +18,6 @@
       ../../os/games/steam.nix
     ];
 
-  services.libinput.touchpad.naturalScrolling = true;
   services.x2goserver.enable = false;
   environment.systemPackages = [
     pkgs.clamav
@@ -99,8 +98,6 @@
       };
     };
   };
-
-  services.touchegg.enable = true;
 
   users.users.ws1user = {
     isSystemUser = true;

@@ -5,6 +5,7 @@
       includes = [
         aspects.power-management
         aspects.bluetooth
+        aspects.trackpad
       ];
     };
   };
