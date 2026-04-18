@@ -39,7 +39,7 @@
             '';
 
             services.udev.extraRules = ''
-              SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="9981", MODE="0666", OWNER="${inputs.flake.context.adminUser}"
+              SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="9981", MODE="0666", OWNER="${inputs.self.context.adminUser}"
             '';
           };
         homeManager =
