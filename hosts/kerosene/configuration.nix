@@ -20,7 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  environment.binsh = "${pkgs.dash}/bin/dash";
   environment.variables = {
     GDK_SCALE = "1";
     GDK_DPI_SCALE = "1";
