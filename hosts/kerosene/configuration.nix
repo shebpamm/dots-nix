@@ -20,7 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  services.pcscd.enable = true;
   services.sshd.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -28,8 +27,6 @@
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-
-  programs.gnupg.agent.enable = true;
 
   programs.fish.enable = true;
   programs.zsh = {
@@ -79,7 +76,6 @@
   environment.systemPackages = with pkgs; [
     coreutils
     gcc
-    gnupg
     usbutils
     vim
     zsh

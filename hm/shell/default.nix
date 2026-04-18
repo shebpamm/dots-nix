@@ -60,8 +60,6 @@
     wget
     xclip
     yq-go
-    yubikey-agent
-    yubikey-manager
     zoxide
     lefthook
     actionlint

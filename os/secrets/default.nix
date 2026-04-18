@@ -4,22 +4,8 @@
     ./users.nix
   ];
 
-
-
-  # Enable GPG
-  programs.gnupg.agent = {
-    enable = true;
-  };
-
-  # Enable smart card service to access Yubikeys
-  services.pcscd.enable = true;
-
-  environment.systemPackages = [ pkgs.gnupg ];
-
-
   # Expose secrets
   sops.defaultSopsFile = ../../secrets/default.yaml;
-  sops.gnupg.sshKeyPaths = [];
   sops.age.sshKeyPaths = [
     "/etc/ssh/ssh_sops_key"
   ];

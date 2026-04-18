@@ -30,7 +30,6 @@
     pcmanfm
     pulseaudio
     sops
-    yubioath-flutter
     wireshark
     ollama
     cfssl

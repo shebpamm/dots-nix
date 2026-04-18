@@ -12,7 +12,6 @@
     coreutils
     git
     gcc
-    gnupg
     pinentry-curses
     usbutils
     vim

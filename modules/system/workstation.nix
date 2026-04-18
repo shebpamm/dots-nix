@@ -6,6 +6,7 @@
         aspects.system-base
         aspects.cross-platform
         aspects.keyring
+        aspects.yubikey
       ];
     };
   };
