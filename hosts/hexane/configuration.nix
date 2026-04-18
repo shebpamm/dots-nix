@@ -18,21 +18,6 @@
       ../../os/games/steam.nix
     ];
 
-  virtualisation.docker.enable = true;
-
-  # services.xserver.dpi = 96 + 16;
-  # services.xserver =
-  #   {
-  #     dpi = 96 + 16;
-  #     deviceSection = ''
-  #       Section "Device"
-  #           Identifier "intelGpu"
-  #           Driver "intel"
-  #           Option "VirtualHeads" "1"
-  #       EndSection
-  #     '';
-  #   };
-
   boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.resumeDevice = "/dev/mapper/crypted";
   boot.kernelParams = [
@@ -42,7 +27,6 @@
     "cgroup_memory=1"
   ];
 
-  # programs.immersed.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
   programs._1password-gui.polkitPolicyOwners = [ "shebpamm" ];
