@@ -3,7 +3,7 @@
   flake.aspects =
     { ... }:
     {
-      fish-functions = {
+      fish = {
         nixos = { pkgs, ... }: { };
         homeManager =
           { pkgs, ... }:

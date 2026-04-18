@@ -1,13 +1,9 @@
 { inputs, ... }:
 {
   flake.aspects =
-    { aspects, ... }:
+    { ... }:
     {
       fish = {
-        includes = [
-          aspects.fish-functions
-          aspects.fish-shell-init
-        ];
         nixos =
           { ... }:
           {

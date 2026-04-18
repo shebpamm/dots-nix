@@ -3,7 +3,7 @@
   flake.aspects =
     { ... }:
     {
-      fish-shell-init = {
+      fish = {
         nixos = { pkgs, ... }: { };
         homeManager =
           { pkgs, ... }:
