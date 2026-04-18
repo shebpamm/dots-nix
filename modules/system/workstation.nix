@@ -12,6 +12,7 @@
           aspects.fish
           aspects.docker
           aspects.rtl-sdr
+          aspects.clamav
         ];
 
         nixos =

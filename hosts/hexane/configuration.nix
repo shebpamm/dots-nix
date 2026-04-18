@@ -18,14 +18,6 @@
       ../../os/games/steam.nix
     ];
 
-  services.x2goserver.enable = false;
-  environment.systemPackages = [
-    pkgs.clamav
-  ];
-  services.clamav.daemon.enable = true;
-
-  services.clamav.updater.enable = true;
-
   virtualisation.docker.enable = true;
 
   # services.xserver.dpi = 96 + 16;
