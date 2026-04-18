@@ -18,9 +18,7 @@
       ../../os/games/steam.nix
     ];
 
-  hardware.bluetooth.enable = true;
   hardware.rtl-sdr.enable = true;
-  services.blueman.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
   services.x2goserver.enable = false;
   environment.systemPackages = [

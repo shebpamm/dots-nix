@@ -4,6 +4,7 @@
     laptop-base = {
       includes = [
         aspects.power-management
+        aspects.bluetooth
       ];
     };
   };
