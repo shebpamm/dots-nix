@@ -18,18 +18,11 @@
       ../../os/games/steam.nix
     ];
 
-  services.upower.enable = true;
   hardware.bluetooth.enable = true;
   hardware.rtl-sdr.enable = true;
   services.blueman.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
   services.x2goserver.enable = false;
-  services.tlp.enable = true;
-  services.tlp.settings = {
-    CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-  };
-
   environment.systemPackages = [
     pkgs.clamav
   ];
