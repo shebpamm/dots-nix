@@ -16,6 +16,11 @@
           { pkgs, ... }:
           {
             environment.binsh = "${pkgs.dash}/bin/dash";
+
+            environment.systemPackages = with pkgs; [
+              coreutils
+              git
+            ];
           };
       };
     };
