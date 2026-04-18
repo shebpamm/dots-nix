@@ -20,11 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-  };
-
   services.pcscd.enable = true;
   services.sshd.enable = true;
 

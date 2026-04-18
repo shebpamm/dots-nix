@@ -6,6 +6,7 @@
         aspects.nix
         aspects.homemanager-base
         aspects.homelab-cert
+        aspects.network
       ];
 
       nixos = { };
