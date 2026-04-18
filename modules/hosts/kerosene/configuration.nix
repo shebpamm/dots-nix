@@ -15,6 +15,7 @@
           aspects.ollama
           aspects.virtualbox
           aspects.kvm
+          aspects.calibre
         ];
 
         nixos =
