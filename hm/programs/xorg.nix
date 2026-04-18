@@ -14,7 +14,6 @@
         configureFlags = oldAttrs.configureFlags ++ [ "--with-mplayer=${mplayer}/bin/mplayer" ];
       }))
     eww
-    autorandr
     arandr
   ];
 }

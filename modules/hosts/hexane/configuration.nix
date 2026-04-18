@@ -7,6 +7,7 @@
         aspects.workstation
         aspects.laptop-base
         aspects.polkit
+        aspects.autorandr
       ];
     };
   };
