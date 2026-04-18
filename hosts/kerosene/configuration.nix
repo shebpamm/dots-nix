@@ -20,11 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  environment.systemPackages = with pkgs; [
-    zsh
-  ];
-
-
   virtualisation.docker.enable = true;
   virtualisation.docker.enableNvidia = true;
   virtualisation.docker.daemon.settings = {
