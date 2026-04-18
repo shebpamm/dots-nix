@@ -20,11 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  environment.variables = {
-    GDK_SCALE = "1";
-    GDK_DPI_SCALE = "1";
-    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1";
-  };
   environment.systemPackages = with pkgs; [
     coreutils
     gcc

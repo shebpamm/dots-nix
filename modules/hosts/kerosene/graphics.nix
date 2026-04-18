@@ -1,13 +1,10 @@
 { ... }:
 {
-  flake.aspects = { ... }: {
+  flake.aspects = { aspects, ... }: {
     kerosene = {
-      nixos = { pkgs, ... }: {
-        services.xserver.dpi = 96;
-      };
-      homeManager = { pkgs, ... }: {
-
-      };
+      includes = [ aspects.hidpi ];
+      nixos = { pkgs, ... }: { };
+      homeManager = { pkgs, ... }: { };
     };
   };
 }
