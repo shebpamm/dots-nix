@@ -10,6 +10,7 @@
           aspects.keyring
           aspects.yubikey
           aspects.fish
+          aspects.docker
         ];
 
         nixos =

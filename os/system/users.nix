@@ -20,7 +20,6 @@ in
   };
 
   users.extraGroups.vboxusers.members = [ user ];
-  users.extraGroups.docker.members = [ user ];
   users.extraGroups.libvirtd.members = [ user ];
   users.extraGroups.audio.members = [ user ];
   users.extraGroups.plugdev.members = [ user ];
