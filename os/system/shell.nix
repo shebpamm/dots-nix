@@ -6,6 +6,5 @@
     enableGlobalCompInit = false;
   };
 
-  programs.fish.enable = lib.mkDefault true;
   programs.command-not-found.enable = false;
 }

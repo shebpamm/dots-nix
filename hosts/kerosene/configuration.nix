@@ -20,15 +20,6 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  programs.fish.enable = true;
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableGlobalCompInit = false;
-  };
-
-
-
   services.xserver = {
     videoDrivers = [ "nvidia" ];
     dpi = 96;

@@ -3,7 +3,6 @@
   imports = [
     ./git.nix
     ./zsh.nix
-    ./fish
     ./lorri.nix
     ./tmux.nix
     ./fortunes.nix

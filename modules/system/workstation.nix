@@ -7,6 +7,7 @@
         aspects.cross-platform
         aspects.keyring
         aspects.yubikey
+        aspects.fish
       ];
     };
   };
