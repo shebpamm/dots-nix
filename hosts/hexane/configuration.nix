@@ -18,14 +18,6 @@
       ../../os/games/steam.nix
     ];
 
-  boot.resumeDevice = "/dev/mapper/crypted";
-  boot.kernelParams = [
-    "resume_offset=3155204"
-    "cgroup_enable=memory"
-    "cgroup_enable=cpuset"
-    "cgroup_memory=1"
-  ];
-
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
   programs._1password-gui.polkitPolicyOwners = [ "shebpamm" ];
