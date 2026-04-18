@@ -3,10 +3,6 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-
-      # Other Modules
       ../../os/system
       ../../os/system/keyboard.nix
       # ../../os/system/graphics/wayland.nix
