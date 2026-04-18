@@ -103,7 +103,6 @@
     };
   };
 
-  services.sshd.enable = true;
   services.touchegg.enable = true;
 
   users.users.ws1user = {

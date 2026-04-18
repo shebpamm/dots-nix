@@ -7,6 +7,7 @@
         aspects.homemanager-base
         aspects.homelab-cert
         aspects.network
+        aspects.ssh
       ];
 
       nixos = { };
