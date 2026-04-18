@@ -34,6 +34,27 @@ all() {
   done
 }
 
+nixos_current() {
+  echo "Comparing flake vs currently running NixOS system"
+
+  running=$(readlink -f /run/current-system)
+  flake=$(nix build ".#nixosConfigurations.$(hostname).config.system.build.toplevel" \
+    --print-out-paths --no-link 2> >(gray_stderr))
+
+  nvd diff "$running" "$flake"
+}
+
+hm_current() {
+  echo "Comparing flake vs currently active Home Manager config"
+
+  running=$(readlink -f "$HOME/.local/state/nix/profiles/home-manager")
+
+  flake=$(nix build ".#homeConfigurations.$(hostname).activationPackage" \
+    --print-out-paths --no-link 2> >(gray_stderr))
+
+  nvd diff "$running" "$flake"
+}
+
 # if no arguments are given, compare all systems
 # otherwise, compare only the specified systems
 # usage: compare.sh [nixos|hm] [system...]
@@ -48,6 +69,15 @@ elif [[ "$1" == "hm" ]]; then
   for system in "$@"; do
     hm "$system"
   done
+elif [[ "$1" == "current" ]]; then
+  if [[ "$2" == "nixos" ]]; then
+    nixos_current
+  elif [[ "$2" == "hm" ]]; then
+    hm_current
+  else
+    nixos_current
+    hm_current
+  fi
 else
   all
 fi
