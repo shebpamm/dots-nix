@@ -11,6 +11,7 @@
           aspects.yubikey
           aspects.fish
           aspects.docker
+          aspects.rtl-sdr
         ];
 
         nixos =

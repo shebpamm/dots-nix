@@ -18,7 +18,6 @@
       ../../os/games/steam.nix
     ];
 
-  hardware.rtl-sdr.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
   services.x2goserver.enable = false;
   environment.systemPackages = [

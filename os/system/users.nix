@@ -20,5 +20,4 @@ in
   };
 
   users.extraGroups.audio.members = [ user ];
-  users.extraGroups.plugdev.members = [ user ];
 }
