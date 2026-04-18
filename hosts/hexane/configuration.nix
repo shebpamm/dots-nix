@@ -24,7 +24,6 @@
   services.blueman.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
   services.x2goserver.enable = false;
-  services.gnome.gnome-keyring.enable = true;
   services.tlp.enable = true;
   services.tlp.settings = {
     CPU_SCALING_GOVERNOR_ON_AC = "performance";

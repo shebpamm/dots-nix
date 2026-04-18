@@ -5,6 +5,7 @@
       includes = [
         aspects.system-base
         aspects.cross-platform
+        aspects.keyring
       ];
     };
   };
