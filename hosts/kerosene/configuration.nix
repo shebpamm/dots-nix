@@ -20,7 +20,5 @@
       ../../os/virtualization/kvm.nix
     ];
 
-  virtualisation.virtualbox.host.enable = true;
-
   system.stateVersion = "23.11";
 }

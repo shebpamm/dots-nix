@@ -11,6 +11,7 @@
         aspects.flipperzero
         aspects.nvidia-base
         aspects.ollama
+        aspects.virtualbox
       ];
 
       nixos = { pkgs, ... }: {
