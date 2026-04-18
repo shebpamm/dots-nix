@@ -13,7 +13,10 @@
               enable = true;
             };
 
-            environment.systemPackages = [ pkgs.gnupg ];
+            environment.systemPackages = with pkgs; [
+              gnupg
+              pinentry-curses
+            ];
           };
         homeManager =
           { pkgs, ... }:
