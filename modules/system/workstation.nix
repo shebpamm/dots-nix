@@ -14,6 +14,7 @@
           aspects.rtl-sdr
           aspects.clamav
           aspects.steam
+          aspects.neovim
         ];
 
         nixos =

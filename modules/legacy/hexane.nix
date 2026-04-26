@@ -15,7 +15,6 @@
             ../../hm/desktop
             ../../hm/desktop/windowManagers/awesome.nix
             ../../hm/dev
-            ../../hm/editors/neovim.nix
             ../../hm/editors/vim.nix
             ../../hm/editors/vscode.nix
             ../../hm/system/clipcat.nix

@@ -14,7 +14,6 @@
           imports = [
             ../../hm/system/clipcat.nix
             ../../hm/shell
-            ../../hm/editors/neovim.nix
             ../../hm/editors/vscode.nix
             ../../hm/editors/vim.nix
             ../../hm/dev
