@@ -1,5 +1,13 @@
 local wk = require "which-key"
 
+local function hover()
+  vim.lsp.buf.hover { border = "single" }
+end
+
+local function signature_help()
+  vim.lsp.buf.signature_help { border = O.borders }
+end
+
 wk.register {
   ["<leader>"] = {
     c = {
@@ -29,8 +37,8 @@ wk.register {
   },
   ["]d"] = { vim.diagnostic.goto_next, "next diagnostic" },
   ["[d"] = { vim.diagnostic.goto_prev, "prev diagnostic" },
-  ["<C-k>"] = { vim.lsp.buf.signature_help, "signature help" },
-  K = { vim.lsp.buf.hover, "lsp: hover" },
+  ["<C-k>"] = { signature_help, "signature help" },
+  K = { hover, "lsp: hover" },
 }
 
 -- Visual mode mappings
