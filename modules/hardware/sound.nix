@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.aspects =
     { ... }:
@@ -18,6 +18,7 @@
               };
               pulse.enable = true;
             };
+            users.extraGroups.audio.members = [ inputs.self.context.adminUser ];
           };
         homeManager = { ... }: { };
       };
