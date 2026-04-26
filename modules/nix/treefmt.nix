@@ -56,4 +56,12 @@
       "secrets/*.yaml"
     ];
   };
+
+  flake.aspects.treefmt = {
+    homeManager =
+      { pkgs, ... }:
+      {
+        home.packages = [ inputs.self.formatter.${pkgs.stdenv.hostPlatform.system} ];
+      };
+  };
 }

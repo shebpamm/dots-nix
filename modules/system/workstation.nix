@@ -15,6 +15,7 @@
           aspects.clamav
           aspects.steam
           aspects.neovim
+          aspects.treefmt
         ];
 
         nixos =
