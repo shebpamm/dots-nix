@@ -19,6 +19,11 @@
           {
             nix.registry = nixRegistry;
 
+            nixpkgs.flake = {
+              setFlakeRegistry = false;
+              setNixPath = false;
+            };
+
             environment.etc = (
               mapAttrs' (name: value: {
                 name = "nix/inputs/${name}";
