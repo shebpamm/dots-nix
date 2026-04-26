@@ -5,14 +5,23 @@
     {
       hexane = {
         nixos =
-          { config, lib, pkgs, modulesPath, ... }:
           {
-            imports =
-              [
-                (modulesPath + "/installer/scan/not-detected.nix")
-              ];
+            config,
+            lib,
+            modulesPath,
+            ...
+          }:
+          {
+            imports = [
+              (modulesPath + "/installer/scan/not-detected.nix")
+            ];
 
-            boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" ];
+            boot.initrd.availableKernelModules = [
+              "xhci_pci"
+              "thunderbolt"
+              "nvme"
+              "usbhid"
+            ];
             boot.initrd.kernelModules = [ ];
             boot.kernelModules = [ "kvm-intel" ];
             boot.extraModulePackages = [ ];

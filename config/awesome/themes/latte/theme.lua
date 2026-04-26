@@ -8,9 +8,9 @@ local rnotification = require "ruled.notification"
 local dpi = xresources.apply_dpi
 local theme_path = require("gears").filesystem.get_configuration_dir() .. "themes/latte/"
 
-local c = require("themes.latte.colors")
+local c = require "themes.latte.colors"
 
-local theme = require("themes.latte.recolor_layouts")
+local theme = require "themes.latte.recolor_layouts"
 
 theme.font_name = "JetBrainsMono Nerd Font"
 theme.font = theme.font_name .. " 8"
@@ -59,7 +59,7 @@ theme.border_radius = 9
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
-theme.taglist_bg_empty = c.rosewater  -- Inactive diamond outline
+theme.taglist_bg_empty = c.rosewater -- Inactive diamond outline
 theme.taglist_bg_occupied = c.rosewater -- Occupied diamond outline
 theme.taglist_bg_focus = c.rosewater -- Active diamond outline
 theme.taglist_fg_empty = c.mantle -- Inside of diamond

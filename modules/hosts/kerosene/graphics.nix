@@ -1,10 +1,12 @@
 { ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    kerosene = {
-      includes = [ aspects.hidpi ];
-      nixos = { pkgs, ... }: { };
-      homeManager = { pkgs, ... }: { };
+  flake.aspects =
+    { aspects, ... }:
+    {
+      kerosene = {
+        includes = [ aspects.hidpi ];
+        nixos = { ... }: { };
+        homeManager = { ... }: { };
+      };
     };
-  };
 }

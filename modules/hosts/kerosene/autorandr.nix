@@ -7,7 +7,7 @@
         includes = [ aspects.autorandr ];
 
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
             services.autorandr.profiles = {
               main = {
@@ -33,7 +33,7 @@
               };
             };
           };
-        homeManager = { pkgs, ... }: { };
+        homeManager = { ... }: { };
       };
     };
 }

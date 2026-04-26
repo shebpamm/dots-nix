@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ ... }:
 {
   programs.kitty.settings = {
     background = "#2e3440";

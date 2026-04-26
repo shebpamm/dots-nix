@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./fun.nix

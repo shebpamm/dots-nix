@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -7,7 +7,6 @@
     ../../os/system/shell.nix
     ../../os/system/users.nix
   ];
-
 
   boot.binfmt.emulatedSystems = [ ];
   nix.settings.extra-platforms = [ ];

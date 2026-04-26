@@ -117,9 +117,12 @@
                 dotfiles = inputs.self.context.dotfilesPath;
               in
               {
-                ".config/fish/static_variables.fish".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/fish/static_variables.fish";
-                ".config/fish/kubectl_aliases.fish".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/fish/kubectl_aliases.fish";
-                ".config/fish/completions".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/fish/completions";
+                ".config/fish/static_variables.fish".source =
+                  config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/fish/static_variables.fish";
+                ".config/fish/kubectl_aliases.fish".source =
+                  config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/fish/kubectl_aliases.fish";
+                ".config/fish/completions".source =
+                  config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/fish/completions";
               };
           };
       };

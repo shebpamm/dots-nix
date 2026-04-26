@@ -68,9 +68,7 @@
               };
             };
           };
-        homeManager =
-          { pkgs, ... }:
-          { };
+        homeManager = { ... }: { };
       };
     };
 }

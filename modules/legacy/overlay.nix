@@ -3,7 +3,8 @@
   flake.aspects = {
     legacy =
       let
-        miscOverlay = self: super:
+        miscOverlay =
+          self: super:
           let
             system = self.stdenv.hostPlatform.system;
           in

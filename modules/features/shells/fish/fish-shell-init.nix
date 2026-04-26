@@ -4,9 +4,9 @@
     { ... }:
     {
       fish = {
-        nixos = { pkgs, ... }: { };
+        nixos = { ... }: { };
         homeManager =
-          { pkgs, ... }:
+          { ... }:
           {
             programs.fish.interactiveShellInit = ''
               for secret in hass-server hass-token hass-phone hass-imaginary openai-api-key jira-api-token pagerduty-api-token

@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
   services.picom = {
     enable = false;
@@ -6,7 +6,10 @@
 
     shadow = true;
     shadowOpacity = 0.4;
-    shadowOffsets = [ (-5) (0) ];
+    shadowOffsets = [
+      (-5)
+      (0)
+    ];
     shadowExclude = [
       "name = 'Notification'"
       "class_g = 'Rofi'"
@@ -20,7 +23,10 @@
 
     fade = true;
     fadeDelta = 3;
-    fadeSteps = [ 0.03 0.03 ];
+    fadeSteps = [
+      0.03
+      0.03
+    ];
     fadeExclude = [ "class_g = 'xsecurelock'" ];
 
     backend = "glx";

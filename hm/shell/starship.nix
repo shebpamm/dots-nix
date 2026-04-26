@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   programs.starship.enable = false;
   programs.starship.settings = {

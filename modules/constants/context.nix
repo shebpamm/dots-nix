@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ lib, ... }:
 {
   options.context = lib.mkOption {
     description = "System constants, such as admin username";

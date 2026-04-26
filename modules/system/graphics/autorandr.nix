@@ -5,7 +5,7 @@
     {
       autorandr = {
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
             services.autorandr.enable = true;
             systemd.services.autorandr.after = [ "graphical-session-pre.target" ];

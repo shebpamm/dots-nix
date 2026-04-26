@@ -5,7 +5,7 @@
     {
       hexane = {
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
             boot.resumeDevice = "/dev/mapper/crypted";
             boot.kernelParams = [

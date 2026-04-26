@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ config, pkgs, ... }:
 let
   extras = with pkgs; [
     ansible-lint
@@ -8,7 +8,7 @@ let
     haskellPackages.haskell-language-server
     dockerfile-language-server
     prettier
-    prettierd 
+    prettierd
     typescript-language-server
     vscode-langservers-extracted
     ty
@@ -46,12 +46,14 @@ in
     withNodeJs = true;
     withRuby = true;
     extraPackages = extras ++ python-extras;
-    extraPython3Packages = (ps: with ps; [
-      python-dotenv
-      requests
-      pynvim
-      prompt-toolkit
-    ]);
+    extraPython3Packages = (
+      ps: with ps; [
+        python-dotenv
+        requests
+        pynvim
+        prompt-toolkit
+      ]
+    );
   };
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/nvim";

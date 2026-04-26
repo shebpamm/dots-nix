@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ lib, ... }:
 {
   programs.zsh = lib.mkDefault {
     enable = true;

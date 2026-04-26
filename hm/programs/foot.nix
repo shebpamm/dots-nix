@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ ... }:
 {
   programs.foot = {
     enable = true;

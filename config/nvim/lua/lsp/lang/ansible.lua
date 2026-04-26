@@ -16,7 +16,7 @@ M.setup = {
           enabled = true,
           path = "ansible-lint",
           arguments = "-x=fqcn[action-core],yaml[line-length],fqcn[action]",
-        }
+        },
       },
       executionEnvironment = {
         enabled = false,

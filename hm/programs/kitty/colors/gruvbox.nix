@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ ... }:
 {
   programs.kitty.settings = {
     # gruvbox material --------------------------------------------

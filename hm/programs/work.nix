@@ -1,19 +1,18 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 let
-  git-crypt-worktrees = pkgs.git-crypt.overrideAttrs (oldAttrs: rec {
+  git-crypt-worktrees = pkgs.git-crypt.overrideAttrs (_oldAttrs: rec {
     pname = "git-crypt";
     version = "0.6.0";
-    src = pkgs.fetchFromGitHub
-      {
-        owner = "morganwahl";
-        repo = pname;
-        rev = "use-common-git-dir";
-        sha256 = "sha256-f4FjLfVmfLcHpLITQCQaobU10aHifPqhCpamjUrMI/A";
-      };
+    src = pkgs.fetchFromGitHub {
+      owner = "morganwahl";
+      repo = pname;
+      rev = "use-common-git-dir";
+      sha256 = "sha256-f4FjLfVmfLcHpLITQCQaobU10aHifPqhCpamjUrMI/A";
+    };
   });
 
   # The releases/tags have not been updated forever, so locked to a recent commit instead.
-  jira = pkgs.go-jira.overrideAttrs (oldAttrs: rec {
+  jira = pkgs.go-jira.overrideAttrs (_oldAttrs: rec {
     pname = "go-jira";
     src = pkgs.fetchFromGitHub {
       owner = "go-jira";

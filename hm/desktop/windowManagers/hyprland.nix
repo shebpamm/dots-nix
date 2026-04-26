@@ -1,4 +1,9 @@
-{ config, pkgs, libs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   configPath = ../../../config/hypr;
 

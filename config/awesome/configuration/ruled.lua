@@ -83,13 +83,13 @@ naughty.connect_signal("request::display", function(n)
     n.position = "top_right"
 
     -- Only rewrite title if we actually matched the pattern
-    local channel = title:match("%[.+%] in #(.+)")
+    local channel = title:match "%[.+%] in #(.+)"
     if channel then
       n.title = "<b>#" .. channel .. "</b>"
     end
 
     local is_triggered = message:find("🔴", 1, true) ~= nil
-    local is_resolved  = message:find("%*Resolved%*") ~= nil
+    local is_resolved = message:find "%*Resolved%*" ~= nil
 
     local label = channel and ("#" .. channel) or title
     local state_title = label
@@ -105,11 +105,11 @@ naughty.connect_signal("request::display", function(n)
 
     local pd_message
     if is_resolved then
-    --  "PagerDuty: *Resolved* <*#477477: [test] bot-devops notification test*> "
-      pd_message = message:match("PagerDuty:%s*%*Resolved%*%s*<%*#%d+:%s*(.-)%*%s*>")
+      --  "PagerDuty: *Resolved* <*#477477: [test] bot-devops notification test*> "
+      pd_message = message:match "PagerDuty:%s*%*Resolved%*%s*<%*#%d+:%s*(.-)%*%s*>"
     elseif is_triggered then
-    --  "PagerDuty: 🔴 *<[test] bot-devops notification test>* Assigned: <Dummy>\n"
-      pd_message = message:match("PagerDuty:.-%*<(.-)>%*")
+      --  "PagerDuty: 🔴 *<[test] bot-devops notification test>* Assigned: <Dummy>\n"
+      pd_message = message:match "PagerDuty:.-%*<(.-)>%*"
     end
 
     if pd_message then

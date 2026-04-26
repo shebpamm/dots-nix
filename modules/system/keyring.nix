@@ -1,10 +1,14 @@
 { ... }:
 {
-  flake.aspects = { ... }: {
-    keyring = {
-      nixos = { pkgs, ... }: {
-        services.gnome.gnome-keyring.enable = true;
+  flake.aspects =
+    { ... }:
+    {
+      keyring = {
+        nixos =
+          { ... }:
+          {
+            services.gnome.gnome-keyring.enable = true;
+          };
       };
     };
-  };
 }

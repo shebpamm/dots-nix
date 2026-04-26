@@ -1,11 +1,15 @@
 { ... }:
 {
-  flake.aspects = { ... }: {
-    flipperzero = {
-      nixos = { ... }: {
-        hardware.flipperzero.enable = true;
+  flake.aspects =
+    { ... }:
+    {
+      flipperzero = {
+        nixos =
+          { ... }:
+          {
+            hardware.flipperzero.enable = true;
+          };
+        homeManager = { ... }: { };
       };
-      homeManager = { ... }: { };
     };
-  };
 }

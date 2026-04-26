@@ -5,7 +5,7 @@
     {
       kerosene = {
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
             disko.devices = {
               disk.booter = {

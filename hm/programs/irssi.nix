@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ config, ... }:
 {
   programs.irssi = {
     enable = false;
@@ -31,8 +31,7 @@
         };
       };
     };
-    extraConfig = ''
-    '';
+    extraConfig = "";
   };
   home.file.".irssi/scripts".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/irssi/scripts";

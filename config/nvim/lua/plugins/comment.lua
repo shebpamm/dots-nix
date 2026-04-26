@@ -7,7 +7,7 @@ return {
     "gbc",
     "gbc",
     { "gc", mode = "v" },
-    { "gb", mode = "v" }
+    { "gb", mode = "v" },
   },
   opts = {
     padding = true,
@@ -16,5 +16,5 @@ return {
       basic = true,
       extra = true,
     },
-  }
+  },
 }

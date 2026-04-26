@@ -5,7 +5,7 @@
     {
       hexane = {
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
 
             disko.devices = {

@@ -6,7 +6,12 @@
     {
       kerosene = {
         nixos =
-          { config, lib, modulesPath, ... }:
+          {
+            config,
+            lib,
+            modulesPath,
+            ...
+          }:
           {
 
             imports = [

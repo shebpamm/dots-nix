@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
   services.lorri.enable = true;
   home.packages = [ pkgs.direnv ];

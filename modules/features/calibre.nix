@@ -5,7 +5,7 @@
     {
       calibre = {
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
             services.udisks2.enable = true;
             services.gvfs.enable = true;

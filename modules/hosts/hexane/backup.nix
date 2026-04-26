@@ -5,7 +5,7 @@
     {
       hexane = {
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
 
             services.btrbk.instances.btrbk.onCalendar = "daily";

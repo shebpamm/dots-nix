@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ config, ... }:
 {
   home.file.".zsh".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/zsh/.zsh";

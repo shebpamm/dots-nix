@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   services.libinput.enable = true;
   services.displayManager.defaultSession = "none+awesome";
@@ -18,9 +18,6 @@
     deviceSection = ''
       Option "ModeValidation" "AllowNonEdidModes"
     '';
-
-    
-    
 
     xkb.layout = "eu";
     xkb.options = "caps:escape";

@@ -1,8 +1,10 @@
 { ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    network = {
-      includes = [ aspects.dns ];
+  flake.aspects =
+    { aspects, ... }:
+    {
+      network = {
+        includes = [ aspects.dns ];
+      };
     };
-  };
 }

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-exec()
-{
+exec() {
   rofi -show fb -modes "fb:$0" --normal-window
 }
 
@@ -24,8 +23,8 @@ else
   if [ "${1: -1}" = "/" ]; then
     vault kv list "$1" | jq -r ".[] | . = \"$1\" + ."
   # Does it start with >?
-  elif [[ "$1" = *": "* ]]; then 
-    IFS=': ' read -r path key <<< "$1"
+  elif [[ $1 == *": "* ]]; then
+    IFS=': ' read -r path key <<<"$1"
     res=$(vault kv get "$path" | jq -r --arg key "$key" '.data.data[$key]')
     echo "$res" | xclip -sel clip >/dev/null 2>&1
 

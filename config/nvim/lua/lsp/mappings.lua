@@ -1,11 +1,16 @@
 local wk = require "which-key"
 
-wk.register({
+wk.register {
   ["<leader>"] = {
     c = {
       name = "+code",
       r = { vim.lsp.buf.rename, "rename" },
-      a = { function() require("fastaction").code_action() end, "code action" },
+      a = {
+        function()
+          require("fastaction").code_action()
+        end,
+        "code action",
+      },
     },
     l = {
       name = "+lsp",
@@ -26,12 +31,12 @@ wk.register({
   ["[d"] = { vim.diagnostic.goto_prev, "prev diagnostic" },
   ["<C-k>"] = { vim.lsp.buf.signature_help, "signature help" },
   K = { vim.lsp.buf.hover, "lsp: hover" },
-})
+}
 
 -- Visual mode mappings
-wk.register({
+wk.register {
   c = {
     name = "+code",
     a = { vim.lsp.buf.code_action, "range code action" },
   },
-})
+}

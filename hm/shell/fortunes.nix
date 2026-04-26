@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   devops-fortunes = pkgs.stdenv.mkDerivation {
     name = "devops-fortunes";

@@ -14,10 +14,10 @@ local function merge(a, b)
 end
 
 local function concat(a, b)
-    for i=1,#b do
-        a[#a+1] = b[i]
-    end
-    return a
+	for i = 1, #b do
+		a[#a + 1] = b[i]
+	end
+	return a
 end
 
 module.merge = merge

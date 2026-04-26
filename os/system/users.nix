@@ -12,7 +12,10 @@ in
       };
       ${user} = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" ];
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+        ];
         shell = pkgs.fish;
         hashedPasswordFile = config.sops.secrets.main-password.path;
       };

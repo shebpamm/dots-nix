@@ -15,34 +15,38 @@ client.connect_signal("request::titlebars", function(c)
     end),
   }
 
-  awful.titlebar(c, {
-    size = 37.5,
-  }):setup {
-    { -- Middle
-      { -- Title
-        align = "center",
-        widget = awful.titlebar.widget.titlewidget(c),
+  awful
+    .titlebar(c, {
+      size = 37.5,
+    })
+    :setup {
+      { -- Middle
+        { -- Title
+          align = "center",
+          widget = awful.titlebar.widget.titlewidget(c),
+        },
+        buttons = buttons,
+        layout = wibox.layout.flex.horizontal,
       },
-      buttons = buttons,
-      layout = wibox.layout.flex.horizontal,
-    },
 
-    {
-      { -- Right
-        awful.titlebar.widget.closebutton(c),
-        layout = wibox.layout.fixed.horizontal,
+      {
+        { -- Right
+          awful.titlebar.widget.closebutton(c),
+          layout = wibox.layout.fixed.horizontal,
+        },
+        widget = wibox.container.margin,
+        margins = 14,
       },
-      widget = wibox.container.margin,
-      margins = 14,
-    },
-    layout = wibox.layout.stack,
-  }
+      layout = wibox.layout.stack,
+    }
 end)
 
 -- imagine using titlebars for tiled windows
 screen.connect_signal("arrange", function(s)
   -- don't do anything if there's no selected tag
-  if not s.selected_tag then return end
+  if not s.selected_tag then
+    return
+  end
 
   local layout = s.selected_tag.layout.name
   for _, c in pairs(s.clients) do

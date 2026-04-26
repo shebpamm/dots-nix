@@ -1,6 +1,11 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
-  home.packages = with pkgs; [ nordic paper-icon-theme papirus-icon-theme catppuccin-gtk ];
+  home.packages = with pkgs; [
+    nordic
+    paper-icon-theme
+    papirus-icon-theme
+    catppuccin-gtk
+  ];
   gtk = {
     enable = true;
     font = {

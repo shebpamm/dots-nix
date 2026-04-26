@@ -4,9 +4,9 @@
     { ... }:
     {
       fish = {
-        nixos = { pkgs, ... }: { };
+        nixos = { ... }: { };
         homeManager =
-          { pkgs, ... }:
+          { ... }:
           {
             programs.fish.functions = {
               __complete_remote_path = {

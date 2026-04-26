@@ -5,7 +5,7 @@
     {
       workstation = {
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
             sops.secrets = {
               root-password = {

@@ -1,3 +1,3 @@
 return {
-  "Joorem/vim-haproxy"
+  "Joorem/vim-haproxy",
 }

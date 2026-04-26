@@ -1,3 +1,3 @@
 return {
-  audible_bell = "Disabled"
+	audible_bell = "Disabled",
 }

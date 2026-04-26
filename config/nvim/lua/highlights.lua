@@ -28,5 +28,4 @@ cmd "hi LspReferenceText cterm=bold gui=bold"
 cmd "hi LspReferenceRead cterm=bold gui=bold"
 cmd "hi LspReferenceWrite cterm=bold gui=bold"
 
-
 require("colors." .. O.colorscheme).overrides()

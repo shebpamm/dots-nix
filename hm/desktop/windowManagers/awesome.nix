@@ -1,6 +1,7 @@
-{ config, pkgs, libs, ... }:
+{ config, ... }:
 {
   home.file = {
-    ".config/awesome".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/awesome";
+    ".config/awesome".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/awesome";
   };
 }

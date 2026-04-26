@@ -13,7 +13,9 @@ end
 function M.format_sync(display_messages)
   display_messages = display_messages ~= false
   vim.lsp.buf.format { timeout_ms = 5000 }
-  if display_messages then print("Format done.") end
+  if display_messages then
+    print "Format done."
+  end
 end
 
 return M

@@ -5,7 +5,7 @@
     {
       wsone = {
         nixos =
-          { pkgs, ... }:
+          { ... }:
           {
             users.users.ws1user = {
               isSystemUser = true;
@@ -14,9 +14,7 @@
 
             users.groups.ws1user = { };
           };
-        homeManager =
-          { pkgs, ... }:
-          { };
+        homeManager = { ... }: { };
       };
     };
 }

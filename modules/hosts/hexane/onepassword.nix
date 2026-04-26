@@ -6,7 +6,7 @@
       hexane = {
         includes = [ aspects.onepassword ];
         homeManager =
-          { pkgs, ... }:
+          { ... }:
           {
             programs.ssh.matchBlocks."*".extraOptions = {
               IdentityAgent = "~/.1password/agent.sock";

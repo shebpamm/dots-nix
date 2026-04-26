@@ -60,20 +60,20 @@ hm_current() {
 # otherwise, compare only the specified systems
 # usage: compare.sh [nixos|hm] [system...]
 
-if [[ "$1" == "nixos" ]]; then
+if [[ $1 == "nixos" ]]; then
   shift
   for system in "$@"; do
     nixos "$system"
   done
-elif [[ "$1" == "hm" ]]; then
+elif [[ $1 == "hm" ]]; then
   shift
   for system in "$@"; do
     hm "$system"
   done
-elif [[ "$1" == "current" ]]; then
-  if [[ "$2" == "nixos" ]]; then
+elif [[ $1 == "current" ]]; then
+  if [[ $2 == "nixos" ]]; then
     nixos_current
-  elif [[ "$2" == "hm" ]]; then
+  elif [[ $2 == "hm" ]]; then
     hm_current
   else
     nixos_current

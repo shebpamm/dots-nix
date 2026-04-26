@@ -8,20 +8,25 @@
     {
       nix = {
         nixos =
-          { lib, config, ... }:
+          { lib, ... }:
           let
             inherit (lib) filterAttrs mapAttrs';
 
-            flakes = filterAttrs (name: value: value ? outputs) inputs;
+            flakes = filterAttrs (_name: value: value ? outputs) inputs;
 
-            nixRegistry = builtins.mapAttrs (name: v: { flake = v; }) flakes;
+            nixRegistry = builtins.mapAttrs (_name: v: { flake = v; }) flakes;
           in
           {
             nix.registry = nixRegistry;
 
-            environment.etc = (mapAttrs'
-              (name: value: { name = "nix/inputs/${name}"; value = { source = value.outPath; }; })
-              inputs);
+            environment.etc = (
+              mapAttrs' (name: value: {
+                name = "nix/inputs/${name}";
+                value = {
+                  source = value.outPath;
+                };
+              }) inputs
+            );
 
             nix.nixPath = [ "/etc/nix/inputs" ];
           };

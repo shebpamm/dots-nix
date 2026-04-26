@@ -1,11 +1,15 @@
 { ... }:
 {
-  flake.aspects = { ... }: {
-    homelab-cert = {
-      nixos = { pkgs, ... }: {
-        security.pki.certificateFiles = [ ../../home.crt ];
+  flake.aspects =
+    { ... }:
+    {
+      homelab-cert = {
+        nixos =
+          { ... }:
+          {
+            security.pki.certificateFiles = [ ../../home.crt ];
+          };
+        homeManager = { ... }: { };
       };
-      homeManager = { pkgs, ... }: { };
     };
-  };
 }

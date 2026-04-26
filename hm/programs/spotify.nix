@@ -1,4 +1,4 @@
-{ config, pkgs, libs, inputs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     spotify-player

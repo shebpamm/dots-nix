@@ -1,7 +1,8 @@
-{ config, pkgs, libs, ... }:
+{ config, pkgs, ... }:
 {
   home.packages = [ pkgs.sxhkd ];
   home.file = {
-    ".config/berry".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/berry";
+    ".config/berry".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/berry";
   };
 }

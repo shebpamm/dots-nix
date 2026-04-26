@@ -13,9 +13,12 @@ return {
     config = function()
       require("leap-spooky").setup {
         extra_text_objects = {
-          "iq", "aq",
-          "iv", "av",
-          "ik", "ak",
+          "iq",
+          "aq",
+          "iv",
+          "av",
+          "ik",
+          "ak",
         },
       }
     end,

@@ -30,24 +30,26 @@ local tray_widget = wibox.widget {
 screen.connect_signal("request::desktop_decoration", function(s)
   local l = awful.layout.suit
   if s ~= screen.primary then
-    awful.popup({
-      bg = beautiful.none,
-      placement = function(c)
-        return (awful.placement.bottom_left)(c, { margins = { bottom = 20, left = 10, right = 10 } })
-      end,
-      shape = gears.shape.rect,
-      screen = s,
-      layout = wibox.layout.fixed.vertical,
-      ontop = true,
-      widget = {
-        {
-          widget = wibox.container.place,
-          {
-            widget = tray_widget,
-          },
-        },
+    awful
+      .popup({
+        bg = beautiful.none,
+        placement = function(c)
+          return (awful.placement.bottom_left)(c, { margins = { bottom = 20, left = 10, right = 10 } })
+        end,
+        shape = gears.shape.rect,
+        screen = s,
         layout = wibox.layout.fixed.vertical,
-      },
-    }):struts { left = 40 }
+        ontop = true,
+        widget = {
+          {
+            widget = wibox.container.place,
+            {
+              widget = tray_widget,
+            },
+          },
+          layout = wibox.layout.fixed.vertical,
+        },
+      })
+      :struts { left = 40 }
   end
 end)

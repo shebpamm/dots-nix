@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     dunst
@@ -8,11 +8,10 @@
     xdotool
     xpra
     xprintidle
-    (xsecurelock.overrideAttrs
-      (oldAttrs: {
-        buildInputs = oldAttrs.buildInputs ++ [ mplayer ];
-        configureFlags = oldAttrs.configureFlags ++ [ "--with-mplayer=${mplayer}/bin/mplayer" ];
-      }))
+    (xsecurelock.overrideAttrs (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs ++ [ mplayer ];
+      configureFlags = oldAttrs.configureFlags ++ [ "--with-mplayer=${mplayer}/bin/mplayer" ];
+    }))
     eww
     arandr
   ];

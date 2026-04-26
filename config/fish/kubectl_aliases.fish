@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-abbr --add k "kubectl"
+abbr --add k kubectl
 abbr --add ksys "kubectl --namespace=kube-system"
 abbr --add ka "kubectl apply --recursive -f"
 abbr --add ksysa "kubectl --namespace=kube-system apply --recursive -f"

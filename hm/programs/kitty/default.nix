@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ ... }:
 {
   imports = [ ./colors/catppuccin/frappe.nix ];
 

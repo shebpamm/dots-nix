@@ -19,5 +19,3 @@ naughty.config.presets.low = {
   fg = beautiful.fg_normal,
   bg = beautiful.bg_normal,
 }
-
-

@@ -1,11 +1,15 @@
 { ... }:
 {
-  flake.aspects = { ... }: {
-    ntfs = {
-      nixos = { ... }: {
-        boot.supportedFilesystems = [ "ntfs" ];
+  flake.aspects =
+    { ... }:
+    {
+      ntfs = {
+        nixos =
+          { ... }:
+          {
+            boot.supportedFilesystems = [ "ntfs" ];
+          };
+        homeManager = { ... }: { };
       };
-      homeManager = { ... }: { };
     };
-  };
 }

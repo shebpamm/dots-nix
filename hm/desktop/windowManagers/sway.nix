@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
   imports = [ ../../programs/foot.nix ];
   home.packages = with pkgs; [

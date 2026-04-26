@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.git = {
     enable = true;
@@ -58,7 +58,10 @@
       url = {
         "https://github.com/" = {
           insteadOf = "gh:";
-          pushInsteadOf = [ "github:" "git://github.com/" ];
+          pushInsteadOf = [
+            "github:"
+            "git://github.com/"
+          ];
         };
       };
       "credential \"https://github.com\"" = {
