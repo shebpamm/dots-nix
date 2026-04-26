@@ -1,21 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
     ../../os/system/env.nix
     ../../os/system/shell.nix
     ../../os/system/users.nix
-  ];
-
-  boot.binfmt.emulatedSystems = [ ];
-  nix.settings.extra-platforms = [ ];
-
-  boot.loader.raspberryPi.bootloader = "kernel";
-  boot.loader.generic-extlinux-compatible.enable = false;
-
-  services.openssh.enable = true;
-
-  environment.systemPackages = with pkgs; [
   ];
 
   programs.zsh.enable = true;

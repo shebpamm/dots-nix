@@ -3,7 +3,7 @@
   flake.aspects =
     { ... }:
     {
-      workstation = {
+      user-secrets = {
         nixos =
           { ... }:
           {
