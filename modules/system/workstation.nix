@@ -18,6 +18,8 @@
           aspects.steam
           aspects.neovim
           aspects.treefmt
+          aspects.sound
+          aspects.spotify
         ];
 
         nixos =
