@@ -47,6 +47,7 @@
     nur.url = "github:nix-community/NUR";
     sops-nix.url = "github:Mic92/sops-nix";
     spicetify.url = "github:Gerg-L/spicetify-nix";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
     zen.url = "github:0xc000022070/zen-browser-flake";
   };
 }
