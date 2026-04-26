@@ -4,6 +4,11 @@
     { ... }:
     {
       neovim = {
+        nixos =
+          { ... }:
+          {
+            environment.sessionVariables.EDITOR = "nvim";
+          };
         homeManager =
           { pkgs, config, ... }:
           let
