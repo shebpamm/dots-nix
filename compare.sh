@@ -1,5 +1,6 @@
 #!/usr/bin/env nix
 #!nix shell nixpkgs#nvd -c bash
+# shellcheck shell=bash
 
 gray_stderr() {
   awk '{
