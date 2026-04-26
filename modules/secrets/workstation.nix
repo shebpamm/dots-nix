@@ -5,7 +5,7 @@
     {
       workstation = {
         nixos =
-          { config, ... }:
+          { ... }:
           {
 
             sops.defaultSopsFile = ../../secrets/default.yaml;
@@ -52,19 +52,6 @@
               "shebpamm-libera.crt" = {
                 mode = "0400";
                 owner = "shebpamm";
-              };
-
-              wifi-psk-wpa = {
-                owner = "root";
-                mode = "0400";
-              };
-            };
-
-            sops.templates = {
-              home_wifi_psk_wpa = {
-                content = "WIFI_PSK=${config.sops.placeholder.wifi-psk-wpa}";
-                owner = "root";
-                mode = "0400";
               };
             };
           };

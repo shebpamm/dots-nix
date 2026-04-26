@@ -1,8 +1,7 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
-    ../../os/secrets
     ../../os/system/env.nix
     ../../os/system/shell.nix
     ../../os/system/users.nix
@@ -13,17 +12,6 @@
 
   boot.loader.raspberryPi.bootloader = "kernel";
   boot.loader.generic-extlinux-compatible.enable = false;
-
-  networking = {
-    hostName = "enderpi";
-    wireless = {
-      enable = true;
-      networks."SorsaNet2400" = {
-        pskRaw = "ext:WIFI_PSK";
-      };
-      secretsFile = config.sops.templates.home_wifi_psk_wpa.path;
-    };
-  };
 
   services.openssh.enable = true;
 
