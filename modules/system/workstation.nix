@@ -8,6 +8,7 @@
           aspects.system-base
           aspects.cross-platform
           aspects.keyring
+          aspects.fonts
           aspects.yubikey
           aspects.fish
           aspects.docker
