@@ -40,9 +40,7 @@
 
       # YAML
       yamllint.enable = true;
-      yamllint.excludes = [ "secrets/*.yaml" ]; # sops encrypted files
       yamlfmt.enable = true;
-      yamlfmt.excludes = [ "secrets/*.yaml" ];
 
       # Misc
       dockerfmt.enable = true; # Dockerfiles
@@ -53,5 +51,9 @@
       stylua.enable = true; # Lua
       taplo.enable = true; # TOML
     };
+    settings.excludes = [
+      "node_modules/*"
+      "secrets/*.yaml"
+    ];
   };
 }
