@@ -11,6 +11,7 @@
           aspects.fonts
           aspects.yubikey
           aspects.fish
+          aspects.zsh
           aspects.docker
           aspects.rtl-sdr
           aspects.clamav
