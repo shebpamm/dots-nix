@@ -23,6 +23,7 @@
           aspects.spotify
           aspects.clipcat
           aspects.gtk
+          aspects.rofi
         ];
 
         nixos =
