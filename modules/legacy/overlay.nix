@@ -25,7 +25,6 @@
         legacyOverlays = [
           inputs.nixpkgs-sheb.overlay
           inputs.neovim-nightly.overlays.default
-          inputs.hyprpaper.overlays.default
           inputs.anttipkgs.overlays.default
           miscOverlay
         ];

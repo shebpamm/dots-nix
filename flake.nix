@@ -23,11 +23,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprpaper = {
-      url = "github:shebpamm/hyprpaper";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     import-tree.url = "github:vic/import-tree";
     kat.url = "github:macropower/nur-packages";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";

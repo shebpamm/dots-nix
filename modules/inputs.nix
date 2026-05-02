@@ -15,9 +15,6 @@
     spicetify.url = "github:Gerg-L/spicetify-nix";
     sops-nix.url = "github:Mic92/sops-nix";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprpaper.url = "github:shebpamm/hyprpaper";
-    hyprpaper.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
     disko.url = "github:nix-community/disko";
     compfy.url = "github:allusive-dev/compfy";
