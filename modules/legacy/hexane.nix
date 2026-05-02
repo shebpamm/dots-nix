@@ -17,7 +17,6 @@
             ../../hm/dev
             ../../hm/editors/vim.nix
             ../../hm/editors/vscode.nix
-            ../../hm/system/clipcat.nix
             ../../hm/programs
             ../../hm/programs/graphics.nix
             ../../hm/programs/xorg.nix

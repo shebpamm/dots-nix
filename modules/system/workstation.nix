@@ -20,6 +20,7 @@
           aspects.treefmt
           aspects.sound
           aspects.spotify
+          aspects.clipcat
         ];
 
         nixos =

@@ -12,7 +12,6 @@
         };
         homeManager = {
           imports = [
-            ../../hm/system/clipcat.nix
             ../../hm/shell
             ../../hm/editors/vscode.nix
             ../../hm/editors/vim.nix
