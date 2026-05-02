@@ -15,7 +15,7 @@
 
             hardware.graphics.enable32Bit = true;
 
-            virtualisation.docker.enableNvidia = true;
+            hardware.nvidia-container-toolkit.enable = true;
           };
         homeManager = { ... }: { };
       };
