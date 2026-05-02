@@ -14,7 +14,6 @@
             ../../hm/editors/vscode.nix
             ../../hm/programs
             ../../hm/programs/graphics.nix
-            ../../hm/programs/xorg.nix
             ../../hm/programs/work.nix
             ../../hm/shell
           ];
