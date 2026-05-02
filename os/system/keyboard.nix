@@ -1,9 +1,5 @@
 { ... }:
 {
-  imports = [
-    # inputs.kmonad.nixosModules.default
-  ];
-
   # hardware.keyboard.zsa.enable = true;
 
   services.udev.extraRules = ''
@@ -32,29 +28,6 @@
     # Keymapp Flashing rules for the Voyager
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
   '';
-
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-        if (action.id == "org.freedesktop.systemd1.manage-units") {
-            if (action.lookup("unit") == "kmonad-integrated.service" || action.lookup("unit") == "kmonad-integrated.path") {
-                var verb = action.lookup("verb");
-                if (verb == "start" || verb == "stop" || verb == "restart") {
-                    return polkit.Result.YES;
-                }
-            }
-        }
-    });
-  '';
-
-  services.kmonad = {
-    enable = true;
-    keyboards = {
-      integrated = {
-        device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
-        config = builtins.readFile ../../config/kmonad/homerow.kbd;
-      };
-    };
-  };
 
   services.clipcat.enable = true;
 }
