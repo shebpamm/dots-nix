@@ -23,7 +23,21 @@
             };
             programs.dconf.enable = true;
           };
-        homeManager = { ... }: { };
+        homeManager =
+          { pkgs, ... }:
+          {
+            home.packages = with pkgs; [
+              dunst
+              wmctrl
+              xdotool
+              xprintidle
+              arandr
+              (xsecurelock.overrideAttrs (oldAttrs: {
+                buildInputs = oldAttrs.buildInputs ++ [ mplayer ];
+                configureFlags = oldAttrs.configureFlags ++ [ "--with-mplayer=${mplayer}/bin/mplayer" ];
+              }))
+            ];
+          };
       };
     };
 }
