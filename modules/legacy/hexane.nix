@@ -5,11 +5,6 @@
     {
       hexane = {
         includes = [ aspects.legacy ];
-        nixos = {
-          imports = [
-            ../../hosts/hexane/configuration.nix
-          ];
-        };
         homeManager = {
           imports = [
             ../../hm/desktop

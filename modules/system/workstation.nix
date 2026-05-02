@@ -6,6 +6,7 @@
       workstation = {
         includes = [
           aspects.system-base
+          aspects.awesome
           aspects.cross-platform
           aspects.keyring
           aspects.fonts

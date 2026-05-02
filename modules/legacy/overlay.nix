@@ -23,7 +23,6 @@
           };
 
         legacyOverlays = [
-          inputs.nixpkgs-f2k.overlays.default
           inputs.nixpkgs-sheb.overlay
           inputs.neovim-nightly.overlays.default
           inputs.hyprpaper.overlays.default
