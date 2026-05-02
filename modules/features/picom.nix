@@ -1,62 +1,66 @@
 { ... }:
 {
-  flake.aspects = { ... }: {
-    picom = {
-      homeManager = { pkgs, ... }: {
-        services.picom = {
-          enable = true;
-          package = pkgs.picom;
+  flake.aspects =
+    { ... }:
+    {
+      picom = {
+        homeManager =
+          { pkgs, ... }:
+          {
+            services.picom = {
+              enable = true;
+              package = pkgs.picom;
 
-          shadow = true;
-          shadowOpacity = 0.4;
-          shadowOffsets = [
-            (-5)
-            (0)
-          ];
-          shadowExclude = [
-            "name = 'Notification'"
-            "class_g = 'Rofi'"
-            "class_g = 'Conky'"
-            "class_g ?= 'Notify-osd'"
-            "class_g = 'Cairo-clock'"
-            "class_g = 'awesome'"
-            "class_g = 'Vncviewer'"
-            "_GTK_FRAME_EXTENTS@:c"
-          ];
+              shadow = true;
+              shadowOpacity = 0.4;
+              shadowOffsets = [
+                (-5)
+                (0)
+              ];
+              shadowExclude = [
+                "name = 'Notification'"
+                "class_g = 'Rofi'"
+                "class_g = 'Conky'"
+                "class_g ?= 'Notify-osd'"
+                "class_g = 'Cairo-clock'"
+                "class_g = 'awesome'"
+                "class_g = 'Vncviewer'"
+                "_GTK_FRAME_EXTENTS@:c"
+              ];
 
-          fade = true;
-          fadeDelta = 3;
-          fadeSteps = [
-            0.03
-            0.03
-          ];
-          fadeExclude = [ "class_g = 'xsecurelock'" ];
+              fade = true;
+              fadeDelta = 3;
+              fadeSteps = [
+                0.03
+                0.03
+              ];
+              fadeExclude = [ "class_g = 'xsecurelock'" ];
 
-          backend = "glx";
+              backend = "glx";
 
-          vSync = true;
+              vSync = true;
 
-          settings = {
-            animations = false;
-            animation-window-mass = 1;
-            animation-stiffness = 300;
-            animation-dampening = 26;
-            animation-clamping = true;
+              settings = {
+                animations = false;
+                animation-window-mass = 1;
+                animation-stiffness = 300;
+                animation-dampening = 26;
+                animation-clamping = true;
 
-            animation-for-open-window = "zoom";
-            animation-force-steps = false;
+                animation-for-open-window = "zoom";
+                animation-force-steps = false;
 
-            shadow-radius = 16;
-            corner-radius = 20;
-            rounded-corners-exclude = [
-              "window_type = 'dock'"
-              "window_type = 'desktop'"
-              "class_g = 'awesome'"
-              "class_g = 'Vncviewer'"
-            ];
+                shadow-radius = 16;
+                corner-radius = 20;
+                rounded-corners-exclude = [
+                  "window_type = 'dock'"
+                  "window_type = 'desktop'"
+                  "class_g = 'awesome'"
+                  "class_g = 'Vncviewer'"
+                ];
+              };
+            };
           };
-        };
       };
     };
-  };
 }
