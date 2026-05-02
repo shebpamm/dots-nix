@@ -24,7 +24,14 @@
               package = inputs.nixpkgs-f2k.packages.${pkgs.stdenv.hostPlatform.system}.awesome-git;
             };
           };
-        homeManager = { ... }: { };
+        homeManager =
+          { config, ... }:
+          {
+            home.file = {
+              ".config/awesome".source =
+                config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/awesome";
+            };
+          };
       };
     };
 }

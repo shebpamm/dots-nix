@@ -13,7 +13,6 @@
             ../../hm/dev
             ../../hm/programs
             ../../hm/programs/graphics.nix
-            ../../hm/desktop/windowManagers/awesome.nix
           ];
         };
       };
