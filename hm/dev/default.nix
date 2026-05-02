@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./lua.nix
     ./nix.nix
     ./node.nix
     ./python.nix
