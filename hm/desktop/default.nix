@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ./gtk.nix
-  ];
   home.packages = with pkgs; [
     tint2
   ];

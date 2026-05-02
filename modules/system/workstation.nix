@@ -22,6 +22,7 @@
           aspects.sound
           aspects.spotify
           aspects.clipcat
+          aspects.gtk
         ];
 
         nixos =
