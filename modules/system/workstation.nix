@@ -26,6 +26,9 @@
         nixos =
           { pkgs, ... }:
           {
+            # Use fish as default shell on workstations
+            dots.users.defaultShell = pkgs.fish;
+
             environment.systemPackages = with pkgs; [
               gcc
             ];
