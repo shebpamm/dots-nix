@@ -31,7 +31,6 @@
     pulseaudio
     sops
     wireshark
-    ollama
     cfssl
     file
     talosctl
