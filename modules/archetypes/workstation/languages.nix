@@ -4,7 +4,10 @@
     { aspects, ... }:
     {
       workstation = {
-        includes = [ aspects.lua ];
+        includes = [
+          aspects.lua
+          aspects.go
+        ];
       };
     };
 }
