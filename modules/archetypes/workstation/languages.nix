@@ -9,6 +9,7 @@
           aspects.lua
           aspects.go
           aspects.python
+          aspects.rust
         ];
       };
     };
