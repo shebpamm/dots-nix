@@ -10,7 +10,6 @@
             ../../hm/shell
             ../../hm/editors/vscode.nix
             ../../hm/editors/vim.nix
-            ../../hm/dev
             ../../hm/programs
             ../../hm/programs/graphics.nix
           ];

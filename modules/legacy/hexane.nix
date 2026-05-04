@@ -7,7 +7,6 @@
         includes = [ aspects.legacy ];
         homeManager = {
           imports = [
-            ../../hm/dev
             ../../hm/editors/vim.nix
             ../../hm/editors/vscode.nix
             ../../hm/programs
