@@ -8,6 +8,7 @@
           aspects.node
           aspects.lua
           aspects.go
+          aspects.python
         ];
       };
     };
