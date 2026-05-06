@@ -10,6 +10,7 @@
             services.clipcat = {
               enable = true;
               daemonSettings = {
+                daemonize = true;
                 log.emit_journald = true;
 
                 watcher = {
