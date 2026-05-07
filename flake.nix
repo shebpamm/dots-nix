@@ -6,6 +6,7 @@
   inputs = {
     anttipkgs.url = "github:anttiharju/nur-packages";
     catppuccin.url = "github:catppuccin/nix";
+    claude.url = "github:shebpamm/claude-nix";
     compfy.url = "github:allusive-dev/compfy";
     cursor = {
       url = "github:thinktankmachine/cursor-nixos-flake";
