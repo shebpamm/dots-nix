@@ -59,11 +59,11 @@
         "wrappers": "wrappers"
       },
       "locked": {
-        "lastModified": 1774008711,
-        "narHash": "sha256-KfCYgQYhpZyEuNC/8/Y9leNVhHlIaYxbStG/fsTiNSo=",
+        "lastModified": 1778156979,
+        "narHash": "sha256-/U3htD6G9GCDwma0/ji6HZ4GqTse/KdeJ/wwzL+jWmw=",
         "owner": "shebpamm",
         "repo": "claude-nix",
-        "rev": "ecee0abb5088f586de2722636c1a67a30ad664cc",
+        "rev": "e6ca5a5d3eb3749474f2877ca18299382302251c",
         "type": "github"
       },
       "original": {

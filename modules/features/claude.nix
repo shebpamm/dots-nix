@@ -7,7 +7,7 @@
     {
       claude = {
         homeManager =
-          { ... }:
+          { pkgs, ... }:
           {
             imports = [ inputs.claude.homeModules.default ];
 
@@ -16,6 +16,10 @@
               kubernetes.enable = false;
               grafana.enable = false;
             };
+
+            nixpkgs.overlays = [ inputs.claude.overlays.default ];
+
+            home.packages = [ pkgs.ccusage ];
           };
       };
     };
