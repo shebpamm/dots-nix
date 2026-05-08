@@ -54,6 +54,7 @@
     settings.excludes = [
       "node_modules/*"
       "secrets/*.yaml"
+      "Cargo.nix"
     ];
   };
 
