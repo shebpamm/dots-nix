@@ -44,6 +44,10 @@
     sops-nix.url = "github:Mic92/sops-nix";
     spicetify.url = "github:Gerg-L/spicetify-nix";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    wrappers = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen.url = "github:0xc000022070/zen-browser-flake";
   };
 }

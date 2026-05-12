@@ -1213,6 +1213,7 @@
         "sops-nix": "sops-nix",
         "spicetify": "spicetify",
         "treefmt-nix": "treefmt-nix",
+        "wrappers": "wrappers_2",
         "zen": "zen"
       }
     },
@@ -1401,6 +1402,26 @@
         "owner": "BirdeeHub",
         "repo": "nix-wrapper-modules",
         "rev": "abb9fe7e20adcf3c854c03d101e5d18c6d49457c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
+        "type": "github"
+      }
+    },
+    "wrappers_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778560014,
+        "narHash": "sha256-Hu9RMo7vJt/4dx/vAvyG+cE9RBwpaH1ouyunvruYaDI=",
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
+        "rev": "e30aa99c9c7038e16efae3cad7916a47307a9e36",
         "type": "github"
       },
       "original": {
