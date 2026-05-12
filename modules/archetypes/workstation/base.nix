@@ -24,6 +24,7 @@
           aspects.clipcat
           aspects.gtk
           aspects.rofi
+          aspects.kubernetes
         ];
 
         nixos =
