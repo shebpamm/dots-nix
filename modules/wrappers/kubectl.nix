@@ -1,9 +1,9 @@
 { ... }:
 {
-  flake.wrappers.kubectl = { wlib, pkgs, ... }:
+  flake.wrappers.kubectl =
+    { wlib, pkgs, ... }:
     {
       imports = [ wlib.modules.default ];
-
 
       config = {
         package = pkgs.kubecolor;
