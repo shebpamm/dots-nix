@@ -13,7 +13,6 @@
             flox = inputs.flox.packages.${system}.flox;
             compfy = inputs.compfy.packages.${system}.compfy;
             devenv = inputs.devenv.packages.${system}.devenv;
-            kat = inputs.kat.packages.${system}.kat;
             nur = import inputs.nur {
               nurpkgs = super;
               pkgs = super;

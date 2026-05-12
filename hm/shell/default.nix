@@ -63,7 +63,6 @@
     erdtree
     granted
     relcheck
-    kat
   ];
 
   # not big enough for their own modules
