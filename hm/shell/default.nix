@@ -36,9 +36,6 @@
     hyperfine
     jq
     k9s
-    kubectx
-    kubernetes-helm
-    kustomize
     lazygit
     maim
     ncdu
