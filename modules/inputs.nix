@@ -24,6 +24,7 @@
     anttipkgs.url = "github:anttiharju/nur-packages";
     cursor = {
       url = "github:thinktankmachine/cursor-nixos-flake";
+      group = "ai";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };

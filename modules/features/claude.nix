@@ -1,6 +1,7 @@
 { inputs, ... }:
 {
   flake-file.inputs.claude.url = "github:shebpamm/claude-nix";
+  flake-file.inputs.claude.group = "ai";
 
   flake.aspects =
     { ... }:
