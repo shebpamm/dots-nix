@@ -9,19 +9,19 @@
   # https://github.com/hercules-ci/flake-parts
 
   # Generate flake.nix from module options.
-  # https://github.com/vic/flake-file
+  # https://github.com/denful/flake-file
 
   # Import all nix files in a directory tree.
-  # https://github.com/vic/import-tree
+  # https://github.com/denful/import-tree
 
   flake-file.inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.group = "dendritic";
-    flake-file.url = "github:vic/flake-file";
+    flake-file.url = "github:denful/flake-file";
     flake-file.group = "dendritic";
-    flake-aspects.url = "github:vic/flake-aspects";
+    flake-aspects.url = "github:denful/flake-aspects";
     flake-aspects.group = "dendritic";
-    import-tree.url = "github:vic/import-tree";
+    import-tree.url = "github:denful/import-tree";
     import-tree.group = "dendritic";
   };
 
