@@ -16,9 +16,13 @@
 
   flake-file.inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.group = "dendritic";
     flake-file.url = "github:vic/flake-file";
+    flake-file.group = "dendritic";
     flake-aspects.url = "github:vic/flake-aspects";
+    flake-aspects.group = "dendritic";
     import-tree.url = "github:vic/import-tree";
+    import-tree.group = "dendritic";
   };
 
   imports = [
