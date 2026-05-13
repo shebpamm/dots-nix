@@ -1,6 +1,19 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
-  perSystem =
+  options.flake-file.inputs = lib.mkOption {
+    type = lib.types.lazyAttrsOf (
+      lib.types.submodule {
+        options = {
+          group = lib.mkOption {
+            default = "";
+            type = lib.types.str;
+            description = "The input group this input belongs to.";
+          };
+        };
+      }
+    );
+  };
+  config.perSystem =
     { pkgs, ... }:
     {
       apps.list-inputs =
