@@ -24,6 +24,7 @@
           aspects.spotify
           aspects.clipcat
           aspects.gtk
+          aspects.irssi
           aspects.rofi
           aspects.kubernetes
           aspects.direnv

@@ -1,0 +1,47 @@
+{ ... }:
+{
+  flake.aspects =
+    { ... }:
+    {
+      irssi = {
+        homeManager =
+          { config, ... }:
+          {
+            programs.irssi = {
+              enable = true;
+              networks = {
+                liberachat = {
+                  nick = "shebpamm";
+                  server = {
+                    address = "irc.libera.chat";
+                    port = 6697;
+                    autoConnect = true;
+                    ssl = {
+                      enable = true;
+                      certificateFile = "/run/secrets/shebpamm-libera.crt";
+                    };
+                  };
+                  channels = { };
+                };
+                oftc = {
+                  nick = "shebpamm";
+                  server = {
+                    address = "irc.oftc.net";
+                    port = 6697;
+                    autoConnect = true;
+                    ssl = {
+                      enable = true;
+                      certificateFile = "/run/secrets/shebpamm-libera.crt";
+                    };
+                  };
+                };
+              };
+            };
+            home.file.".irssi/scripts".source =
+              config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/irssi/scripts";
+            home.file.".irssi/screwer-redux.theme".source =
+              config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/irssi/screwer-redux.theme";
+          };
+      };
+    };
+}

@@ -2,7 +2,6 @@
 {
   imports = [
     ./fun.nix
-    ./irssi.nix
     ./weechat.nix
     ./kitty
     ./wezterm.nix
