@@ -28,6 +28,7 @@
           aspects.kubernetes
           aspects.direnv
           aspects.claude
+          aspects.vscode
         ];
 
         nixos =

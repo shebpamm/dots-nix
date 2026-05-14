@@ -8,7 +8,6 @@
         homeManager = {
           imports = [
             ../../hm/shell
-            ../../hm/editors/vscode.nix
             ../../hm/programs
             ../../hm/programs/graphics.nix
           ];
