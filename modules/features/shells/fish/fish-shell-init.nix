@@ -9,7 +9,7 @@
           { ... }:
           {
             programs.fish.interactiveShellInit = ''
-              for secret in hass-server hass-token hass-phone hass-imaginary openai-api-key jira-api-token pagerduty-api-token
+              for secret in hass-server hass-token hass-phone hass-imaginary openai-api-key deepseek-api-key jira-api-token pagerduty-api-token
                 if test -O /run/secrets/$secret
                   set -x (string upper $secret | tr - _ ) (cat /run/secrets/$secret)
                 end

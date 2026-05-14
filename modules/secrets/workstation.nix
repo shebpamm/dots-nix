@@ -35,6 +35,11 @@
                 owner = "shebpamm";
               };
 
+              deepseek-api-key = {
+                mode = "0400";
+                owner = "shebpamm";
+              };
+
               jira-api-token = {
                 mode = "0400";
                 owner = "shebpamm";
