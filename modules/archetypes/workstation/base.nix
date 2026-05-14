@@ -18,6 +18,7 @@
           aspects.clamav
           aspects.steam
           aspects.neovim
+          aspects.vim
           aspects.treefmt
           aspects.sound
           aspects.spotify
