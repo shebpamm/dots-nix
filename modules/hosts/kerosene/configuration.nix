@@ -13,7 +13,7 @@
           aspects.flipperzero
           aspects.nvidia-base
           aspects.ollama
-          aspects.virtualbox
+          # aspects.virtualbox
           aspects.kvm
           aspects.calibre
         ];
@@ -21,7 +21,7 @@
         nixos =
           { pkgs, ... }:
           {
-            boot.kernelPackages = pkgs.linuxPackages_6_1; # TODO: update to latest after refactor
+            boot.kernelPackages = pkgs.linuxPackages_latest;
           };
       };
     };
