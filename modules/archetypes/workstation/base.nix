@@ -26,6 +26,7 @@
           aspects.rofi
           aspects.kubernetes
           aspects.direnv
+          aspects.claude
         ];
 
         nixos =

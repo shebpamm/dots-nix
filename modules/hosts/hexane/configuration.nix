@@ -11,7 +11,6 @@
           aspects.polkit
           aspects.autorandr
           aspects.wsone
-          aspects.claude
         ];
 
         nixos =
