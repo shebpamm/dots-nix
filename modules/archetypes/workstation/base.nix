@@ -31,6 +31,7 @@
           aspects.claude
           aspects.discord
           aspects.vscode
+          aspects.cursor
         ];
 
         nixos =

@@ -22,11 +22,5 @@
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
     anttipkgs.url = "github:anttiharju/nur-packages";
-    cursor = {
-      url = "github:thinktankmachine/cursor-nixos-flake";
-      group = "ai";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
   };
 }

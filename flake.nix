@@ -8,13 +8,6 @@
     catppuccin.url = "github:catppuccin/nix";
     claude.url = "github:shebpamm/claude-nix";
     compfy.url = "github:allusive-dev/compfy";
-    cursor = {
-      url = "github:thinktankmachine/cursor-nixos-flake";
-      inputs = {
-        home-manager.follows = "home-manager";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
     disko.url = "github:nix-community/disko";
     flake-aspects.url = "github:denful/flake-aspects";
     flake-file.url = "github:denful/flake-file";

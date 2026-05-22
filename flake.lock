@@ -106,26 +106,6 @@
         "type": "github"
       }
     },
-    "cursor": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1758681788,
-        "narHash": "sha256-n0rbPBGMe4PDJjGPDPVZjElQSBukTZA20B3ynMV0+WI=",
-        "owner": "thinktankmachine",
-        "repo": "cursor-nixos-flake",
-        "rev": "25890c795884b0cd0d8cb321622eb3be556d1501",
-        "type": "github"
-      },
-      "original": {
-        "owner": "thinktankmachine",
-        "repo": "cursor-nixos-flake",
-        "type": "github"
-      }
-    },
     "disko": {
       "inputs": {
         "nixpkgs": "nixpkgs_5"
@@ -1192,7 +1172,6 @@
         "catppuccin": "catppuccin",
         "claude": "claude",
         "compfy": "compfy",
-        "cursor": "cursor",
         "disko": "disko",
         "flake-aspects": "flake-aspects",
         "flake-file": "flake-file",
