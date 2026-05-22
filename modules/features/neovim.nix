@@ -57,6 +57,7 @@
               withPython3 = true;
               withNodeJs = true;
               withRuby = true;
+              sideloadInitLua = true; # We just symlink our config, skip writing init.lua
               extraPackages = extras ++ python-extras;
               extraPython3Packages = (
                 ps: with ps; [
