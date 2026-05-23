@@ -12,7 +12,6 @@
       homeManager = {
         imports = [
           inputs.catppuccin.homeManagerModules.catppuccin
-          inputs.spicetify.homeManagerModules.default
         ];
       };
     };

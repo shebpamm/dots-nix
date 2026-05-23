@@ -8,7 +8,6 @@
         homeManager = {
           imports = [
             ../../hm/shell
-            ../../hm/programs
           ];
         };
       };

@@ -17,7 +17,6 @@
               nurpkgs = super;
               pkgs = super;
             };
-            spicetifyPackages = inputs.spicetify.legacyPackages.${system};
           };
 
         legacyOverlays = [
