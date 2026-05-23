@@ -8,12 +8,10 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    openssl
     pavucontrol
     pcmanfm
     pulseaudio
     sops
-    cfssl
     file
     talosctl
     flox

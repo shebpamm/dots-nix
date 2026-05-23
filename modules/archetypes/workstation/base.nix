@@ -37,6 +37,7 @@
           aspects.wireshark
           aspects.kitty
           aspects.mplayer
+          aspects.openssl
         ];
 
         nixos =
