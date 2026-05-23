@@ -3,13 +3,11 @@
   imports = [
     ./fun.nix
     ./weechat.nix
-    ./kitty
     ./wezterm.nix
     ./management.nix
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    kitty
     libnotify
     mplayer
     nfs-utils
