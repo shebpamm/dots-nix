@@ -7,7 +7,6 @@
         includes = [ aspects.legacy ];
         homeManager = {
           imports = [
-            ../../hm/programs/work.nix
             ../../hm/shell
           ];
         };

@@ -11,6 +11,7 @@
           aspects.polkit
           aspects.autorandr
           aspects.wsone
+          aspects.work
         ];
 
         nixos =
