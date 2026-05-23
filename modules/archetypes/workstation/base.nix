@@ -32,6 +32,7 @@
           aspects.vscode
           aspects.bitwarden
           aspects.firefox
+          aspects.chrome
         ];
 
         nixos =
