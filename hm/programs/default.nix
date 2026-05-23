@@ -9,7 +9,6 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    iperf3
     kitty
     libnotify
     mplayer

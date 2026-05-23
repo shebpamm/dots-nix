@@ -33,6 +33,7 @@
           aspects.bitwarden
           aspects.firefox
           aspects.chrome
+          aspects.network-utils
         ];
 
         nixos =
