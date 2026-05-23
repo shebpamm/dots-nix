@@ -8,10 +8,7 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    libnotify
     mplayer
-    nfs-utils
-    nyxt
     openssl
     pavucontrol
     pcmanfm

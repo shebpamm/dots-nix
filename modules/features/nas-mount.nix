@@ -26,7 +26,13 @@
               ];
             };
           };
-        homeManager = { ... }: { };
+        homeManager =
+          { pkgs, ... }:
+          {
+            home.packages = with pkgs; [
+              nfs-utils
+            ];
+          };
       };
     };
 }

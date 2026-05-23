@@ -27,6 +27,7 @@
           { pkgs, ... }:
           {
             home.packages = with pkgs; [
+              libnotify
               dunst
               wmctrl
               xdotool
