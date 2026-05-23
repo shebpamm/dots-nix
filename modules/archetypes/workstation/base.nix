@@ -36,6 +36,7 @@
           aspects.network-utils
           aspects.wireshark
           aspects.kitty
+          aspects.wezterm
           aspects.mplayer
           aspects.openssl
           aspects.pcmanfm
