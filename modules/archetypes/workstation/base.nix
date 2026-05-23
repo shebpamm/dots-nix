@@ -40,6 +40,7 @@
           aspects.openssl
           aspects.pcmanfm
           aspects.flox
+          aspects.fun
         ];
 
         nixos =
