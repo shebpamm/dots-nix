@@ -12,6 +12,7 @@
               git
               usbutils
               vim
+              file
             ];
           };
         homeManager = { ... }: { };
