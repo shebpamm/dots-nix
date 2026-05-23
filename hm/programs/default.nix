@@ -19,7 +19,6 @@
     pcmanfm
     pulseaudio
     sops
-    wireshark
     cfssl
     file
     talosctl

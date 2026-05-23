@@ -34,6 +34,7 @@
           aspects.firefox
           aspects.chrome
           aspects.network-utils
+          aspects.wireshark
         ];
 
         nixos =
