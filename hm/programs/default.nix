@@ -9,7 +9,6 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    zen-browser
     iperf3
     kitty
     libnotify
