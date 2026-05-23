@@ -8,9 +8,7 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    pavucontrol
     pcmanfm
-    pulseaudio
     sops
     file
     talosctl

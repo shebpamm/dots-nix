@@ -20,7 +20,14 @@
             };
             users.extraGroups.audio.members = [ inputs.self.context.adminUser ];
           };
-        homeManager = { ... }: { };
+        homeManager =
+          { pkgs, ... }:
+          {
+            home.packages = with pkgs; [
+              pavucontrol
+              pulseaudio
+            ];
+          };
       };
     };
 }
