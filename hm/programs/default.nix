@@ -9,8 +9,6 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    bitwarden-desktop
-    bitwarden-cli
     firefox
     google-chrome
     zen-browser

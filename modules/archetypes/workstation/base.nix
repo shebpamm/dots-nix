@@ -32,6 +32,7 @@
           aspects.discord
           aspects.vscode
           aspects.cursor
+          aspects.bitwarden
         ];
 
         nixos =
