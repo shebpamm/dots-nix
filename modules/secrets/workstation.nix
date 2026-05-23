@@ -4,7 +4,10 @@
     { aspects, ... }:
     {
       workstation = {
-        includes = [ aspects.user-secrets ];
+        includes = [
+          aspects.user-secrets
+          aspects.sops
+        ];
         nixos =
           { ... }:
           {
