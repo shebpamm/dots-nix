@@ -28,10 +28,8 @@
           aspects.rofi
           aspects.kubernetes
           aspects.direnv
-          aspects.claude
           aspects.discord
           aspects.vscode
-          aspects.cursor
           aspects.bitwarden
         ];
 
