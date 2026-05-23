@@ -31,6 +31,7 @@
           aspects.discord
           aspects.vscode
           aspects.bitwarden
+          aspects.firefox
         ];
 
         nixos =

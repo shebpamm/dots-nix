@@ -9,7 +9,6 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    firefox
     google-chrome
     zen-browser
     iperf3
