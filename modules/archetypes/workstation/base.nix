@@ -42,6 +42,7 @@
           aspects.flox
           aspects.fun
           aspects.drawing
+          aspects.warriors
         ];
 
         nixos =
