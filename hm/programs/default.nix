@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./fun.nix
@@ -6,8 +6,5 @@
     ./wezterm.nix
     ./management.nix
     ./spotify.nix
-  ];
-  home.packages = with pkgs; [
-    flox
   ];
 }

@@ -18,7 +18,6 @@
     nur.url = "github:nix-community/NUR";
     disko.url = "github:nix-community/disko";
     compfy.url = "github:allusive-dev/compfy";
-    flox.url = "github:flox/flox";
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
     anttipkgs.url = "github:anttiharju/nur-packages";
