@@ -18,6 +18,7 @@
               kubectx
               kubernetes-helm
               kustomize
+              talosctl
             ];
           };
       };
