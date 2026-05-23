@@ -9,7 +9,6 @@
           imports = [
             ../../hm/shell
             ../../hm/programs
-            ../../hm/programs/graphics.nix
           ];
         };
       };

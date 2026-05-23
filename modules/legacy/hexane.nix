@@ -8,7 +8,6 @@
         homeManager = {
           imports = [
             ../../hm/programs
-            ../../hm/programs/graphics.nix
             ../../hm/programs/work.nix
             ../../hm/shell
           ];

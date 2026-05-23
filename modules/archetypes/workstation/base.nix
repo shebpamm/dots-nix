@@ -41,6 +41,7 @@
           aspects.pcmanfm
           aspects.flox
           aspects.fun
+          aspects.drawing
         ];
 
         nixos =
