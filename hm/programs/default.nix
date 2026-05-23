@@ -8,7 +8,6 @@
     ./spotify.nix
   ];
   home.packages = with pkgs; [
-    pcmanfm
     sops
     file
     talosctl

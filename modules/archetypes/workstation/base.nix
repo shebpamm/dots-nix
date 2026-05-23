@@ -38,6 +38,7 @@
           aspects.kitty
           aspects.mplayer
           aspects.openssl
+          aspects.pcmanfm
         ];
 
         nixos =
