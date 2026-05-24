@@ -26,7 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-polkit-pin.url = "github:NixOS/nixpkgs/88d3861acdd3d2f0e361767018218e51810df8a1";
-    nur.url = "github:nix-community/NUR";
     sops-nix.url = "github:Mic92/sops-nix";
     spicetify.url = "github:Gerg-L/spicetify-nix";
     treefmt-nix.url = "github:numtide/treefmt-nix";
