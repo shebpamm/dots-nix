@@ -4,10 +4,15 @@
     { ... }:
     {
       scripts = {
+        nixos =
+          { ... }:
+          {
+            environment.sessionVariables.PATH = [ "\$HOME/.bin" ];
+          };
+
         homeManager =
           { config, ... }:
           {
-            environment.sessionVariables.PATH = [ "\$HOME/.bin" ];
             home.file.".bin".source =
               config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/bin";
           };
