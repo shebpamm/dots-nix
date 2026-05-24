@@ -15,7 +15,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
     nur.url = "github:nix-community/NUR";
-    disko.url = "github:nix-community/disko";
     compfy.url = "github:allusive-dev/compfy";
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
