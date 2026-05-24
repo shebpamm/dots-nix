@@ -18,6 +18,8 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    terranix.url = "github:terranix/terranix";
+    terranix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   config.flake.lib = {
@@ -63,6 +65,17 @@
           modules = [
             inputs.self.modules.homeManager.${name}
             { nixpkgs.config.allowUnfree = true; }
+          ];
+        };
+      };
+
+    mkTerraform =
+      { system, name }:
+      {
+        ${name} = inputs.terranix.lib.terranixConfiguration {
+          inherit system;
+          modules = [
+            inputs.self.modules.terraform.${name}
           ];
         };
       };
