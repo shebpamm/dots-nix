@@ -12,6 +12,9 @@
                 "https://cache.nixos.org/"
                 "https://nix-community.cachix.org"
                 "https://domenkozar.cachix.org"
+
+                # Keep this here, since if we put it into raspberry-pi aspect,
+                # it is not set when cross-compiling on a workstation.
                 "https://nixos-raspberrypi.cachix.org"
               ];
 
