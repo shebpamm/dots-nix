@@ -19,6 +19,5 @@
     compfy.url = "github:allusive-dev/compfy";
     zen.url = "github:0xc000022070/zen-browser-flake";
     catppuccin.url = "github:catppuccin/nix";
-    anttipkgs.url = "github:anttiharju/nur-packages";
   };
 }

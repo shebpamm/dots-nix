@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 {
   imports = [
     ./git.nix
@@ -7,10 +7,6 @@
     ./fortunes.nix
     ./starship.nix
     ./bat.nix
-  ];
-
-  home.packages = with pkgs; [
-    relcheck
   ];
 
   # not big enough for their own modules

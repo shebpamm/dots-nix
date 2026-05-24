@@ -53,6 +53,7 @@
           aspects.homeassistant
           aspects.passwords
           aspects.vault
+          aspects.relcheck
         ];
 
         nixos =
