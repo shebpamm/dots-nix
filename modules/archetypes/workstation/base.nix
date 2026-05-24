@@ -55,6 +55,7 @@
           aspects.vault
           aspects.relcheck
           aspects.scripts
+          aspects.tmux
         ];
 
         nixos =
