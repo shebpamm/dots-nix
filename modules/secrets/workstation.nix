@@ -62,6 +62,21 @@
                 mode = "0400";
                 owner = "shebpamm";
               };
+
+              vsphere-username = {
+                mode = "0400";
+                owner = "shebpamm";
+              };
+
+              vsphere-password = {
+                mode = "0400";
+                owner = "shebpamm";
+              };
+
+              vsphere-hostname = {
+                mode = "0400";
+                owner = "shebpamm";
+              };
             };
           };
         homeManager = { ... }: { };

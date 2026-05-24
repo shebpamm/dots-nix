@@ -58,6 +58,7 @@
           aspects.tmux
           aspects.bat
           aspects.fortunes
+          aspects.terraform
         ];
 
         nixos =

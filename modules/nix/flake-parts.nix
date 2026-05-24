@@ -14,6 +14,11 @@
     default = { };
   };
 
+  options.flake.terraformConfigurations = lib.mkOption {
+    type = lib.types.attrsOf lib.types.raw;
+    default = { };
+  };
+
   config.flake-file.inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
@@ -74,6 +79,7 @@
       {
         ${name} = inputs.terranix.lib.terranixConfiguration {
           inherit system;
+          extraArgs = { inherit name; };
           modules = [
             inputs.self.modules.terraform.${name}
           ];
