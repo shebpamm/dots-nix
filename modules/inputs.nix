@@ -12,7 +12,6 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-sheb.url = "github:shebpamm/nixpkgs-sheb";
     nixpkgs-sheb.inputs.nixpkgs.follows = "nixpkgs";
-    sops-nix.url = "github:Mic92/sops-nix";
     logiops.url = "github:ckiee/nixpkgs/logiops-nixos";
     nur.url = "github:nix-community/NUR";
     compfy.url = "github:allusive-dev/compfy";
