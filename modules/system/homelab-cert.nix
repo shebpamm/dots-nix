@@ -7,7 +7,7 @@
         nixos =
           { ... }:
           {
-            security.pki.certificateFiles = [ ../../home.crt ];
+            security.pki.certificateFiles = [ ../../config/home.crt ];
           };
         homeManager = { ... }: { };
       };
