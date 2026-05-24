@@ -10,8 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    pass
-    pwgen
     qrencode
     rabtap
     ranger
