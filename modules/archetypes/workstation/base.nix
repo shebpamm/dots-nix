@@ -52,6 +52,7 @@
           aspects.gnumake
           aspects.homeassistant
           aspects.passwords
+          aspects.vault
         ];
 
         nixos =
