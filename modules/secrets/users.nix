@@ -1,9 +1,10 @@
 { ... }:
 {
   flake.aspects =
-    { ... }:
+    { aspects, ... }:
     {
       user-secrets = {
+        includes = [ aspects.sops ];
         nixos =
           { ... }:
           {
