@@ -49,6 +49,7 @@
           aspects.shell-utils
           aspects.media-utils
           aspects.git
+          aspects.gnumake
         ];
 
         nixos =

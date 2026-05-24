@@ -10,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    gnumake
     home-assistant-cli
     k9s
     pamixer
