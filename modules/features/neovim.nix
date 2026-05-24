@@ -1,5 +1,7 @@
 { ... }:
 {
+  flake-file.inputs.neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+
   flake.aspects =
     { ... }:
     {
