@@ -45,6 +45,7 @@
           aspects.drawing
           aspects.warriors
           aspects.cloudflared
+          aspects.ripgrep
         ];
 
         nixos =

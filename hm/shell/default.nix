@@ -10,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    (ripgrep.override { withPCRE2 = true; })
     comma
     dyff
     eza
