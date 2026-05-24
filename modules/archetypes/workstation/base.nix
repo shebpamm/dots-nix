@@ -47,6 +47,7 @@
           aspects.cloudflared
           aspects.ripgrep
           aspects.shell-utils
+          aspects.media-utils
         ];
 
         nixos =

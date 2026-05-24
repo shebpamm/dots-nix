@@ -10,21 +10,10 @@
   ];
 
   home.packages = with pkgs; [
-    feh
-    ffmpeg
-    fish
-    fortune
-    fzf
-    github-cli
     github-cli
     gnumake
     home-assistant-cli
-    hyperfine
-    jq
     k9s
-    lazygit
-    maim
-    ncdu
     pamixer
     pass
     playerctl
@@ -33,20 +22,12 @@
     rabtap
     ranger
     silicon
-    socat
     teleport
-    unzip
     vault
-    websocat
-    wget
-    xclip
-    yq-go
-    zoxide
     lefthook
     actionlint
     action-validator
     shellcheck
-    erdtree
     granted
     relcheck
   ];

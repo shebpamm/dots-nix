@@ -33,6 +33,7 @@
               xdotool
               xprintidle
               arandr
+              xclip
               (xsecurelock.overrideAttrs (oldAttrs: {
                 buildInputs = oldAttrs.buildInputs ++ [ mplayer ];
                 configureFlags = oldAttrs.configureFlags ++ [ "--with-mplayer=${mplayer}/bin/mplayer" ];

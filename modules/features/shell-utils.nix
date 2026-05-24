@@ -19,9 +19,12 @@
               websocat
               yq-go
               erdtree
+              fzf
+              ncdu
+              zoxide
+              wget
             ];
           };
       };
     };
 }
-
