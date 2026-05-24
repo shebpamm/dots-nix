@@ -10,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    home-assistant-cli
     k9s
     pamixer
     pass

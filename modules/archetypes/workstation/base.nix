@@ -50,6 +50,7 @@
           aspects.media-utils
           aspects.git
           aspects.gnumake
+          aspects.homeassistant
         ];
 
         nixos =
