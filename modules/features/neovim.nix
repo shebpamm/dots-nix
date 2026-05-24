@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake-file.inputs.neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
@@ -54,6 +54,8 @@
 
           in
           {
+            nixpkgs.overlays = [ inputs.neovim-nightly.overlays.default ];
+
             programs.neovim = {
               enable = true;
               defaultEditor = true;

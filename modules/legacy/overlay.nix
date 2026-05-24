@@ -11,7 +11,6 @@
         };
 
         legacyOverlays = [
-          inputs.neovim-nightly.overlays.default
           miscOverlay
         ];
       in
