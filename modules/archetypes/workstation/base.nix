@@ -48,6 +48,7 @@
           aspects.ripgrep
           aspects.shell-utils
           aspects.media-utils
+          aspects.git
         ];
 
         nixos =

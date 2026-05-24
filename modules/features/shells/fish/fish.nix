@@ -34,15 +34,9 @@
 
               shellAbbrs = {
                 "cert" = "openssl x509 -text -noout -in ";
-                "ghf" = "gh run list -u (gh-user) -s failure";
                 "kx" = "kubectx";
                 "kns" = "kubens";
-                "gpc" = "gh pr checkout";
-                "gpcl" = "gh pr checkout (gh-last-pr)";
-                "grb" = "gh repo browse -w";
-                "gpcr" = "gh pr create -w";
                 "ssls" = "openssl x509 -noout -text -in ";
-                "gpv" = "gh pr view -w";
                 "c" = "clear";
                 "ks" = "k9s";
                 "ksw" = "k9s --write";

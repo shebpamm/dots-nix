@@ -10,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    github-cli
     gnumake
     home-assistant-cli
     k9s
