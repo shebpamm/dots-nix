@@ -11,12 +11,6 @@
 
   home.packages = with pkgs; [
     (ripgrep.override { withPCRE2 = true; })
-    acpi
-    alsa-utils
-    astyle
-    bind
-    bottom
-    brightnessctl
     cloudflared
     comma
     dyff

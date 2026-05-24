@@ -26,6 +26,7 @@
             home.packages = with pkgs; [
               pavucontrol
               pulseaudio
+              alsa-utils
             ];
           };
       };

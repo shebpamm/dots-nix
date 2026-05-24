@@ -14,7 +14,13 @@
               CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
             };
           };
-        homeManager = { ... }: { };
+        homeManager =
+          { pkgs, ... }:
+          {
+            home.packages = with pkgs; [
+              acpi
+            ];
+          };
       };
     };
 }

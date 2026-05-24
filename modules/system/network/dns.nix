@@ -13,6 +13,13 @@
               nssmdns4 = true;
             };
           };
+        homeManager =
+          { pkgs, ... }:
+          {
+            home.packages = with pkgs; [
+              bind
+            ];
+          };
       };
     };
 }

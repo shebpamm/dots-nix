@@ -40,6 +40,7 @@
               bash-language-server
               yaml-language-server
               shfmt
+              astyle
               tree-sitter
             ];
             python-extras = with pkgs.python314Packages; [
