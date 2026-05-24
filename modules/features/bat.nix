@@ -1,13 +1,13 @@
 { ... }:
 {
   flake.aspects =
-    { ... }:
+    { aspects, ... }:
     {
       bat = {
+        includes = [ aspects.catppuccin ];
         homeManager =
           { ... }:
           {
-            catppuccin.flavor = "frappe";
             catppuccin.bat.enable = true;
 
             programs.bat.enable = true;
