@@ -53,6 +53,7 @@ return {
   },
   {
     "hiphish/rainbow-delimiters.nvim",
+    submodules = false,
     config = function()
       local rainbow_delimiters = require "rainbow-delimiters"
 

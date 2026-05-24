@@ -5,9 +5,9 @@ return {
   config = function()
     require("copilot").setup {
       suggestion = {
-        enabled = true;
-        hide_during_completion = false;
-        auto_trigger = true;
+        enabled = true,
+        hide_during_completion = false,
+        auto_trigger = true,
         keymap = {
           accept = "<C-f>",
           prev = "<C-j>",

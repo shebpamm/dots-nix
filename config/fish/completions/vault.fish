@@ -5,4 +5,3 @@ function __complete_vault
     vault
 end
 complete -f -c vault -a "(__complete_vault)"
-

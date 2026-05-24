@@ -7,4 +7,4 @@ end
 
 complete -f -c kubectx
 complete -f -x -c kubectx -n '__fish_kubectx_arg_number 1' -a "(kubectl config get-contexts --output='name')"
-complete -f -x -c kubectx -n '__fish_kubectx_arg_number 1' -a "-" -d "switch to the previous namespace in this context"
+complete -f -x -c kubectx -n '__fish_kubectx_arg_number 1' -a - -d "switch to the previous namespace in this context"

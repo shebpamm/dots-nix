@@ -1,20 +1,27 @@
-local Popup = require("nui.popup")
-local Input = require("nui.input")
+local Popup = require "nui.popup"
+local Input = require "nui.input"
 local event = require("nui.utils.autocmd").event
 
-local b =
-'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'                     -- You will need this for encoding/decoding
+local b = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/" -- You will need this for encoding/decoding
 function enc(data)
-    return ((data:gsub('.', function(x) 
-        local r,b='',x:byte()
-        for i=8,1,-1 do r=r..(b%2^i-b%2^(i-1)>0 and '1' or '0') end
-        return r;
-    end)..'0000'):gsub('%d%d%d?%d?%d?%d?', function(x)
-        if (#x < 6) then return '' end
-        local c=0
-        for i=1,6 do c=c+(x:sub(i,i)=='1' and 2^(6-i) or 0) end
-        return b:sub(c+1,c+1)
-    end)..({ '', '==', '=' })[#data%3+1])
+  return (
+    (data:gsub(".", function(x)
+      local r, b = "", x:byte()
+      for i = 8, 1, -1 do
+        r = r .. (b % 2 ^ i - b % 2 ^ (i - 1) > 0 and "1" or "0")
+      end
+      return r
+    end) .. "0000"):gsub("%d%d%d?%d?%d?%d?", function(x)
+      if #x < 6 then
+        return ""
+      end
+      local c = 0
+      for i = 1, 6 do
+        c = c + (x:sub(i, i) == "1" and 2 ^ (6 - i) or 0)
+      end
+      return b:sub(c + 1, c + 1)
+    end) .. ({ "", "==", "=" })[#data % 3 + 1]
+  )
 end
 
 -- This function asks a question using a prompt and returns the answer as a list of lines.
@@ -39,17 +46,16 @@ local function prompt(cmd, instruction)
   -- Display an empty message to indicate that the question has been asked
   vim.api.nvim_echo({ { "" } }, false, {})
 
-
   -- Split the answer into a list of lines and return it
   local answer_lines = {}
-  for s in response['answer']:gmatch("[^\r\n]+") do
+  for s in response["answer"]:gmatch "[^\r\n]+" do
     table.insert(answer_lines, s)
   end
   return vim.tbl_deep_extend("force", response, { answer = answer_lines })
 end
 
 local function create_popup()
-  local popup = Popup({
+  local popup = Popup {
     enter = true,
     border = {
       style = "rounded",
@@ -69,13 +75,13 @@ local function create_popup()
       height = "60%",
     },
     buf_options = {
-      filetype = "markdown"
+      filetype = "markdown",
     },
     win_options = {
       linebreak = true,
       wrap = true,
-    }
-  })
+    },
+  }
 
   popup:on(event.BufLeave, function()
     popup:unmount()
@@ -97,13 +103,13 @@ end
 local function xcli_modify(cmd, instruction)
   local response = prompt(cmd, instruction)
 
-  if response['type'] == 'edit' then
-    vim.api.nvim_buf_set_lines(0, cmd.line1 - 1, cmd.line2, false, response['answer'])
-  elseif response['type'] == 'code' then
-    vim.api.nvim_buf_set_lines(0, cmd.line1 - 1, cmd.line2, false, response['answer'])
+  if response["type"] == "edit" then
+    vim.api.nvim_buf_set_lines(0, cmd.line1 - 1, cmd.line2, false, response["answer"])
+  elseif response["type"] == "code" then
+    vim.api.nvim_buf_set_lines(0, cmd.line1 - 1, cmd.line2, false, response["answer"])
   else
     local popup = create_popup()
-    vim.api.nvim_buf_set_lines(popup.bufnr, 0, 1, false, response['answer'])
+    vim.api.nvim_buf_set_lines(popup.bufnr, 0, 1, false, response["answer"])
   end
 end
 
@@ -144,4 +150,4 @@ local function xcli_free(cmd)
   end)
 end
 
-vim.api.nvim_create_user_command('AI', xcli_free, { range = 1 })
+vim.api.nvim_create_user_command("AI", xcli_free, { range = 1 })

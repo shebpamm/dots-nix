@@ -9,7 +9,7 @@ SHELL=$(which bash)
 export SHELL
 
 function usage() {
-    cat <<EOF
+  cat <<EOF
 Usage: ${0} <host>
 
 Watch for any changes between the flake nixosConfiguration for <host> at time
@@ -24,38 +24,40 @@ EOF
 }
 
 function spin() {
-    while :;do for s in / - \\ \|; do printf "\r$s ...building...";sleep 0.2;done;done
+  while :; do for s in / - \\ \|; do
+    printf "\r%s ...building..." "$s"
+    sleep 0.2
+  done; done
 }
 
-if [[ $# -lt 1 ]]
-then
-    usage
-    exit 1
+if [[ $# -lt 1 ]]; then
+  usage
+  exit 1
 else
-    system=$1 ; shift
+  system=$1
+  shift
 fi
 
 function drv() {
-    nix --no-warn-dirty path-info --derivation \
-        ".#nixosConfigurations.${1}.config.system.build.toplevel"
+  nix --no-warn-dirty path-info --derivation \
+    ".#nixosConfigurations.${1}.config.system.build.toplevel"
 }
 
 original=$(drv "${system}")
 
 function drvdiff() {
-    clear
-    spin &
-    spinner=$!
-    revised=$(drv "${system}")
-    kill $spinner
-    if [[ $original == "$revised" ]]
-    then
-        echo "✅ Identical"
-    else
-        # nvd diff "${original}" "${revised}"
-        nix store diff-closures "${original}" "${revised}"
-        # nix-diff "${original}" "${revised}"
-    fi
+  clear
+  spin &
+  spinner=$!
+  revised=$(drv "${system}")
+  kill $spinner
+  if [[ $original == "$revised" ]]; then
+    echo "✅ Identical"
+  else
+    # nvd diff "${original}" "${revised}"
+    nix store diff-closures "${original}" "${revised}"
+    # nix-diff "${original}" "${revised}"
+  fi
 }
 
 export original system

@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Collect context
+TICKETS=$(jira mine 2>/dev/null) || { echo "Error: 'jira mine' failed"; exit 1; }
+DIFF_STAGED=$(git diff --staged 2>/dev/null)
+DIFF_UNSTAGED=$(git diff 2>/dev/null)
+
+EXTRA_CONTEXT="$@"
+
+if [[ -z "$DIFF_STAGED" && -z "$DIFF_UNSTAGED" ]]; then
+  echo "No changes found (git diff is empty). Stage or make some changes first."
+  exit 1
+fi
+
+SCHEMA='{"type":"object","properties":{"ticket_id":{"type":"string"},"ticket_summary":{"type":"string"},"branch":{"type":"string"}},"required":["ticket_id","ticket_summary","branch"]}'
+
+PROMPT="You are a git branch naming assistant.
+
+Below are the open Jira tickets assigned to the current user, followed by the current git diff.
+Your job is to pick the ticket that best matches the diff and suggest a branch name.
+
+Branch naming convention: <TICKET_ID>-<short-description>
+- Use the ticket ID exactly as shown (e.g. HCLOUD-1208)
+- Short description: lowercase, hyphen-separated, 3-5 words
+- Example: HCLOUD-1208-enable-irsa-hetzner-clusters
+
+--- JIRA TICKETS ---
+${TICKETS}
+
+--- GIT DIFF (staged) ---
+${DIFF_STAGED}
+
+--- GIT DIFF (unstaged) ---
+${DIFF_UNSTAGED}
+
+--- EXTRA CONTEXT SPECIFIED BY USER ---
+${EXTRA_CONTEXT}
+"
+
+# Ask Claude
+RESPONSE=$(echo "$PROMPT" | claude -p --bare --output-format json --json-schema "$SCHEMA" 2>/dev/null) || {
+  echo "Error: claude invocation failed"
+  exit 1
+}
+
+# Parse ticket fields from structured output
+TICKET_ID=$(echo "$RESPONSE" | jq -r '.structured_output.ticket_id')
+TICKET_SUMMARY=$(echo "$RESPONSE" | jq -r '.structured_output.ticket_summary')
+BRANCH=$(echo "$RESPONSE" | jq -r '.structured_output.branch')
+
+if [[ "$TICKET_ID" == "null" || "$BRANCH" == "null" ]]; then
+  echo "Error: could not parse Claude response:"
+  echo "$RESULT"
+  exit 1
+fi
+
+echo ""
+echo "Ticket: ${TICKET_SUMMARY} (${TICKET_ID})"
+echo "Branch: ${BRANCH}"
+echo ""
+read -r -p "Proceed? (y/n): " CONFIRM
+
+if [[ "$CONFIRM" =~ ^[Yy]$ ]]; then
+  git checkout -b "$BRANCH"
+  echo "Created branch: $BRANCH"
+else
+  echo "Aborted."
+  exit 0
+fi

@@ -1,0 +1,32 @@
+{ ... }:
+{
+  flake.aspects =
+    { ... }:
+    {
+      yubikey = {
+        nixos =
+          { pkgs, ... }:
+          {
+            services.pcscd.enable = true;
+
+            programs.gnupg.agent = {
+              enable = true;
+            };
+
+            environment.systemPackages = with pkgs; [
+              gnupg
+              pinentry-curses
+            ];
+          };
+        homeManager =
+          { pkgs, ... }:
+          {
+            home.packages = with pkgs; [
+              yubioath-flutter
+              yubikey-agent
+              yubikey-manager
+            ];
+          };
+      };
+    };
+}

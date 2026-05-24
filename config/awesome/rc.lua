@@ -34,4 +34,4 @@ require "squeals"
 require "ui"
 
 -- execute autorandr
-awful.spawn.with_shell("autorandr -c")
+awful.spawn.with_shell "autorandr -c"
