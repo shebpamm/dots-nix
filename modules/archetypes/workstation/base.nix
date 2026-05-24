@@ -57,6 +57,7 @@
           aspects.scripts
           aspects.tmux
           aspects.bat
+          aspects.fortunes
         ];
 
         nixos =

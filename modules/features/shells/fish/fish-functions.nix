@@ -19,17 +19,6 @@
                 '';
               };
 
-              fish_greeting = {
-                description = "Greeting displayed at start of shell";
-                body = ''
-                  set_color yellow
-
-                  fortune ~/.fortunes
-
-                  set_color normal
-                '';
-              };
-
               clear = {
                 description = "Custom clear implementation";
                 body = ''

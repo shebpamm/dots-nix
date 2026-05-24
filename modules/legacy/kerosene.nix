@@ -5,11 +5,6 @@
     {
       kerosene = {
         includes = [ aspects.legacy ];
-        homeManager = {
-          imports = [
-            ../../hm/shell
-          ];
-        };
       };
     };
 }
