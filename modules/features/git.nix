@@ -8,9 +8,18 @@
           { pkgs, ... }:
           {
             home.packages = with pkgs; [
-              github-cli
               lefthook
             ];
+
+            programs.gh = {
+              enable = true;
+              extensions = with pkgs; [
+                gh-markdown-preview
+              ];
+              settings.aliases = {
+                "co" = "pr checkout";
+              };
+            };
 
             programs.fish.shellAbbrs = {
               "ghf" = "gh run list -u (gh-user) -s failure";
