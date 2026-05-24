@@ -9,6 +9,7 @@
           {
             home.packages = with pkgs; [
               github-cli
+              lefthook
             ];
 
             programs.fish.shellAbbrs = {

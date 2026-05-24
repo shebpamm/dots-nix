@@ -23,6 +23,9 @@
               ncdu
               zoxide
               wget
+              qrencode
+              ranger
+              silicon
             ];
           };
       };

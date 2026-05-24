@@ -10,17 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    qrencode
-    rabtap
-    ranger
-    silicon
-    teleport
     vault
-    lefthook
-    actionlint
-    action-validator
-    shellcheck
-    granted
     relcheck
   ];
 

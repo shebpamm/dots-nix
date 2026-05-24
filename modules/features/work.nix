@@ -40,6 +40,7 @@
               aws-vault
               awscli2
               jira
+              granted
             ];
           };
       };
