@@ -1,5 +1,7 @@
 local M = {}
 
+local conform = require "conform"
+
 function M.toggle_format_on_save()
   O.format_on_save = not O.format_on_save
 end
@@ -12,7 +14,7 @@ end
 
 function M.format_sync(display_messages)
   display_messages = display_messages ~= false
-  vim.lsp.buf.format { timeout_ms = 5000 }
+  conform.format { timeout_ms = 5000 }
   if display_messages then
     print "Format done."
   end

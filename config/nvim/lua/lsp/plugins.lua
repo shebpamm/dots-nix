@@ -1,6 +1,6 @@
 require "lsp.mappings"
 
-require("lsp.null-ls").setup()
+require("lsp.format").setup()
 
 require("go").setup {
   lsp_cfg = true,

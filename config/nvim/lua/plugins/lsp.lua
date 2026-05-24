@@ -8,5 +8,5 @@ return {
   },
 
   "ray-x/go.nvim",
-  "nvimtools/none-ls.nvim",
+  "stevearc/conform.nvim",
 }
