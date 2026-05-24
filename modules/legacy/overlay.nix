@@ -11,7 +11,6 @@
         };
 
         legacyOverlays = [
-          inputs.nixpkgs-sheb.overlay
           inputs.neovim-nightly.overlays.default
           miscOverlay
         ];
