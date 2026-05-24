@@ -54,6 +54,7 @@
           aspects.passwords
           aspects.vault
           aspects.relcheck
+          aspects.scripts
         ];
 
         nixos =
