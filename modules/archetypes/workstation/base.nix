@@ -44,6 +44,7 @@
           aspects.fun
           aspects.drawing
           aspects.warriors
+          aspects.cloudflared
         ];
 
         nixos =

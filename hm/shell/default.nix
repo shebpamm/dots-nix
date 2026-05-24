@@ -11,7 +11,6 @@
 
   home.packages = with pkgs; [
     (ripgrep.override { withPCRE2 = true; })
-    cloudflared
     comma
     dyff
     eza
