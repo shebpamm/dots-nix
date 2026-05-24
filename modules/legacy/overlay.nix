@@ -9,10 +9,7 @@
             system = self.stdenv.hostPlatform.system;
           in
           {
-            zen-browser = inputs.zen.packages.${system}.default;
             flox = inputs.flox.packages.${system}.flox;
-            compfy = inputs.compfy.packages.${system}.compfy;
-            devenv = inputs.devenv.packages.${system}.devenv;
             nur = import inputs.nur {
               nurpkgs = super;
               pkgs = super;
