@@ -10,10 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    comma
-    dyff
-    eza
-    fd
     feh
     ffmpeg
     fish
@@ -23,7 +19,6 @@
     github-cli
     gnumake
     home-assistant-cli
-    htop
     hyperfine
     jq
     k9s

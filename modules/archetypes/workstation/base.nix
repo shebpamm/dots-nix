@@ -46,6 +46,7 @@
           aspects.warriors
           aspects.cloudflared
           aspects.ripgrep
+          aspects.shell-utils
         ];
 
         nixos =
