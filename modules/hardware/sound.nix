@@ -27,6 +27,8 @@
               pavucontrol
               pulseaudio
               alsa-utils
+              pamixer
+              playerctl
             ];
           };
       };

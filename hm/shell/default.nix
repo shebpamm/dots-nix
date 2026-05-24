@@ -10,10 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    k9s
-    pamixer
     pass
-    playerctl
     pwgen
     qrencode
     rabtap

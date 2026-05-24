@@ -19,6 +19,7 @@
               kubernetes-helm
               kustomize
               talosctl
+              k9s
             ];
           };
       };
