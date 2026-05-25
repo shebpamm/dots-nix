@@ -18,6 +18,7 @@
               ];
               settings.aliases = {
                 "co" = "pr checkout";
+                "b" = "browse";
               };
             };
 
