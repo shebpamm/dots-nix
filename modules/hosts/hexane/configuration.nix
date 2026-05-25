@@ -13,12 +13,6 @@
           aspects.wsone
           aspects.work
         ];
-
-        nixos =
-          { pkgs, ... }:
-          {
-            boot.kernelPackages = pkgs.linuxPackages_6_1; # TODO: update to latest after refactor
-          };
       };
     };
 }

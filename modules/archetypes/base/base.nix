@@ -16,6 +16,7 @@
         nixos =
           { pkgs, ... }:
           {
+            boot.kernelPackages = pkgs.linuxPackages_latest;
             environment.binsh = "${pkgs.dash}/bin/dash";
             services.automatic-timezoned.enable = true;
           };
