@@ -11,6 +11,7 @@
           aspects.python
           aspects.rust
           aspects.bash
+          aspects.yaml
         ];
       };
     };
