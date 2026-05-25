@@ -10,6 +10,7 @@
           aspects.go
           aspects.python
           aspects.rust
+          aspects.bash
         ];
       };
     };
