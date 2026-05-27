@@ -1,20 +1,17 @@
 return {
-  "numToStr/Comment.nvim",
+  "nvim-mini/mini.comment",
   keys = {
     "gc",
-    "gb",
     "gcc",
-    "gbc",
-    "gbc",
     { "gc", mode = "v" },
     { "gb", mode = "v" },
   },
   opts = {
-    padding = true,
-    sticky = true,
     mappings = {
-      basic = true,
-      extra = true,
+      comment = "gc",
+      comment_line = "gcc",
+      comment_visual = "gc",
+      textobject = "gc",
     },
   },
 }
