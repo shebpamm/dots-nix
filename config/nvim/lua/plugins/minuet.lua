@@ -93,7 +93,6 @@ end
 
 local setup_minuet = function()
   local opts = {
-    notify = "debug",
     provider = "claude",
     request_timeout = 5,
     curl_extra_args = aws_curl,
@@ -112,6 +111,21 @@ local setup_minuet = function()
             return opts
           end,
         },
+      },
+    },
+    virtualtext = {
+      auto_trigger_ft = {
+        "lua",
+        "rust",
+        "nix",
+        "python",
+        "javascript",
+        "typescript",
+        "yaml",
+      },
+      keymap = {
+        accept = "<C-f>",
+        accept_line = "<C-e>",
       },
     },
   }
