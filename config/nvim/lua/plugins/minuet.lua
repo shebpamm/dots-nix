@@ -72,6 +72,10 @@ local function get_aws_credentials()
 end
 
 local aws_curl = function()
+  if require("minuet").config.provider ~= "claude" then
+    return {}
+  end
+
   local creds = get_aws_credentials()
   if not creds then
     return {}
@@ -92,8 +96,10 @@ local aws_curl = function()
 end
 
 local setup_minuet = function()
+  local provider = os.getenv "NVIM_LLM_PROVIDER" or "claude"
+
   local opts = {
-    provider = "claude",
+    provider = provider,
     request_timeout = 5,
     curl_extra_args = aws_curl,
 
@@ -110,6 +116,16 @@ local setup_minuet = function()
             opts.headers["x-api-key"] = nil
             return opts
           end,
+        },
+      },
+      provider_options = {
+        openai_fim_compatible = {
+          api_key = "DEEPSEEK_API_KEY",
+          name = "deepseek",
+          optional = {
+            max_tokens = 256,
+            top_p = 0.9,
+          },
         },
       },
     },
@@ -134,7 +150,6 @@ local setup_minuet = function()
 end
 
 return {
-  "iinm/minuet-ai.nvim",
-  branch = "feat/awscurl",
+  "milanglacier/minuet-ai.nvim",
   config = setup_minuet,
 }

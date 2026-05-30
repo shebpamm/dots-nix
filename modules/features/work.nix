@@ -31,6 +31,7 @@
             });
           in
           {
+            dots.neovim.llm.provider = "claude";
             home.packages = with pkgs; [
               slack
               openvpn
