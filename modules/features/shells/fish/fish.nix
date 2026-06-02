@@ -61,8 +61,8 @@
                   src = pkgs.fetchFromGitHub {
                     owner = "shebpamm";
                     repo = "theme-bobthefish";
-                    rev = "f226864d956f8ad056604ca65d37e338ac5930b3";
-                    sha256 = "sha256-YYSanau67IvnfHn24hWfoM1w2XSLU0isqBqdf/vuGIY=";
+                    rev = "077081d885f0f813ce642b01d0bfa66be144e395";
+                    sha256 = "sha256-iy8okNiZi5JIN6idW92COGDLENLi1O2KbSFbvecXGt4=";
                   };
                 }
 

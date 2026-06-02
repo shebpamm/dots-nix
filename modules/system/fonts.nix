@@ -1,5 +1,8 @@
-{ ... }:
+{ inputs, ... }:
 {
+  flake-file.inputs.sheb-icons.url = "github:shebpamm/icons";
+  flake-file.inputs.sheb-icons.inputs.nixpkgs.follows = "nixpkgs";
+
   flake.aspects =
     { ... }:
     {
@@ -19,6 +22,8 @@
               meslo-lg
               noto-fonts
               noto-fonts-emoji-blob-bin
+
+              inputs.sheb-icons.packages.${stdenv.hostPlatform.system}.default
             ];
 
             fonts.fontconfig = {

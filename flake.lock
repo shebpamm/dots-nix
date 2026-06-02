@@ -290,6 +290,24 @@
         "type": "github"
       }
     },
+    "flake-parts_4": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib_3"
+      },
+      "locked": {
+        "lastModified": 1778716662,
+        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1637014545,
@@ -595,6 +613,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-lib_3": {
+      "locked": {
+        "lastModified": 1777168982,
+        "narHash": "sha256-GOkGPcboWE9BmGCRMLX3worL4EMnsnG8MyKmXNeYuhQ=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "f5901329dade4a6ea039af1433fb087bd9c1fe14",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
     "nixpkgs-polkit-pin": {
       "locked": {
         "lastModified": 1769018530,
@@ -877,6 +910,7 @@
         "nixpkgs": "nixpkgs_9",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nixpkgs-polkit-pin": "nixpkgs-polkit-pin",
+        "sheb-icons": "sheb-icons",
         "sops-nix": "sops-nix",
         "spicetify": "spicetify",
         "treefmt-nix": "treefmt-nix",
@@ -915,6 +949,24 @@
         "ref": "nightly",
         "repo": "rust-analyzer",
         "type": "github"
+      }
+    },
+    "sheb-icons": {
+      "inputs": {
+        "flake-parts": "flake-parts_4",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780409803,
+        "narHash": "sha256-il9pAiOI/208RQWGIdnqtFaDL8Ew0yq3orQP0pXwObo=",
+        "path": "/home/shebpamm/stuff/icons",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/shebpamm/stuff/icons",
+        "type": "path"
       }
     },
     "sops-nix": {
