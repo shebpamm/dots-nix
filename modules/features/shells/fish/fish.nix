@@ -1,5 +1,9 @@
 { inputs, ... }:
 {
+  flake-file.inputs.bobthefish.url = "github:shebpamm/theme-bobthefish";
+  flake-file.inputs.bobthefish.flake = false;
+  flake-file.inputs.bobthefish.group = "icons";
+
   flake.aspects =
     { ... }:
     {
@@ -58,12 +62,7 @@
                 # https://github.com/oh-my-fish/theme-bobthefish
                 {
                   name = "bobthefish";
-                  src = pkgs.fetchFromGitHub {
-                    owner = "shebpamm";
-                    repo = "theme-bobthefish";
-                    rev = "077081d885f0f813ce642b01d0bfa66be144e395";
-                    sha256 = "sha256-iy8okNiZi5JIN6idW92COGDLENLi1O2KbSFbvecXGt4=";
-                  };
+                  src = inputs.bobthefish;
                 }
 
                 # https://github.com/franciscolourenco/done

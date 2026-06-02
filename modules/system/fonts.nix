@@ -2,6 +2,7 @@
 {
   flake-file.inputs.sheb-icons.url = "github:shebpamm/icons";
   flake-file.inputs.sheb-icons.inputs.nixpkgs.follows = "nixpkgs";
+  flake-file.inputs.sheb-icons.group = "icons";
 
   flake.aspects =
     { ... }:

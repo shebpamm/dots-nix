@@ -5,6 +5,10 @@
 
   inputs = {
     anttipkgs.url = "github:anttiharju/nur-packages";
+    bobthefish = {
+      url = "github:shebpamm/theme-bobthefish";
+      flake = false;
+    };
     catppuccin.url = "github:catppuccin/nix";
     claude.url = "github:shebpamm/claude-nix";
     disko.url = "github:nix-community/disko";
@@ -27,7 +31,7 @@
     };
     nixpkgs-polkit-pin.url = "github:NixOS/nixpkgs/88d3861acdd3d2f0e361767018218e51810df8a1";
     sheb-icons = {
-      url = "path:/home/shebpamm/stuff/icons";
+      url = "github:shebpamm/icons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix.url = "github:Mic92/sops-nix";
