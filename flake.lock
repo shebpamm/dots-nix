@@ -37,11 +37,11 @@
     "bobthefish": {
       "flake": false,
       "locked": {
-        "lastModified": 1780410999,
-        "narHash": "sha256-mEDknILKM0XvFo4J1UBmC4IH/feWSJ0hoSgI3jlHFIA=",
+        "lastModified": 1780411802,
+        "narHash": "sha256-AWpOr+jGUgO5BTplfPRxCAYwRySAo5pMGfGrgFxZ/Xs=",
         "owner": "shebpamm",
         "repo": "theme-bobthefish",
-        "rev": "487dd8867726c9b3c63842de831c763bdcf8da03",
+        "rev": "9d1de673a3c5a59dafc42caab7326bbe961fba1f",
         "type": "github"
       },
       "original": {
@@ -976,11 +976,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780408765,
-        "narHash": "sha256-m1MnGX9wGwwLbkkwfAAEisLLQLkL52VipEt9L3DR9yk=",
+        "lastModified": 1780411055,
+        "narHash": "sha256-9d4JxwbYiMf7PlE+1L0CP6Mm9n8xa6fKRB+TEf0Hxpw=",
         "owner": "shebpamm",
         "repo": "icons",
-        "rev": "da7525ca6d8ea6181d2ef7236a95ce7d478ca2b9",
+        "rev": "076c8673f721269d380f3664bd06ebb3e6c7a22e",
         "type": "github"
       },
       "original": {
