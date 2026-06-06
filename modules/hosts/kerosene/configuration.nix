@@ -17,6 +17,7 @@
           aspects.kvm
           aspects.calibre
           aspects.minecraft
+          aspects.logitech
         ];
       };
     };
