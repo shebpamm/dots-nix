@@ -16,6 +16,7 @@
           # aspects.virtualbox
           aspects.kvm
           aspects.calibre
+          aspects.minecraft
         ];
       };
     };
