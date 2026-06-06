@@ -13,7 +13,7 @@ while [ "$1" ]; do
       exit ;;
 
     status)
-      if systemctl is-active --quiet kmonad-integrated.service; then
+      if systemctl is-active --quiet kmonad-default.service; then
         printf "on"
         exit 0;
       else
@@ -21,19 +21,19 @@ while [ "$1" ]; do
         exit 1;
       fi ;;
     toggle)
-      if systemctl is-active --quiet kmonad-integrated.service; then
-        systemctl stop kmonad-integrated.path
-        systemctl stop kmonad-integrated.service
+      if systemctl is-active --quiet kmonad-default.service; then
+        systemctl stop kmonad-default.path
+        systemctl stop kmonad-default.service
       else
-        systemctl start kmonad-integrated.service
+        systemctl start kmonad-default.service
       fi
       exit ;;
     enable)
-      systemctl start kmonad-integrated.service
+      systemctl start kmonad-default.service
       exit ;;
     disable)
-      systemctl stop kmonad-integrated.path
-      systemctl stop kmonad-integrated.service
+      systemctl stop kmonad-default.path
+      systemctl stop kmonad-default.service
       exit ;;
     *)
       printf "\033[0;31merr: invalid command\n"
