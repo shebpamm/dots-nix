@@ -30,7 +30,7 @@
           aspects.direnv
           aspects.discord
           aspects.vscode
-          aspects.bitwarden
+          # aspects.bitwarden
           aspects.firefox
           aspects.chrome
           aspects.network-utils
