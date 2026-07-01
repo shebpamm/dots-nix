@@ -14,6 +14,7 @@
               htop
               hyperfine
               jq
+              jc
               socat
               unzip
               websocat
