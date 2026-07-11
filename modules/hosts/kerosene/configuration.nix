@@ -18,6 +18,7 @@
           aspects.calibre
           aspects.minecraft
           aspects.logitech
+          aspects.bluetooth
         ];
       };
     };
