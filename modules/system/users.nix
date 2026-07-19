@@ -4,9 +4,7 @@
     { aspects, ... }:
     {
       users = {
-        includes = [
-          aspects.user-secrets
-        ];
+        includes = [ ];
 
         nixos =
           {
