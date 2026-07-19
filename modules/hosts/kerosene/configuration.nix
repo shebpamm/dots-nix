@@ -19,6 +19,7 @@
           aspects.minecraft
           aspects.logitech
           aspects.bluetooth
+          aspects.roto-control
         ];
       };
     };
