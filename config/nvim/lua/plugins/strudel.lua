@@ -7,7 +7,6 @@ return {
     strudel.setup {
       browser_exec_path = "/home/shebpamm/.nix-profile/bin/google-chrome-stable",
     }
-
   end,
   keys = {
     {
