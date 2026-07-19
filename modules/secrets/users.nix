@@ -11,12 +11,12 @@
             sops.secrets = {
               root-password = {
                 neededForUsers = true;
-                sopsFile = ../../secrets/users.yaml;
+                sopsFile = ../../secrets/workstation/users.yaml;
               };
 
               main-password = {
                 neededForUsers = true;
-                sopsFile = ../../secrets/users.yaml;
+                sopsFile = ../../secrets/workstation/users.yaml;
               };
             };
           };
