@@ -10,7 +10,6 @@
           aspects.homelab-cert
           aspects.network
           aspects.ssh
-          aspects.users
         ];
 
         nixos =
