@@ -25,6 +25,19 @@ local function add_custom_parsers()
       files = { "src/parser.c", "src/scanner.cc" },
     },
   }
+
+  parsers.strudel = {
+    install_info = {
+      url = "https://github.com/pedrozappa/tree-sitter-strdl", -- local path or git repo
+      files = { "src/parser.c" }, -- note that some parsers also require src/scanner.c or src/scanner.cc
+      -- optional entries:
+      branch = "main", -- default branch in case of git repo if different from master
+      generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+      requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+      queries = "queries", -- also install queries from given directory
+    },
+    filetype = "strudel", -- if filetype does not match the parser name
+  }
 end
 
 local function ensure_parsers()
@@ -110,7 +123,7 @@ local function setup_binds()
         return
       end
 
-      parser = vim.treesitter.language.get_lang(ft)
+      local parser = vim.treesitter.language.get_lang(ft)
 
       if not parser then
         return
@@ -125,8 +138,9 @@ end
 local function setup()
   local ts = require "nvim-treesitter"
 
-  ensure_parsers()
+  add_custom_parsers()
   vim.api.nvim_create_autocmd("User", { pattern = "TSUpdate", callback = add_custom_parsers })
+  ensure_parsers()
 
   ts.setup {
     highlight = {

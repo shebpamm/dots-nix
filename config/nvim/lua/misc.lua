@@ -42,3 +42,14 @@ local function generate_password()
 end
 
 utils.command("GeneratePassword", generate_password)
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = { "*.str", "*.strdl", "*.strudel" },
+  callback = function(ev)
+    vim.bo.filetype = "strudel"
+    vim.bo.commentstring = "// %s"
+    -- This should really be nvim-treesitters job, but..
+    -- highlights do not work if I don't start it myself
+    vim.treesitter.start(ev.buf, "strudel")
+  end,
+})

@@ -17,16 +17,6 @@ wk.register {
       c = { "<CMD>ColorizerToggle<CR>", "colorizer" },
       f = { require("lsp.utils").toggle_format_on_save, "format on save" },
     },
-    -- packer
-    p = {
-      name = "+packer",
-      u = { "<CMD>PackerUpdate<CR>", "Update Plugins" },
-      s = { "<CMD>PackerSync<CR>", "Sync Plugins" },
-      i = { "<CMD>PackerInstall<CR>", "Install Plugins" },
-      c = { "<CMD>PackerCompile<CR>", "Compile Config" },
-      C = { "<CMD>PackerClean<CR>", "Clean Plugins" },
-      p = { "<CMD>PackerProfile<CR>", "Profile" },
-    },
     [","] = { "<CMD>edit ~/.config/nvim/lua/config.lua<CR>", "edit config" },
     -- git
     v = {
