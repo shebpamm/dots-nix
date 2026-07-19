@@ -9,7 +9,7 @@
           { pkgs, ... }:
           {
             home.packages = with pkgs; [
-              nodejs_latest
+              nodejs_24
               deno
             ];
             home.sessionVariables = {
