@@ -122,6 +122,10 @@
                   label = "data";
                   size = config.server.specs.disk;
                 };
+                cdrom = {
+                  datastore_id = "\${data.vsphere_datastore.datastore.id}";
+                  path = "sops-secrets.iso";
+                };
                 ovf_deploy = {
                   allow_unverified_ssl_cert = true;
                   local_ovf_path = config.server.image;
