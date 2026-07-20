@@ -1,3 +1,10 @@
 result
 config/zsh/.zsh/zinit
 packer_compiled.*
+
+# terranix build outputs
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+config.tf.json
+.terraform.lock.hcl
