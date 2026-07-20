@@ -7,7 +7,7 @@
         nixos =
           { config, ... }:
           {
-            sops.defaultSopsFile = ../../secrets/default.yaml;
+            sops.defaultSopsFile = ../../secrets/workstation/default.yaml;
             sops.age.sshKeyPaths = [
               "/etc/ssh/ssh_sops_key"
             ];

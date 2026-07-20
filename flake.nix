@@ -36,6 +36,10 @@
     };
     sops-nix.url = "github:Mic92/sops-nix";
     spicetify.url = "github:Gerg-L/spicetify-nix";
+    terranix = {
+      url = "github:terranix/terranix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     treefmt-nix.url = "github:numtide/treefmt-nix";
     wrappers = {
       url = "github:BirdeeHub/nix-wrapper-modules";

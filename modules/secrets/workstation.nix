@@ -12,7 +12,7 @@
           { ... }:
           {
 
-            sops.defaultSopsFile = ../../secrets/default.yaml;
+            sops.defaultSopsFile = ../../secrets/workstation/default.yaml;
             sops.age.sshKeyPaths = [
               "/etc/ssh/ssh_sops_key"
             ];
@@ -59,6 +59,21 @@
               };
 
               "shebpamm-libera.crt" = {
+                mode = "0400";
+                owner = "shebpamm";
+              };
+
+              vsphere-username = {
+                mode = "0400";
+                owner = "shebpamm";
+              };
+
+              vsphere-password = {
+                mode = "0400";
+                owner = "shebpamm";
+              };
+
+              vsphere-hostname = {
                 mode = "0400";
                 owner = "shebpamm";
               };

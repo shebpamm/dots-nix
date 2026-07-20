@@ -6,6 +6,7 @@
       workstation = {
         includes = [
           aspects.system-base
+          aspects.users
           aspects.awesome
           aspects.cross-platform
           aspects.keyring
@@ -59,6 +60,7 @@
           aspects.tmux
           aspects.bat
           aspects.fortunes
+          aspects.terraform
         ];
 
         nixos =
@@ -66,6 +68,8 @@
           {
             # Use fish as default shell on workstations
             dots.users.defaultShell = pkgs.fish;
+
+            boot.kernelPackages = pkgs.linuxPackages_latest;
 
             environment.systemPackages = with pkgs; [
               gcc
