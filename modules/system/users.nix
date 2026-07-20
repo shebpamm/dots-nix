@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   flake.aspects =
-    { aspects, ... }:
+    { ... }:
     {
       users = {
         includes = [ ];

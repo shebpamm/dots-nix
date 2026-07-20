@@ -2,22 +2,18 @@ keys:
   - &workstation age18de5qeh3lenv478ykpqqrs6wj668lc2urpw4ecjkk89nayewwdssktx693
   - &servers age1926vvd0jfems0q8g5ksxycxh9pud607k72pqncs7g5nmsvyl4u4shpduc5
 creation_rules:
-
   # Main key is encrypted with pgp card
   - path_regex: secrets/workstation\.key$
     pgp: 4D69D9521390361EF9AF096AEAFA19811BC6CB6D
-
   # The main key can decrypt the server key for provisioning
   - path_regex: secrets/servers\.key$
     key_groups:
       - age:
           - *workstation
-
   - path_regex: secrets/workstation/[^/]+\.yaml$
     key_groups:
       - age:
           - *workstation
-
   - path_regex: secrets/servers/[^/]+\.yaml$
     key_groups:
       - age:
