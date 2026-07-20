@@ -5,8 +5,10 @@
     {
       server = {
         nixos =
-          { ... }:
+          { lib, ... }:
           {
+            virtualisation.vmware.guest.enable = true;
+            virtualisation.virtualbox.guest.enable = lib.mkForce false;
             image.modules.virtualbox =
               { ... }:
               {
