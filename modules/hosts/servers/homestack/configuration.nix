@@ -8,7 +8,10 @@
           aspects.server
         ];
 
-        nixos.system.stateVersion = "23.11";
+        nixos = {
+          system.stateVersion = "23.11";
+          networking.hostName = "homestack";
+        };
         terraform = { };
       };
     };
