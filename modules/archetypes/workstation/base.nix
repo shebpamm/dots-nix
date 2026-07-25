@@ -61,6 +61,7 @@
           aspects.bat
           aspects.fortunes
           aspects.terraform
+          aspects.svalboard
         ];
 
         nixos =
