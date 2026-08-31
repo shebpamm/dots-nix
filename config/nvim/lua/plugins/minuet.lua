@@ -151,5 +151,6 @@ end
 
 return {
   "milanglacier/minuet-ai.nvim",
+  enabled = false,
   config = setup_minuet,
 }
