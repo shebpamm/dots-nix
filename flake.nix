@@ -22,6 +22,7 @@
     };
     import-tree.url = "github:denful/import-tree";
     kat.url = "github:macropower/nur-packages";
+    llm-agents.url = "github:numtide/llm-agents.nix";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     nixpkgs.url = "nixpkgs/nixos-unstable";

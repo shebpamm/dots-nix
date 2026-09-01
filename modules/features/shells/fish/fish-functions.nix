@@ -102,6 +102,14 @@
                 description = "go to git root directory";
                 body = "cd (git rev-parse --show-toplevel)";
               };
+
+              cursa = {
+                description = "fix stupid cursor placing binary blobs in path";
+                body = ''
+                  rm -f ~/.local/bin/cursor-agent
+                  /home/shebpamm/.nix-profile/bin/cursor-agent
+                '';
+              };
             };
           };
       };
