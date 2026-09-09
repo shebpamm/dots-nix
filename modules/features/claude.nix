@@ -8,12 +8,13 @@
     {
       claude = {
         homeManager =
-          { pkgs, ... }:
+          { pkgs, lib, ... }:
           {
             imports = [ inputs.claude.homeModules.default ];
 
             wrappers.claude-code = {
               enable = true;
+              package = lib.mkForce inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.claude-code;
               kubernetes.enable = false;
               grafana.enable = false;
             };
