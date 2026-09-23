@@ -20,6 +20,7 @@
               kustomize
               talosctl
               k9s
+              kfilt
             ];
           };
       };
