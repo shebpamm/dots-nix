@@ -37,11 +37,11 @@
     "bobthefish": {
       "flake": false,
       "locked": {
-        "lastModified": 1780411802,
-        "narHash": "sha256-AWpOr+jGUgO5BTplfPRxCAYwRySAo5pMGfGrgFxZ/Xs=",
+        "lastModified": 1790168432,
+        "narHash": "sha256-yvOaSH0o8VU7Myd38aFGV7YuqYiXarrn2VO7FAOJiJw=",
         "owner": "shebpamm",
         "repo": "theme-bobthefish",
-        "rev": "9d1de673a3c5a59dafc42caab7326bbe961fba1f",
+        "rev": "54a4e6e6d5a1940b4b0c77a658692ae16210426d",
         "type": "github"
       },
       "original": {
