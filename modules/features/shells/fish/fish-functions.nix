@@ -110,6 +110,14 @@
                   /home/shebpamm/.nix-profile/bin/cursor-agent
                 '';
               };
+
+              bobthefish_colors = {
+                description = "Custom bobthefish color overrides";
+                body = ''
+                  set -x color_k8s 326ce5 dfdfdf
+                  set -x color_nix 4d6fb7 dfdfdf
+                '';
+              };
             };
           };
       };
