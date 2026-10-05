@@ -84,6 +84,7 @@
                   };
                 };
 
+                branch.master.pushRemote = "no_push";
                 push.autoSetupRemote = true;
 
                 url = {
