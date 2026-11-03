@@ -7,6 +7,7 @@
         includes = [
           aspects.claude
           aspects.cursor
+          aspects.codex
         ];
       };
     };
