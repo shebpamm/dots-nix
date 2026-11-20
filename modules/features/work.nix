@@ -32,6 +32,9 @@
           in
           {
             dots.neovim.llm.provider = "claude";
+            home.sessionVariables = {
+              theme_display_k8s_context = "yes";
+            };
             home.packages = with pkgs; [
               slack
               openvpn
