@@ -158,7 +158,23 @@ end)
 naughty.expiration_paused = false
 naughty.persistence_enabled = false
 
--- Enable sloppy focus, so that focus follows mouse.
+local stored_keys
+local keys_disabled = false
+
 client.connect_signal("mouse::enter", function(c)
-  c:activate { context = "mouse_enter", raise = false }
+    c:activate { context = "mouse_enter", raise = false }
+
+    local is_river = c.name and c.name:match("river")
+
+    if not keys_disabled and is_river then
+        stored_keys = root._keys()
+        root._keys({})
+        c:keys({})
+        keys_disabled = true
+    elseif keys_disabled and not is_river then
+        -- root._keys(stored_keys)
+        root._keys(stored_keys)
+        stored_keys = nil
+        keys_disabled = false
+    end
 end)
