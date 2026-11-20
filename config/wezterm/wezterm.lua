@@ -8,6 +8,6 @@ config = tbl.merge(config, require("keyboard"))
 config = tbl.merge(config, require("bell"))
 
 config.scrollback_lines = 3500
-config.default_cursor_style = 'BlinkingUnderline'
+config.default_cursor_style = "BlinkingUnderline"
 
 return config
